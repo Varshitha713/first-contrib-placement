@@ -79,8 +79,6 @@ This project was created as a part of my submission for **Social Summer of Code 
 
 This project is licensed under the MIT License — see the LICENSE file for details.
 
-.
-
 ## 💡 Maintainer
 
 Made with ❤️ by [Macha Varshitha]. Open for suggestions and contributions!

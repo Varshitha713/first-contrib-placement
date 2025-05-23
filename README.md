@@ -53,7 +53,7 @@ For detailed steps, check [`CONTRIBUTING.md`](./CONTRIBUTING.md)
 
 ## 🫶 Motivation
 
-This project was created as a part of my submission for **GirlScript Summer of Code 2025** as a Project Admin. I wanted to build something that:
+This project was created as a part of my submission for **Social Summer of Code 2025** as a Project Admin. I wanted to build something that:
 
 * Helps fellow students
 * Teaches open source contribution basics

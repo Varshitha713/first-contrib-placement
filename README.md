@@ -21,12 +21,21 @@ https://varshitha713.github.io/good-first-issue-for-students/
 
 * HTML
 * CSS
-* Flexbox Layout
 * Git & GitHub (for collaboration)
 
 
 ## 🧑‍💻 How to Contribute
 
+📌 What to Add!?
+
+Contributors are expected to add a simple card that contains:
+
+* A link to a useful placement-related resource (e.g., DSA, Web Dev, Aptitude, etc.)
+
+* A short description explaining what the link offers
+  check [index.html](index.html) for the structure of the card
+
+These cards will appear on the main page to help students easily explore resources.
 Want to add a resource?
 
 1. **Fork** this repository
@@ -42,18 +51,22 @@ For detailed steps, check [`CONTRIBUTING.md`](./CONTRIBUTING.md)
 ## 🧭 File Structure
 
 ```
+placement-resources/
+├── images/
+│   └── prjct-preview.png
+├── styles/
+│   └── style.css
 ├── index.html
-├── index.css
 ├── README.md
+├── contributing.md
 ├── LICENSE
-├── CONTRIBUTING.md
-└── ISSUE_TEMPLATE.md
+
 ```
 
 
 ## 🫶 Motivation
 
-This project was created as a part of my submission for **GirlScript Summer of Code 2025** as a Project Admin. I wanted to build something that:
+This project was created as a part of my submission for **Social Summer of Code 2025** as a Project Admin. I wanted to build something that:
 
 * Helps fellow students
 * Teaches open source contribution basics

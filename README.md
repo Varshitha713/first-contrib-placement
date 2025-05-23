@@ -34,6 +34,8 @@ Contributors are expected to add a simple card that contains:
 
 * A short description explaining what the link offers
   check [index.html](index.html) for the structure of the card
+  
+* You can also raise issues regarding the webpage design and work on them
 
 These cards will appear on the main page to help students easily explore resources.
 Want to add a resource?

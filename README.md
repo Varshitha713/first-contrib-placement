@@ -11,7 +11,7 @@ This project is a simple website that displays a collection of high-quality reso
 
 ## 🌐 Live Preview
 
-Coming Soon via GitHub Pages...
+https://varshitha713.github.io/good-first-issue-for-students/
 
 
 ## 🛠️ Tech Stack

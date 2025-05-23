@@ -10,7 +10,7 @@ This project is a simple website that displays a collection of high-quality reso
 
 ## Screenshots
 
-!![prjct=preview](images/prjct-preview.png)
+![prjct=preview](images/prjct-preview.png)
 
 ## 🌐 Live Preview
 

@@ -8,6 +8,9 @@ This project is a simple website that displays a collection of high-quality reso
 * 👩‍💻 Beginners learning to contribute to open source
 * 🌱 First-time contributors looking for a “Good First Issue”
 
+## Screenshots
+
+!![prjct=preview](images/prjct-preview.png)
 
 ## 🌐 Live Preview
 

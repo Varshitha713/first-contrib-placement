@@ -1,8 +1,4 @@
-
-# 🚀 Placement Resources - Good First Issues
-
-Welcome to the **Placement Resources** repository! This project is created with the goal of helping BTech students and aspiring contributors find useful links and curated resources for placement preparation — while also giving beginners a simple and friendly open-source contribution experience.
-
+# Placement Resources
 
 ## 📌 What is This Project?
 
@@ -63,15 +59,11 @@ This project was created as a part of my submission for **GirlScript Summer of C
 
 ## 📄 License
 
-This project is licensed under the MIT License. See [`LICENSE`](./LICENSE) for more details.
+This project is licensed under the MIT License — see the LICENSE file for details.
 
+.
 
-## 🙌 Acknowledgments
+## 💡 Maintainer
 
-Thanks to every contributor who helps this project grow. Your effort matters! 💜
-
-
-
-
-
+Made with ❤️ by [Macha Varshitha]. Open for suggestions and contributions!
 

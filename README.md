@@ -1,84 +1,77 @@
-# Placement Resources
 
-## What is This Project?
+# 🚀 Placement Resources - Good First Issues
+
+Welcome to the **Placement Resources** repository! This project is created with the goal of helping BTech students and aspiring contributors find useful links and curated resources for placement preparation — while also giving beginners a simple and friendly open-source contribution experience.
+
+
+## 📌 What is This Project?
 
 This project is a simple website that displays a collection of high-quality resources shared by contributors. It’s designed for:
 
-🎓 Students preparing for placements
-
-👩‍💻 Beginners learning to contribute to open source
-
-🌱 First-time contributors looking for a “Good First Issue”
+* 🎓 Students preparing for placements
+* 👩‍💻 Beginners learning to contribute to open source
+* 🌱 First-time contributors looking for a “Good First Issue”
 
 
 ## 🌐 Live Preview
 
-Coming Soon! (or add your GitHub Pages/Netlify/Vercel link here)
-
-## 📸 Screenshot
-
-
-
-## 🚀 Features
-
-Beginner-friendly project setup
-
-Simple, clean, responsive UI
+Coming Soon via GitHub Pages...
 
 
 ## 🛠️ Tech Stack
 
-HTML5
-CSS3
+* HTML
+* CSS
+* Flexbox Layout
+* Git & GitHub (for collaboration)
 
 
-## 🧠 How to Contribute
+## 🧑‍💻 How to Contribute
 
-1. Fork the repository
+Want to add a resource?
 
-2. Clone your fork:
+1. **Fork** this repository
+2. **Clone** the forked repo
+3. Add your resource link and a short description in the correct section (like `DSA`, `Web Dev`, `CS Fundamentals`, etc.)
+4. Commit your changes: `git commit -m "Added new DSA resource"`
+5. Push to your fork: `git push origin main`
+6. Open a **Pull Request** with a proper title and description
 
-  git clone [https://github.com/your-username/placement-resources.git]
+For detailed steps, check [`CONTRIBUTING.md`](./CONTRIBUTING.md)
 
-3. Create a new branch:
 
-  git checkout -b feature-name
+## 🧭 File Structure
 
-4. Add your changes (new resources, fixes, improvements)
-
-5. Commit and push:
-
-6. git add .
-7. git commit -m "Added XYZ resource"
-8. git push origin feature-name
-
-9. Submit a Pull Request 🚀
-
-  For more info, see CONTRIBUTING.md
-
- ## 📂 Project Structure
-
-  placement-resources/
+```
 ├── index.html
-├── style.css
+├── index.css
 ├── README.md
-├── CONTRIBUTING.md
 ├── LICENSE
-├── CODE_OF_CONDUCT.md
-└── assets/
-    └── screenshot.png
+├── CONTRIBUTING.md
+└── ISSUE_TEMPLATE.md
+```
 
-##  🙌 Acknowledgements
 
-This project was created to help beginners understand open-source workflows and contribute meaningfully while learning.
+## 🫶 Motivation
 
-##  📄 License
+This project was created as a part of my submission for **GirlScript Summer of Code 2025** as a Project Admin. I wanted to build something that:
 
-This project is licensed under the MIT License — see the LICENSE file for details.
+* Helps fellow students
+* Teaches open source contribution basics
+* Has a clean, minimal design
 
-.
 
-## 💡 Maintainer
+## 📄 License
 
-Made with ❤️ by [Macha Varshitha]. Open for suggestions and contributions!
+This project is licensed under the MIT License. See [`LICENSE`](./LICENSE) for more details.
+
+
+## 🙌 Acknowledgments
+
+Thanks to every contributor who helps this project grow. Your effort matters! 💜
+
+
+
+
+
 

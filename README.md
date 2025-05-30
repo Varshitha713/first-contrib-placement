@@ -81,5 +81,5 @@ This project is licensed under the MIT License — see the LICENSE file for deta
 
 ## 💡 Maintainer
 
-Made with ❤️ by [Macha Varshitha]. Open for suggestions and contributions!
+Made with ❤️ by Macha Varshitha. Open for suggestions and contributions!
 

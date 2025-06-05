@@ -18,10 +18,11 @@ html,body{
  }
  .container h3{
   text-align: center;
+  font-size: 1.8rem;
  }
  .card{
   background-color: #EDF6F9;
-  margin: 10px 0;
+  margin: 25px 0;
   padding:10px;
   border-radius: 8px;
   box-shadow:0 4px 8px rgba(0,0,0,0.1);
@@ -35,9 +36,10 @@ html,body{
             color: #219EBC;
             font-weight: bold;
             text-decoration: none;
+            transition: 0.3s ease-in-out;
         }
 .card a:hover {
-            text-decoration: underline;
+            color:#037b86;
             cursor: pointer;
         }
 footer{

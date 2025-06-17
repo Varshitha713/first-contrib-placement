@@ -21,6 +21,7 @@ https://varshitha713.github.io/good-first-issue-for-students/
 
 * HTML
 * CSS
+* JavaScript
 * Git & GitHub (for collaboration)
 
 
@@ -36,6 +37,8 @@ Contributors are expected to add a simple card that contains:
   check [index.html](index.html) for the structure of the card
   
 * You can also raise issues regarding the webpage design and work on them
+
+* Don't forget to add a category to the card for filtering. Feel free to add new categories if wanted
 
 These cards will appear on the main page to help students easily explore resources.
 Want to add a resource?

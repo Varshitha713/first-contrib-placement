@@ -3,31 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <title>Placement Resources</title>
   <link href="styles/style.css" rel="stylesheet">
 </head>
+
 <body>
   <header>
     <h1>Welcome to Placement Resources!</h1>
     <p>Find and share the best resources to help students prepare for the placements</p>
   </header>
+
   <div class ="container">
     <h3>Recommended Resources</h3>
 
-    <div class="card">
-      <h4>Coding Practicce(mainly for DSA):Leetcode</h4>
+    <div class="search-bar">
+      <div class="filter">
+        <select id="categoryFilter">
+          <option value="all">All</option>
+          <option value="coding">Coding</option>
+          <option value="sql">SQL</option>
+          <option value="learning">Learning</option>
+          <option value="documentation">Documentation</option>
+        </select>
+      </div>
+      <input type="text" id="searchInput" placeholder="Search for resources..." />
+    </div>
+
+    <div class="card" category="coding">
+      <h4>Coding Practice(mainly for DSA):Leetcode</h4>
       <p>LeetCode offers a wide range of problems to practice coding skills for technical interviews.</p>
       <a href="https://leetcode.com">visit leetcode</a>
     </div>
 
-    <div class="card">
+    <div class="card" category="learning">
       <h4>Online learning platform: edX</h4>
       <p>edX is an online learning platform offering free and paid courses, certificates, and degrees from top universities like Harvard and MIT to help you gain skills and advance your career.</p>
       <a href="https://www.edx.org/">visit edX</a>
     </div>
 
-    <div class="card">
-      <h4>competitive coding platform: Codeforces</h4>
+    <div class="card" category="coding">
+      <h4>Competitive coding platform: Codeforces</h4>
       <p>Codeforces is a competitive programming platform known for regular contests and a vast problem archive to improve algorithmic skills."</p>
       <a href="https://www.edx.org/">visit codeforces</a>
     </div>
@@ -37,12 +55,72 @@
       <a href="https://gitimmersion.com">visit gitimmersion</a> 
     </div>
 
+    <div class="card" category="coding">
+      <h4>Coding Practice: Frontend Mentor</h4>
+      <p>Frontend Mentor offers real-world frontend challenges to improve your HTML, CSS, and JavaScript skills.</p>
+      <a href="https://www.frontendmentor.io/">visit frontend mentor</a>
+    </div>
+
+    <div class="card" category="documentation">
+      <h4>Online Documentation: DevDocs</h4>
+      <p>Combines multiple developer documentations in one fast, searchable interface.</p>
+      <a href="https://devdocs.io">visit devdocs</a>
+    </div>
+
+    <div class="card" category="sql">
+      <h4>Practice SQL: SQLZoo</h4>
+      <p>platform for practing SQL with projects</p>
+      <a href="https://www.sqlzoo.net/wiki/SQL_Tutorial">visit sqlzoo</a>
+    </div>
+
+    <div class="card" category="coding">
+      <h4>Coding Challenge: Code wars</h4>
+      <p>Coding practice for all programming levels</p>
+      <a href="https://www.codewars.com/">visit Code wars</a>
+    </div>
+
+    <div class="card" category="coding">
+      <h4>Coding Test: HackerRank</h4>
+      <p>Coding Test & Interview Solution</p>
+      <a href="https://www.hackerrank.com/">visit HackerRank</a>
+    </div>
+    
+
 </div>
 <footer>
   <p>Hope you learnt how to contribute using this project and Don't forget to use the resources
     <p>Happy coding!!!</p>
   </p>
 </footer>
+
+<script>
+  const searchInput = document.getElementById('searchInput');
+  const categoryFilter = document.getElementById('categoryFilter');
+
+  function searchAndFilter() {
+    const searchText = searchInput.value.toLowerCase();
+    const selectedCategory = categoryFilter.value;
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+      const text = card.textContent.toLowerCase();
+      const cardCategory = card.getAttribute('category');
+
+      const matchesSearch = text.includes(searchText);
+      const matchesCategory = selectedCategory === "all" || cardCategory === selectedCategory;
+
+      if (matchesSearch && matchesCategory) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  }
+
+  searchInput.addEventListener('input', searchAndFilter);
+  categoryFilter.addEventListener('change', searchAndFilter);
+</script>
+
 
 
 </body>

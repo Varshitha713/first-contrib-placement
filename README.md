@@ -21,6 +21,7 @@ https://varshitha713.github.io/good-first-issue-for-students/
 
 * HTML
 * CSS
+* JavaScript
 * Git & GitHub (for collaboration)
 
 
@@ -34,6 +35,10 @@ Contributors are expected to add a simple card that contains:
 
 * A short description explaining what the link offers
   check [index.html](index.html) for the structure of the card
+  
+* You can also raise issues regarding the webpage design and work on them
+
+* Don't forget to add a category to the card for filtering. Feel free to add new categories if wanted
 
 These cards will appear on the main page to help students easily explore resources.
 Want to add a resource?
@@ -77,9 +82,7 @@ This project was created as a part of my submission for **Social Summer of Code 
 
 This project is licensed under the MIT License — see the LICENSE file for details.
 
-.
-
 ## 💡 Maintainer
 
-Made with ❤️ by [Macha Varshitha]. Open for suggestions and contributions!
+Made with ❤️ by Macha Varshitha. Open for suggestions and contributions!
 

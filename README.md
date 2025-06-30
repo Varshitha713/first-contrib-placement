@@ -69,15 +69,6 @@ placement-resources/
 ```
 
 
-## 🫶 Motivation
-
-This project was created as a part of my submission for **Social Summer of Code 2025** as a Project Admin. I wanted to build something that:
-
-* Helps fellow students
-* Teaches open source contribution basics
-* Has a clean, minimal design
-
-
 ## 📄 License
 
 This project is licensed under the MIT License — see the LICENSE file for details.

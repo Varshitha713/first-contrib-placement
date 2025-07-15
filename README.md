@@ -21,7 +21,6 @@ https://varshitha713.github.io/good-first-issue-for-students/
 
 * HTML
 * CSS
-* JavaScript
 * Git & GitHub (for collaboration)
 
 

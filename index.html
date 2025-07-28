@@ -134,6 +134,8 @@
       <p>Curated resources and practice materials to sharpen your quantitative, logical, and verbal aptitude skills for competitive exams and placements.</p>
       <a href="https://www.indiabix.com/" target="_blank">Visit indiabix</a>
     </div>
+  <!-- Back to Top Button -->
+    <button id="backToTop" title="Go to top">↑</butt
 
 </div>
 <footer>
@@ -196,6 +198,22 @@
       localStorage.setItem("mode", "light");
     }
   });
+
+  // JavaScript code to make back to top button work 
+    const backToTopButton = document.getElementById("backToTop");
+
+  window.onscroll = () => {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
+    }
+  };
+
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
 </script>
 
 

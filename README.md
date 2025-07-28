@@ -14,7 +14,8 @@ This project is a simple website that displays a collection of high-quality reso
 
 ## 🌐 Live Preview
 
-https://varshitha713.github.io/good-first-issue-for-students/
+https://first-contrib-placement.netlify.app/
+
 
 
 ## 🛠️ Tech Stack

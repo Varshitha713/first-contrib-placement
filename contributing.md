@@ -1,6 +1,6 @@
 Contributing Guidelines
 
-elcome to the Placement Resources project! 🎉 We’re excited to have you here.
+Welcome to the Placement Resources project! 🎉 We’re excited to have you here.
 Whether you’re a beginner or an experienced developer, your contributions are valuable.
 
 ✨ Ways to Contribute

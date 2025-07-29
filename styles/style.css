@@ -56,6 +56,20 @@ header {
   font-family: 'Roboto', sans-serif; 
 }
 
+.dark-mode .search-bar input {
+  background-color: #2A2A2A;
+  color: #E0E0E0;
+  border-color: #555555;
+}
+
+.dark-mode .search-bar input::placeholder {
+  color: #B0B0B0;
+}
+
+.dark-mode .search-bar input:focus {
+  border-color: #7FDBFF;
+}
+
 .search-bar input::placeholder {
   color: #5ca5cc; 
 }
@@ -85,6 +99,20 @@ header {
  
 }
 
+.dark-mode #categoryFilter {
+  background-color: #2A2A2A;
+  color: #E0E0E0;
+  border-color: #555555;
+}
+
+.dark-mode #categoryFilter:focus {
+  border-color: #7FDBFF;
+}
+
+.dark-mode #categoryFilter option {
+  background-color: #2A2A2A;
+  color: #E0E0E0;
+}
 
 .card {
   background-color: rgba(146, 205, 209, 0.85); 
@@ -192,7 +220,14 @@ header{
 }
 
 .dark-mode .card a {
-  color: #7FDBFF;
+  color: #121212;
+  background-color: #7FDBFF;
+}
+
+.dark-mode .card a:hover {
+  color: #121212;
+  background-color: #5FCADD;
+  text-decoration: underline;
 }
 
 .dark-mode footer {
@@ -224,4 +259,13 @@ header{
 
 #backToTop:hover {
   background-color: #037b86;
+}
+
+.dark-mode #backToTop {
+  background-color: #7FDBFF;
+  color: #121212;
+}
+
+.dark-mode #backToTop:hover {
+  background-color: #5FCADD;
 }

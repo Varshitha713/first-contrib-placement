@@ -30,7 +30,7 @@ Live Preview: [first-contrib-placement.netlify.app](https://first-contrib-placem
 1.  **Fork** this repository.
 2.  **Clone** your fork:
     ```bash
-    git clone https://github.com//placement-resources.git
+    git clone https://github.com/Varshitha713/first-contrib-placement
     ```
 3.  **Create a new branch**:
     ```bash

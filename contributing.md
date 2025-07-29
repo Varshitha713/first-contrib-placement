@@ -1,63 +1,94 @@
-Contributing Guidelines
+# 🤝 Contributing to Placement Resources
 
-Welcome to the Placement Resources project! 🎉 We’re excited to have you here.
-Whether you’re a beginner or an experienced developer, your contributions are valuable.
+Hi there\! 👋 We're thrilled you're considering contributing to this open-source project. Whether you're here via **GSSoC’25**, learning HTML/CSS/JS, or just want to help out — you're welcome\! 💜
 
-✨ Ways to Contribute
+This document will guide you through the process of contributing effectively.
 
-Add useful placement resources (websites, courses, articles, videos, etc.)
+-----
 
-Improve the UI with better design or layout
+## 📌 Project Overview
 
-Fix typos or improve documentation
+**Placement Resources** is a simple website that displays useful study and interview prep resources. Contributors add their own resource cards and/or help improve the website's UI/UX.
 
-Report bugs or suggest features
+Live Preview: [first-contrib-placement.netlify.app](https://first-contrib-placement.netlify.app/)
 
-📦 Getting Started
+-----
 
-1. Fork the Repository
+## 🚀 How to Contribute
 
-Click the Fork button on the top right of this page to create a copy of this repository in your GitHub account.
+### 🧠 What You Can Do:
 
-2. Clone Your Fork
+  * 🧩 **Add a new resource card** (with link, title, short description, and category)
+  * 🎨 **Improve the UI/UX** (e.g., navbar, responsiveness, dark mode)
+  * 🐞 **Fix bugs** or improve structure
+  * 📖 **Improve documentation**
 
-git clone https://github.com/your-username/placement-resources.git
-cd placement-resources
+-----
 
-3. Create a New Branch
+## 🧾 Steps to Add a Resource
 
-git checkout -b your-branch-name
+1.  **Fork** this repository.
+2.  **Clone** your fork:
+    ```bash
+    git clone https://github.com//placement-resources.git
+    ```
+3.  **Create a new branch**:
+    ```bash
+    git checkout -b my-feature-branch
+    ```
+4.  Open `index.html` and scroll to the relevant category (e.g., DSA, Aptitude).
+5.  Copy the existing card format and add your resource with:
+      * ✅ A link
+      * ✅ A short description
+      * ✅ A proper category tag
+6.  Save your changes.
+7.  **Commit your changes**:
+    ```bash
+    git commit -m "Added DSA resource: [resource name]"
+    ```
+8.  **Push to your fork**:
+    ```bash
+    git push origin my-feature-branch
+    ```
+9.  Open a **Pull Request (PR)** with a short, meaningful title.
 
-4. Make Your Changes
+-----
 
-Add your resources or edits and test the project locally.
+### 🎯 Guidelines for PRs
 
-5. Stage, Commit & Push
+  * Only work on issues **assigned to you**.
+  * If you want to suggest a new feature, please **raise an issue first**.
+  * Always **reference the issue** you're solving in your PR (e.g., `Fixes #10`).
+  * If making UI changes, attach **before & after screenshots**.
+  * Ensure your contribution works in **both light and and dark mode**.
 
-git add .
-git commit -m "Your detailed commit message"
-git push origin your-branch-name
+-----
 
-6. Create a Pull Request
+### 🛠️ Code Style Guide
 
-Go to your forked repository on GitHub and click on Compare & pull request.
+  * Follow the existing **indentation** and HTML structure.
+  * Use **meaningful commit messages**.
+  * Keep CSS styles in the appropriate file (`styles/style.css`).
 
-Describe your changes clearly and submit the pull request.
+-----
 
+### 🧭 Code of Conduct
 
-✅ Commit Message Format
+Be **respectful, patient, and inclusive**. New contributors are welcome\! Please follow the **Code of Conduct** for this project.
 
-Please write clear and concise commit messages. Examples:
+-----
 
-Added a new link to coding resources
+### 💬 Need Help or Want to Discuss?
 
-Fixed layout issues on the resource cards
+  * 📢 Join our **Discord server**: [Join Here](https://discord.gg/eZUc6NA4Np)
+  * 📌 Open a **GitHub Discussion**
 
-Improved documentation in README
+We’d love to support your learning and contribution journey\! 💪
 
+-----
 
-🤝 Code of Conduct
+### 🙌 Credits
 
-Please read our CODE_OF_CONDUCT.md to understand the rules of respectful engagement.
+Made with ❤️ by Macha Varshitha
 
-Thank you for making this project better! 🫶
+Open to contributions, feedback, and suggestions\! 🚀

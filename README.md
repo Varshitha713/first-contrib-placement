@@ -5,28 +5,24 @@
 
 This is a simple, open-source website dedicated to providing **useful study and interview preparation resources** for students and job seekers. Our goal is to create a centralized place where anyone can find materials to help them succeed in their placements and career journeys.
 
------
 
 ## ✨ Features
 
   * **Curated Resource Cards**: Easy-to-browse cards with links, descriptions, and categories for various topics.
   * **Community-Driven**: Resources are added and improved by contributors like you\!
-
------
+     
 
 ## 🚀 Live Preview
 
 Check out the live version of the website here: [first-contrib-placement.netlify.app](https://first-contrib-placement.netlify.app/)
-
------
-
+<br>
 ## 💻 Technologies Used
 
   * **HTML**
   * **CSS**
   * **JavaScript**
 
------
+<br>
 
 ## 🤝 Contributing
 
@@ -39,7 +35,11 @@ We welcome contributions from everyone, whether you're a seasoned developer or j
   * **Fix bugs**: Help us squash any issues.
   * **Improve documentation**: Make our project easier to understand.
 
-### Getting Started with Your First Contribution:
+ <br>   
+
+## Getting Started with Your First Contribution:
+
+
 
 1.  **Fork** this repository.
 2.  **Clone** your forked repository to your local machine:
@@ -61,26 +61,26 @@ We welcome contributions from everyone, whether you're a seasoned developer or j
     ```
 7.  **Open a Pull Request (PR)** on GitHub from your branch to our `main` branch. Provide a descriptive title and details about your contribution.
 
-For more detailed contribution guidelines, please refer to our [`CONTRIBUTING.md`](https://www.google.com/search?q=CONTRIBUTING.md) file.
+For more detailed contribution guidelines, please refer to our [`CONTRIBUTING.md`](https://github.com/Varshitha713/first-contrib-placement/blob/master/contributing.md) file.
 
------
+<br>
 
 ## 💬 Support and Community
 
 Got questions or want to discuss ideas?
 
-  * 📢 Join our **Discord server**: [Join Here](https://www.google.com/search?q=https://discord.gg/your-discord-link) (Please replace `your-discord-link` with the actual link if you have one\!)
+  * 📢 Join our **Discord server**: [Join Here](https://discord.gg/eZUc6NA4Np) for any doubts or issues!!
   * 📌 Open a **GitHub Discussion**
 
 We're here to support your learning and contribution journey\!
 
------
+<br>
 
 ## ⭐ Show Your Support
 
 If you find this project helpful, please give it a star\! It encourages us to keep improving.
 
------
+<br>
 
 ## 🙌 Credits
 

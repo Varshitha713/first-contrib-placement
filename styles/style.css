@@ -83,8 +83,16 @@ header {
 .search-bar input::placeholder {
   color: #5ca5cc; 
 }
-.filter {
+/* .filter {
   padding-right: 8px;
+} */
+.filter {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 #categoryFilter {

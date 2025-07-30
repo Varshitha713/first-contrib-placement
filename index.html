@@ -17,7 +17,7 @@
       <p>Find and share the best resources to help students prepare for the placements</p>
     </div>
     <div>
-      <p align="end" id="toggle-mode">Toggle Mode</p>
+      <button id="toggle-mode"></button>
     </div>
   </header>
   <div class ="container">
@@ -179,10 +179,10 @@
 
     if (savedMode === "dark") {
       document.body.classList.add("dark-mode");
-      toggleBtn.textContent = "☀️ Light Mode";
+      toggleBtn.textContent = "☀️";
     } else {
       document.body.classList.remove("dark-mode");
-      toggleBtn.textContent = "🌙 Dark Mode";
+      toggleBtn.textContent = "🌙";
     }
   });
 
@@ -191,10 +191,10 @@
     document.body.classList.toggle("dark-mode");
 
     if (document.body.classList.contains("dark-mode")) {
-      toggleBtn.textContent = "☀️ Light Mode";
+      toggleBtn.textContent = "☀️";
       localStorage.setItem("mode", "dark");
     } else {
-      toggleBtn.textContent = "🌙 Dark Mode";
+      toggleBtn.textContent = "🌙";
       localStorage.setItem("mode", "light");
     }
   });

@@ -22,10 +22,14 @@ header {
 
 
 
-.container {
-  margin: 20px auto;
-  padding: 20px;
-  max-width: 900px; 
+ .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .p{
   padding: 5px;
@@ -121,6 +125,8 @@ header {
 }
 
 .card {
+  flex: 1 1 280px;
+  max-width: 320px;
   background-color: rgba(146, 205, 209, 0.85); 
   backdrop-filter: blur(4px);
   margin: 25px 0;
@@ -131,6 +137,7 @@ header {
   font-family: 'Roboto', sans-serif;
   
 }
+
 
 .card:hover {
   transform: scale(1.02);

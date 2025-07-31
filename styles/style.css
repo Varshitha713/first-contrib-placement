@@ -120,6 +120,30 @@ header {
   color: #E0E0E0;
 }
 
+#showFavBtn {
+  padding: 8px 12px;
+  background-color: #019ea6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin-left: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#showFavBtn:hover {
+  background-color: #008a91;
+}
+
+body.dark-mode .fav-btn {
+  color: #cccccc;
+}
+
+body.dark-mode .fav-btn.active {
+  color: #7FDBFF;
+}
+
 .card {
   background-color: rgba(146, 205, 209, 0.85); 
   backdrop-filter: blur(4px);
@@ -153,6 +177,21 @@ header {
   cursor: pointer;
   text-decoration: underline;
  
+}
+.fav-btn {
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.fav-btn.active {
+  color: #00adb5;
+}
+
+.fav-btn:hover {
+  transform: scale(1.4);
 }
 
 footer {

@@ -7,14 +7,20 @@ html, body {
 }
 
 header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   background-color: #006D77; 
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color: #FFFFFF;
   padding: 16px;
-  text-align: center;
   font-size: 1.5rem;
   letter-spacing: 1px; 
 }
+
+
 
 .container {
   margin: 20px auto;
@@ -268,4 +274,28 @@ header{
 
 .dark-mode #backToTop:hover {
   background-color: #5FCADD;
+}
+
+#toggle-mode{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color:#037b86;
+  border: 1px solid #003B42;
+  width: 50px;
+  height: 40px;
+  border-radius: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#toggle-mode:hover{
+  transition: all 1s ease;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 786px) {
+  #toggle-mode{
+    position: static;
+  }
 }

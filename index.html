@@ -20,7 +20,7 @@
       <p>Find and share the best resources to help students prepare for the placements</p>
     </div>
     <div>
-      <p align="end" id="toggle-mode">Toggle Mode</p>
+      <button id="toggle-mode"></button>
     </div>
   </header>
   <div class="container">
@@ -44,7 +44,6 @@
       <p>LeetCode offers a wide range of problems to practice coding skills for technical interviews.</p>
       <a href="https://leetcode.com"> Visit leetcode </a>
       <p></p>
-
     </div>
 
     <div class="card" category="learning">
@@ -53,18 +52,17 @@
         universities like Harvard and MIT to help you gain skills and advance your career.</p>
       <a href="https://www.edx.org/">Visit edX</a>
       <p></p>
-
     </div>
 
     <div class="card" category="coding">
       <h4>Competitive coding platform: Codeforces</h4>
       <p>Codeforces is a competitive programming platform known for regular contests and a vast problem archive to
         improve algorithmic skills.</p>
-      <a href="https://www.edx.org/">Visit codeforces</a>
+      <a href="https://codeforces.com/">Visit codeforces</a>
       <p></p>
-
     </div>
-    <div class="card">
+
+    <div class="card" category="learning">
       <h4>Learning Git: Git Immersion</h4>
       <p>Git Immersion is a guided tour that helps you learn Git through hands-on labs and practical examples.</p>
       <a href="https://gitimmersion.com" target="_blank">visit gitimmersion</a>
@@ -75,7 +73,6 @@
       <p>Frontend Mentor offers real-world frontend challenges to improve your HTML, CSS, and JavaScript skills.</p>
       <a href="https://www.frontendmentor.io/">Visit frontend mentor</a>
       <p></p>
-
     </div>
 
     <div class="card" category="documentation">
@@ -83,7 +80,6 @@
       <p>Combines multiple developer documentations in one fast, searchable interface.</p>
       <a href="https://devdocs.io">Visit devdocs</a>
       <p></p>
-
     </div>
 
     <div class="card" category="sql">
@@ -91,7 +87,6 @@
       <p>platform for practing SQL with projects</p>
       <a href="https://www.sqlzoo.net/wiki/SQL_Tutorial">Visit sqlzoo</a>
       <p></p>
-
     </div>
 
     <div class="card" category="coding">
@@ -113,7 +108,6 @@
       <p>Online courses with Certifications</p>
       <a href="https://www.mygreatlearning.com/">Visit Great Learning</a>
       <p></p>
-
     </div>
 
     <div class="card" category="learning">
@@ -178,14 +172,34 @@
       <a href="https://www.deeplearning.ai/" target="_blank">Visit DeepLearning.ai</a>
     </div>
 
+    <div class="card" category="coding">
+      <h4>DSA Mastery: Take U Forward (Striver’s Sheet)</h4>
+      <p>Take U Forward offers a curated A2Z DSA Sheet, system design roadmap, and coding tutorials perfect for
+        placement prep. Striver’s approach is structured and widely recommended.</p>
+      <a href="https://takeuforward.org/" target="_blank">Visit Take U Forward</a>
+    </div>
+
+    <div class="card" category="learning">
+      <h4>Web Dev Tutorials: W3Schools</h4>
+      <p>W3Schools offers beginner-friendly tutorials and interactive examples for HTML, CSS, JavaScript, Python, SQL,
+        and more. Great for quick learning and reference.</p>
+      <a href="https://www.w3schools.com/" target="_blank">Explore W3Schools</a>
+    </div>
+
+    <div class="card" category="learning">
+      <h4>Interactive Learning: freeCodeCamp</h4>
+      <p>Offers hands-on coding lessons, certifications, and projects in web development, data science, and more—all for
+        free.</p>
+      <a href="https://www.freecodecamp.org/" target="_blank">Explore freeCodeCamp</a>
+    </div>
+
     <!-- Back to Top Button -->
     <button id="backToTop" title="Go to top">↑</button>
-
   </div>
+
   <footer>
-    <p>Hope you learnt how to contribute using this project and Don't forget to use the resources
+    <p>Hope you learnt how to contribute using this project and Don't forget to use the resources</p>
     <p>Happy coding!!!</p>
-    </p>
   </footer>
 
   <script>
@@ -217,7 +231,6 @@
 
     const toggleBtn = document.getElementById("toggle-mode");
 
-    // 🔄 Load saved mode on page load
     window.addEventListener("DOMContentLoaded", () => {
       const savedMode = localStorage.getItem("mode");
 
@@ -230,7 +243,6 @@
       }
     });
 
-    // 🟢 Toggle and Save Mode
     toggleBtn.addEventListener("click", () => {
       document.body.classList.toggle("dark-mode");
 
@@ -243,7 +255,6 @@
       }
     });
 
-    // JavaScript code to make back to top button work 
     const backToTopButton = document.getElementById("backToTop");
 
     window.onscroll = () => {
@@ -257,11 +268,7 @@
     backToTopButton.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-
   </script>
-
-
-
 </body>
 
 </html>

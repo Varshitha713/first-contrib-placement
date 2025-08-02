@@ -82,18 +82,21 @@ header {
 
 .search-bar input::placeholder {
   color: #5ca5cc; 
-}
-/* .filter {
-  padding-right: 8px;
-} */
-.filter {
-  width: 100%;
+   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding-right: 8px;
   gap: 1rem;
   margin-bottom: 2rem;
 }
+
+.filter {
+  padding-right: 8px;
+}
+/* .filter {
+ 
+} */
 
 #categoryFilter {
   width: 140px;
@@ -143,8 +146,13 @@ header {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   font-family: 'Roboto', sans-serif;
-  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
 }
+
 
 
 .card:hover {

@@ -404,3 +404,26 @@ footer {
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   padding-top: 15px;
 }
+.card {
+  transition: transform 0.25s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+.dark-mode .tag {
+  background-color: #2a4f4f;
+  color: #ade8f4;
+}
+.card {
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  overflow: hidden;
+}

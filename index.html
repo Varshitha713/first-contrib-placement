@@ -12,7 +12,9 @@
 
 <body>
   <header>
+    
     <div class="main-heading">
+      <img src="images/PR-LOGO.png" width="140" height="120" id="logo">
       <h1>Welcome to Placement Resources!</h1>
       <p>Find and share the best resources to help students prepare for the placements</p>
     </div>
@@ -32,6 +34,18 @@
           <option value="learning">Learning</option>
           <option value="documentation">Documentation</option>
         </select>
+        <div class="filter-dropdown">
+          <button id="filterToggle" class="dropdown-btn">🎯 Categories ▾</button>
+          <div id="checkboxContainer" class="checkbox-dropdown">
+            <label><input type="checkbox" value="coding" checked> Coding</label>
+            <label><input type="checkbox" value="sql" checked> SQL</label>
+            <label><input type="checkbox" value="learning" checked> Learning</label>
+            <label><input type="checkbox" value="documentation" checked> Documentation</label>
+            <label><input type="checkbox" value="mock" checked> Mock Tests</label>
+            <label><input type="checkbox" value="interview" checked> Interview Prep</label>
+            <label><input type="checkbox" value="CTFs" checked> CTFs</label>
+          </div>
+        </div>
       </div>
       <input type="text" id="searchInput" placeholder="Search for resources..." />
 
@@ -65,6 +79,14 @@
     </div>
 
     <div class="card" data-id="resource-5" category="learning">
+    <div class="card" category="coding">
+      <h4>Competitive Coding Contests platform: AtCoder</h4>
+      <p>AtCoder is a popular online competitive programming platform.It is known for its well-structured problems, clear constraints, and strong emphasis on logical thinking.</p>
+       <a href="https://atcoder.jp/">Visit AtCoder</a>
+      <p></p>
+    </div>
+
+    <div class="card" category="learning">
       <h4>Learning Git: Git Immersion</h4> 
       <p>Git Immersion is a guided tour that helps you learn Git through hands-on labs and practical examples.</p>
       <a href="https://gitimmersion.com" target="_blank">visit gitimmersion</a> 
@@ -136,26 +158,86 @@
 
 </div>
 <footer>
+
   <p>Hope you learnt how to contribute using this project and Don't forget to use the resources
     <p>Happy coding!!!</p>
   </p>
 </footer>
 
+  <div class="footer-container">
+    <!-- Branding -->
+    <div class="footer-section">
+      <h2>first-contrib-placement</h2>
+      <p>
+        A community-driven project to share the best placement and learning resources for BTech students.
+      </p>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/varshitha-macha/" target="blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Contribute</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">Roadmap</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Top Categories -->
+    <div class="footer-section">
+      <h3>Top Categories</h3>
+      <ul>
+        <li><a href="#">DSA Practice</a></li>
+        <li><a href="#">Resume Tips</a></li>
+        <li><a href="#">Interview Prep</a></li>
+        <li><a href="#">Open Source</a></li>
+        <li><a href="#">Roadmaps</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-section">
+      <h3>Get in Touch</h3>
+      <p><strong>Location:</strong> India</p>
+      <p><strong>Email:</strong> contact@firstcontrib.com</p>
+    </div>
+  </div>
+
+
+  <div class="footer-bottom">
+    © 2025 All Rights Reserved | Built with ❤️ by the FCP Community
+  </div>
+</footer>
+
+
+
+
 <script>
   const searchInput = document.getElementById('searchInput');
-  const categoryFilter = document.getElementById('categoryFilter');
+  const categoryCheckboxes = document.querySelectorAll('#checkboxContainer input[type="checkbox"]');
+  const cards = document.querySelectorAll('.card');
+  const toggleBtn = document.getElementById("toggle-mode");
+  const backToTopButton = document.getElementById("backToTop");
 
+  // 🔍 Search & Filter Logic
   function searchAndFilter() {
     const searchText = searchInput.value.toLowerCase();
-    const selectedCategory = categoryFilter.value;
-    const cards = document.querySelectorAll('.card');
+    const selectedCategories = Array.from(categoryCheckboxes)
+      .filter(cb => cb.checked)
+      .map(cb => cb.value);
 
     cards.forEach(card => {
       const text = card.textContent.toLowerCase();
       const cardCategory = card.getAttribute('category');
 
       const matchesSearch = text.includes(searchText);
-      const matchesCategory = selectedCategory === "all" || cardCategory === selectedCategory;
+      const matchesCategory = selectedCategories.includes(cardCategory);
 
       if (matchesSearch && matchesCategory) {
         card.classList.remove('hidden');
@@ -165,12 +247,11 @@
     });
   }
 
+  // Event Listeners
   searchInput.addEventListener('input', searchAndFilter);
-  categoryFilter.addEventListener('change', searchAndFilter);
+  categoryCheckboxes.forEach(cb => cb.addEventListener('change', searchAndFilter));
 
-  const toggleBtn = document.getElementById("toggle-mode");
-
-  // 🔄 Load saved mode on page load
+  // 🌗 Dark Mode
   window.addEventListener("DOMContentLoaded", () => {
     const savedMode = localStorage.getItem("mode");
 
@@ -181,6 +262,7 @@
       document.body.classList.remove("dark-mode");
       toggleBtn.textContent = "🌙";
     }
+    searchAndFilter();
   });
 
   // 🟢 Toggle and Save Mode
@@ -196,9 +278,7 @@
     }
   });
 
-  // JavaScript code to make back to top button work 
-    const backToTopButton = document.getElementById("backToTop");
-
+  // ⬆️ Back to Top
   window.onscroll = () => {
     if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
       backToTopButton.style.display = "block";
@@ -211,6 +291,19 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
+  // ⬇️ Toggle dropdown
+  const filterToggle = document.getElementById("filterToggle");
+  const filterDropdown = document.querySelector(".filter-dropdown");
+  filterToggle.addEventListener("click", () => {
+    filterDropdown.classList.toggle("open");
+  });
+
+  // ⛔ Close dropdown if clicked outside
+  window.addEventListener("click", (e) => {
+    if (!filterDropdown.contains(e.target)) {
+      filterDropdown.classList.remove("open");
+    }
+  });
 </script>
 
 <!-- Favorite Button Script -->

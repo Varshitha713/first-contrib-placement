@@ -43,99 +43,93 @@
       <h4>Coding Practice(mainly for DSA):Leetcode</h4>
       <p>LeetCode offers a wide range of problems to practice coding skills for technical interviews.</p>
       <a href="https://leetcode.com"> Visit leetcode </a>
-      <button class="fav-btn">☆</button> <!-- Empty star initially --> 
     </div>
 
     <div class="card" data-id="resource-2" category="learning">
       <h4>Online learning platform: edX</h4>
       <p>edX is an online learning platform offering free and paid courses, certificates, and degrees from top universities like Harvard and MIT to help you gain skills and advance your career.</p>
       <a href="https://www.edx.org/">Visit edX</a>
-      <button class="fav-btn">☆</button>
     </div>
 
     <div class="card" data-id="resource-3" category="coding">
       <h4>Competitive coding platform: Codeforces</h4>
       <p>Codeforces is a competitive programming platform known for regular contests and a vast problem archive to improve algorithmic skills.</p>
        <a href="https://www.edx.org/">Visit codeforces</a>
-      <button class="fav-btn">☆</button>
     </div>
-    <div class="card" data-id="resource-4" category="learning">
+
+    <div class="card" data-id="resource-4" category="coding">
+      <h4>Competitive Coding Contests platform: AtCoder</h4>
+      <p>AtCoder is a popular online competitive programming platform.It is known for its well-structured problems, clear constraints, and strong emphasis on logical thinking.</p>
+       <a href="https://atcoder.jp/">Visit AtCoder</a>
+      <p></p>
+    </div>
+
+    <div class="card" data-id="resource-5" category="learning">
       <h4>Learning Git: Git Immersion</h4> 
       <p>Git Immersion is a guided tour that helps you learn Git through hands-on labs and practical examples.</p>
       <a href="https://gitimmersion.com" target="_blank">visit gitimmersion</a> 
-      <button class="fav-btn">☆</button>
     </div>
 
-    <div class="card" data-id="resource-5" category="coding">
+    <div class="card" data-id="resource-6" category="coding">
       <h4>Coding Practice: Frontend Mentor</h4>
       <p>Frontend Mentor offers real-world frontend challenges to improve your HTML, CSS, and JavaScript skills.</p>
       <a href="https://www.frontendmentor.io/">Visit frontend mentor</a>
-      <button class="fav-btn">☆</button>
     </div>
 
-    <div class="card" data-id="resource-6" category="documentation">
+    <div class="card" data-id="resource-7" category="documentation">
       <h4>Online Documentation: DevDocs</h4>
       <p>Combines multiple developer documentations in one fast, searchable interface.</p>
       <a href="https://devdocs.io">Visit devdocs</a>
-      <button class="fav-btn">☆</button>
     </div>
 
-    <div class="card" data-id="resource-7" category="sql">
+    <div class="card" data-id="resource-8" category="sql">
       <h4>Practice SQL: SQLZoo</h4>
       <p>platform for practing SQL with projects</p>
       <a href="https://www.sqlzoo.net/wiki/SQL_Tutorial">Visit sqlzoo</a>
-      <button class="fav-btn">☆</button>
   
     </div>
 
-    <div class="card" data-id="resource-8" category="coding">
+    <div class="card" data-id="resource-9" category="coding">
       <h4>Coding Challenge: Code wars</h4>
       <p>Coding practice for all programming levels</p>
       <a href="https://www.codewars.com/">Visit Code wars</a>
-      <button class="fav-btn">☆</button>
     </div>
 
-    <div class="card" data-id="resource-9" category="coding">
+    <div class="card" data-id="resource-10" category="coding">
       <h4>Coding Test: HackerRank</h4>
       <p>Coding Test & Interview Solution</p>
       <a href="https://www.hackerrank.com/">Visit HackerRank</a>
-      <button class="fav-btn">☆</button>
     </div>
 
-     <div class="card" data-id="resource-10" category="learning">
+     <div class="card" data-id="resource-11" category="learning">
       <h4>Courses and Certifications: Great Learning</h4>
       <p>Online courses with Certifications</p>
       <a href="https://www.mygreatlearning.com/">Visit Great Learning</a>
-      <button class="fav-btn">☆</button>
     
     </div>
 
-    <div class="card" data-id="resource-11" category="learning">
+    <div class="card" data-id="resource-12" category="learning">
       <h4>Practice and Courses: GeeksForGeeks</h4>
       <p>Practice coding, learn DSA, and explore computer science topics with tutorials and challenges.</p>
       <a href="https://www.geeksforgeeks.org" target="_blank">Visit GeeksForGeeks</a>
-      <button class="fav-btn">☆</button>
     </div>
 
-    <div class="card" data-id="resource-12" category="coding">
+    <div class="card" data-id="resource-13" category="coding">
       <h4>Algorithm Learning: Data Structure Visualization</h4>
       <p>An interactive resource for visualizing various Data Structures and Algorithms. Perfect for understanding complex concepts through dynamic illustrations.</p>
       <a href="https://www.cs.usfca.edu/~galles/visualization/Algorithms.html" target="_blank">Visit Data Structures Visualization</a>
-      <button class="fav-btn">☆</button>
     </div>
     
-    <div class="card" data-id="resource-13" category="learning">
+    <div class="card" data-id="resource-14" category="learning">
       <h4>Documentation: Placement ready in 3 months</h4>
       <p>A comprehensive guide outlining strategies and essential tips to prepare for your placements in just thaddree months.</p>
       <a href="https://medium.com/@varshini_vijay/placement-ready-in-3-months-bfba2512bee2" target="_blank">Visit Medium</a>
-      <button class="fav-btn">☆</button>
     </div>
 
-    <div class="card" data-id="resource-14" category="learning">
+    <div class="card" data-id="resource-15" category="learning">
       <h4>Learning: Aptitude Questions and Answers</h4>
       <p>Curated resources and practice materials to sharpen your quantitative, logical, and verbal aptitude skills for competitive exams and placements.</p>
       <a href="https://www.indiabix.com/" target="_blank">Visit indiabix</a>
-      <button class="fav-btn">☆</button>
     </div>
   <!-- Back to Top Button -->
     <button id="backToTop" title="Go to top">↑</button>
@@ -222,47 +216,76 @@
 <!-- Favorite Button Script -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const buttons = document.querySelectorAll(".fav-btn");
 
-    buttons.forEach(button => {
-      const card = button.closest(".card");
-      const cardId = card.getAttribute("data-id");
+    const cards = document.querySelectorAll(".card");
 
-      if (localStorage.getItem(cardId) === "true") {
-        button.classList.add("active");
-        button.textContent = "★"; // filled star
-      } else {
-        button.textContent = "☆"; // empty star
+    const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || {};
+
+    cards.forEach((card, index) => {
+
+      if (!card.dataset.id) {
+        card.dataset.id = `auto-${index + 1}`;
       }
 
-      button.addEventListener("click", () => {
-        const isActive = button.classList.toggle("active");
-        button.textContent = isActive ? "★" : "☆";
-        localStorage.setItem(cardId, isActive);
-      });
-    });
-    const favBtn = document.getElementById("showFavBtn");
+      const cardId = card.dataset.id;
 
-    favBtn?.addEventListener("click", function () {
-      const cards = document.querySelectorAll(".card");
-      const showOnlyFavs = this.classList.toggle("active");
+      // Create favorite button
+      const favBtn = document.createElement("button");
+      favBtn.classList.add("fav-btn");
+      favBtn.style.marginTop = "10px";
+      favBtn.textContent = savedFavorites[cardId] ? "★" : "☆";
 
-      this.textContent = showOnlyFavs ? "Show All" : "Show Favorites";
-
-      cards.forEach(card => {
-        const cardId = card.getAttribute("data-id");
-        const isFav = localStorage.getItem(cardId) === "true";
-
-        if (showOnlyFavs && !isFav) {
-          card.classList.add("hidden");
+      // Toggle star on click and update localStorage
+      favBtn.addEventListener("click", () => {
+        if (favBtn.textContent === "☆") {
+          favBtn.textContent = "★";
+          savedFavorites[cardId] = true;
         } else {
-          card.classList.remove("hidden");
+          favBtn.textContent = "☆";
+          delete savedFavorites[cardId];
         }
+
+        localStorage.setItem("favorites", JSON.stringify(savedFavorites));
       });
+
+      // Add the button to the card
+      card.appendChild(favBtn);
     });
   });
 </script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const showFavBtn = document.getElementById("showFavBtn");
+    let showingFavorites = false;
+
+    showFavBtn.addEventListener("click", () => {
+      const cards = document.querySelectorAll(".card");
+      const savedFavorites = JSON.parse(localStorage.getItem("favorites")) || {};
+
+      if (!showingFavorites) {
+        // Show only favorite cards
+        cards.forEach(card => {
+          const id = card.dataset.id;
+          if (!savedFavorites[id]) {
+            card.style.display = "none";
+          } else {
+            card.style.display = "block";
+          }
+        });
+        showFavBtn.textContent = "Show All";
+        showingFavorites = true;
+      } else {
+        // Show all cards
+        cards.forEach(card => {
+          card.style.display = "block";
+        });
+        showFavBtn.textContent = "Show Favorites";
+        showingFavorites = false;
+      }
+    });
+  });
+</script>
 
 </body>
 </html>

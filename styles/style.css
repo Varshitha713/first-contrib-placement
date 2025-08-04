@@ -466,6 +466,9 @@ footer {
   border-left: 4px solid #FF4D4D;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
+input[placeholder] .search-bar{
+  text-align: left;
+}
 .search-bar {
   position: relative;
   width: 100%;

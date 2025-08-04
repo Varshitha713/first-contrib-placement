@@ -440,12 +440,7 @@ footer {
 }
 
 .checkbox-dropdown label {
-  display: flex;
-  flex-direction: row-reverse;
-  vertical-align: middle;
-  text-align: left;
-  justify-content:center;
-  align-items: center;
+   display: block;
   margin: 0px 0;
   padding-top: 8px;
   width: 180px;
@@ -471,7 +466,7 @@ footer {
   color:#e3e3e3
 }
 .dark-mode .checkbox-dropdown {
-    background-color: #222b36;
+    background-color: #3d4e62;
     color: #E0E0E0;
 }
 

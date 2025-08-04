@@ -444,3 +444,64 @@ footer {
 .filter-dropdown.open .checkbox-dropdown {
   display: block;
 }
+#noResultsMessage {
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 1.1rem;
+  font-family: 'Roboto', sans-serif;
+  animation: fadeIn 0.3s ease-out;
+  
+  /* Light mode default */
+  background-color: #FFF5F5;
+  color: #5E2B2B;
+  border-left: 4px solid #FF6B6B;
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.1);
+}
+
+.dark-mode #noResultsMessage {
+  background-color: #2A1A1A;
+  color: #FFB4B4;
+  border-left: 4px solid #FF4D4D;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+.search-bar {
+  position: relative;
+  width: 100%;
+}
+
+.search-icon-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  right: 16px;
+  width: 20px;
+  height: 20px;
+  fill: #5ca5cc;
+  transition: fill 0.3s ease;
+  pointer-events: none;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 14px 46px 14px 16px !important;
+}
+
+/* Focus effects */
+.search-bar input:focus + .search-icon {
+  fill: #219EBC;
+}
+
+/* Dark mode */
+.dark-mode .search-icon {
+  fill: #B0B0B0;
+}
+
+.dark-mode .search-bar input:focus + .search-icon {
+  fill: #7FDBFF;
+}

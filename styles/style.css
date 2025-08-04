@@ -31,10 +31,24 @@ margin-top: 12px;
 
 
 .container {
-  margin: 20px auto;
-  padding: 20px;
-  max-width: 900px; 
+display: flex;
+flex-direction: column;
+gap: 1.5rem;
+padding: 2rem;
+max-width: 1200px;
+margin: 0 auto;
 }
+
+
+ /* .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+} */
 .p{
   padding: 5px;
 }
@@ -86,10 +100,21 @@ margin-top: 12px;
 
 .search-bar input::placeholder {
   color: #5ca5cc; 
+   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-right: 8px;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
+
 .filter {
   padding-right: 8px;
 }
+/* .filter {
+ 
+} */
 
 #categoryFilter {
   width: 140px;
@@ -129,6 +154,8 @@ margin-top: 12px;
 }
 
 .card {
+  flex: 1 1 280px;
+  max-width: 320px;
   background-color: rgba(146, 205, 209, 0.85); 
   backdrop-filter: blur(4px);
   margin: 25px 0;
@@ -137,8 +164,20 @@ margin-top: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   font-family: 'Roboto', sans-serif;
-  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
 }
+
+.cards-section {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 1.5rem;
+}
+
 
 .card:hover {
   transform: scale(1.02);

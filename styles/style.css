@@ -305,7 +305,6 @@ header{
   cursor: pointer;
   transition: all 0.3s;
 }
-
 #toggle-mode:hover{
   transition: all 1s ease;
   transform: translateY(-3px);

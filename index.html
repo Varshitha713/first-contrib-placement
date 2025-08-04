@@ -7,12 +7,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <title>Placement Resources</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="styles/style.css" rel="stylesheet">
 </head>
 
 <body>
   <header>
+    
     <div class="main-heading">
+      <img src="images/PR-LOGO.png" width="140" height="120" id="logo">
       <h1>Welcome to Placement Resources!</h1>
       <p>Find and share the best resources to help students prepare for the placements</p>
     </div>
@@ -25,13 +28,18 @@
 
     <div class="search-bar">
       <div class="filter">
-        <select id="categoryFilter">
-          <option value="all">All</option>
-          <option value="coding">Coding</option>
-          <option value="sql">SQL</option>
-          <option value="learning">Learning</option>
-          <option value="documentation">Documentation</option>
-        </select>
+        <div class="filter-dropdown">
+          <button id="filterToggle" class="dropdown-btn">🎯 Categories ▾</button>
+          <div id="checkboxContainer" class="checkbox-dropdown">
+            <label><input type="checkbox" value="coding" checked> Coding</label>
+            <label><input type="checkbox" value="sql" checked> SQL</label>
+            <label><input type="checkbox" value="learning" checked> Learning</label>
+            <label><input type="checkbox" value="documentation" checked> Documentation</label>
+            <label><input type="checkbox" value="mock" checked> Mock Tests</label>
+            <label><input type="checkbox" value="interview" checked> Interview Prep</label>
+            <label><input type="checkbox" value="CTFs" checked> CTFs</label>
+          </div>
+        </div>
       </div>
       <input type="text" id="searchInput" placeholder="Search for resources..." />
     </div>
@@ -58,6 +66,14 @@
       <p></p>
      
     </div>
+
+    <div class="card" category="coding">
+      <h4>Competitive Coding Contests platform: AtCoder</h4>
+      <p>AtCoder is a popular online competitive programming platform.It is known for its well-structured problems, clear constraints, and strong emphasis on logical thinking.</p>
+       <a href="https://atcoder.jp/">Visit AtCoder</a>
+      <p></p>
+    </div>
+
     <div class="card" category="learning">
       <h4>Learning Git: Git Immersion</h4> 
       <p>Git Immersion is a guided tour that helps you learn Git through hands-on labs and practical examples.</p>
@@ -131,6 +147,111 @@
       <p>Curated resources and practice materials to sharpen your quantitative, logical, and verbal aptitude skills for competitive exams and placements.</p>
       <a href="https://www.indiabix.com/" target="_blank">Visit indiabix</a>
     </div>
+
+
+
+    <div class="card" category="interview">
+      <h4>Technical Interviews: InterviewBit</h4>
+      <p>Structured interview preparation with company-specific questions and mock interviews.</p>
+      <a href="https://www.interviewbit.com/">Visit Technical Interviews</a>
+    </div>
+
+    <div class="card" category="interview">
+      <h4>Coding Interviews: AlgoExpert</h4>
+      <p>Master coding interviews with curated questions, video explanations, and mock assessments.</p>
+      <a href="https://www.algoexpert.io/">Visit Coding Interviews</a>
+    </div>
+
+    <div class="card" category="interview">
+      <h4>SQL Interview Questions: SQLBolt</h4>
+      <p>Interactive SQL tutorial and interview questions for database-related roles.</p>
+      <a href="https://sqlbolt.com/">Visit SQL Interview Questions</a>
+    </div>
+
+    <div class="card" category="interview">
+      <h4>Mock Interviews: Interviewing.io</h4>
+      <p>Practice technical interviews anonymously with engineers from top companies.</p>
+      <a href="https://interviewing.io/">Visit Mock Interviews</a>
+    </div>
+
+    <div class="card" category="interview">
+      <h4>Programming Mock Tests: Coding Ninjas</h4>
+      <p>Mock interview questions and coding assessments for placement preparation.</p>
+      <a href="https://www.codingninjas.com/">Visit Programming Mock Tests</a>
+    </div>
+
+    <div class="card" category="interview">
+      <h4>System Design Interviews: Grokking</h4>
+      <p>Learn system design concepts and practice with real interview questions from top tech companies.</p>
+      <a href="https://www.educative.io/courses/grokking-the-system-design-interview">Visit System Design Interviews</a>
+    </div>
+
+    <div class="card" category="interview">
+      <h4>Behavioral Interviews: Pramp</h4>
+      <p>Practice behavioral and technical interviews with peers in a realistic interview setting.</p>
+      <a href="https://www.pramp.com/">Visit Behavioral Interviews</a>
+    </div>
+
+    <!-- Mock Test Section -->
+    <div class="card" category="mock">
+      <h4>Coding Mock Tests: TestDome</h4>
+      <p>Programming skill assessments and coding tests used by companies for hiring.</p>
+      <a href="https://www.testdome.com/">Visit Coding Mock Tests</a>
+    </div>
+
+    <div class="card" category="mock">
+      <h4>Technical Mock Tests: HackerEarth</h4>
+      <p>Practice technical assessments with timed coding challenges and algorithmic problems.</p>
+      <a href="https://www.hackerearth.com/">Visit Technical Mock Tests</a>
+    </div>
+
+    <div class="card" category="mock">
+      <h4>SQL Mock Tests: W3Schools SQL Quiz</h4>
+      <p>Test your SQL knowledge with interactive quizzes and practice tests.</p>
+      <a href="https://www.w3schools.com/quiztest/quiztest.asp?qtest=SQL">Visit SQL Mock Tests</a>
+    </div>
+
+    <div class="card" category="mock">
+      <h4>Aptitude Mock Tests: Youth4work</h4>
+      <p>Comprehensive mock tests for quantitative, logical reasoning, and verbal ability.</p>
+      <a href="https://www.youth4work.com/">Visit Aptitude Mock Tests</a>
+    </div>
+  <!-- Back to Top Button -->
+
+    <div class="card" category="learning">
+      <h4>Courses for programming: UDEMY </h4>
+      <p>Online learning platform offering a vast range of beginner to advanced programming courses across various languages and technologies, taught by industry professionals.</p>
+      <a href="https://www.udemy.com/" target="_blank">Visit Udemy</a>
+    </div>
+
+    <div class="card" category="learning">
+      <h4>Learning technologies from professionals: Coursera  </h4>
+      <p> Global online learning platform that offers university level programming courses and professional certificates from top institutions like Stanford, MIT, and Google, often with hands on projects and peer-reviewed assignments.</p>
+      <a href="https://www.coursera.org/" target="_blank">Visit Coursera</a>
+    </div>
+
+    <div class="card" category="learning">
+      <h4> DSA sheets by Striver </h4>
+      <p> Curated sets of coding problems designed by Striver to help students systematically prepare for coding interviews, focusing on data structures, algorithms, and problem solving patterns with increasing difficulty.</p>
+      <a href="https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/" target="_blank">Visit Striver's sheets</a>
+    </div>
+
+    <div class="card" category="CTFs">
+      <h4> CTF Challenges by PicoCTF </h4>
+      <p> A free, beginner friendly cybersecurity competition and learning platform, featuring capture the flag (CTF) challenges that teach hacking, reverse engineering, cryptography, forensics, and more through interactive problem solving</p>
+      <a href="https://picoctf.org/" target="_blank">Visit PicoCTF </a>
+    </div>
+  
+    <div class="card" category="CTFs">
+      <h4> Cybersecurity by TryHackMe </h4>
+      <p> A gamified platform for learning ethical hacking and cybersecurity through hands on labs and guided paths.</p>
+      <a href="https://tryhackme.com/" target="_blank">Visit TryHackMe </a>
+    </div>
+
+
+
+
+
     <div class="card" category="coding">
       <h4>DSA Mastery: Take U Forward (Striver’s Sheet)</h4>
       <p>Take U Forward offers a curated A2Z DSA Sheet, system design roadmap, and coding tutorials perfect for placement prep. Striver’s approach is structured and widely recommended.</p>
@@ -148,30 +269,88 @@
     </div>
     </div>
     <!-- Back to Top Button -->
+
+
+ 
+
     <button id="backToTop" title="Go to top">↑</button>
 
   </div>
 <footer>
-  <p>Hope you learnt how to contribute using this project and Don't forget to use the resources
-    <p>Happy coding!!!</p>
-  </p>
+  <div class="footer-container">
+    <!-- Branding -->
+    <div class="footer-section">
+      <h2>first-contrib-placement</h2>
+      <p>
+        A community-driven project to share the best placement and learning resources for BTech students.
+      </p>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/varshitha-macha/" target="blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="#">Contribute</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="./roadmap.html">Roadmap</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Top Categories -->
+    <div class="footer-section">
+      <h3>Top Categories</h3>
+      <ul>
+        <li><a href="#">DSA Practice</a></li>
+        <li><a href="#">Resume Tips</a></li>
+        <li><a href="./interviewprep.html">Interview Prep</a></li>
+        <li><a href="#">Open Source</a></li>
+        <li><a href="./roadmap.html">Roadmaps</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-section">
+      <h3>Get in Touch</h3>
+      <p><strong>Location:</strong> India</p>
+      <p><strong>Email:</strong> contact@firstcontrib.com</p>
+    </div>
+  </div>
+
+
+  <div class="footer-bottom">
+    © 2025 All Rights Reserved | Built with ❤️ by the FCP Community
+  </div>
 </footer>
+
+
+
 
 <script>
   const searchInput = document.getElementById('searchInput');
-  const categoryFilter = document.getElementById('categoryFilter');
+  const categoryCheckboxes = document.querySelectorAll('#checkboxContainer input[type="checkbox"]');
+  const cards = document.querySelectorAll('.card');
+  const toggleBtn = document.getElementById("toggle-mode");
+  const backToTopButton = document.getElementById("backToTop");
 
+  // 🔍 Search & Filter Logic
   function searchAndFilter() {
     const searchText = searchInput.value.toLowerCase();
-    const selectedCategory = categoryFilter.value;
-    const cards = document.querySelectorAll('.card');
+    const selectedCategories = Array.from(categoryCheckboxes)
+      .filter(cb => cb.checked)
+      .map(cb => cb.value);
 
     cards.forEach(card => {
       const text = card.textContent.toLowerCase();
       const cardCategory = card.getAttribute('category');
 
       const matchesSearch = text.includes(searchText);
-      const matchesCategory = selectedCategory === "all" || cardCategory === selectedCategory;
+      const matchesCategory = selectedCategories.includes(cardCategory);
 
       if (matchesSearch && matchesCategory) {
         card.classList.remove('hidden');
@@ -181,12 +360,11 @@
     });
   }
 
+  // Event Listeners
   searchInput.addEventListener('input', searchAndFilter);
-  categoryFilter.addEventListener('change', searchAndFilter);
+  categoryCheckboxes.forEach(cb => cb.addEventListener('change', searchAndFilter));
 
-  const toggleBtn = document.getElementById("toggle-mode");
-
-  // 🔄 Load saved mode on page load
+  // 🌗 Dark Mode
   window.addEventListener("DOMContentLoaded", () => {
     const savedMode = localStorage.getItem("mode");
 
@@ -197,6 +375,7 @@
       document.body.classList.remove("dark-mode");
       toggleBtn.textContent = "🌙";
     }
+    searchAndFilter();
   });
 
   // 🟢 Toggle and Save Mode
@@ -212,9 +391,7 @@
     }
   });
 
-  // JavaScript code to make back to top button work 
-    const backToTopButton = document.getElementById("backToTop");
-
+  // ⬆️ Back to Top
   window.onscroll = () => {
     if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
       backToTopButton.style.display = "block";
@@ -227,6 +404,19 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
+  // ⬇️ Toggle dropdown
+  const filterToggle = document.getElementById("filterToggle");
+  const filterDropdown = document.querySelector(".filter-dropdown");
+  filterToggle.addEventListener("click", () => {
+    filterDropdown.classList.toggle("open");
+  });
+
+  // ⛔ Close dropdown if clicked outside
+  window.addEventListener("click", (e) => {
+    if (!filterDropdown.contains(e.target)) {
+      filterDropdown.classList.remove("open");
+    }
+  });
 </script>
 
 

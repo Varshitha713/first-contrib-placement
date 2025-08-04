@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ultimate Placement Roadmap</title>
+  <link rel="stylesheet" href="./styles/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, #f0f7ff, #ffffff);
+    }
+    header {
+      background: linear-gradient(135deg, #006D77, #83C5BE);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+    }
+    .timeline {
+      max-width: 900px;
+      margin: 50px auto;
+      position: relative;
+    }
+    .step {
+      background: linear-gradient(145deg, #ffffff, #e0f7fa);
+      margin: 30px 0;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+      position: relative;
+      border-left: 8px solid #006D77;
+      transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+      animation: fadeInUp 1s ease-in-out both;
+    }
+    .step:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 36px rgba(0, 0, 0, 0.25);
+      background: linear-gradient(135deg, #d1f0e3, #ffffff);
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .step h2 {
+      color: #006D77;
+      margin-bottom: 12px;
+      font-size: 1.5rem;
+      transition: color 0.4s ease;
+    }
+    .step:hover h2 {
+      color: #004e56;
+    }
+    .step p {
+      line-height: 1.7;
+      color: #333;
+      margin-bottom: 10px;
+      transition: color 0.4s ease;
+    }
+    .step:hover p {
+      color: #222;
+    }
+    .intro-wrapper {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      display: flex;
+      gap: 20px;
+      padding: 40px 20px;
+    }
+    .intro {
+      flex: 0 0 90%;
+      scroll-snap-align: center;
+      background: linear-gradient(135deg, #f8ffff, #e0f7fa);
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      color: #333;
+      animation: fadeIn 1s ease-in-out;
+      transition: transform 0.3s ease;
+    }
+    .intro:hover {
+      transform: scale(1.02);
+    }
+    .intro h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #006D77;
+    }
+    .intro p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    .highlight {
+      color: #ff6f61;
+      font-weight: bold;
+    }
+    ul {
+      margin: 10px 0;
+      padding-left: 20px;
+    }
+    ul li::marker {
+      color: #006D77;
+    }
+  </style>
+</head>
+<body>
+  <header class="animate__animated animate__fadeInDown">
+    <h1>🚀 Placement Preparation Roadmap for Students</h1>
+  </header>
+
+  <div class="intro-wrapper animate__animated animate__fadeIn" data-aos="fade-right" data-aos-delay="100">
+    <section class="intro">
+      <h2>✨ Your Journey Begins Here</h2>
+      <p>Welcome to the ultimate roadmap for cracking tech placements! 🎯 Whether you're just getting started or already deep into preparation, this guide will help you <span class="highlight">plan smart, build projects, master interviews, and land your dream job</span>. Think of it as your personal GPS to navigate the world of placements 🚗💼.</p>
+    </section>
+    <section class="intro">
+      <h2>🧭 Why Follow This Roadmap?</h2>
+      <p>Because random learning leads to confusion! This roadmap gives you a <span class="highlight">clear path with milestones</span>, the right resources, and tips that actually work—designed by students who’ve been through it.</p>
+    </section>
+  </div>
+
+
+  <div class="timeline" data-aos="fade-up" data-aos-delay="200">
+
+    <div class="step" data-aos="fade-right">
+      <h2>🔰 Step 0: Explore and Set a Goal</h2>
+      <p>Before you begin, understand what roles you want to pursue: Software Engineer, Data Analyst, Backend Developer, Frontend Developer, AI Engineer, etc. Research job descriptions on LinkedIn and Glassdoor to understand expectations.</p>
+      <ul>
+        <li>Watch YouTube career roadmap videos (e.g., "Software Engineering Roadmap").</li>
+        <li>Read blogs on job trends and skills in demand.</li>
+        <li>Join tech forums and LinkedIn communities.</li>
+      </ul>
+    </div>
+
+    <div class="step" data-aos="fade-left">
+      <h2>🛠 Step 1: Learn a Programming Language</h2>
+      <p>Start with a language used in interviews like <span class="highlight">C++, Java, or Python</span>. Learn syntax, functions, control structures, OOP, and basic problem solving.</p>
+      <ul>
+        <li>Recommended resources: Programming with Mosh, Apna College DSA playlist, freeCodeCamp.</li>
+        <li>Practice basic problems on HackerRank and CodeChef.</li>
+      </ul>
+    </div>
+
+    <div class="step" data-aos="fade-right">
+      <h2>📚 Step 2: Data Structures & Algorithms</h2>
+      <p>DSA is the most important skill for tech placements. Build strong fundamentals.</p>
+      <ul>
+        <li>Start with arrays, strings, recursion → move to stacks, queues, linked lists, trees, heaps, graphs.</li>
+        <li>Follow a structured sheet like <span class="highlight">Striver’s SDE Sheet</span> or <span class="highlight">Love Babbar 450</span>.</li>
+        <li>Use LeetCode, GFG, and Codeforces for practice.</li>
+        <li>Time-bound daily practice: 2-3 problems/day for 4-6 months.</li>
+      </ul>
+    </div>
+
+    <div class="step" data-aos="fade-left">
+      <h2>💻 Step 3: Build Projects</h2>
+      <p>Hands-on projects show your practical skills. Choose domain-aligned projects (web, ML, app dev, etc.).</p>
+      <ul>
+        <li>Web dev stack: HTML, CSS, JS, React, Node.js, MongoDB (MERN).</li>
+        <li>AI/ML: Python, Pandas, Scikit-learn, TensorFlow.</li>
+        <li>Host on GitHub with README and deploy using Netlify/Vercel.</li>
+        <li>Build minimum 2 major and 2 minor projects.</li>
+      </ul>
+    </div>
+
+    <div class="step" data-aos="fade-right">
+      <h2>📄 Step 4: Resume Building</h2>
+      <p>Create a clean, one-page resume highlighting:</p>
+      <ul>
+        <li>Key skills, projects (with GitHub links), internships, coding profiles, achievements.</li>
+        <li>Use action verbs and measurable impact.</li>
+        <li>Tools: Canva, Overleaf (LaTeX), Novoresume.</li>
+        <li>Get reviews from seniors or use free resume review platforms.</li>
+      </ul>
+    </div>
+
+    <div class="step" data-aos="fade-left">
+      <h2>🤝 Step 5: Interview Preparation</h2>
+      <p>Prepare for technical + behavioral + HR rounds.</p>
+      <ul>
+        <li>Mock interviews: InterviewBit, Pramp, peers.</li>
+        <li>Prepare CS fundamentals: OS, DBMS, CN, OOPs.</li>
+        <li>Behavioral: STAR method, common HR questions, project explanation.</li>
+        <li>Record yourself to improve speaking clarity and confidence.</li>
+      </ul>
+    </div>
+
+    <div class="step" data-aos="fade-right">
+      <h2>🎯 Step 6: Apply and Track</h2>
+      <p>Start applying 3-6 months before graduation. Apply smartly and track progress.</p>
+      <ul>
+        <li>Use LinkedIn Jobs, Internshala, TNP portal, company websites.</li>
+        <li>Tailor your resume for each role.</li>
+        <li>Keep a spreadsheet to track applications, status, and feedback.</li>
+        <li>Network with alumni and attend career fairs.</li>
+      </ul>
+    </div>
+
+    <div class="step" data-aos="fade-up">
+      <h2>🌟 Bonus: Portfolio & Personal Branding</h2>
+      <p>Establish a strong online presence.</p>
+      <ul>
+        <li>LinkedIn: Consistent posts, projects, certifications.</li>
+        <li>GitHub: Starred repos, pinned projects, green contribution graph.</li>
+        <li>Blog: Medium or Hashnode for writing about tech learnings.</li>
+        <li>Portfolio site: Include about, skills, projects, contact form.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>AOS.init({ once: true, duration: 1000 });</script>
+  <footer>
+  <div class="footer-container">
+    <!-- Branding -->
+    <div class="footer-section">
+      <h2>first-contrib-placement</h2>
+      <p>
+        A community-driven project to share the best placement and learning resources for BTech students.
+      </p>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/varshitha-macha/" target="blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="#">Contribute</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="./roadmap.html">Roadmap</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Top Categories -->
+    <div class="footer-section">
+      <h3>Top Categories</h3>
+      <ul>
+        <li><a href="#">DSA Practice</a></li>
+        <li><a href="#">Resume Tips</a></li>
+        <li><a href="./interviewprep.html">Interview Prep</a></li>
+        <li><a href="#">Open Source</a></li>
+        <li><a href="./roadmap.html">Roadmaps</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-section">
+      <h3>Get in Touch</h3>
+      <p><strong>Location:</strong> India</p>
+      <p><strong>Email:</strong> contact@firstcontrib.com</p>
+    </div>
+  </div>
+
+
+  <div class="footer-bottom">
+    © 2025 All Rights Reserved | Built with ❤️ by the FCP Community
+  </div>
+</footer>
+
+</body>
+</html>

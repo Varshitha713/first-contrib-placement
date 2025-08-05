@@ -87,3 +87,9 @@ If you find this project helpful, please give it a star\! It encourages us to ke
 Made with ❤️ by Macha Varshitha
 
 Open to contributions, feedback, and suggestions\! 🚀
+
+<br>
+
+## 📝 License
+
+This project is licensed under the [MIT License](./LICENSE).

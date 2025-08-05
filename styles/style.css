@@ -443,3 +443,56 @@ footer {
 .filter-dropdown.open .checkbox-dropdown {
   display: block;
 }
+
+.blue-background {
+  background-color: #27abdb;;
+  padding: 60px 20px;
+  min-height: 100vh;
+}
+
+.feedback-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: rgb(255,255,255,0.06);
+
+  padding: 2rem;
+  border-radius:10px; 
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.2);
+}
+
+.feedback-form .form-group {
+  margin-bottom: 1.2rem;
+}
+
+.feedback-form label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.feedback-form input,
+.feedback-form select,
+.feedback-form textarea {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  background-color: #fefefe;
+  box-sizing: border-box;
+}
+
+.feedback-form input:focus,
+.feedback-form select:focus,
+.feedback-form textarea:focus {
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.3);
+}
+
+.feedback-form button {
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}

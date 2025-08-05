@@ -13,17 +13,22 @@
 </head>
 
 <body>
-  <header>
-    
-    <div class="main-heading">
-      <img src="images/PR-LOGO.png" width="140" height="120" id="logo">
-      <h1>Welcome to Placement Resources!</h1>
-      <p>Find and share the best resources to help students prepare for the placements</p>
-    </div>
-    <div>
-      <button id="toggle-mode"></button>
-    </div>
-  </header>
+ <header class="relative flex flex-col items-center justify-center text-center bg-gradient-to-b from-[#0f172a] to-[#1e293b] py-10 rounded-b-3xl shadow-xl">
+  <div class="main-heading space-y-4">
+    <img src="images/PR-LOGO.png" width="140" height="120" id="logo" class="hover:scale-110 transition-transform duration-300">
+    <h1 class="text-3xl md:text-5xl font-bold text-white animate-fadeInUp">Welcome to Placement Resources!</h1>
+    <p class="text-lg md:text-xl text-slate-300">Find and share the best resources to help students prepare for the placements</p>
+  </div>
+
+  <!-- Dark Mode Toggle Button -->
+  <div class="absolute top-6 right-6">
+    <button id="toggle-mode" class="w-12 h-12 rounded-full bg-white/10 backdrop-blur-lg flex items-center justify-center shadow-md hover:ring-2 ring-cyan-400 transition-all duration-300">
+      🌙
+    </button>
+  </div>
+</header>
+
+
   <div class ="container">
     <h3>Recommended Resources</h3>
 
@@ -53,50 +58,45 @@
 
 
 
-    <div class="card" category="coding">
-      <h4>Coding Practice(mainly for DSA):Leetcode</h4>
-      <p>LeetCode offers a wide range of problems to practice coding skills for technical interviews.</p>
-      <a href="https://leetcode.com"> Visit leetcode </a>
-      <p></p>
-    </div>
+<div class="card-container">
+  <!-- Cards Start -->
+  <div class="card" category="coding">
+    <h4>Coding Practice(mainly for DSA):Leetcode</h4>
+    <p>LeetCode offers a wide range of problems to practice coding skills for technical interviews.</p>
+    <a href="https://leetcode.com"> Visit leetcode </a>
+  </div>
 
-    <div class="card" category="learning">
-      <h4>Online learning platform: edX</h4>
-      <p>edX is an online learning platform offering free and paid courses, certificates, and degrees from top universities like Harvard and MIT to help you gain skills and advance your career.</p>
-      <a href="https://www.edx.org/">Visit edX</a>
-      <p></p>
-     
-    </div>
+  <div class="card" category="learning">
+    <h4>Online learning platform: edX</h4>
+    <p>edX is an online learning platform offering free and paid courses, certificates, and degrees from top universities like Harvard and MIT to help you gain skills and advance your career.</p>
+    <a href="https://www.edx.org/">Visit edX</a>
+  </div>
 
-    <div class="card" category="coding">
-      <h4>Competitive coding platform: Codeforces</h4>
-      <p>Codeforces is a competitive programming platform known for regular contests and a vast problem archive to improve algorithmic skills.</p>
-       <a href="https://codeforces.com/">Visit codeforces</a>
-      <p></p>
-     
-    </div>
+  <div class="card" category="coding">
+    <h4>Competitive coding platform: Codeforces</h4>
+    <p>Codeforces is a competitive programming platform known for regular contests and a vast problem archive to improve algorithmic skills.</p>
+    <a href="https://codeforces.com/">Visit codeforces</a>
+  </div>
 
-    <div class="card" category="coding">
-      <h4>Competitive Coding Contests platform: AtCoder</h4>
-      <p>AtCoder is a popular online competitive programming platform.It is known for its well-structured problems, clear constraints, and strong emphasis on logical thinking.</p>
-       <a href="https://atcoder.jp/">Visit AtCoder</a>
-      <p></p>
-    </div>
+  <div class="card" category="coding">
+    <h4>Competitive Coding Contests platform: AtCoder</h4>
+    <p>AtCoder is a popular online competitive programming platform. It is known for its well-structured problems, clear constraints, and strong emphasis on logical thinking.</p>
+    <a href="https://atcoder.jp/">Visit AtCoder</a>
+  </div>
 
-    <div class="card" category="learning">
-      <h4>Learning Git: Git Immersion</h4> 
-      <p>Git Immersion is a guided tour that helps you learn Git through hands-on labs and practical examples.</p>
-      <a href="https://gitimmersion.com" target="_blank">visit gitimmersion</a> 
-    </div>
-    <div class="card" category="coding">
-      <h4>Coding Practice: Frontend Mentor</h4>
-      <p>Frontend Mentor offers real-world frontend challenges to improve your HTML, CSS, and JavaScript skills.</p>
-      <a href="https://www.frontendmentor.io/">Visit frontend mentor</a>
-      <p></p>
-     
-    </div>
+  <div class="card" category="learning">
+    <h4>Learning Git: Git Immersion</h4>
+    <p>Git Immersion is a guided tour that helps you learn Git through hands-on labs and practical examples.</p>
+    <a href="https://gitimmersion.com" target="_blank">Visit gitimmersion</a>
+  </div>
 
-    <div class="card" category="documentation">
+  <div class="card" category="coding">
+    <h4>Coding Practice: Frontend Mentor</h4>
+    <p>Frontend Mentor offers real-world frontend challenges to improve your HTML, CSS, and JavaScript skills.</p>
+    <a href="https://www.frontendmentor.io/">Visit frontend mentor</a>
+  </div>
+
+  <div class="card" category="documentation">
       <h4>Online Documentation: DevDocs</h4>
       <p>Combines multiple developer documentations in one fast, searchable interface.</p>
       <a href="https://devdocs.io">Visit devdocs</a>
@@ -284,6 +284,11 @@
     <li>Selecting different categories</li>
   </ul>
 </div>
+  
+</div>
+
+
+    
     <!-- Back to Top Button -->
 
 

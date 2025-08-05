@@ -328,6 +328,33 @@
   </div>
 </footer>
 
+<!-- Feedback Page -->
+<div id="feedback-page" class="page blue-background">
+    <div class="container">
+        <div class="page-header">
+            <h1 style="color: white;">Feedback</h1>
+            <p style="color: #e0e0e0;">We'd love to hear your thoughts!</p>
+        </div>
+        <form id="feedback-form" class="feedback-form">
+            <div class="form-group">
+                <label for="feedback-name" style="color: white;">Your Name</label>
+                <input type="text" id="feedback-name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="feedback-email" style="color: white;">Email</label>
+                <input type="email" id="feedback-email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="feedback-message" style="color: white;">Message</label>
+                <textarea id="feedback-message" name="message" rows="5" placeholder="Your message..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Feedback</button>
+        </form>
+        <div id="feedback-success" style="display: none; margin-top: 20px; color: #d4ffd4;">Thank you for your feedback!</div>
+    </div>
+</div>
+
+
 
 
 
@@ -418,6 +445,46 @@
     }
   });
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const feedbackForm = document.getElementById("feedback-form");
+
+    if (feedbackForm) {
+        feedbackForm.addEventListener("submit", function (e) {
+            e.preventDefault(); // 🛑 Prevents reload and jump to top
+
+            const name = document.getElementById("feedback-name").value.trim();
+            const email = document.getElementById("feedback-email").value.trim();
+            const message = document.getElementById("feedback-message").value.trim();
+
+            const feedback = {
+                name,
+                email,
+                message,
+                time: new Date().toISOString()
+            };
+
+            // Store in localStorage
+            const existingFeedbacks = JSON.parse(localStorage.getItem("feedbacks") || "[]");
+            existingFeedbacks.push(feedback);
+            localStorage.setItem("feedbacks", JSON.stringify(existingFeedbacks));
+
+            // Reset form & show success
+            feedbackForm.reset();
+            const successDiv = document.getElementById("feedback-success");
+            successDiv.style.display = "block";
+            setTimeout(() => {
+                successDiv.style.display = "none";
+            }, 5000);
+        });
+    }
+});
+</script>
+
+
+
+
 
 
 

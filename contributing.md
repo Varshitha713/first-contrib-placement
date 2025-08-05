@@ -1,10 +1,12 @@
 # 🤝 Contributing to Placement Resources
 
-Hi there\! 👋 We're thrilled you're considering contributing to this open-source project. Whether you're here via **GSSoC’25**, learning HTML/CSS/JS, or just want to help out — you're welcome\! 💜
+Welcome to the community! 🎉
 
-This document will guide you through the process of contributing effectively.
+Thank you for your interest in contributing to Placement Resources — a centralized platform to share study and interview preparation materials for students and job seekers. This guide will help you contribute confidently, especially if you're new to open source.
 
------
+This guide will help you contribute confidently, especially if you're new to open source.
+
+---
 
 ## 📌 Project Overview
 
@@ -12,83 +14,218 @@ This document will guide you through the process of contributing effectively.
 
 Live Preview: [first-contrib-placement.netlify.app](https://first-contrib-placement.netlify.app/)
 
------
+---
 
-## 🚀 How to Contribute
+## ⭐ Show Your Support
 
-### 🧠 What You Can Do:
+If you find this project helpful, consider ⭐ starring the repo — it motivates us to keep improving!
 
-  * 🧩 **Add a new resource card** (with link, title, short description, and category)
-  * 🎨 **Improve the UI/UX** (e.g., navbar, responsiveness, dark mode)
-  * 🐞 **Fix bugs** or improve structure
-  * 📖 **Improve documentation**
+---
 
------
+## 📌 Before You Begin
 
-## 🧾 Steps to Add a Resource
+- Please read the [README.md](./README.md) to understand the project's purpose, setup instructions, and goals.
+- Join our community and get involved:
+  - 💬 [GitHub Discussions](https://github.com/Varshitha713/first-contrib-placement/discussions)
+  - 💬 [Discord Server](https://discord.gg/eZUc6NA4Np)
+- Ensure you're working on the latest `main` branch before starting any work.
 
-1.  **Fork** this repository.
-2.  **Clone** your fork:
-    ```bash
-    git clone https://github.com/Varshitha713/first-contrib-placement
-    ```
-3.  **Create a new branch**:
-    ```bash
-    git checkout -b my-feature-branch
-    ```
-4.  Open `index.html` and scroll to the relevant category (e.g., DSA, Aptitude).
-5.  Copy the existing card format and add your resource with:
-      * ✅ A link
-      * ✅ A short description
-      * ✅ A proper category tag
-6.  Save your changes.
-7.  **Commit your changes**:
-    ```bash
-    git commit -m "Added DSA resource: [resource name]"
-    ```
-8.  **Push to your fork**:
-    ```bash
-    git push origin my-feature-branch
-    ```
-9.  Open a **Pull Request (PR)** with a short, meaningful title.
+---
 
------
+## 🧠 Contribution Guidelines
 
-### 🎯 Guidelines for PRs
+Please follow these to ensure smooth collaboration and maintain quality.
 
-  * Only work on issues **assigned to you**.
-  * If you want to suggest a new feature, please **raise an issue first**.
-  * Always **reference the issue** you're solving in your PR (e.g., `Fixes #10`).
-  * If making UI changes, attach **before & after screenshots**.
-  * Ensure your contribution works in **both light and and dark mode**.
+### ✅ DOs
 
------
+- Check if an issue already exists before creating a new one.
+- Ask to be assigned before starting work.
+- Mention the issue number in your PR (`Fixes #<number>` or `Closes #<number>`).
+- Test your changes locally before submitting a PR.
+- Keep PRs focused — one feature or fix per PR.
+- Submit **one pull request per issue** to keep the review process clean and focused.
+- Use screenshots for any visual/UI updates.
 
-### 🛠️ Code Style Guide
+### ❌ DON’Ts
 
-  * Follow the existing **indentation** and HTML structure.
-  * Use **meaningful commit messages**.
-  * Keep CSS styles in the appropriate file (`styles/style.css`).
+- Don’t comment **"I want to work"** on issues already assigned to someone else.  
+- Don’t open PRs **without linking them to an issue**.  
+- Don’t spam with duplicate or irrelevant issues.
 
------
+---
 
-### 🧭 Code of Conduct
+## 🧠 Contributor Assignment Policy
 
-Be **respectful, patient, and inclusive**. New contributors are welcome\! Please follow the **Code of Conduct** for this project.
+To maintain fairness, transparency, and active contribution in our open-source community, we follow these simple rules regarding issue assignments:
 
------
+### 🔢 Issue Assignment Limit
 
-### 💬 Need Help or Want to Discuss?
+- ✅ A contributor can be assigned up to **2 open issues** at a time.
+- 🚫 You **cannot be assigned new issues** until you've submitted a **pull request (PR)** for at least **one** of your current assignments.
+- 🕐 This ensures fair opportunity for everyone and avoids issue hoarding or inactivity.
 
-  * 📢 Join our **Discord server**: [Join Here](https://discord.gg/eZUc6NA4Np)
-  * 📌 Open a **GitHub Discussion**
+### ✅ Tip for Contributors
 
-We’d love to support your learning and contribution journey\! 💪
+Once your pull request is created and linked to an assigned issue, feel free to request another!  
 
------
+We're always happy to see active and consistent contributors. 😊
 
-### 🙌 Credits
+---
 
-Made with ❤️ by Macha Varshitha
+## 🚀 What You Can Contribute
 
-Open to contributions, feedback, and suggestions\! 🚀
+- 🆕 Add new **resource cards** (title, link, description, and category).  
+- 🛠️ Improve **UI/UX** — layout, responsiveness, or animations.  
+- 🐞 Fix **bugs** — check the Issues tab.  
+- 📝 Improve **documentation** — fix typos, clarify instructions, or reformat content.
+
+---
+
+## 🔍 Find or Create an Issue
+
+- Check the [Issues tab](https://github.com/Varshitha713/first-contrib-placement/issues) for available tasks.
+- ✅ **Only work on issues assigned to you.** If you're interested in an unassigned issue, comment:
+  > "Can I work on this?"
+  and wait for a maintainer to assign it.
+- ❌ Avoid commenting on someone else's issue unless you're offering help or feedback.
+- 🧠 Before creating a new issue:
+  - Search both open and closed issues to avoid duplicates.
+
+---
+
+## 🧾 Steps to Add a Resource or Make Changes
+
+### 1. Fork and Clone
+
+```bash
+# Fork the repository on GitHub
+git clone https://github.com/Varshitha713/first-contrib-placement.git
+cd first-contrib-placement
+```
+
+### 2. Create a Branch
+
+```bash
+git checkout -b fix/issue-<number>-short-description
+```
+
+### 3. Make Your Changes
+
+* Open `index.html`
+* Locate the appropriate category (e.g., DSA, Aptitude)
+* Add your resource following the existing card format
+
+Ensure your card includes:
+
+✅ A working link
+
+✅ A short and clear description
+
+✅ A valid category tag
+
+### 4. Test Your Changes
+
+* Check responsiveness on different screen sizes
+* Verify that your changes don’t break any existing functionality
+* Review in both light and dark mode (if applicable)
+
+### 5. Commit Your Changes
+
+```bash
+git commit -m "feat: added [Resource Name] to [Category] (#issue-number)"
+```
+
+### 6. Push to Your Fork
+
+```bash
+git push origin fix/issue-<number>-short-description
+```
+
+### 7. Open a Pull Request
+
+* Open a PR from your branch to the `main` branch
+* Mention the issue like this:
+
+```md
+Fixes #issue-number
+```
+
+* Provide a short summary of your changes
+* Add before/after screenshots if the UI was affected
+* Mark the PR as **“Ready for Review”**
+
+---
+
+## ✅ Commit & PR Guidelines
+
+### ✅ Commit Messages
+
+Use clear, descriptive messages. Example:
+
+```bash
+fix: resolved button alignment issue (#34)
+feat: added sorting algorithm card to DSA category (#18)
+docs: updated README with project setup instructions
+```
+
+### ✅ Pull Requests
+* Reference the relevant issue. Link the issue using :
+  
+  ```bash
+  Fixes #34
+  Resolves #12
+  ```
+  
+* Keep PRs focused and minimal, and use labels like bug, enhancement, or documentation.
+* For UI changes, include before/after screenshots and ensure it works in both light and dark mode.
+* Only work on assigned issues, and reference the issue in your PR (e.g., Fixes #10).
+* For new features, open an issue first, and mark your PR as Ready for Review when done.
+
+
+## 🛠️ Code Style Guide
+
+* Follow consistent indentation and formatting
+* Keep all custom styles in `styles/style.css`
+* Reuse components where possible
+* Use comments for clarity where needed
+
+---
+
+## 🧪 Testing Your Changes
+
+Make sure your updates:
+
+* Work as expected without breaking other features
+* Are responsive across screen sizes
+* Include test cases, if applicable
+
+---
+
+## 📜 Code of Conduct
+
+We aim to foster a respectful, inclusive, and welcoming environment for everyone.
+
+* Be respectful and constructive
+* Use inclusive and professional language
+* Accept feedback gracefully
+
+📄 [Read our full Code of Conduct](./CODE_OF_CONDUCT.MD)
+
+---
+
+## 💬 Support & Community
+
+Need help or want to brainstorm ideas?
+
+* Ask in our [GitHub Discussions](https://github.com/Varshitha713/first-contrib-placement/discussions)
+* Join our [Discord Server](https://discord.gg/eZUc6NA4Np) 
+
+We're here to help you grow and contribute successfully! 💪
+
+---
+
+## 🙌 Credits
+
+Made with ❤️ by **Macha Varshitha**
+
+Open to feedback, contributions, and suggestions! 🚀

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Career Roadmaps</title>
+  <style>
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #ccd6e2;
+    color: #03171f;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .container {
+    max-width: 1500px;
+    margin: 10px auto;
+    padding: 20px;
+  }
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #006D77;
+    font-family:'Lucida Sans', sans-serif;
+    color: #FFFFFF;
+    padding: 16px 10px;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    border-radius: 0px 0px 12px 12px;
+    margin-bottom: 32px;
+  }
+  header h1 {
+    margin-top: 12px;
+    margin-bottom: 0.5rem;
+    font-size: 2.2rem;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+  header p {
+    font-size: 1.1rem;
+    color: #e0f7fa;
+    margin-bottom: 0;
+  }
+  .roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .roadmap-card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin: 0;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s;
+    color: #03171f;
+    font-family: 'Roboto', sans-serif;
+  }
+  .roadmap-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    background-color: rgba(222, 230, 233, 0.9);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  }
+  .roadmap-card h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: #219EBC;
+    font-family:'Lucida Sans', sans-serif;
+  }
+  .roadmap-card p {
+    color: #555;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .roadmap-card a {
+    color: #219EBC;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 1rem;
+    display: inline-block;
+  }
+  .roadmap-card a:hover {
+    color: #037b86;
+    cursor: pointer;
+    text-decoration: underline;
+    background-color: #e0f7fa;
+  }
+  footer {
+    background-color: #28A6C7;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    padding: 40px 20px 20px 20px;
+    margin-top: 60px;
+    border-radius: 0 0 12px 12px;
+    text-align: center;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(0,0,0,0.08);
+  }
+  footer a {
+    color: #e5e5ff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 2rem;
+    }
+    .container {
+      padding: 10px;
+    }
+    .roadmap-card {
+      padding: 18px;
+    }
+    footer {
+      padding: 30px 10px 15px 10px;
+      font-size: 0.95rem;
+    }
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🚀 Career Roadmaps</h1>
+    <p>Explore structured learning paths to kickstart your tech career journey.</p>
+  </header>
+
+  <div class="container">
+    <div class="roadmap-grid">
+      <div class="roadmap-card">
+        <h2>Frontend Developer</h2>
+        <p>HTML, CSS, JavaScript, React & more.</p>
+        <a href="https://roadmap.sh/frontend" target="_blank">View Roadmap →</a>
+      </div>
+      <div class="roadmap-card">
+        <h2>Backend Developer</h2>
+        <p>Node.js, Databases, APIs, Auth & more.</p>
+        <a href="https://roadmap.sh/backend" target="_blank">View Roadmap →</a>
+      </div>
+      <div class="roadmap-card">
+        <h2>DevOps Engineer</h2>
+        <p>CI/CD, Docker, Kubernetes, Monitoring & more.</p>
+        <a href="https://roadmap.sh/devops" target="_blank">View Roadmap →</a>
+      </div>
+      <div class="roadmap-card">
+        <h2>Android Developer</h2>
+        <p>Java/Kotlin, Android Studio, Jetpack, Firebase.</p>
+        <a href="https://roadmap.sh/android" target="_blank">View Roadmap →</a>
+      </div>
+      <div class="roadmap-card">
+        <h2>AI & Data Scientist</h2>
+        <p>Machine Learning, Data Analysis, Deep Learning, NLP, and more.</p>
+        <a href="https://roadmap.sh/ai-data-scientist" target="_blank">View Roadmap →</a>
+      </div>
+      <div class="roadmap-card">
+        <h2>Cybersecurity Expert</h2>
+        <p>Security fundamentals, tools, best practices, and more.</p>
+        <a href="https://roadmap.sh/cyber-security" target="_blank">View Roadmap →</a>
+      </div>
+      <div class="roadmap-card">
+        <h2>Blockchain Developer</h2>
+        <p>Smart Contracts, Ethereum, Solidity & more.</p>
+        <a href="https://roadmap.sh/blockchain" target="_blank">View Roadmap →</a>
+      </div>
+      <div class="roadmap-card">
+        <h2>Data Analyst</h2>
+        <p>SQL, Excel, Data Visualization & more.</p>
+        <a href="https://roadmap.sh/data-analyst" target="_blank">View Roadmap →</a>
+      </div>
+      <div class="roadmap-card">
+        <h2>Product Manager</h2>
+        <p>Product Lifecycle, Agile Methodologies, Market Research & more.</p>
+        <a href="https://roadmap.sh/product-manager" target="_blank">View Roadmap →</a>
+      </div>
+      <div class="roadmap-card">
+        <h2>UX Designer</h2>
+        <p>Wireframing, Prototyping, User Research & more.</p>
+        <a href="https://roadmap.sh/ux-designer" target="_blank">View Roadmap →</a>
+      </div>
+      <div class="roadmap-card">
+        <h2>Game Developer</h2>
+        <p>Unity, Unreal Engine, C#, Game Design & more.</p>
+        <a href="https://roadmap.sh/game-developer" target="_blank">View Roadmap →</a>
+      </div>
+      <div class="roadmap-card">
+        <h2>Technical Writer</h2>
+        <p>Documentation, API Guides, User Manuals & more.</p>
+        <a href="https://roadmap.sh/technical-writer" target="_blank">View Roadmap →</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Made with ❤️ for the community | <a href="https://first-contrib-placement.netlify.app" target="_blank">Back to Home</a>
+  </footer>
+</body>
+</html>

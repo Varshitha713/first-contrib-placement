@@ -1,0 +1,189 @@
+<!-- File 2: resume-tips.html with animations, gradient, read more -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Tips</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/style.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, #e0f7fa, #b2dfdb);
+    }
+    header {
+      background: linear-gradient(135deg, #28A6C7, #004d40);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .container {
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .tip-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, background 0.3s ease;
+      overflow: hidden;
+      position: relative;
+      animation: slideIn 1s ease forwards;
+      opacity: 0;
+    }
+    .tip-card:nth-child(1) { animation-delay: 0.2s; }
+    .tip-card:nth-child(2) { animation-delay: 0.4s; }
+    .tip-card:nth-child(3) { animation-delay: 0.6s; }
+    .tip-card:nth-child(4) { animation-delay: 0.8s; }
+
+    @keyframes slideIn {
+      0% { transform: translateY(20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    .tip-card:hover {
+      transform: scale(1.05);
+      background: linear-gradient(145deg, #e0f2f1, #ffffff);
+    }
+    h2 {
+      margin-top: 0;
+      color: #007c91;
+    }
+    a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #007c91;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .read-more {
+      color: #007c91;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .more-content {
+      display: none;
+      margin-top: 0.5rem;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Resume Tips Hub</h1>
+    <p>Boost your resume with expert tips and free resources</p>
+  </header>
+
+  <div class="container">
+    <div class="tip-card">
+      <h2>Interactive Tips</h2>
+      <p>
+        Understand how recruiters view resumes and how ATS (Applicant Tracking Systems) work. 
+        <span class="read-more" onclick="toggleMore(this)">Read more...</span>
+      </p>
+      <div class="more-content">
+        Use tools like Jobscan to test how well your resume matches a job description. Include keywords from the posting and format your resume in clean sections: summary, education, experience, and skills.
+      </div>
+      <a href="https://novoresume.com/resume-tips" target="_blank">See Resume Tips</a>
+    </div>
+    <div class="tip-card">
+      <h2>Role-specific Advice</h2>
+      <p>
+        Customize your resume by showing relevant projects, tools, and achievements.
+        <span class="read-more" onclick="toggleMore(this)">Read more...</span>
+      </p>
+      <div class="more-content">
+        Include GitHub links, portfolio URLs, or LinkedIn. Use action verbs like "Developed", "Built", "Led". Focus on relevant tools (e.g., Python, TensorFlow for ML, or MongoDB for full stack).
+      </div>
+      <a href="https://enhancv.com/resume-examples/" target="_blank">Explore Role-based Samples</a>
+    </div>
+    <div class="tip-card">
+      <h2>Company Sample Resumes</h2>
+      <p>
+        Study formats used by successful applicants at Google, Amazon, etc.
+        <span class="read-more" onclick="toggleMore(this)">Read more...</span>
+      </p>
+      <div class="more-content">
+        Top resumes use the STAR method: Situation, Task, Action, Result. Always quantify: "Increased API speed by 30%" is more impactful than "Optimized backend code".
+      </div>
+      <a href="https://www.cakeresume.com/resources/top-resume-examples" target="_blank">Company Resumes</a>
+    </div>
+    <div class="tip-card">
+      <h2>Free Templates & Tools</h2>
+      <p>
+        Use online tools like Canva, Zety, or Overleaf for LaTeX-style resumes.
+        <span class="read-more" onclick="toggleMore(this)">Read more...</span>
+      </p>
+      <div class="more-content">
+        Templates help with layout. Resume checkers help with keyword optimization. Follow YouTube creators who do live resume reviews for better insight.
+      </div>
+      <a href="https://www.canva.com/resumes/" target="_blank">Download Templates</a>
+    </div>
+  </div>
+<footer>
+  <div class="footer-container">
+    <!-- Branding -->
+    <div class="footer-section">
+      <h2>first-contrib-placement</h2>
+      <p>
+        A community-driven project to share the best placement and learning resources for BTech students.
+      </p>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/varshitha-macha/" target="blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="#">Contribute</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="./roadmap.html">Roadmap</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Top Categories -->
+    <div class="footer-section">
+      <h3>Top Categories</h3>
+      <ul>
+        <li><a href="./dsa.html">DSA Practice</a></li>
+        <li><a href="./resume.html">Resume Tips</a></li>
+        <li><a href="./interviewprep.html">Interview Prep</a></li>
+        <li><a href="#">Open Source</a></li>
+        <li><a href="./roadmap.html">Roadmaps</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-section">
+      <h3>Get in Touch</h3>
+      <p><strong>Location:</strong> India</p>
+      <p><strong>Email:</strong> contact@firstcontrib.com</p>
+    </div>
+  </div>
+
+
+  <div class="footer-bottom">
+    © 2025 All Rights Reserved | Built with ❤️ by the FCP Community
+  </div>
+</footer>
+  <script>
+    function toggleMore(element) {
+      const more = element.parentElement.nextElementSibling;
+      const isVisible = more.style.display === 'block';
+      more.style.display = isVisible ? 'none' : 'block';
+      element.textContent = isVisible ? 'Read more...' : 'Show less';
+    }
+  </script>
+</body>
+</html>

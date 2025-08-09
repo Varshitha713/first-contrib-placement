@@ -8,29 +8,53 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background: linear-gradient(to bottom right, #f7f9fc, #e0f2f1);
-    }
-    header {
-      background: linear-gradient(to right, #006D77, #00ACC1);
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-    }
-    section {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    section:hover {
-      transform: scale(1.02);
-      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
-    }
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to right, #ccf6c8, #ffffff); /* Light minty teal for body */
+  color: #0F172A;
+  transition: background-color 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+/* Glassy Header */
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(0,95,95,0.85) 0%, rgba(0,128,128,0.85) 100%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-family: 'Lucida Sans', sans-serif;
+  padding: 32px 16px;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  color: #ffffff;
+}
+ section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 2px solid rgba(0, 128, 128, 0.2); /* subtle teal border */
+  box-shadow: 0 4px 12px rgba(0, 128, 128, 0.12), 
+              0 2px 6px rgba(0, 128, 128, 0.06); /* layered shadow */
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+section:hover {
+  transform: translateY(-4px);
+  border-color: #008080; /* stronger teal on hover */
+  box-shadow: 0 8px 20px rgba(0, 128, 128, 0.2), 
+              0 4px 10px rgba(0, 128, 128, 0.1);
+}
+
     h2 {
       color: #006D77;
     }

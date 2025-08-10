@@ -1,6 +1,14 @@
+---
+name: "General Issue"
+about: "Report a bug, request a feature, or suggest an improvement for Placement Resources."
+title: ""
+labels: ""
+assignees: ""
+---
+
 ## 📝 Issue Title
 <!-- Write a short and clear title for your issue -->
- Example: "Add new resource card for Aptitude section" or "Fix mobile layout for navbar" 
+Example: "Add new resource card for Aptitude section" or "Fix mobile layout for navbar" 
 
 ---
 
@@ -15,7 +23,7 @@
 
 ## 📋 Description
 <!-- Clearly describe the problem or suggestion -->
- Example: "The FAQ section does not expand on click in mobile view" or "I want to add a new DSA resource card."
+Example: "The FAQ section does not expand on click in mobile view" or "I want to add a new DSA resource card."
 
 ---
 
@@ -33,9 +41,10 @@ Example: "Clicking a FAQ item should smoothly reveal the answer."
 ---
 
 ## 📸 Screenshots / Videos (if applicable)
- Add screenshots or short videos to explain the issue better 
+Add screenshots or short videos to explain the issue better 
 
 ---
 
 ## 💡 Additional Context
 <!-- Any extra information, references, or related issues -->
+<!-- testing bug-fix -->

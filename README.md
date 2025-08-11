@@ -102,6 +102,14 @@ Open to contributions, feedback, and suggestions 🚀
 
 ---
 
+## 👥 Contributors
+
+Thanks to these amazing people who have contributed to this project 💖
+
+<a href="https://github.com/Varshitha713/first-contrib-placement/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Varshitha713/first-contrib-placement" />
+</a>
+
 ## 📝 License
 
 This project is licensed under the **[MIT License](./LICENSE)**.

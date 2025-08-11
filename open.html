@@ -1,0 +1,220 @@
+<!-- open-source.html: Community Open Source Projects Hub -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Open Source Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/style.css" />
+  <style>
+    :root{--bg1:#eaf7f8;--bg2:#d9f0ef;--accent:#007c91;--accent-dark:#004d40;--card:#ffffff}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,-apple-system,"Helvetica Neue",Arial;margin:0;background:linear-gradient(90deg,var(--bg1),var(--bg2));color:#053033}
+    header{background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;padding:28px 20px;text-align:center}
+    header h1{margin:0;font-size:26px}
+    header p{margin:6px 0 0;opacity:.95}
+    .wrap{max-width:1150px;margin:28px auto;padding:0 20px}
+
+    .topbar{display:flex;gap:12px;align-items:center;justify-content:space-between;margin-bottom:18px}
+    .search input{width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(5,48,51,0.06)}
+    .actions{display:flex;gap:8px}
+    .btn{padding:10px 14px;border-radius:10px;border:none;background:linear-gradient(90deg,var(--accent),var(--accent-dark));color:#fff;font-weight:700;cursor:pointer}
+    .ghost{background:#fff;border:1px solid rgba(5,48,51,0.08);color:var(--accent);font-weight:700;padding:10px 12px;border-radius:10px;text-decoration:none}
+
+    .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+    .chip{padding:8px 10px;border-radius:999px;background:rgba(0,124,145,0.08);color:var(--accent);cursor:pointer;border:1px solid rgba(0,124,145,0.06);font-weight:600}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+    .project{background:var(--card);border-radius:12px;padding:16px;box-shadow:0 8px 30px rgba(3,30,30,0.06);transition:transform .22s ease}
+    .project:hover{transform:translateY(-6px)}
+    .meta{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .lang{font-size:13px;padding:6px 8px;border-radius:8px;background:rgba(0,0,0,0.03)}
+    .stars{font-weight:700;color:#234}
+    .desc{color:#234;margin-top:10px}
+
+    .contribute{margin-top:22px;background:linear-gradient(90deg,rgba(0,124,145,0.06),rgba(0,77,64,0.03));padding:16px;border-radius:10px}
+    .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:12px}
+    .step{background:#fff;padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(3,30,30,0.04)}
+
+    @media (max-width:520px){header h1{font-size:20px}.topbar{flex-direction:column;align-items:stretch}.actions{justify-content:flex-end}}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Open Source Hub</h1>
+    <p>Discover beginner-friendly projects, contribute guides, and live GitHub links.</p>
+  </header>
+
+  <main class="wrap">
+    <div class="topbar">
+      <div class="search" style="flex:1;max-width:640px"><input id="q" placeholder="Search projects, languages or topics (e.g. react, dsa, beginner)"/></div>
+      <div class="actions">
+        <button class="btn" id="newIssueBtn">Create Issue Template</button>
+        <a class="ghost" href="#contribute">How to Contribute</a>
+      </div>
+    </div>
+
+    <div class="filters" id="filters">
+      <div class="chip" data-filter="all">All</div>
+      <div class="chip" data-filter="good-first-issue">Good First Issue</div>
+      <div class="chip" data-filter="beginner">Beginner</div>
+      <div class="chip" data-filter="web">Web</div>
+      <div class="chip" data-filter="cli">CLI</div>
+      <div class="chip" data-filter="library">Library</div>
+    </div>
+
+    <section class="grid" id="grid">
+      <!-- Example Project Cards (live GitHub links) -->
+      <article class="project" data-tags="web,beginner,good-first-issue">
+        <div class="meta"><strong>public-apis</strong><span class="lang">Python</span><span class="stars">⭐ 250k</span></div>
+        <div class="desc">A collective list of free APIs for developers — great for beginners to find API projects and practice integrations.</div>
+      </article>
+
+      <article class="project" data-tags="web,library">
+        <div class="meta"><strong>axios</strong><span class="lang">JavaScript</span><span class="stars">⭐ 119k</span></div>
+        <div class="desc">Promise based HTTP client for the browser and node.js. Contribute docs, tests, or bug fixes.</div>
+      </article>
+
+      <article class="project" data-tags="cli,beginner">
+        <div class="meta">tldr</strong><span class="lang">Shell</span><span class="stars">⭐ 40k</span></div>
+        <div class="desc">Simplified and community-driven man pages. Great for documentation contributions and small fixes.</div>
+      </article>
+
+      <article class="project" data-tags="library,good-first-issue">
+        <div class="meta"><strong>react</strong><span class="lang">JavaScript</span><span class="stars">⭐ 230k</span></div>
+        <div class="desc">A declarative, efficient, and flexible JavaScript library for building user interfaces. Many beginner-friendly repos in the ecosystem.</div>
+      </article>
+
+      <article class="project" data-tags="dsa,beginner">
+        <div class="meta"><strong>javascript-algorithms</strong><span class="lang">JavaScript</span><span class="stars">⭐ 180k</span></div>
+        <div class="desc">Algorithms and data structures implemented in JavaScript with explanations and links — perfect to learn and contribute code or docs.</div>
+      </article>
+
+      <article class="project" data-tags="docs,beginner">
+        <div class="meta"><strong>first-contributions</strong><span class="lang">Docs</span><span class="stars">⭐ 180k</span></div>
+        <div class="desc">Helps beginners make their first contribution — includes a hands-on tutorial to submit a pull request.</div>
+      </article>
+    </section>
+
+    <section class="contribute" id="contribute">
+      <h3 style="margin:0;color:var(--accent-dark)">How to Contribute — Quick Guide</h3>
+      <div class="steps">
+        <div class="step"><strong>1. Find an Issue</strong><div style="margin-top:8px">Look for labels: <em>good first issue</em>, <em>help wanted</em> or <em>beginner</em>.</div></div>
+        <div class="step"><strong>2. Fork & Clone</strong><div style="margin-top:8px">Fork the repo, clone locally, and create a topic branch for your work.</div></div>
+        <div class="step"><strong>3. Run Tests</strong><div style="margin-top:8px">Run the project tests or linters. Add tests for your changes when possible.</div></div>
+        <div class="step"><strong>4. Make PR</strong><div style="margin-top:8px">Open a pull request with a clear title and description referencing the issue number.</div></div>
+      </div>
+      <p style="margin-top:12px">Need a template? Click <button class="ghost" id="issueTpl">Create Issue Template</button> to generate a starter ISSUE_TEMPLATE.md for your repo.</p>
+    </section>
+
+    <section style="margin-top:20px;display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap">
+      <div style="flex:1;min-width:280px;background:#fff;padding:12px;border-radius:10px;box-shadow:0 8px 30px rgba(3,30,30,0.04)">
+        <h4 style="margin:0 0 8px;color:var(--accent-dark)">Open Source License</h4>
+        <p style="margin:0;color:#234">Prefer permissive licenses (MIT, Apache 2.0) for small projects. Include a LICENSE file and contributor covenant if you expect community involvement.</p>
+      </div>
+      <div style="flex:1;min-width:280px;background:#fff;padding:12px;border-radius:10px;box-shadow:0 8px 30px rgba(3,30,30,0.04)">
+        <h4 style="margin:0 0 8px;color:var(--accent-dark)">Maintainer Tips</h4>
+        <ul style="margin:0 0 0 18px;color:#234">
+          <li>Label issues clearly and add contribution docs.</li>
+          <li>Keep a CONTRIBUTING.md and CODE_OF_CONDUCT.md.</li>
+          <li>Use CI to validate PRs and friendly templates to speed reviews.</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+   <footer>
+  <div class="footer-container">
+    <!-- Branding -->
+    <div class="footer-section">
+      <h2>first-contrib-placement</h2>
+      <p>
+        A community-driven project to share the best placement and learning resources for BTech students.
+      </p>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/varshitha-macha/" target="blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="#">Contribute</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="./roadmap.html">Roadmap</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Top Categories -->
+    <div class="footer-section">
+      <h3>Top Categories</h3>
+      <ul>
+        <li><a href="./dsa.html">DSA Practice</a></li>
+        <li><a href="./resume.html">Resume Tips</a></li>
+        <li><a href="./interviewprep.html">Interview Prep</a></li>
+        <li><a href="./open.html">Open Source</a></li>
+        <li><a href="./roadmap.html">Roadmaps</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-section">
+      <h3>Get in Touch</h3>
+      <p><strong>Location:</strong> India</p>
+      <p><strong>Email:</strong> contact@firstcontrib.com</p>
+    </div>
+  </div>
+
+
+  <div class="footer-bottom">
+    © 2025 All Rights Reserved | Built with ❤️ by the FCP Community
+  </div>
+</footer>
+  <script>
+    // basic interactions: filter and issue template generator
+    const chips = Array.from(document.querySelectorAll('.chip'));
+    const grid = document.getElementById('grid');
+    const projects = Array.from(grid.children);
+    chips.forEach(c=>c.addEventListener('click',()=>{
+      const f = c.dataset.filter;
+      chips.forEach(x=>x.style.opacity = x===c? '1' : '0.6');
+      projects.forEach(p=>{
+        if(f==='all') p.style.display='';
+        else p.style.display = p.dataset.tags.includes(f) ? '' : 'none';
+      })
+    }));
+
+    document.getElementById('q').addEventListener('input', e=>{
+      const q = e.target.value.trim().toLowerCase();
+      projects.forEach(p=>{
+        const txt = (p.innerText||'').toLowerCase();
+        p.style.display = txt.includes(q)? '' : 'none';
+      })
+    });
+
+    // issue template generator (simple client-side file download)
+    function download(filename, content){
+      const el = document.createElement('a');
+      el.setAttribute('href','data:text/plain;charset=utf-8,'+encodeURIComponent(content));
+      el.setAttribute('download',filename); document.body.appendChild(el); el.click(); el.remove();
+    }
+
+    document.getElementById('issueTpl').addEventListener('click',()=>{
+      const tpl = `<!-- ISSUE TEMPLATE -->\n### Summary\nProvide a short description of the issue.\n\n### Steps To Reproduce\n1. \n2. \n3.\n\n### Expected behavior\nDescribe the expected behavior.\n\n### Environment\n- OS: \n- Node: \n\n### Additional context\nAdd any other context about the problem here.`;
+      download('ISSUE_TEMPLATE.md', tpl);
+      alert('ISSUE_TEMPLATE.md downloaded — add it to .github/ISSUE_TEMPLATE/ in your repo.');
+    });
+
+    document.getElementById('newIssueBtn').addEventListener('click', ()=>{
+      const tpl = `# Bug Report\nProvide a concise title and description.\n\n**Steps to reproduce:**\n1. \n2. \n3.\n\n**Expected behavior:**\n\n**Screenshots / Logs:**\n\n**Environment:**\n- OS:\n- Browser / Node:\n\n**Additional notes:**`;
+      download('BUG_REPORT.md', tpl);
+      alert('BUG_REPORT.md downloaded — use it as a template for issues.');
+    });
+  </script>
+</body>
+</html>

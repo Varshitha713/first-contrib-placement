@@ -18,8 +18,26 @@
       text-align: center;
       padding: 40px 20px;
     }
+    .search-container {
+      margin-top: 20px;
+    }
+    .search-bar {
+      width: 80%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+    .prep-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
     section {
-      max-width: 900px;
+      width : 325px;
       margin: 40px auto;
       padding: 20px;
       background: #ffffff;
@@ -52,58 +70,113 @@
     <h1>💼 Interview Preparation Central</h1>
     <p>Everything you need to ace coding & HR interviews!</p>
   </header>
+  <div class="search-container">
+    <input type="text" id="searchBar" class="search-bar" placeholder="🔍 Search resources...">
+  </div>
+  <div class = "prep-container">
+    <section data-aos="zoom-in-up">
+      <h2>🔧 Technical Interview Practice</h2>
+      <ul>
+        <li><a href="https://leetcode.com" target="_blank">LeetCode</a> – Practice with real coding interview questions.</li>
+        <li><a href="https://www.geeksforgeeks.org/tag/technical-interview-questions/" target="_blank">GeeksforGeeks</a> – Technical Q&A</li>
+        <li><a href="https://interviewbit.com" target="_blank">InterviewBit</a> – Guided practice with mock interview flow.</li>
+      </ul>
+    </section>
 
-  <section data-aos="zoom-in-up">
-    <h2>🔧 Technical Interview Practice</h2>
-    <ul>
-      <li><a href="https://leetcode.com" target="_blank">LeetCode</a> – Practice with real coding interview questions.</li>
-      <li><a href="https://www.geeksforgeeks.org/tag/technical-interview-questions/" target="_blank">GeeksforGeeks – Technical Q&A</a></li>
-      <li><a href="https://interviewbit.com" target="_blank">InterviewBit</a> – Guided practice with mock interview flow.</li>
-    </ul>
-  </section>
+    <section data-aos="zoom-in-up">
+      <h2>🏗 System Design & Architecture</h2>
+      <ul>
+        <li><a href="https://www.educative.io/courses/grokking-the-system-design-interview" target="_blank">Grokking the System Design Interview</a></li>
+        <li><a href="https://github.com/donnemartin/system-design-primer" target="_blank">System Design Primer</a> – GitHub</li>
+        <li><a href="http://highscalability.com/" target="_blank">High Scalability</a> – Architecture case studies</li>
+      </ul>
+    </section>
 
-  <section data-aos="zoom-in-up" data-aos-delay="100">
-    <h2>🗣️ HR/Behavioral Interview Tips</h2>
-    <ul>
-      <li><a href="https://www.indeed.com/career-advice/interviewing/top-interview-questions-and-answers" target="_blank">Common HR Questions – Indeed</a></li>
-      <li><a href="https://www.youtube.com/playlist?list=PLV8vIYTIdSnYBZQXaDgJrOnl7tOX0fgUe" target="_blank">YouTube Playlist: HR Mock Interviews</a></li>
-      <li><a href="https://www.linkedin.com/pulse/mastering-behavioral-interviews-star-method-guide-jennifer-chen" target="_blank">Using STAR Method for Behavioral Questions</a></li>
-    </ul>
-  </section>
+    <section data-aos="zoom-in-up">
+      <h2>📘 Core CS Fundamentals</h2>
+      <ul>
+        <li><a href="https://cs50.harvard.edu/x/" target="_blank">Harvard CS50x</a> – Computer Science fundamentals</li>
+        <li><a href="https://www.bigocheatsheet.com/" target="_blank">Big-O Complexity Cheat Sheet</a></li>
+      </ul>
+    </section>
 
-  <section data-aos="zoom-in-up" data-aos-delay="200">
-    <h2>🎥 Video-Based Learning</h2>
-    <ul>
-      <li><a href="https://www.youtube.com/c/ClémentMihailescu" target="_blank">Clément Mihailescu – Former Google Engineer</a></li>
-      <li><a href="https://www.youtube.com/@ApnaCollegeOfficial" target="_blank">Apna College – Placement Prep Series</a></li>
-      <li><a href="https://www.youtube.com/@codebasics" target="_blank">Codebasics – System Design + HR</a></li>
-    </ul>
-  </section>
+    <section data-aos="zoom-in-up">
+      <h2>📊 Data Structures & Algorithms Visualization</h2>
+      <ul>
+        <li><a href="https://visualgo.net" target="_blank">Visualgo.net</a></li>
+        <li><a href="https://algorithm-visualizer.org/" target="_blank">Algorithm Visualizer</a></li>
+      </ul>
+    </section>
 
-  <section data-aos="zoom-in-up" data-aos-delay="300">
-    <h2>🧠 Mock Interview Platforms</h2>
-    <ul>
-      <li><a href="https://pramp.com" target="_blank">Pramp – Free peer-to-peer mock interviews</a></li>
-      <li><a href="https://interviewing.io" target="_blank">Interviewing.io – Anonymous real interviews</a></li>
-    </ul>
-  </section>
+    <section data-aos="zoom-in-up">
+      <h2>🗣️ HR/Behavioral Interview Tips</h2>
+      <ul>
+        <li><a href="https://www.indeed.com/career-advice/interviewing/top-interview-questions-and-answers" target="_blank">Indeed</a> – Common HR Questions</li>
+        <li><a href="https://www.youtube.com/playlist?list=PLV8vIYTIdSnYBZQXaDgJrOnl7tOX0fgUe" target="_blank">YouTube Playlist</a> – HR Mock Interviews</li>
+        <li><a href="https://www.linkedin.com/pulse/mastering-behavioral-interviews-star-method-guide-jennifer-chen" target="_blank">STAR Method for Behavioral Questions</a></li>
+      </ul>
+    </section>
 
-  <section data-aos="zoom-in-up" data-aos-delay="400">
-    <h2>📄 Resume Review & Feedback</h2>
-    <ul>
-      <li><a href="https://resumeworded.com" target="_blank">ResumeWorded – Instant feedback & score</a></li>
-      <li><a href="https://enhancv.com" target="_blank">Enhancv – AI resume builder</a></li>
-      <li><a href="https://overleaf.com" target="_blank">Overleaf – LaTeX templates for CS resumes</a></li>
-    </ul>
-  </section>
+    <section data-aos="zoom-in-up">
+      <h2>🏢 Company-Specific Prep</h2>
+      <ul>
+        <li><a href="https://www.glassdoor.com" target="_blank">Glassdoor</a> – Company interview reviews</li>
+        <li><a href="https://leetcode.com/problemset/all/?listId=wpwgkgt" target="_blank">LeetCode</a> – Company tagged questions</li>
+        <li><a href="https://www.levels.fyi" target="_blank">Levels.fyi – Salary and role insights</a></li>
+      </ul>
+    </section>
 
-  <section data-aos="flip-up" data-aos-delay="500">
-    <h2>📚 Bonus: Behavioral Interview Cheat Sheet</h2>
-    <ul>
-      <li><a href="https://hbr.org/2020/01/what-really-makes-a-good-interview-question" target="_blank">What Makes a Good Interview Question – HBR</a></li>
-      <li><a href="https://www.themuse.com/advice/30-behavioral-interview-questions-you-should-be-ready-to-answer" target="_blank">30 Behavioral Questions – The Muse</a></li>
-    </ul>
-  </section>
+    <section data-aos="zoom-in-up">
+      <h2>💬 Communication & Soft Skills</h2>
+      <ul>
+        <li><a href="https://www.speakeasy.ai" target="_blank">SpeakEasy</a> – Improve communication clarity</li>
+        <li><a href="https://www.toastmasters.org/find-a-club" target="_blank">Toastmasters</a> – Public speaking practice</li>
+      </ul>
+    </section>
+
+    <section data-aos="zoom-in-up">
+      <h2>🧠 Mock Interview Platforms</h2>
+      <ul>
+        <li><a href="https://pramp.com" target="_blank">Pramp</a> – Free peer-to-peer mock interviews</li>
+        <li><a href="https://interviewing.io" target="_blank">Interviewing.io</a> – Anonymous real interviews</li>
+      </ul>
+    </section>
+
+    <section data-aos="zoom-in-up">
+      <h2>🧪 Assessment Practice</h2>
+      <ul>
+        <li><a href="https://www.codility.com/" target="_blank">Codility</a></li>
+        <li><a href="https://www.hackerrank.com/" target="_blank">HackerRank Skill Tests</a></li>
+        <li><a href="https://www.kaggle.com/" target="_blank">Kaggle</a> – Data competitions</li>
+      </ul>
+    </section>
+
+    <section data-aos="zoom-in-up">
+      <h2>📄 Resume Review & Feedback</h2>
+      <ul>
+        <li><a href="https://resumeworded.com" target="_blank">ResumeWorded</a></li>
+        <li><a href="https://enhancv.com" target="_blank">Enhancv</a></li>
+        <li><a href="https://overleaf.com" target="_blank">Overleaf</a> – LaTeX templates</li>
+      </ul>
+    </section>
+
+    <section data-aos="zoom-in-up">
+      <h2>🧘 Mindset & Stress Management</h2>
+      <ul>
+        <li><a href="https://www.headspace.com" target="_blank">Headspace</a> – Mindfulness</li>
+        <li><a href="https://www.ted.com/talks/amy_cuddy_your_body_language_shapes_who_you_are" target="_blank">Amy Cuddy TED Talk</a> – Confidence tips</li>
+      </ul>
+    </section>
+
+    <section data-aos="zoom-in-up">
+      <h2>📚 Bonus: Behavioral Interview Cheat Sheet</h2>
+      <ul>
+        <li><a href="https://hbr.org/2020/01/what-really-makes-a-good-interview-question" target="_blank">What Makes a Good Interview Question</a> – HBR</li>
+        <li><a href="https://www.themuse.com/advice/30-behavioral-interview-questions-you-should-be-ready-to-answer" target="_blank">30 Behavioral Questions</a> – The Muse</li>
+      </ul>
+    </section>
+  </div>
+
    <footer>
   <div class="footer-container">
     <!-- Branding -->
@@ -155,10 +228,17 @@
     © 2025 All Rights Reserved | Built with ❤️ by the FCP Community
   </div>
 </footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
     AOS.init({ once: true, duration: 1000 });
+    document.getElementById('searchBar').addEventListener('keyup', function () {
+      const filter = this.value.toLowerCase();
+      document.querySelectorAll('section').forEach(sec => {
+        const text = sec.textContent.toLowerCase();
+        sec.style.display = text.includes(filter) ? '' : 'none';
+      });
+    });
   </script>
-
 </body>
 </html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - First Contrib Placement</title>
+  <link rel="stylesheet" href="styles/about.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="about-header">
+    <h1>About Us</h1>
+    <p>Empowering students with the best placement and learning resources.</p>
+  </header>
+
+  <!-- Mission Section -->
+  <section class="mission">
+    <div class="container">
+      <h2>Our Mission</h2>
+      <p>
+        At First Contrib Placement, we aim to provide open and high-quality placement resources for students across the globe.
+        This platform is created to bridge the gap between learners and opportunities, while fostering a strong community of contributors.
+      </p>
+    </div>
+  </section>
+
+  <!-- Vision Section -->
+  <section class="vision">
+    <div class="container">
+      <h2>Our Vision</h2>
+      <p>
+        We envision a future where every student has free access to quality resources, guidance, and mentorship — enabling them to excel in academics, technical skills, and interviews.
+      </p>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team">
+    <div class="container">
+      <h2>Meet the Team</h2>
+      <div class="team-members">
+        <div class="member">
+          <img src="images/founder.png" alt="Team Member">
+          <h3>Varshitha Macha</h3>
+          <p>Founder & Lead Contributor</p>
+        </div>
+        <div class="member">
+          <img src="images/community.png" alt="Team Member">
+          <h3>Community</h3>
+          <p>Open Source Contributors</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section class="timeline">
+    <div class="container">
+      <h2>Our Journey</h2>
+      <ul>
+        <li><strong>2024:</strong> Project started as a small community initiative.</li>
+        <li><strong>2024:</strong> Added DSA & Resume resources.</li>
+        <li><strong>2025:</strong> Expanded to interview prep and open source resources.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Back to Top Button -->
+
+    <div>
+    <button id="backToTop" title="Go to top">↑</button>
+
+  </div>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <!-- Branding -->
+      <div class="footer-section">
+        <h2>first-contrib-placement</h2>
+        <p>
+          A community-driven project to share the best placement and learning resources for BTech students.
+        </p>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/varshitha-macha/" target="blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="#">Contribute</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="./roadmap.html">Roadmap</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="./about.html">About</a><li>
+        </ul>
+      </div>
+
+      <!-- Top Categories -->
+      <div class="footer-section">
+        <h3>Top Categories</h3>
+        <ul>
+          <li><a href="./dsa.html">DSA Practice</a></li>
+          <li><a href="./resume.html">Resume Tips</a></li>
+          <li><a href="./interviewprep.html">Interview Prep</a></li>
+          <li><a href="#">Open Source</a></li>
+          <li><a href="./roadmap.html">Roadmaps</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-section">
+        <h3>Get in Touch</h3>
+        <p><strong>Location:</strong> India</p>
+        <p><strong>Email:</strong> contact@firstcontrib.com</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 All Rights Reserved | Built with ❤️ by the FCP Community
+    </div>
+  </footer>
+
+  <script>
+    
+  // ⬆️ Back to Top
+  window.onscroll = () => {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+      backToTop.style.display = "block";
+    } else {
+      backToTop.style.display = "none";
+    }
+  };
+
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+</body>
+</html>

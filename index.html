@@ -35,13 +35,16 @@
         <div class="filter-dropdown">
           <button id="filterToggle" class="dropdown-btn">🎯 Categories ▾</button>
           <div id="checkboxContainer" class="checkbox-dropdown">
-            <label><input type="checkbox" value="coding" checked> Coding</label>
-            <label><input type="checkbox" value="sql" checked> SQL</label>
-            <label><input type="checkbox" value="learning" checked> Learning</label>
-            <label><input type="checkbox" value="documentation" checked> Documentation</label>
-            <label><input type="checkbox" value="mock" checked> Mock Tests</label>
-            <label><input type="checkbox" value="interview" checked> Interview Prep</label>
-            <label><input type="checkbox" value="CTFs" checked> CTFs</label>
+            <input type="text" id="categoryDropdownSearch" placeholder="Search categories..." style="width: 95%; margin: 6px 2%; padding: 4px; border-radius: 4px; border: 1px solid #ccc;">
+            <div id="categoryCheckboxList">
+              <label><input type="checkbox" value="coding" checked> Coding</label>
+              <label><input type="checkbox" value="sql" checked> SQL</label>
+              <label><input type="checkbox" value="learning" checked> Learning</label>
+              <label><input type="checkbox" value="documentation" checked> Documentation</label>
+              <label><input type="checkbox" value="mock" checked> Mock Tests</label>
+              <label><input type="checkbox" value="interview" checked> Interview Prep</label>
+              <label><input type="checkbox" value="CTFs" checked> CTFs</label>
+            </div>
           </div>
         </div>
       </div>
@@ -380,8 +383,10 @@
 
 
   <script>
-    const searchInput = document.getElementById('searchInput');
-    const categoryCheckboxes = document.querySelectorAll('#checkboxContainer input[type="checkbox"]');
+  const searchInput = document.getElementById('searchInput');
+  const categoryCheckboxes = document.querySelectorAll('#categoryCheckboxList input[type="checkbox"]');
+  const categoryDropdownSearch = document.getElementById('categoryDropdownSearch');
+  const categoryCheckboxList = document.getElementById('categoryCheckboxList');
     const cards = document.querySelectorAll('.card');
     const toggleBtn = document.getElementById("toggle-mode");
     const backToTopButton = document.getElementById("backToTop");
@@ -389,7 +394,7 @@
     // 🔍 Search & Filter Logic
     function searchAndFilter() {
       const searchText = searchInput.value.toLowerCase();
-      const selectedCategories = Array.from(categoryCheckboxes)
+      const selectedCategories = Array.from(document.querySelectorAll('#categoryCheckboxList input[type="checkbox"]'))
         .filter(cb => cb.checked)
         .map(cb => cb.value);
 
@@ -419,6 +424,15 @@
         noResultsMsg.classList.remove("hidden");
       }
     }
+
+    // Category dropdown search logic
+    categoryDropdownSearch.addEventListener('input', function () {
+      const filter = this.value.toLowerCase();
+      Array.from(categoryCheckboxList.children).forEach(label => {
+        const labelText = label.textContent.toLowerCase();
+        label.style.display = labelText.includes(filter) ? '' : 'none';
+      });
+    });
 
     // Event Listeners
     searchInput.addEventListener('input', searchAndFilter);

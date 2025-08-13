@@ -396,6 +396,13 @@ footer {
   padding: 1px;
   background-color: #ccd6e2;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.checkbox-dropdown:hover {
+  box-shadow: 0 8px 24px rgba(33,158,188,0.18), 0 2px 8px rgba(33,158,188,0.10);
+  transform: scale(1.03) translateY(-2px);
+  background-color: #eaf6fa;
 }
 
 .checkbox-dropdown label {
@@ -409,6 +416,31 @@ footer {
   padding-left: 8px;
   border-radius: 0px;
   height: 25px;
+  transition: background 0.3s, color 0.3s, transform 0.25s cubic-bezier(.68,-0.55,.27,1.55), box-shadow 0.3s;
+  position: relative;
+}
+
+.checkbox-dropdown label:hover {
+  background-color: #037b86;
+  color: #e3e3e3;
+  transform: scale(1.07) translateX(10px);
+  box-shadow: 0 4px 16px rgba(33,158,188,0.18);
+}
+
+.checkbox-dropdown label::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #219EBC 0%, #037b86 100%);
+  border-radius: 2px;
+  transition: width 0.3s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+.checkbox-dropdown label:hover::after {
+  width: 100%;
 }
 
 .checkbox-dropdown input[type="checkbox"] {

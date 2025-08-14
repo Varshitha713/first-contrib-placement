@@ -1,209 +1,263 @@
-<!-- open-source.html: Community Open Source Projects Hub -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Open Source Hub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/style.css" />
-  <style>
-    :root{--bg1:#eaf7f8;--bg2:#d9f0ef;--accent:#007c91;--accent-dark:#004d40;--card:#ffffff}
-    *{box-sizing:border-box}
-    body{font-family:Inter,system-ui,Segoe UI,Roboto,-apple-system,"Helvetica Neue",Arial;margin:0;background:linear-gradient(90deg,var(--bg1),var(--bg2));color:#053033}
-    header{background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;padding:28px 20px;text-align:center}
-    header h1{margin:0;font-size:26px}
-    header p{margin:6px 0 0;opacity:.95}
-    .wrap{max-width:1150px;margin:28px auto;padding:0 20px}
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Open Source Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="./styles/style.css">
+<style>
+:root{
+  --bg1:#eaf7f8;
+  --bg2:#d9f0ef;
+  --accent:#007c91;
+  --accent-dark:#004d40;
+  --card:#ffffff;
+}
+*{box-sizing:border-box}
+body{
+  font-family:Inter,system-ui,Segoe UI,Roboto,-apple-system,"Helvetica Neue",Arial;
+  margin:0;
+  background:linear-gradient(90deg,var(--bg1),var(--bg2));
+  color:#053033
+}
+header{
+  background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+  color:#fff;
+  padding:28px 20px;
+  text-align:center
+}
+header h1{margin:0;font-size:26px}
+header p{margin:6px 0 0;opacity:.95}
+.wrap{max-width:1150px;margin:28px auto;padding:0 20px}
 
-    .topbar{display:flex;gap:12px;align-items:center;justify-content:space-between;margin-bottom:18px}
-    .search input{width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(5,48,51,0.06)}
-    .actions{display:flex;gap:8px}
-    .btn{padding:10px 14px;border-radius:10px;border:none;background:linear-gradient(90deg,var(--accent),var(--accent-dark));color:#fff;font-weight:700;cursor:pointer}
-    .ghost{background:#fff;border:1px solid rgba(5,48,51,0.08);color:var(--accent);font-weight:700;padding:10px 12px;border-radius:10px;text-decoration:none}
+.topbar{display:flex;gap:12px;align-items:center;justify-content:space-between;margin-bottom:18px}
+.search input{
+  width:100%;
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid rgba(5,48,51,0.06)
+}
+.actions{display:flex;gap:8px}
 
-    .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
-    .chip{padding:8px 10px;border-radius:999px;background:rgba(0,124,145,0.08);color:var(--accent);cursor:pointer;border:1px solid rgba(0,124,145,0.06);font-weight:600}
+.button{
+  padding:10px 14px;
+  border-radius:10px;
+  border:none;
+  background:linear-gradient(90deg,var(--accent),var(--accent-dark));
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+  transition:transform 0.2s ease, background 0.3s ease;
+}
+.button:hover{
+  transform:scale(1.05);
+  background:linear-gradient(90deg,var(--accent-dark),var(--accent));
+}
+.ghost{
+  background:#fff;
+  border:1px solid rgba(5,48,51,0.08);
+  color:var(--accent);
+  font-weight:700;
+  padding:10px 12px;
+  border-radius:10px;
+  text-decoration:none
+}
+.repo-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:15px;
+  padding:20px;
+}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
 
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
-    .project{background:var(--card);border-radius:12px;padding:16px;box-shadow:0 8px 30px rgba(3,30,30,0.06);transition:transform .22s ease}
-    .project:hover{transform:translateY(-6px)}
-    .meta{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-    .lang{font-size:13px;padding:6px 8px;border-radius:8px;background:rgba(0,0,0,0.03)}
-    .stars{font-weight:700;color:#234}
-    .desc{color:#234;margin-top:10px}
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.card h3 {margin: 0 0 10px;font-size: 1.2rem;color: #007c91;}
+.card p {font-size: 0.9rem;color: #555;}
+.card a {display:inline-block;margin-top:10px;color: #0097a7;text-decoration:none;font-weight:bold}
 
-    .contribute{margin-top:22px;background:linear-gradient(90deg,rgba(0,124,145,0.06),rgba(0,77,64,0.03));padding:16px;border-radius:10px}
-    .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:12px}
-    .step{background:#fff;padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(3,30,30,0.04)}
-
-    @media (max-width:520px){header h1{font-size:20px}.topbar{flex-direction:column;align-items:stretch}.actions{justify-content:flex-end}}
-  </style>
+.contribute{
+  margin-top:22px;
+  background:linear-gradient(90deg,rgba(0,124,145,0.06),rgba(0,77,64,0.03));
+  padding:16px;
+  border-radius:10px
+}
+.steps{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:12px;
+  margin-top:12px
+}
+.step{
+  background:#fff;
+  padding:12px;
+  border-radius:10px;
+  box-shadow:0 6px 18px rgba(3,30,30,0.04)
+}
+</style>
 </head>
 <body>
-  <header>
-    <h1>Open Source Hub</h1>
-    <p>Discover beginner-friendly projects, contribute guides, and live GitHub links.</p>
-  </header>
+<header>
+  <h1>Open Source Hub</h1>
+  <p>Discover beginner-friendly projects, contribute guides, and live GitHub links.</p>
+</header>
 
-  <main class="wrap">
-    <div class="topbar">
-      <div class="search" style="flex:1;max-width:640px"><input id="q" placeholder="Search projects, languages or topics (e.g. react, dsa, beginner)"/></div>
-      <div class="actions">
-        <button class="btn" id="newIssueBtn">Create Issue Template</button>
-        <a class="ghost" href="#contribute">How to Contribute</a>
+<main class="wrap">
+  <div class="topbar">
+    <div class="search" style="flex:1;max-width:640px">
+      <input id="q" placeholder="Search projects, languages or topics (e.g. react, api, beginner)"/>
+    </div>
+    <div class="actions">
+      <button class="button" id="newIssueBtn">Create Issue Template</button>
+      <a class="ghost" href="#contribute">How to Contribute</a>
+    </div>
+  </div>
+
+  <div class="filters">
+    <button class="button" onclick="fetchRepos('javascript')">JavaScript</button>
+    <button class="button" onclick="fetchRepos('python')">Python</button>
+    <button class="button" onclick="fetchRepos('java')">Java</button>
+    <button class="button" onclick="fetchRepos('html')">HTML/CSS</button>
+    <button class="button" onclick="fetchRepos('machine-learning')">Machine Learning</button>
+    <button class="button" onclick="fetchRepos('web')">Web</button>
+  </div>
+
+  <div class="repo-container" id="repoContainer">
+    <p style="text-align:center;">Click a filter or search to load repositories...</p>
+  </div>
+
+  <section class="contribute" id="contribute">
+    <h3 style="margin:0;color:var(--accent-dark)">How to Contribute — Quick Guide</h3>
+    <div class="steps">
+      <div class="step"><strong>1. Find an Issue</strong><div style="margin-top:8px">Look for labels: <em>good first issue</em>, <em>help wanted</em> or <em>beginner</em>.</div></div>
+      <div class="step"><strong>2. Fork & Clone</strong><div style="margin-top:8px">Fork the repo, clone locally, and create a topic branch for your work.</div></div>
+      <div class="step"><strong>3. Run Tests</strong><div style="margin-top:8px">Run the project tests or linters. Add tests for your changes when possible.</div></div>
+      <div class="step"><strong>4. Make PR</strong><div style="margin-top:8px">Open a pull request with a clear title and description referencing the issue number.</div></div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="footer-container">
+    <!-- Branding -->
+    <div class="footer-section">
+      <h2>first-contrib-placement</h2>
+      <p>
+        A community-driven project to share the best placement and learning resources for BTech students.
+      </p>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/varshitha-macha/" target="blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
       </div>
     </div>
 
-    <div class="filters" id="filters">
-      <div class="chip" data-filter="all">All</div>
-      <div class="chip" data-filter="good-first-issue">Good First Issue</div>
-      <div class="chip" data-filter="beginner">Beginner</div>
-      <div class="chip" data-filter="web">Web</div>
-      <div class="chip" data-filter="cli">CLI</div>
-      <div class="chip" data-filter="library">Library</div>
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="#">Contribute</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="./roadmap.html">Roadmap</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
     </div>
 
-    <!-- Correct ID and grid class for filtering -->
-    <div id="grid" class="grid"></div>
-
-    <section class="contribute" id="contribute">
-      <h3 style="margin:0;color:var(--accent-dark)">How to Contribute — Quick Guide</h3>
-      <div class="steps">
-        <div class="step"><strong>1. Find an Issue</strong><div style="margin-top:8px">Look for labels: <em>good first issue</em>, <em>help wanted</em> or <em>beginner</em>.</div></div>
-        <div class="step"><strong>2. Fork & Clone</strong><div style="margin-top:8px">Fork the repo, clone locally, and create a topic branch for your work.</div></div>
-        <div class="step"><strong>3. Run Tests</strong><div style="margin-top:8px">Run the project tests or linters. Add tests for your changes when possible.</div></div>
-        <div class="step"><strong>4. Make PR</strong><div style="margin-top:8px">Open a pull request with a clear title and description referencing the issue number.</div></div>
-      </div>
-      <p style="margin-top:12px">Need a template? Click <button class="ghost" id="issueTpl">Create Issue Template</button> to generate a starter ISSUE_TEMPLATE.md for your repo.</p>
-    </section>
-
-    <section style="margin-top:20px;display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap">
-      <div style="flex:1;min-width:280px;background:#fff;padding:12px;border-radius:10px;box-shadow:0 8px 30px rgba(3,30,30,0.04)">
-        <h4 style="margin:0 0 8px;color:var(--accent-dark)">Open Source License</h4>
-        <p style="margin:0;color:#234">Prefer permissive licenses (MIT, Apache 2.0) for small projects. Include a LICENSE file and contributor covenant if you expect community involvement.</p>
-      </div>
-      <div style="flex:1;min-width:280px;background:#fff;padding:12px;border-radius:10px;box-shadow:0 8px 30px rgba(3,30,30,0.04)">
-        <h4 style="margin:0 0 8px;color:var(--accent-dark)">Maintainer Tips</h4>
-        <ul style="margin:0 0 0 18px;color:#234">
-          <li>Label issues clearly and add contribution docs.</li>
-          <li>Keep a CONTRIBUTING.md and CODE_OF_CONDUCT.md.</li>
-          <li>Use CI to validate PRs and friendly templates to speed reviews.</li>
-        </ul>
-      </div>
-    </section>
-
-  </main>
-  <footer>
-    <!-- Footer content unchanged -->
-    <div class="footer-container">
-      <div class="footer-section">
-        <h2>first-contrib-placement</h2>
-        <p>A community-driven project to share the best placement and learning resources for BTech students.</p>
-        <div class="social-icons">
-          <a href="https://www.linkedin.com/in/varshitha-macha/" target="blank"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank"><i class="fab fa-github"></i></a>
-        </div>
-      </div>
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="#">Contribute</a></li>
-          <li><a href="#">Resources</a></li>
-          <li><a href="./roadmap.html">Roadmap</a></li>
-          <li><a href="./contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Top Categories</h3>
-        <ul>
-          <li><a href="./dsa.html">DSA Practice</a></li>
-          <li><a href="./resume.html">Resume Tips</a></li>
-          <li><a href="./interviewprep.html">Interview Prep</a></li>
-          <li><a href="./open.html">Open Source</a></li>
-          <li><a href="./roadmap.html">Roadmaps</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Get in Touch</h3>
-        <p><strong>Location:</strong> India</p>
-        <p><strong>Email:</strong> contact@firstcontrib.com</p>
-      </div>
+    <!-- Top Categories -->
+    <div class="footer-section">
+      <h3>Top Categories</h3>
+      <ul>
+        <li><a href="./dsa.html">DSA Practice</a></li>
+        <li><a href="./resume.html">Resume Tips</a></li>
+        <li><a href="./interviewprep.html">Interview Prep</a></li>
+        <li><a href="./open.html">Open Source</a></li>
+        <li><a href="./roadmap.html">Roadmaps</a></li>
+      </ul>
     </div>
-    <div class="footer-bottom">
-      © 2025 All Rights Reserved | Built with ❤️ by the FCP Community
+
+    <!-- Contact Info -->
+    <div class="footer-section">
+      <h3>Get in Touch</h3>
+      <p><strong>Location:</strong> India</p>
+      <p><strong>Email:</strong> contact@firstcontrib.com</p>
     </div>
-  </footer>
+  </div>
 
-  <script>
-    const chips = Array.from(document.querySelectorAll('.chip'));
-    const grid = document.getElementById('grid');
 
-    chips.forEach(c=>c.addEventListener('click',()=>{
-      const f = c.dataset.filter;
-      chips.forEach(x=>x.style.opacity = x===c? '1' : '0.6');
-      Array.from(grid.children).forEach(p=>{
-        if(f==='all') p.style.display='';
-        else p.style.display = p.dataset.tags?.includes(f) ? '' : 'none';
-      });
-    }));
+  <div class="footer-bottom">
+    © 2025 All Rights Reserved | Built with ❤️ by the FCP Community
+  </div>
+</footer>
 
-    document.getElementById('q').addEventListener('input', e=>{
-      const q = e.target.value.trim().toLowerCase();
-      Array.from(grid.children).forEach(p=>{
-        const txt = (p.innerText||'').toLowerCase();
-        p.style.display = txt.includes(q)? '' : 'none';
-      });
-    });
+<script>
+async function fetchRepos(query) {
+  const container = document.getElementById("repoContainer");
+  container.innerHTML = "<p style='text-align:center;'>Loading...</p>";
 
-    function download(filename, content){
-      const el = document.createElement('a');
-      el.setAttribute('href','data:text/plain;charset=utf-8,'+encodeURIComponent(content));
-      el.setAttribute('download',filename);
-      document.body.appendChild(el);
-      el.click();
-      el.remove();
+  try {
+    const res = await fetch(`https://api.github.com/search/repositories?q=${encodeURIComponent(query)}&sort=stars&order=desc&per_page=50`);
+    const data = await res.json();
+
+    if (!data.items || data.items.length === 0) {
+      container.innerHTML = `<p style="text-align:center;">No repositories found for "${query}"</p>`;
+      return;
     }
 
-    document.getElementById('issueTpl').addEventListener('click',()=>{
-      const tpl = `<!-- ISSUE TEMPLATE -->\n### Summary\nProvide a short description of the issue.\n\n### Steps To Reproduce\n1. \n2. \n3.\n\n### Expected behavior\nDescribe the expected behavior.\n\n### Environment\n- OS: \n- Node: \n\n### Additional context\nAdd any other context about the problem here.`;
-      download('ISSUE_TEMPLATE.md', tpl);
-      alert('ISSUE_TEMPLATE.md downloaded — add it to .github/ISSUE_TEMPLATE/ in your repo.');
-    });
+    // Random 9 repos
+    const shuffled = data.items.sort(() => 0.5 - Math.random()).slice(0, 9);
 
-    document.getElementById('newIssueBtn').addEventListener('click', ()=>{
-      const tpl = `# Bug Report\nProvide a concise title and description.\n\n**Steps to reproduce:**\n1. \n2. \n3.\n\n**Expected behavior:**\n\n**Screenshots / Logs:**\n\n**Environment:**\n- OS:\n- Browser / Node:\n\n**Additional notes:**`;
-      download('BUG_REPORT.md', tpl);
-      alert('BUG_REPORT.md downloaded — use it as a template for issues.');
+    container.innerHTML = "";
+    shuffled.forEach((repo, index) => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <h3>${repo.name}</h3>
+        <p>${repo.description ? repo.description.substring(0, 100) + "..." : "No description"}</p>
+        <p>⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}</p>
+        <a href="${repo.html_url}" target="_blank">View Repo</a>
+      `;
+      container.appendChild(card);
+      setTimeout(() => card.classList.add("show"), index * 200); // animation stagger
     });
+  } catch (error) {
+    container.innerHTML = `<p style="text-align:center; color:red;">Error loading repositories</p>`;
+    console.error(error);
+  }
+}
 
-    const username = "Varshitha713"; 
-    async function fetchRepos() {
-      try {
-        const response = await fetch(`https://api.github.com/users/${username}/repos`);
-        if (!response.ok) throw new Error("Failed to fetch repos");
-        const repos = await response.json();
-        grid.innerHTML = "";
-        repos.forEach(repo => {
-          const card = document.createElement("div");
-          card.className = "project";
-          card.dataset.tags = "all"; 
-          card.innerHTML = `
-            <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
-            <p class="desc">${repo.description || "No description"}</p>
-            <div class="meta">
-              <span class="stars">⭐ ${repo.stargazers_count}</span>
-              <span>🍴 ${repo.forks_count}</span>
-            </div>
-          `;
-          grid.appendChild(card);
-        });
-      } catch (err) {
-        grid.innerHTML = `<p>Error loading repos: ${err.message}</p>`;
-      }
-    }
-    fetchRepos();
-  </script>
+// Search listener
+document.getElementById("q").addEventListener("keypress", function(e) {
+  if (e.key === "Enter") {
+    fetchRepos(this.value.trim());
+  }
+});
+
+// Download template
+function download(filename, content){
+  const el = document.createElement('a');
+  el.setAttribute('href','data:text/plain;charset=utf-8,'+encodeURIComponent(content));
+  el.setAttribute('download',filename);
+  document.body.appendChild(el);
+  el.click();
+  el.remove();
+}
+document.getElementById('newIssueBtn').addEventListener('click',()=>{
+  const tpl = `<!-- ISSUE TEMPLATE -->\n### Summary\nProvide a short description of the issue.\n\n### Steps To Reproduce\n1. \n2. \n3.\n\n### Expected behavior\nDescribe the expected behavior.\n\n### Environment\n- OS: \n- Node: \n\n### Additional context\nAdd any other context about the problem here.`;
+  download('ISSUE_TEMPLATE.md', tpl);
+  alert('ISSUE_TEMPLATE.md downloaded — add it to .github/ISSUE_TEMPLATE/ in your repo.');
+});
+</script>
 </body>
 </html>

@@ -36,24 +36,38 @@ header {
   box-shadow: 0 8px 16px rgba(0,0,0,0.15);
   color: #ffffff;
 }
- section {
+.sections-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* spacing between cards */
+  width: 100%;
   max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
+}
+
+/* All sections same height */
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 1; /* grow equally inside a flex container */
+  min-height: 220px;
+  padding: 24px 20px;
   background: #ffffff;
-  border-radius: 16px;
-  border: 2px solid rgba(0, 128, 128, 0.2); /* subtle teal border */
+  border-radius: 24px;
+  border: 2px solid rgba(0, 128, 128, 0.2);
   box-shadow: 0 4px 12px rgba(0, 128, 128, 0.12), 
-              0 2px 6px rgba(0, 128, 128, 0.06); /* layered shadow */
+              0 2px 6px rgba(0, 128, 128, 0.06);
   transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
 
 section:hover {
-  transform: translateY(-4px);
-  border-color: #008080; /* stronger teal on hover */
-  box-shadow: 0 8px 20px rgba(0, 128, 128, 0.2), 
-              0 4px 10px rgba(0, 128, 128, 0.1);
+  transform: translateY(-6px);
+  border-color: #008080;
+  box-shadow: 0 10px 20px rgba(0, 128, 128, 0.25), 
+              0 5px 12px rgba(0, 128, 128, 0.12);
 }
+
+
 
     h2 {
       color: #006D77;

@@ -399,22 +399,33 @@ header img:hover {
 
 /* Footer */
 footer {
-  background: linear-gradient(135deg, #005f5f 0%, #008080 100%); /* Deep to medium teal gradient */
-  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 20px;
-  border-top-left-radius: 24px;
-  border-top-right-radius: 24px;
-  box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, rgba(0,95,95,0.85) 0%, rgba(0,128,128,0.85) 100%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-family: 'Lucida Sans', sans-serif;
+  padding: 40px 20px;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 -8px 16px rgba(0,0,0,0.15);
+  color: #ffffff;
+
+  width: 100vw;       /* Full screen width */
+  margin-left: calc(-50vw + 50%); /* Align flush with edges */
+  border-radius: 0;   /* Match header (no curve at edges) */
 }
 
 .footer-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   gap: 40px;
-  max-width: 1200px;
-  margin: auto;
+  width: 100%;
+  max-width: 1200px; /* Keeps content neat */
 }
 
 .footer-section {
@@ -423,14 +434,14 @@ footer {
 }
 
 .footer-section h2 {
-  color: #b2f0e6; /* Light mint-teal for headers */
+  color: #b2f0e6;
   font-size: 26px;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
 .footer-section h3 {
-  color: #b2f0e6; /* Same mint-teal for consistency */
+  color: #b2f0e6;
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
@@ -439,7 +450,7 @@ footer {
 .footer-section p {
   font-size: 15px;
   line-height: 1.5;
-  color: #e0f7f5; /* Soft light teal text */
+  color: #e0f7f5;
 }
 
 .footer-section ul {
@@ -453,14 +464,14 @@ footer {
 }
 
 .footer-section a {
-  color: #66d1c6; /* Medium aqua link */
+  color: #66d1c6;
   text-decoration: none;
   font-size: 15px;
   transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
-  color: #b2f0e6; /* Lighter mint hover */
+  color: #b2f0e6;
 }
 
 .social-icons {
@@ -472,19 +483,19 @@ footer {
 
 .social-icons a {
   font-size: 20px;
-  color: #66d1c6; /* Aqua icons */
+  color: #66d1c6;
   transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
-  color: #b2f0e6; /* Mint hover */
+  color: #b2f0e6;
 }
 
 .footer-bottom {
   margin-top: 40px;
   text-align: center;
   font-size: 15px;
-  color: #ccebea; /* Soft grayish teal */
+  color: #ccebea;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   padding-top: 15px;
 }

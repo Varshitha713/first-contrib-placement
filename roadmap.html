@@ -9,10 +9,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background: linear-gradient(to right, #f0f7ff, #ffffff);
-    }
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: linear-gradient(to right, #ccf6c8, #ffffff);
+}
+
     header {
       background: linear-gradient(135deg, #006D77, #83C5BE);
       color: white;
@@ -24,7 +25,18 @@
       max-width: 900px;
       margin: 50px auto;
       position: relative;
+      padding-left: 30px;
     }
+    .timeline::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, #28A6C7, #006D77);
+  border-radius: 2px;
+}
     .step {
       background: linear-gradient(145deg, #ffffff, #e0f7fa);
       margin: 30px 0;
@@ -32,21 +44,22 @@
       padding: 30px;
       box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
       position: relative;
-      border-left: 8px solid #006D77;
+      border-left: 8px solid #28A6C7; 
       transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
       animation: fadeInUp 1s ease-in-out both;
     }
     .step:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 36px rgba(0, 0, 0, 0.25);
-      background: linear-gradient(135deg, #d1f0e3, #ffffff);
-    }
+  transform: translateY(-8px);
+  box-shadow: 0 20px 36px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(135deg, #d1f0e3, #ffffff);
+  border-left-color: #006D77;
+}
     @keyframes fadeInUp {
       0% { opacity: 0; transform: translateY(40px); }
       100% { opacity: 1; transform: translateY(0); }
     }
     .step h2 {
-      color: #006D77;
+        color: #006D77;
       margin-bottom: 12px;
       font-size: 1.5rem;
       transition: color 0.4s ease;

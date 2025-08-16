@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
   <title>Placement Resources</title>
   <link rel="icon" type="image/png" href="./images/favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -14,17 +17,39 @@
 
 <body>
   <header>
-    
-    <div class="main-heading">
-      <img src="images/PR-LOGO.png" width="140" height="120" id="logo">
-      <h1>Welcome to Placement Resources!</h1>
-      <p>Find and share the best resources to help students prepare for the placements</p>
-    </div>
-    <div>
-      <button id="toggle-mode"></button>
-    </div>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <div class="logo">
+          <img src="images/PR-LOGO.png" width="140" height="120" id="logo">
+        </div>
+
+        <!-- Hamburger icon -->
+        <button class="navbar-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+
+        <!-- Navigation Links -->
+
+        <ul class="navbar-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="interviewprep.html">Resources</a></li>
+          <li><a href="roadmap.html">Roadmap</a></li>
+          <li><a href="https://github.com/your-repo-link" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+          </li>
+        </ul>
+
+
+        <!-- Dark/Light Mode Toggle -->
+        <button id="toggle-mode"></button>
+      </div>
+    </nav>
+    <h1>Welcome to Placement Resources!</h1>
+    <h3>Find and share the best resources to help students prepare for the placements</h3>
   </header>
-  <div class ="container">
+  <div class="container">
     <h3>Recommended Resources</h3>
 
     <div class="search-bar">
@@ -42,13 +67,14 @@
           </div>
         </div>
       </div>
-     
+
       <input type="text" id="searchInput" placeholder="Search for resources..." />
-       <div class="search-icon-container">
-    <svg class="search-icon" viewBox="0 0 24 24">
-      <path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-    </svg>
-  </div>
+      <div class="search-icon-container">
+        <svg class="search-icon" viewBox="0 0 24 24">
+          <path
+            d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+        </svg>
+      </div>
     </div>
 
 
@@ -62,45 +88,49 @@
 
     <div class="card" category="coding">
       <h4>Competitive Programming Platform: CodeChef</h4>
-      <p>CodeChef helps programmers enhance their algorithmic thinking and problem-solving skills through a wide variety of time-bound challenges and practice problems.</p>
+      <p>CodeChef helps programmers enhance their algorithmic thinking and problem-solving skills through a wide variety
+        of time-bound challenges and practice problems.</p>
       <a href="https://www.codechef.com">Visit CodeChef</a>
       <p></p>
     </div>
 
     <div class="card" category="learning">
       <h4>Online learning platform: edX</h4>
-      <p>edX is an online learning platform offering free and paid courses, certificates, and degrees from top universities like Harvard and MIT to help you gain skills and advance your career.</p>
+      <p>edX is an online learning platform offering free and paid courses, certificates, and degrees from top
+        universities like Harvard and MIT to help you gain skills and advance your career.</p>
       <a href="https://www.edx.org/">Visit edX</a>
       <p></p>
-     
+
     </div>
 
     <div class="card" category="coding">
       <h4>Competitive coding platform: Codeforces</h4>
-      <p>Codeforces is a competitive programming platform known for regular contests and a vast problem archive to improve algorithmic skills.</p>
-       <a href="https://codeforces.com/">Visit codeforces</a>
+      <p>Codeforces is a competitive programming platform known for regular contests and a vast problem archive to
+        improve algorithmic skills.</p>
+      <a href="https://codeforces.com/">Visit codeforces</a>
       <p></p>
-     
+
     </div>
 
     <div class="card" category="coding">
       <h4>Competitive Coding Contests platform: AtCoder</h4>
-      <p>AtCoder is a popular online competitive programming platform.It is known for its well-structured problems, clear constraints, and strong emphasis on logical thinking.</p>
-       <a href="https://atcoder.jp/">Visit AtCoder</a>
+      <p>AtCoder is a popular online competitive programming platform.It is known for its well-structured problems,
+        clear constraints, and strong emphasis on logical thinking.</p>
+      <a href="https://atcoder.jp/">Visit AtCoder</a>
       <p></p>
     </div>
 
     <div class="card" category="learning">
-      <h4>Learning Git: Git Immersion</h4> 
+      <h4>Learning Git: Git Immersion</h4>
       <p>Git Immersion is a guided tour that helps you learn Git through hands-on labs and practical examples.</p>
-      <a href="https://gitimmersion.com" target="_blank">visit gitimmersion</a> 
+      <a href="https://gitimmersion.com" target="_blank">visit gitimmersion</a>
     </div>
     <div class="card" category="coding">
       <h4>Coding Practice: Frontend Mentor</h4>
       <p>Frontend Mentor offers real-world frontend challenges to improve your HTML, CSS, and JavaScript skills.</p>
       <a href="https://www.frontendmentor.io/">Visit frontend mentor</a>
       <p></p>
-     
+
     </div>
 
     <div class="card" category="documentation">
@@ -108,7 +138,7 @@
       <p>Combines multiple developer documentations in one fast, searchable interface.</p>
       <a href="https://devdocs.io">Visit devdocs</a>
       <p></p>
-     
+
     </div>
 
     <div class="card" category="sql">
@@ -116,7 +146,7 @@
       <p>platform for practing SQL with projects</p>
       <a href="https://www.sqlzoo.net/wiki/SQL_Tutorial">Visit sqlzoo</a>
       <p></p>
-  
+
     </div>
 
     <div class="card" category="coding">
@@ -133,12 +163,12 @@
       <p></p>
     </div>
 
-     <div class="card" category="learning">
+    <div class="card" category="learning">
       <h4>Courses and Certifications: Great Learning</h4>
       <p>Online courses with Certifications</p>
       <a href="https://www.mygreatlearning.com/">Visit Great Learning</a>
       <p></p>
-     </div>
+    </div>
 
     <div class="card" category="learning">
       <h4>Practice and Courses: GeeksForGeeks</h4>
@@ -148,19 +178,24 @@
 
     <div class="card" category="coding">
       <h4>Algorithm Learning: Data Structure Visualization</h4>
-      <p>An interactive resource for visualizing various Data Structures and Algorithms. Perfect for understanding complex concepts through dynamic illustrations.</p>
-      <a href="https://www.cs.usfca.edu/~galles/visualization/Algorithms.html" target="_blank">Visit Data Structures Visualization</a>
+      <p>An interactive resource for visualizing various Data Structures and Algorithms. Perfect for understanding
+        complex concepts through dynamic illustrations.</p>
+      <a href="https://www.cs.usfca.edu/~galles/visualization/Algorithms.html" target="_blank">Visit Data Structures
+        Visualization</a>
     </div>
-    
+
     <div class="card" category="learning">
       <h4>Documentation: Placement ready in 3 months</h4>
-      <p>A comprehensive guide outlining strategies and essential tips to prepare for your placements in just three months.</p>
-      <a href="https://medium.com/@varshini_vijay/placement-ready-in-3-months-bfba2512bee2" target="_blank">Visit Medium</a>
+      <p>A comprehensive guide outlining strategies and essential tips to prepare for your placements in just three
+        months.</p>
+      <a href="https://medium.com/@varshini_vijay/placement-ready-in-3-months-bfba2512bee2" target="_blank">Visit
+        Medium</a>
     </div>
 
     <div class="card" category="learning">
       <h4>Learning: Aptitude Questions and Answers</h4>
-      <p>Curated resources and practice materials to sharpen your quantitative, logical, and verbal aptitude skills for competitive exams and placements.</p>
+      <p>Curated resources and practice materials to sharpen your quantitative, logical, and verbal aptitude skills for
+        competitive exams and placements.</p>
       <a href="https://www.indiabix.com/" target="_blank">Visit indiabix</a>
     </div>
 
@@ -232,27 +267,32 @@
       <p>Comprehensive mock tests for quantitative, logical reasoning, and verbal ability.</p>
       <a href="https://www.youth4work.com/">Visit Aptitude Mock Tests</a>
     </div>
-  <!-- Back to Top Button -->
+    <!-- Back to Top Button -->
 
     <div class="card" category="learning">
       <h4>Courses for programming: UDEMY </h4>
-      <p>Online learning platform offering a vast range of beginner to advanced programming courses across various languages and technologies, taught by industry professionals.</p>
+      <p>Online learning platform offering a vast range of beginner to advanced programming courses across various
+        languages and technologies, taught by industry professionals.</p>
       <a href="https://www.udemy.com/" target="_blank">Visit Udemy</a>
     </div>
 
     <div class="card" category="learning">
-      <h4>Learning technologies from professionals: Coursera  </h4>
-      <p> Global online learning platform that offers university level programming courses and professional certificates from top institutions like Stanford, MIT, and Google, often with hands on projects and peer-reviewed assignments.</p>
+      <h4>Learning technologies from professionals: Coursera </h4>
+      <p> Global online learning platform that offers university level programming courses and professional certificates
+        from top institutions like Stanford, MIT, and Google, often with hands on projects and peer-reviewed
+        assignments.</p>
       <a href="https://www.coursera.org/" target="_blank">Visit Coursera</a>
     </div>
 
 
     <div class="card" category="CTFs">
       <h4> CTF Challenges by PicoCTF </h4>
-      <p> A free, beginner friendly cybersecurity competition and learning platform, featuring capture the flag (CTF) challenges that teach hacking, reverse engineering, cryptography, forensics, and more through interactive problem solving</p>
+      <p> A free, beginner friendly cybersecurity competition and learning platform, featuring capture the flag (CTF)
+        challenges that teach hacking, reverse engineering, cryptography, forensics, and more through interactive
+        problem solving</p>
       <a href="https://picoctf.org/" target="_blank">Visit PicoCTF </a>
     </div>
-  
+
     <div class="card" category="CTFs">
       <h4> Cybersecurity by TryHackMe </h4>
       <p> A gamified platform for learning ethical hacking and cybersecurity through hands on labs and guided paths.</p>
@@ -265,191 +305,207 @@
 
     <div class="card" category="coding">
       <h4>DSA Mastery: Take U Forward (Striver’s Sheet)</h4>
-      <p>Take U Forward offers a curated A2Z DSA Sheet, system design roadmap, and coding tutorials perfect for placement prep. Striver’s approach is structured and widely recommended.</p>
+      <p>Take U Forward offers a curated A2Z DSA Sheet, system design roadmap, and coding tutorials perfect for
+        placement prep. Striver’s approach is structured and widely recommended.</p>
       <a href="https://takeuforward.org/" target="_blank">Visit Take U Forward</a>
     </div>
     <div class="card" category="learning">
       <h4>Web Dev Tutorials: W3Schools</h4>
-      <p>W3Schools offers beginner-friendly tutorials and interactive examples for HTML, CSS, JavaScript, Python, SQL, and more. Great for quick learning and reference.</p>
+      <p>W3Schools offers beginner-friendly tutorials and interactive examples for HTML, CSS, JavaScript, Python, SQL,
+        and more. Great for quick learning and reference.</p>
       <a href="https://www.w3schools.com/" target="_blank">Explore W3Schools</a>
     </div>
     <div class="card" category="learning">
       <h4>Interactive Learning: freeCodeCamp</h4>
-      <p>Offers hands-on coding lessons, certifications, and projects in web development, data science, and more—all for free.</p>
+      <p>Offers hands-on coding lessons, certifications, and projects in web development, data science, and more—all for
+        free.</p>
       <a href="https://www.freecodecamp.org/" target="_blank">Explore freeCodeCamp</a>
     </div>
     <div id="noResultsMessage" class="hidden">
-     No matching resources found. 
-     <dl>Try:</dl>
-  <ul>
-    <li>Changing search terms</li>
-    <li>Selecting different categories</li>
-  </ul>
-</div>
+      No matching resources found.
+      <dl>Try:</dl>
+      <ul>
+        <li>Changing search terms</li>
+        <li>Selecting different categories</li>
+      </ul>
+    </div>
     <!-- Back to Top Button -->
 
 
- 
+
 
     <button id="backToTop" title="Go to top">↑</button>
 
   </div>
-<footer>
-  <div class="footer-container">
-    <!-- Branding -->
-    <div class="footer-section">
-      <h2>first-contrib-placement</h2>
-      <p>
-        A community-driven project to share the best placement and learning resources for BTech students.
-      </p>
-      <div class="social-icons">
-        <a href="https://www.linkedin.com/in/varshitha-macha/" target="blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+  <footer>
+    <div class="footer-container">
+      <!-- Branding -->
+      <div class="footer-section">
+        <h2>first-contrib-placement</h2>
+        <p>
+          A community-driven project to share the best placement and learning resources for BTech students.
+        </p>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/varshitha-macha/" target="blank" rel="noopener noreferrer"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer"><i
+              class="fab fa-github"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="#">Contribute</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="./roadmap.html">Roadmap</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Top Categories -->
+      <div class="footer-section">
+        <h3>Top Categories</h3>
+        <ul>
+          <li><a href="#">DSA Practice</a></li>
+          <li><a href="#">Resume Tips</a></li>
+          <li><a href="./interviewprep.html">Interview Prep</a></li>
+          <li><a href="#">Open Source</a></li>
+          <li><a href="./roadmap.html">Roadmaps</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-section">
+        <h3>Get in Touch</h3>
+        <p><strong>Location:</strong> India</p>
+        <p><strong>Email:</strong> contact@firstcontrib.com</p>
       </div>
     </div>
 
-    <!-- Quick Links -->
-    <div class="footer-section">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="#">Contribute</a></li>
-        <li><a href="#">Resources</a></li>
-        <li><a href="./roadmap.html">Roadmap</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+
+    <div class="footer-bottom">
+      © 2025 All Rights Reserved | Built with ❤️ by the FCP Community
     </div>
+  </footer>
 
-    <!-- Top Categories -->
-    <div class="footer-section">
-      <h3>Top Categories</h3>
-      <ul>
-        <li><a href="#">DSA Practice</a></li>
-        <li><a href="#">Resume Tips</a></li>
-        <li><a href="./interviewprep.html">Interview Prep</a></li>
-        <li><a href="#">Open Source</a></li>
-        <li><a href="./roadmap.html">Roadmaps</a></li>
-      </ul>
-    </div>
+  <script>
+    const navbarToggle = document.querySelector('.navbar-toggle');
+    const navbarMenu = document.querySelector('.navbar-menu');
 
-    <!-- Contact Info -->
-    <div class="footer-section">
-      <h3>Get in Touch</h3>
-      <p><strong>Location:</strong> India</p>
-      <p><strong>Email:</strong> contact@firstcontrib.com</p>
-    </div>
-  </div>
+    navbarToggle.addEventListener('click', () => {
+      navbarToggle.classList.toggle('active');
+      navbarMenu.classList.toggle('active');
+    });
+  </script>
 
 
-  <div class="footer-bottom">
-    © 2025 All Rights Reserved | Built with ❤️ by the FCP Community
-  </div>
-</footer>
+  <script>
 
+    const searchInput = document.getElementById('searchInput');
+    const categoryCheckboxes = document.querySelectorAll('#checkboxContainer input[type="checkbox"]');
+    const cards = document.querySelectorAll('.card');
+    const toggleBtn = document.getElementById("toggle-mode");
+    const backToTopButton = document.getElementById("backToTop");
 
-
-
-<script>
-  const searchInput = document.getElementById('searchInput');
-  const categoryCheckboxes = document.querySelectorAll('#checkboxContainer input[type="checkbox"]');
-  const cards = document.querySelectorAll('.card');
-  const toggleBtn = document.getElementById("toggle-mode");
-  const backToTopButton = document.getElementById("backToTop");
-
-  // 🔍 Search & Filter Logic
-  function searchAndFilter() {
-    const searchText = searchInput.value.toLowerCase();
-    const selectedCategories = Array.from(categoryCheckboxes)
+    // 🔍 Search & Filter Logic
+    function searchAndFilter() {
+      const searchText = searchInput.value.toLowerCase();
+      const selectedCategories = Array.from(categoryCheckboxes)
         .filter(cb => cb.checked)
         .map(cb => cb.value);
-    
-    let hasVisibleCards = false;
 
-    cards.forEach(card => {
+      let hasVisibleCards = false;
+
+      cards.forEach(card => {
         const text = card.textContent.toLowerCase();
         const cardCategory = card.getAttribute('category');
 
         const matchesSearch = text.includes(searchText);
-        const matchesCategory = selectedCategories.length === 0 || 
-                              selectedCategories.includes(cardCategory);
+        const matchesCategory = selectedCategories.length === 0 ||
+          selectedCategories.includes(cardCategory);
 
         if (matchesSearch && matchesCategory) {
-            card.classList.remove("hidden");
-            hasVisibleCards = true;
+          card.classList.remove("hidden");
+          hasVisibleCards = true;
         } else {
-            card.classList.add("hidden");
+          card.classList.add("hidden");
         }
+      });
+
+      // Show/hide no results message
+      const noResultsMsg = document.getElementById('noResultsMessage');
+      if (hasVisibleCards) {
+        noResultsMsg.classList.add("hidden");
+      } else {
+        noResultsMsg.classList.remove("hidden");
+      }
+    }
+
+    // Event Listeners
+    searchInput.addEventListener('input', searchAndFilter);
+    categoryCheckboxes.forEach(cb => cb.addEventListener('change', searchAndFilter));
+
+    // 🌗 Dark Mode
+    window.addEventListener("DOMContentLoaded", () => {
+      const savedMode = localStorage.getItem("mode");
+
+      if (savedMode === "dark") {
+        document.body.classList.add("dark-mode");
+        toggleBtn.textContent = "☀️";
+      } else {
+        document.body.classList.remove("dark-mode");
+        toggleBtn.textContent = "🌙";
+      }
+      searchAndFilter();
     });
 
-    // Show/hide no results message
-    const noResultsMsg = document.getElementById('noResultsMessage');
-    if (hasVisibleCards) {
-        noResultsMsg.classList.add("hidden");
-    } else {
-        noResultsMsg.classList.remove("hidden");
-    }
-}
+    // 🟢 Toggle and Save Mode
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
 
-  // Event Listeners
-  searchInput.addEventListener('input', searchAndFilter);
-  categoryCheckboxes.forEach(cb => cb.addEventListener('change', searchAndFilter));
+      if (document.body.classList.contains("dark-mode")) {
+        toggleBtn.textContent = "☀️";
+        localStorage.setItem("mode", "dark");
+      } else {
+        toggleBtn.textContent = "🌙";
+        localStorage.setItem("mode", "light");
+      }
+    });
 
-  // 🌗 Dark Mode
-  window.addEventListener("DOMContentLoaded", () => {
-    const savedMode = localStorage.getItem("mode");
+    // ⬆️ Back to Top
+    window.onscroll = () => {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        backToTopButton.style.display = "block";
+      } else {
+        backToTopButton.style.display = "none";
+      }
+    };
 
-    if (savedMode === "dark") {
-      document.body.classList.add("dark-mode");
-      toggleBtn.textContent = "☀️";
-    } else {
-      document.body.classList.remove("dark-mode");
-      toggleBtn.textContent = "🌙";
-    }
-    searchAndFilter();
-  });
+    backToTopButton.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
-  // 🟢 Toggle and Save Mode
-  toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
+    // ⬇️ Toggle dropdown
+    const filterToggle = document.getElementById("filterToggle");
+    const filterDropdown = document.querySelector(".filter-dropdown");
+    filterToggle.addEventListener("click", () => {
+      filterDropdown.classList.toggle("open");
+    });
 
-    if (document.body.classList.contains("dark-mode")) {
-      toggleBtn.textContent = "☀️";
-      localStorage.setItem("mode", "dark");
-    } else {
-      toggleBtn.textContent = "🌙";
-      localStorage.setItem("mode", "light");
-    }
-  });
+    // ⛔ Close dropdown if clicked outside
+    window.addEventListener("click", (e) => {
+      if (!filterDropdown.contains(e.target)) {
+        filterDropdown.classList.remove("open");
+      }
+    });
 
-  // ⬆️ Back to Top
-  window.onscroll = () => {
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-      backToTopButton.style.display = "block";
-    } else {
-      backToTopButton.style.display = "none";
-    }
-  };
-
-  backToTopButton.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  // ⬇️ Toggle dropdown
-  const filterToggle = document.getElementById("filterToggle");
-  const filterDropdown = document.querySelector(".filter-dropdown");
-  filterToggle.addEventListener("click", () => {
-    filterDropdown.classList.toggle("open");
-  });
-
-  // ⛔ Close dropdown if clicked outside
-  window.addEventListener("click", (e) => {
-    if (!filterDropdown.contains(e.target)) {
-      filterDropdown.classList.remove("open");
-    }
-  });
-</script>
+  </script>
 
 
 
 </body>
+
 </html>

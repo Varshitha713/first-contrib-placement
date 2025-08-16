@@ -49,6 +49,12 @@ header {
   max-width: 1600px;
 }
 
+.navbar-icons{
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 .logo img {
   height: 90px;
   width: auto;

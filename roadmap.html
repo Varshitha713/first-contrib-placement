@@ -7,120 +7,44 @@
   <link rel="stylesheet" href="./styles/style.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background: linear-gradient(to right, #f0f7ff, #ffffff);
-    }
-    header {
-      background: linear-gradient(135deg, #006D77, #83C5BE);
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
-    }
-    .timeline {
-      max-width: 900px;
-      margin: 50px auto;
-      position: relative;
-    }
-    .step {
-      background: linear-gradient(145deg, #ffffff, #e0f7fa);
-      margin: 30px 0;
-      border-radius: 16px;
-      padding: 30px;
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-      position: relative;
-      border-left: 8px solid #006D77;
-      transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
-      animation: fadeInUp 1s ease-in-out both;
-    }
-    .step:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 36px rgba(0, 0, 0, 0.25);
-      background: linear-gradient(135deg, #d1f0e3, #ffffff);
-    }
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(40px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    .step h2 {
-      color: #006D77;
-      margin-bottom: 12px;
-      font-size: 1.5rem;
-      transition: color 0.4s ease;
-    }
-    .step:hover h2 {
-      color: #004e56;
-    }
-    .step p {
-      line-height: 1.7;
-      color: #333;
-      margin-bottom: 10px;
-      transition: color 0.4s ease;
-    }
-    .step:hover p {
-      color: #222;
-    }
-    .intro-wrapper {
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      display: flex;
-      gap: 20px;
-      padding: 40px 20px;
-    }
-    .intro {
-      flex: 0 0 90%;
-      scroll-snap-align: center;
-      background: linear-gradient(135deg, #f8ffff, #e0f7fa);
-      border-radius: 16px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      padding: 30px;
-      color: #333;
-      animation: fadeIn 1s ease-in-out;
-      transition: transform 0.3s ease;
-    }
-    .intro:hover {
-      transform: scale(1.02);
-    }
-    .intro h2 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-      color: #006D77;
-    }
-    .intro p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-    }
-    .highlight {
-      color: #ff6f61;
-      font-weight: bold;
-    }
-    ul {
-      margin: 10px 0;
-      padding-left: 20px;
-    }
-    ul li::marker {
-      color: #006D77;
-    }
-  </style>
+  
 </head>
 <body>
   <header class="animate__animated animate__fadeInDown">
     <h1>🚀 Placement Preparation Roadmap for Students</h1>
   </header>
 
-  <div class="intro-wrapper animate__animated animate__fadeIn" data-aos="fade-right" data-aos-delay="100">
-    <section class="intro">
-      <h2>✨ Your Journey Begins Here</h2>
-      <p>Welcome to the ultimate roadmap for cracking tech placements! 🎯 Whether you're just getting started or already deep into preparation, this guide will help you <span class="highlight">plan smart, build projects, master interviews, and land your dream job</span>. Think of it as your personal GPS to navigate the world of placements 🚗💼.</p>
-    </section>
-    <section class="intro">
-      <h2>🧭 Why Follow This Roadmap?</h2>
-      <p>Because random learning leads to confusion! This roadmap gives you a <span class="highlight">clear path with milestones</span>, the right resources, and tips that actually work—designed by students who’ve been through it.</p>
-    </section>
+  <div class="intro-sections" data-aos="fade-up">
+    <div class="section-header">
+      <h2 class="section-title">Start Your Placement Journey</h2>
+      <p class="section-subtitle">Your path to success in tech placements starts here</p>
+    </div>
+    
+    <div class="intro-container">
+      <section class="intro-card journey-card" data-aos="fade-right" data-aos-delay="100">
+        <div class="card-header">
+          <div class="icon-wrapper journey-icon">
+            <span class="intro-icon">✨</span>
+          </div>
+          <h2 class="card-title animate__animated animate__fadeInDown">Your Journey Begins Here</h2>
+        </div>
+        <div class="card-content">
+          <p>Welcome to the ultimate roadmap for cracking tech placements! 🎯 Whether you're just getting started or already deep into preparation, this guide will help you <span class="highlight">plan smart, build projects, master interviews, and land your dream job</span>. Think of it as your personal GPS to navigate the world of placements 🚗💼.</p>
+        </div>
+      </section>
+      
+      <section class="intro-card roadmap-card" data-aos="fade-left" data-aos-delay="200">
+        <div class="card-header">
+          <div class="icon-wrapper roadmap-icon">
+            <span class="intro-icon">🧭</span>
+          </div>
+          <h2 class="card-title animate__animated animate__fadeInDown">Why Follow This Roadmap?</h2>
+        </div>
+        <div class="card-content">
+          <p>Because random learning leads to confusion! This roadmap gives you a <span class="highlight">clear path with milestones</span>, the right resources, and tips that actually work—designed by students who've been through it.</p>
+        </div>
+      </section>
+    </div>
   </div>
 
 

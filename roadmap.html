@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ultimate Placement Roadmap</title>
-  <link rel="stylesheet" href="./styles/style.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       background: linear-gradient(to right, #f0f7ff, #ffffff);
     }
+
     header {
       background: linear-gradient(135deg, #006D77, #83C5BE);
       color: white;
@@ -20,11 +23,13 @@
       padding: 40px 20px;
       box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
     }
+
     .timeline {
       max-width: 900px;
       margin: 50px auto;
       position: relative;
     }
+
     .step {
       background: linear-gradient(145deg, #ffffff, #e0f7fa);
       margin: 30px 0;
@@ -36,33 +41,47 @@
       transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
       animation: fadeInUp 1s ease-in-out both;
     }
+
     .step:hover {
       transform: translateY(-8px);
       box-shadow: 0 20px 36px rgba(0, 0, 0, 0.25);
       background: linear-gradient(135deg, #d1f0e3, #ffffff);
     }
+
     @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(40px); }
-      100% { opacity: 1; transform: translateY(0); }
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
+
     .step h2 {
       color: #006D77;
       margin-bottom: 12px;
       font-size: 1.5rem;
       transition: color 0.4s ease;
     }
+
     .step:hover h2 {
       color: #004e56;
     }
+
     .step p {
       line-height: 1.7;
       color: #333;
       margin-bottom: 10px;
       transition: color 0.4s ease;
     }
+
     .step:hover p {
       color: #222;
     }
+
     .intro-wrapper {
       overflow-x: auto;
       scroll-snap-type: x mandatory;
@@ -71,6 +90,7 @@
       gap: 20px;
       padding: 40px 20px;
     }
+
     .intro {
       flex: 0 0 90%;
       scroll-snap-align: center;
@@ -82,65 +102,170 @@
       animation: fadeIn 1s ease-in-out;
       transition: transform 0.3s ease;
     }
+
     .intro:hover {
       transform: scale(1.02);
     }
+
     .intro h2 {
       font-size: 2rem;
       margin-bottom: 10px;
       color: #006D77;
     }
+
     .intro p {
       font-size: 1.1rem;
       line-height: 1.8;
     }
+
     .highlight {
       color: #ff6f61;
       font-weight: bold;
     }
+
     ul {
       margin: 10px 0;
       padding-left: 20px;
     }
+
     ul li::marker {
       color: #006D77;
     }
+    dark-mode {
+      background: #121212 !important;
+      background-color: #121212 !important;
+      color: #F0F0F0 !important;
+    }
+
+    .dark-mode body {
+      background: #121212 !important;
+      background-color: #121212 !important;
+    }
+
+    .dark-mode .navbar {
+      background-color: #1a1a1a !important;
+    }
+
+    .dark-mode .navbar-container .navbar-menu li a {
+      color: #F0F0F0 !important;
+    }
+
+    .dark-mode .navbar-container .navbar-menu li a:hover {
+      color: #28A6C7 !important;
+      background: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .dark-mode header {
+      background: linear-gradient(135deg, #003B42, #5A8A8F) !important;
+      color: #E0F7FA !important;
+    }
+
+    .dark-mode .intro-wrapper {
+      background: transparent !important;
+    }
+
+    .dark-mode .intro {
+      background: rgba(30, 42, 48, 0.8) !important;
+      background-color: #1E2A30 !important;
+      color: #E0E0E0 !important;
+      border: 1px solid #333 !important;
+    }
+
+    .dark-mode .intro h2 {
+      color: #7FDBFF !important;
+    }
+
+    .dark-mode .intro p {
+      color: #B0B0B0 !important;
+    }
+
+    .dark-mode .step {
+      background: rgba(30, 42, 48, 0.9) !important;
+      background-color: #1E2A30 !important;
+      color: #E0E0E0 !important;
+      border-left-color: #7FDBFF !important;
+      border: 1px solid #333 !important;
+    }
+
+    .dark-mode .step:hover {
+      background: rgba(42, 58, 64, 0.9) !important;
+      background-color: #2A3A40 !important;
+    }
+
+    .dark-mode .step h2 {
+      color: #7FDBFF !important;
+    }
+
+    .dark-mode .step:hover h2 {
+      color: #5FCADD !important;
+    }
+
+    .dark-mode .step p {
+      color: #B0B0B0 !important;
+    }
+
+    .dark-mode .step:hover p {
+      color: #E0E0E0 !important;
+    }
+
+    .dark-mode .highlight {
+      color: #ff8a65 !important;
+    }
+
+    .dark-mode ul li::marker {
+      color: #7FDBFF !important;
+    }
+
+    .dark-mode footer {
+      background-color: #004E64 !important;
+      color: #E0F7FA !important;
+    }
+
+    .dark-mode footer a {
+      color: #7FDBFF !important;
+    }
+
+    .dark-mode footer a:hover {
+      color: #5FCADD !important;
+    }
   </style>
 </head>
+
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="navbar-container">
-        <div class="logo">
-          <img src="images/PR-LOGO.png" width="140" height="120" id="logo">
-        </div>
 
-
-        <!-- Navigation Links -->
-
-        <ul class="navbar-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="interviewprep.html">Resources</a></li>
-          <li><a href="roadmap.html">Roadmap</a></li>
-          <li><a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
-          </li>
-        </ul>
-
-        <div class="navbar-icons">
-          <!-- Hamburger icon -->
-          <button class="navbar-toggle">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </button>
-
-
-          <!-- Dark/Light Mode Toggle -->
-          <button id="toggle-mode"></button>
-        </div>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="logo">
+        <img src="images/PR-LOGO.png" width="140" height="120" id="logo">
       </div>
-    </nav>
-  </header>
+
+
+      <!-- Navigation Links -->
+
+      <ul class="navbar-menu">
+        <li><a href="index.html"><i class="fa-solid fa-house-chimney"></i>Home</a></li>
+        <li><a href="interviewprep.html"><i class="fa-solid fa-book"></i>Resources</a></li>
+        <li><a href="roadmap.html"><i class="fa-solid fa-map"></i>Roadmap</a></li>
+        <li><a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github"></i>Github</a>
+        </li>
+      </ul>
+
+      <div class="navbar-icons">
+        <!-- Hamburger icon -->
+        <button class="navbar-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+
+        <!-- Dark/Light Mode Toggle -->
+        <button id="toggle-mode"></button>
+      </div>
+    </div>
+  </nav>
+
   <header class="animate__animated animate__fadeInDown">
     <h1>🚀 Placement Preparation Roadmap for Students</h1>
   </header>
@@ -148,11 +273,16 @@
   <div class="intro-wrapper animate__animated animate__fadeIn" data-aos="fade-right" data-aos-delay="100">
     <section class="intro">
       <h2>✨ Your Journey Begins Here</h2>
-      <p>Welcome to the ultimate roadmap for cracking tech placements! 🎯 Whether you're just getting started or already deep into preparation, this guide will help you <span class="highlight">plan smart, build projects, master interviews, and land your dream job</span>. Think of it as your personal GPS to navigate the world of placements 🚗💼.</p>
+      <p>Welcome to the ultimate roadmap for cracking tech placements! 🎯 Whether you're just getting started or already
+        deep into preparation, this guide will help you <span class="highlight">plan smart, build projects, master
+          interviews, and land your dream job</span>. Think of it as your personal GPS to navigate the world of
+        placements 🚗💼.</p>
     </section>
     <section class="intro">
       <h2>🧭 Why Follow This Roadmap?</h2>
-      <p>Because random learning leads to confusion! This roadmap gives you a <span class="highlight">clear path with milestones</span>, the right resources, and tips that actually work—designed by students who’ve been through it.</p>
+      <p>Because random learning leads to confusion! This roadmap gives you a <span class="highlight">clear path with
+          milestones</span>, the right resources, and tips that actually work—designed by students who’ve been through
+        it.</p>
     </section>
   </div>
 
@@ -161,7 +291,9 @@
 
     <div class="step" data-aos="fade-right">
       <h2>🔰 Step 0: Explore and Set a Goal</h2>
-      <p>Before you begin, understand what roles you want to pursue: Software Engineer, Data Analyst, Backend Developer, Frontend Developer, AI Engineer, etc. Research job descriptions on LinkedIn and Glassdoor to understand expectations.</p>
+      <p>Before you begin, understand what roles you want to pursue: Software Engineer, Data Analyst, Backend Developer,
+        Frontend Developer, AI Engineer, etc. Research job descriptions on LinkedIn and Glassdoor to understand
+        expectations.</p>
       <ul>
         <li>Watch YouTube career roadmap videos (e.g., "Software Engineering Roadmap").</li>
         <li>Read blogs on job trends and skills in demand.</li>
@@ -171,7 +303,8 @@
 
     <div class="step" data-aos="fade-left">
       <h2>🛠 Step 1: Learn a Programming Language</h2>
-      <p>Start with a language used in interviews like <span class="highlight">C++, Java, or Python</span>. Learn syntax, functions, control structures, OOP, and basic problem solving.</p>
+      <p>Start with a language used in interviews like <span class="highlight">C++, Java, or Python</span>. Learn
+        syntax, functions, control structures, OOP, and basic problem solving.</p>
       <ul>
         <li>Recommended resources: Programming with Mosh, Apna College DSA playlist, freeCodeCamp.</li>
         <li>Practice basic problems on HackerRank and CodeChef.</li>
@@ -183,7 +316,8 @@
       <p>DSA is the most important skill for tech placements. Build strong fundamentals.</p>
       <ul>
         <li>Start with arrays, strings, recursion → move to stacks, queues, linked lists, trees, heaps, graphs.</li>
-        <li>Follow a structured sheet like <span class="highlight">Striver’s SDE Sheet</span> or <span class="highlight">Love Babbar 450</span>.</li>
+        <li>Follow a structured sheet like <span class="highlight">Striver’s SDE Sheet</span> or <span
+            class="highlight">Love Babbar 450</span>.</li>
         <li>Use LeetCode, GFG, and Codeforces for practice.</li>
         <li>Time-bound daily practice: 2-3 problems/day for 4-6 months.</li>
       </ul>
@@ -249,56 +383,123 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>AOS.init({ once: true, duration: 1000 });</script>
   <footer>
-  <div class="footer-container">
-    <!-- Branding -->
-    <div class="footer-section">
-      <h2>first-contrib-placement</h2>
-      <p>
-        A community-driven project to share the best placement and learning resources for BTech students.
-      </p>
-      <div class="social-icons">
-        <a href="https://www.linkedin.com/in/varshitha-macha/" target="blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+    <div class="footer-container">
+      <!-- Branding -->
+      <div class="footer-section">
+        <h2>first-contrib-placement</h2>
+        <p>
+          A community-driven project to share the best placement and learning resources for BTech students.
+        </p>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/varshitha-macha/" target="blank" rel="noopener noreferrer"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer"><i
+              class="fab fa-github"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="#">Contribute</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="./roadmap.html">Roadmap</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Top Categories -->
+      <div class="footer-section">
+        <h3>Top Categories</h3>
+        <ul>
+          <li><a href="#">DSA Practice</a></li>
+          <li><a href="#">Resume Tips</a></li>
+          <li><a href="./interviewprep.html">Interview Prep</a></li>
+          <li><a href="#">Open Source</a></li>
+          <li><a href="./roadmap.html">Roadmaps</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-section">
+        <h3>Get in Touch</h3>
+        <p><strong>Location:</strong> India</p>
+        <p><strong>Email:</strong> contact@firstcontrib.com</p>
       </div>
     </div>
 
-    <!-- Quick Links -->
-    <div class="footer-section">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="#">Contribute</a></li>
-        <li><a href="#">Resources</a></li>
-        <li><a href="./roadmap.html">Roadmap</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+
+    <div class="footer-bottom">
+      © 2025 All Rights Reserved | Built with ❤️ by the FCP Community
     </div>
+  </footer>
+  <script>
+    // Navbar toggle functionality
+    const navbarToggle = document.querySelector('.navbar-toggle');
+    const navbarMenu = document.querySelector('.navbar-menu');
+    const toggleBtn = document.getElementById("toggle-mode");
 
-    <!-- Top Categories -->
-    <div class="footer-section">
-      <h3>Top Categories</h3>
-      <ul>
-        <li><a href="#">DSA Practice</a></li>
-        <li><a href="#">Resume Tips</a></li>
-        <li><a href="./interviewprep.html">Interview Prep</a></li>
-        <li><a href="#">Open Source</a></li>
-        <li><a href="./roadmap.html">Roadmaps</a></li>
-      </ul>
-    </div>
+    // Hamburger menu toggle
+    navbarToggle.addEventListener('click', () => {
+      navbarToggle.classList.toggle('active');
+      navbarMenu.classList.toggle('active');
+    });
 
-    <!-- Contact Info -->
-    <div class="footer-section">
-      <h3>Get in Touch</h3>
-      <p><strong>Location:</strong> India</p>
-      <p><strong>Email:</strong> contact@firstcontrib.com</p>
-    </div>
-  </div>
+    // Close menu when clicking on a link (for mobile)
+    const menuLinks = navbarMenu.querySelectorAll('a');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navbarToggle.classList.remove('active');
+        navbarMenu.classList.remove('active');
+      });
+    });
 
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!navbarToggle.contains(event.target) && !navbarMenu.contains(event.target)) {
+        navbarToggle.classList.remove('active');
+        navbarMenu.classList.remove('active');
+      }
+    });
 
-  <div class="footer-bottom">
-    © 2025 All Rights Reserved | Built with ❤️ by the FCP Community
-  </div>
-</footer>
+    // Dark/Light mode functionality
+    window.addEventListener("DOMContentLoaded", () => {
+      const savedMode = localStorage.getItem("mode");
+
+      if (savedMode === "dark") {
+        document.body.classList.add("dark-mode");
+        toggleBtn.textContent = "☀️";
+      } else {
+        document.body.classList.remove("dark-mode");
+        toggleBtn.textContent = "🌙";
+      }
+    });
+
+    // Toggle and Save Mode
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+
+      if (document.body.classList.contains("dark-mode")) {
+        toggleBtn.textContent = "☀️";
+        localStorage.setItem("mode", "dark");
+      } else {
+        toggleBtn.textContent = "🌙";
+        localStorage.setItem("mode", "light");
+      }
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 880) {
+        // Reset mobile menu on desktop
+        navbarToggle.classList.remove('active');
+        navbarMenu.classList.remove('active');
+      }
+    });
+  </script>
 
 </body>
+
 </html>

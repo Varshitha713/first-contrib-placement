@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Interview Preparation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="./styles/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   <style>
@@ -12,12 +14,14 @@
       margin: 0;
       background: linear-gradient(to bottom right, #f7f9fc, #e0f2f1);
     }
+
     header {
       background: linear-gradient(to right, #006D77, #00ACC1);
       color: white;
       text-align: center;
       padding: 40px 20px;
     }
+
     section {
       max-width: 900px;
       margin: 40px auto;
@@ -27,60 +31,124 @@
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     section:hover {
       transform: scale(1.02);
       box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
     }
+
     h2 {
       color: #006D77;
     }
+
     ul {
       margin-left: 20px;
       line-height: 1.8;
     }
+
     a {
       color: #007c91;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
+    /* Dark Mode Styles */
+    .dark-mode {
+      background-color: #121212 !important;
+      color: #F0F0F0 !important;
+    }
+
+    .dark-mode .navbar {
+      background-color: #1a1a1a !important;
+    }
+
+    .dark-mode .navbar-container .navbar-menu li a {
+      color: #F0F0F0 !important;
+    }
+
+    .dark-mode .navbar-container .navbar-menu li a:hover {
+      color: #28A6C7 !important;
+      background: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .dark-mode header {
+      background: linear-gradient(to right, #003B42, #006B73) !important;
+      color: #E0F7FA !important;
+    }
+
+    .dark-mode section {
+      background-color: #1E2A30 !important;
+      color: #E0E0E0 !important;
+    }
+
+    .dark-mode section h2 {
+      color: #7FDBFF !important;
+    }
+
+    .dark-mode section p {
+      color: #B0B0B0 !important;
+    }
+
+    .dark-mode section a {
+      color: #5FCADD !important;
+    }
+
+    .dark-mode section a:hover {
+      color: #7FDBFF !important;
+      text-decoration: underline !important;
+    }
+
+    .dark-mode footer {
+      background-color: #004E64 !important;
+      color: #E0F7FA !important;
+    }
+
+    .dark-mode footer a {
+      color: #7FDBFF !important;
+    }
+
+    .dark-mode footer a:hover {
+      color: #5FCADD !important;
+    }
+    
   </style>
 </head>
+
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="navbar-container">
-        <div class="logo">
-          <img src="images/PR-LOGO.png" width="140" height="120" id="logo">
-        </div>
-
-
-        <!-- Navigation Links -->
-
-        <ul class="navbar-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="interviewprep.html">Resources</a></li>
-          <li><a href="roadmap.html">Roadmap</a></li>
-          <li><a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
-          </li>
-        </ul>
-
-        <div class="navbar-icons">
-          <!-- Hamburger icon -->
-          <button class="navbar-toggle">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </button>
-
-
-          <!-- Dark/Light Mode Toggle -->
-          <button id="toggle-mode"></button>
-        </div>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="logo">
+        <img src="images/PR-LOGO.png" width="140" height="120" id="logo">
       </div>
-    </nav>
-  </header>
+
+
+      <!-- Navigation Links -->
+
+      <ul class="navbar-menu">
+        <li><a href="index.html"><i class="fa-solid fa-house-chimney"></i>Home</a></li>
+        <li><a href="interviewprep.html"><i class="fa-solid fa-book"></i>Resources</a></li>
+        <li><a href="roadmap.html"><i class="fa-solid fa-map"></i>Roadmap</a></li>
+        <li><a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github"></i>Github</a>
+        </li>
+      </ul>
+
+      <div class="navbar-icons">
+        <!-- Hamburger icon -->
+        <button class="navbar-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+
+        <!-- Dark/Light Mode Toggle -->
+        <button id="toggle-mode"></button>
+      </div>
+    </div>
+  </nav>
   <header data-aos="fade-down">
     <h1>💼 Interview Preparation Central</h1>
     <p>Everything you need to ace coding & HR interviews!</p>
@@ -89,26 +157,34 @@
   <section data-aos="zoom-in-up">
     <h2>🔧 Technical Interview Practice</h2>
     <ul>
-      <li><a href="https://leetcode.com" target="_blank">LeetCode</a> – Practice with real coding interview questions.</li>
-      <li><a href="https://www.geeksforgeeks.org/tag/technical-interview-questions/" target="_blank">GeeksforGeeks – Technical Q&A</a></li>
-      <li><a href="https://interviewbit.com" target="_blank">InterviewBit</a> – Guided practice with mock interview flow.</li>
+      <li><a href="https://leetcode.com" target="_blank">LeetCode</a> – Practice with real coding interview questions.
+      </li>
+      <li><a href="https://www.geeksforgeeks.org/tag/technical-interview-questions/" target="_blank">GeeksforGeeks –
+          Technical Q&A</a></li>
+      <li><a href="https://interviewbit.com" target="_blank">InterviewBit</a> – Guided practice with mock interview
+        flow.</li>
     </ul>
   </section>
 
   <section data-aos="zoom-in-up" data-aos-delay="100">
     <h2>🗣️ HR/Behavioral Interview Tips</h2>
     <ul>
-      <li><a href="https://www.indeed.com/career-advice/interviewing/top-interview-questions-and-answers" target="_blank">Common HR Questions – Indeed</a></li>
-      <li><a href="https://www.youtube.com/playlist?list=PLV8vIYTIdSnYBZQXaDgJrOnl7tOX0fgUe" target="_blank">YouTube Playlist: HR Mock Interviews</a></li>
-      <li><a href="https://www.linkedin.com/pulse/mastering-behavioral-interviews-star-method-guide-jennifer-chen" target="_blank">Using STAR Method for Behavioral Questions</a></li>
+      <li><a href="https://www.indeed.com/career-advice/interviewing/top-interview-questions-and-answers"
+          target="_blank">Common HR Questions – Indeed</a></li>
+      <li><a href="https://www.youtube.com/playlist?list=PLV8vIYTIdSnYBZQXaDgJrOnl7tOX0fgUe" target="_blank">YouTube
+          Playlist: HR Mock Interviews</a></li>
+      <li><a href="https://www.linkedin.com/pulse/mastering-behavioral-interviews-star-method-guide-jennifer-chen"
+          target="_blank">Using STAR Method for Behavioral Questions</a></li>
     </ul>
   </section>
 
   <section data-aos="zoom-in-up" data-aos-delay="200">
     <h2>🎥 Video-Based Learning</h2>
     <ul>
-      <li><a href="https://www.youtube.com/c/ClémentMihailescu" target="_blank">Clément Mihailescu – Former Google Engineer</a></li>
-      <li><a href="https://www.youtube.com/@ApnaCollegeOfficial" target="_blank">Apna College – Placement Prep Series</a></li>
+      <li><a href="https://www.youtube.com/c/ClémentMihailescu" target="_blank">Clément Mihailescu – Former Google
+          Engineer</a></li>
+      <li><a href="https://www.youtube.com/@ApnaCollegeOfficial" target="_blank">Apna College – Placement Prep
+          Series</a></li>
       <li><a href="https://www.youtube.com/@codebasics" target="_blank">Codebasics – System Design + HR</a></li>
     </ul>
   </section>
@@ -133,65 +209,133 @@
   <section data-aos="flip-up" data-aos-delay="500">
     <h2>📚 Bonus: Behavioral Interview Cheat Sheet</h2>
     <ul>
-      <li><a href="https://hbr.org/2020/01/what-really-makes-a-good-interview-question" target="_blank">What Makes a Good Interview Question – HBR</a></li>
-      <li><a href="https://www.themuse.com/advice/30-behavioral-interview-questions-you-should-be-ready-to-answer" target="_blank">30 Behavioral Questions – The Muse</a></li>
+      <li><a href="https://hbr.org/2020/01/what-really-makes-a-good-interview-question" target="_blank">What Makes a
+          Good Interview Question – HBR</a></li>
+      <li><a href="https://www.themuse.com/advice/30-behavioral-interview-questions-you-should-be-ready-to-answer"
+          target="_blank">30 Behavioral Questions – The Muse</a></li>
     </ul>
   </section>
-   <footer>
-  <div class="footer-container">
-    <!-- Branding -->
-    <div class="footer-section">
-      <h2>first-contrib-placement</h2>
-      <p>
-        A community-driven project to share the best placement and learning resources for BTech students.
-      </p>
-      <div class="social-icons">
-        <a href="https://www.linkedin.com/in/varshitha-macha/" target="blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+  <footer>
+    <div class="footer-container">
+      <!-- Branding -->
+      <div class="footer-section">
+        <h2>first-contrib-placement</h2>
+        <p>
+          A community-driven project to share the best placement and learning resources for BTech students.
+        </p>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/varshitha-macha/" target="blank" rel="noopener noreferrer"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer"><i
+              class="fab fa-github"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="#">Contribute</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="./roadmap.html">Roadmap</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Top Categories -->
+      <div class="footer-section">
+        <h3>Top Categories</h3>
+        <ul>
+          <li><a href="#">DSA Practice</a></li>
+          <li><a href="#">Resume Tips</a></li>
+          <li><a href="./interviewprep.html">Interview Prep</a></li>
+          <li><a href="#">Open Source</a></li>
+          <li><a href="./roadmap.html">Roadmaps</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-section">
+        <h3>Get in Touch</h3>
+        <p><strong>Location:</strong> India</p>
+        <p><strong>Email:</strong> contact@firstcontrib.com</p>
       </div>
     </div>
 
-    <!-- Quick Links -->
-    <div class="footer-section">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="#">Contribute</a></li>
-        <li><a href="#">Resources</a></li>
-        <li><a href="./roadmap.html">Roadmap</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+
+    <div class="footer-bottom">
+      © 2025 All Rights Reserved | Built with ❤️ by the FCP Community
     </div>
-
-    <!-- Top Categories -->
-    <div class="footer-section">
-      <h3>Top Categories</h3>
-      <ul>
-        <li><a href="#">DSA Practice</a></li>
-        <li><a href="#">Resume Tips</a></li>
-        <li><a href="./interviewprep.html">Interview Prep</a></li>
-        <li><a href="#">Open Source</a></li>
-        <li><a href="./roadmap.html">Roadmaps</a></li>
-      </ul>
-    </div>
-
-    <!-- Contact Info -->
-    <div class="footer-section">
-      <h3>Get in Touch</h3>
-      <p><strong>Location:</strong> India</p>
-      <p><strong>Email:</strong> contact@firstcontrib.com</p>
-    </div>
-  </div>
-
-
-  <div class="footer-bottom">
-    © 2025 All Rights Reserved | Built with ❤️ by the FCP Community
-  </div>
-</footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
     AOS.init({ once: true, duration: 1000 });
   </script>
+  <script>
+    // Navbar toggle functionality
+    const navbarToggle = document.querySelector('.navbar-toggle');
+    const navbarMenu = document.querySelector('.navbar-menu');
+    const toggleBtn = document.getElementById("toggle-mode");
 
+    // Hamburger menu toggle
+    navbarToggle.addEventListener('click', () => {
+      navbarToggle.classList.toggle('active');
+      navbarMenu.classList.toggle('active');
+    });
+
+    // Close menu when clicking on a link (for mobile)
+    const menuLinks = navbarMenu.querySelectorAll('a');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navbarToggle.classList.remove('active');
+        navbarMenu.classList.remove('active');
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!navbarToggle.contains(event.target) && !navbarMenu.contains(event.target)) {
+        navbarToggle.classList.remove('active');
+        navbarMenu.classList.remove('active');
+      }
+    });
+
+    // Dark/Light mode functionality
+    window.addEventListener("DOMContentLoaded", () => {
+      const savedMode = localStorage.getItem("mode");
+
+      if (savedMode === "dark") {
+        document.body.classList.add("dark-mode");
+        toggleBtn.textContent = "☀️";
+      } else {
+        document.body.classList.remove("dark-mode");
+        toggleBtn.textContent = "🌙";
+      }
+    });
+
+    // Toggle and Save Mode
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+
+      if (document.body.classList.contains("dark-mode")) {
+        toggleBtn.textContent = "☀️";
+        localStorage.setItem("mode", "dark");
+      } else {
+        toggleBtn.textContent = "🌙";
+        localStorage.setItem("mode", "light");
+      }
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 880) {
+        // Reset mobile menu on desktop
+        navbarToggle.classList.remove('active');
+        navbarMenu.classList.remove('active');
+      }
+    });
+  </script>
 </body>
+
 </html>

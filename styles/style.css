@@ -20,7 +20,7 @@ header {
   align-items: center;
   text-align: center;
   background-color: #006D77;
-  font-family:'Lucida Sans', sans-serif;
+  font-family:'Roboto', sans-serif;
   color: #FFFFFF;
   padding: 16px 10px;
   font-size: 1.5rem;
@@ -35,7 +35,8 @@ header {
   width: 100%;
   position: sticky;
   top: 0;
-  background-color: #006D77;
+  background-color: #004E64;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   backdrop-filter: blur(10px);
   z-index: 1000;
 }
@@ -65,6 +66,7 @@ header {
   text-align: center;
   gap: 1.5rem;
   list-style: none;
+  transform: all 0.3s ease;
 }
 
 .navbar-container .navbar-menu li a{
@@ -82,6 +84,10 @@ header {
 .navbar-container .navbar-menu li a:hover{
   color: #28A6C7;
   background: white;
+}
+
+.navbar-menu li a i{
+  margin-right: 8px;
 }
 
 .navbar-toggle{
@@ -138,6 +144,10 @@ header {
     z-index: 999;
   }
 
+  #toggle-mode{
+    display: block;
+  }
+
   .navbar-toggle.active .bar:nth-child(2){
     opacity: 0;
   }
@@ -159,9 +169,21 @@ header {
   .navbar-container .navbar-menu li a{
     font-size: 1.2rem;
     padding: 3px 15px;
+    filter: brightness(1) invert(0);
   }
 }
 
+.github-link{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.github-icon{
+  height: 24px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
 /* Dark Mode */
 .dark-mode {
   background-color: #121212;

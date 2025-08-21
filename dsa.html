@@ -1,0 +1,312 @@
+<!-- File 1: dsa-roadmap.html — Improved, expanded content, animations, full-length topic cards with live links -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DSA Roadmap — Topic-wise Practice</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles/style.css" />
+  <style>
+    :root{
+      --teal-1: #007c91;
+      --teal-2: #004d40;
+      --bg-1: #e0f7fa;
+      --bg-2: #b2dfdb;
+      --card-radius: 14px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: 'Roboto', sans-serif; background: linear-gradient(90deg,var(--bg-1),var(--bg-2)); color:#06323b;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* Header */
+    header{background:linear-gradient(135deg,var(--teal-1),var(--teal-2)); color:#fff; padding:28px 20px; text-align:center; box-shadow:0 8px 30px rgba(0,0,0,0.12)}
+    header h1{margin:0;font-size:28px;letter-spacing:0.2px}
+    header p{margin:6px 0 0;opacity:0.95}
+
+    /* Container & grid */
+    .wrap{max-width:1180px;margin:28px auto;padding:0 20px}
+    .controls{display:flex;gap:12px;align-items:center;justify-content:space-between;margin-bottom:18px}
+    .search{flex:1;max-width:520px}
+    .search input{width:100%;padding:10px 12px;border-radius:8px;border:1px solid rgba(0,0,0,0.08)}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+
+    /* Card */
+    .card{background:#fff;border-radius:var(--card-radius);padding:18px;box-shadow:0 8px 20px rgba(3,30,30,0.06);overflow:hidden;position:relative;transform:translateY(20px);opacity:0;transition:transform .25s ease,box-shadow .2s ease}
+    .card:hover{transform:translateY(0) scale(1.02);box-shadow:0 18px 40px rgba(3,30,30,0.12)}
+
+    .badge{display:inline-block;padding:6px 10px;border-radius:100px;background:linear-gradient(90deg,var(--teal-1),var(--teal-2));color:#fff;font-size:12px;margin-bottom:8px}
+    h2{margin:6px 0 8px;font-size:20px;color:var(--teal-1)}
+    p.lead{margin:0 0 8px;color:#214b4f}
+
+    .meta{display:flex;gap:12px;flex-wrap:wrap;font-size:13px;color:#2f5a5f;margin-top:8px}
+    .meta span{background:rgba(3,30,30,0.03);padding:6px 8px;border-radius:8px}
+
+    .links{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
+    .links a{padding:8px 12px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);text-decoration:none;font-weight:600;color:var(--teal-1);background:linear-gradient(180deg,rgba(0,0,0,0.00),rgba(0,0,0,0.00));}
+
+    .read{display:inline-block;margin-top:12px;color:var(--teal-1);cursor:pointer;font-weight:700}
+
+    .more{display:none;margin-top:12px;color:#334d4f;line-height:1.5}
+
+    /* stagger animation (will be toggled by JS onload) */
+    .visible{animation:cardIn .6s cubic-bezier(.2,.9,.2,1) forwards}
+    @keyframes cardIn{0%{opacity:0;transform:translateY(30px) scale(.98)}50%{opacity:1}100%{opacity:1;transform:translateY(0) scale(1)}}
+
+    /* full-width section for roadmap timeline */
+    .timeline{margin:28px 0;padding:16px;background:linear-gradient(90deg, rgba(0,124,145,0.06), rgba(0,77,64,0.03));border-radius:12px}
+    .timeline h3{margin:0 0 10px;color:var(--teal-2)}
+    .timeline ol{margin:0;padding-left:18px}
+
+    /* responsiveness tweaks */
+    @media (max-width:520px){header h1{font-size:20px}.card{padding:14px}.links a{font-size:13px;padding:7px 10px}}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>DSA Roadmap — Topic-wise Practice & Resources</h1>
+    <p>In-depth topic cards, live links, practice sets and how to apply each concept in interviews & projects.</p>
+  </header>
+
+  <main class="wrap">
+    <div class="controls">
+      <div class="search"><input id="filter" placeholder="Search topics (e.g. trees, dp, graphs)..." /></div>
+    
+    </div>
+
+    <section class="timeline">
+      <h3>Structured Roadmap (Suggested order)</h3>
+      <ol>
+        <li>Basics: Arrays, Strings, Pointers</li>
+        <li>Linear DS: Linked Lists, Stacks, Queues, Hash Tables</li>
+        <li>Trees & Recursion: Binary Trees, BSTs</li>
+        <li>Graphs & Shortest Paths</li>
+        <li>Dynamic Programming & Greedy</li>
+        <li>Advanced DS: Segment Tree, Fenwick, Tries</li>
+        <li>System Design & Optimization</li>
+      </ol>
+    </section>
+
+    <div class="grid" id="grid">
+
+      <!-- Arrays -->
+      <article class="card" data-tags="arrays,beginner" style="--i:1">
+        <div class="badge">Beginner</div>
+        <h2>Arrays</h2>
+        <p class="lead">Core operations, two-pointer patterns, sliding window and binary search — foundation for many interview problems.</p>
+        <div class="meta"><span>Pattern: Two Pointers</span><span>Difficulty: Easy→Medium</span><span>Time: 1–2 weeks</span></div>
+        <div class="links">
+          <a href="https://leetcode.com/tag/array/" target="_blank">LeetCode — Arrays</a>
+          <a href="https://www.geeksforgeeks.org/array-data-structure/" target="_blank">GFG Arrays</a>
+          <a href="https://www.educative.io/courses/grokking-the-coding-interview/xK0q7" target="_blank">Grokking Patterns</a>
+        </div>
+        <div class="read" onclick="toggle(this)">Read more »</div>
+        <div class="more">
+          Start with traversal, indexing and basic sorting. Practice problems: two-sum variants, subarray sums, sliding window (max subarray), merge sorted arrays. Project idea: build a small analytics dashboard that computes rolling aggregates (moving average, max-window) to connect arrays with real data.
+        </div>
+      </article>
+
+      <!-- Strings -->
+      <article class="card" data-tags="strings,beginner" style="--i:2">
+        <div class="badge">Beginner</div>
+        <h2>Strings</h2>
+        <p class="lead">Manipulation, parsing, pattern matching and hashing. Important for text-processing tasks and many coding questions.</p>
+        <div class="meta"><span>Pattern: Sliding Window, Hash</span><span>Difficulty: Easy→Medium</span><span>Time: 1 week</span></div>
+        <div class="links">
+          <a href="https://leetcode.com/tag/string/" target="_blank">LeetCode — Strings</a>
+          <a href="https://www.geeksforgeeks.org/string-data-structure/" target="_blank">GFG Strings</a>
+        </div>
+        <div class="read" onclick="toggle(this)">Read more »</div>
+        <div class="more">Common tasks: reverse, rotate, find substrings, anagram detection, palindrome checks, and regex-like parsing. Build exercises: detect repeated substrings, implement strstr, and design a small tokenizer for CSV-like input.</div>
+      </article>
+
+      <!-- Linked Lists -->
+      <article class="card" data-tags="linkedlist,intermediate" style="--i:3">
+        <div class="badge">Intermediate</div>
+        <h2>Linked Lists</h2>
+        <p class="lead">Pointers and memory-shape problems — helpful for understanding low-level data movement and in-place algorithms.</p>
+        <div class="meta"><span>Pattern: Fast & Slow Pointers</span><span>Difficulty: Easy→Medium</span><span>Time: 1 week</span></div>
+        <div class="links"><a href="https://leetcode.com/tag/linked-list/" target="_blank">LeetCode — Linked Lists</a></div>
+        <div class="read" onclick="toggle(this)">Read more »</div>
+        <div class="more">Implement list operations from scratch: insertion, deletion, reverse, detect cycles (Floyd’s), merge sorted lists. Interview tip: write clean pointer diagrams before you code.</div>
+      </article>
+
+      <!-- Stacks & Queues -->
+      <article class="card" data-tags="stacks,queues,intermediate" style="--i:4">
+        <div class="badge">Intermediate</div>
+        <h2>Stacks & Queues</h2>
+        <p class="lead">LIFO and FIFO structures used in parsing, backtracking and level-order traversals.</p>
+        <div class="meta"><span>Pattern: Monotonic Stack</span><span>Difficulty: Easy</span><span>Time: 3–5 days</span></div>
+        <div class="links">
+          <a href="https://leetcode.com/tag/stack/" target="_blank">LeetCode — Stack</a>
+          <a href="https://leetcode.com/tag/queue/" target="_blank">LeetCode — Queue</a>
+        </div>
+        <div class="read" onclick="toggle(this)">Read more »</div>
+        <div class="more">Use cases: expression evaluation, browser history (stack), sliding window (deque). Practice monotonic stack problems: next greater element, largest rectangle in histogram.</div>
+      </article>
+
+      <!-- Trees -->
+      <article class="card" data-tags="trees,intermediate" style="--i:5">
+        <div class="badge">Intermediate</div>
+        <h2>Trees & BSTs</h2>
+        <p class="lead">Tree traversals, recursion, balanced trees and binary search trees — essential for hierarchical data and search operations.</p>
+        <div class="meta"><span>Pattern: DFS/BFS</span><span>Difficulty: Medium</span><span>Time: 1–2 weeks</span></div>
+        <div class="links"><a href="https://leetcode.com/tag/tree/" target="_blank">LeetCode — Trees</a>
+          <a href="https://www.educative.io/courses/grokking-the-coding-interview/m2r5G" target="_blank">Grokking — Trees</a>
+        </div>
+        <div class="read" onclick="toggle(this)">Read more »</div>
+        <div class="more">Practice traversal variants (pre/in/post-order), level-order, find LCA, serialize/deserialize tree. Advanced: segment trees, AVL/Red-Black trees for balanced operations.</div>
+      </article>
+
+      <!-- Graphs -->
+      <article class="card" data-tags="graphs,advanced" style="--i:6">
+        <div class="badge">Advanced</div>
+        <h2>Graphs</h2>
+        <p class="lead">Model relations and networks — learn traversal, connectivity, and optimization algorithms.</p>
+        <div class="meta"><span>Pattern: BFS/DFS, Dijkstra</span><span>Difficulty: Medium→Hard</span><span>Time: 2–3 weeks</span></div>
+        <div class="links">
+          <a href="https://cp-algorithms.com/graph/" target="_blank">CP-Algorithms — Graphs</a>
+          <a href="https://leetcode.com/tag/graph/" target="_blank">LeetCode — Graphs</a>
+        </div>
+        <div class="read" onclick="toggle(this)">Read more »</div>
+        <div class="more">Key topics: directed vs undirected, weighted graphs, shortest path (Dijkstra/Bellman-Ford), MST (Kruskal/Prim), topological sort, SCCs. Build: route planner or recommendation graph to apply concepts.</div>
+      </article>
+
+      <!-- Dynamic Programming -->
+      <article class="card" data-tags="dp,advanced" style="--i:7">
+        <div class="badge">Advanced</div>
+        <h2>Dynamic Programming</h2>
+        <p class="lead">Train state design, overlapping subproblems, and optimization strategies — a must for many hard problems.</p>
+        <div class="meta"><span>Pattern: Memoization/Tabulation</span><span>Difficulty: Medium→Hard</span><span>Time: 3–4 weeks</span></div>
+        <div class="links"><a href="https://leetcode.com/tag/dynamic-programming/" target="_blank">LeetCode — DP</a>
+          <a href="https://www.hackerrank.com/domains/tutorials/10-days-of-dp" target="_blank">HackerRank DP</a>
+        </div>
+        <div class="read" onclick="toggle(this)">Read more »</div>
+        <div class="more">Start with classic problems (Fibonacci variants, knapsack, LIS). Learn to identify DP states and transitions. Tip: draw DP tables and reduce dimensions when possible.</div>
+      </article>
+
+      <!-- Advanced DS -->
+      <article class="card" data-tags="advanced,ds" style="--i:8">
+        <div class="badge">Expert</div>
+        <h2>Advanced Data Structures</h2>
+        <p class="lead">Fenwick trees, Segment trees, Tries, Suffix arrays and advanced hashing techniques.</p>
+        <div class="meta"><span>Pattern: Range Queries</span><span>Difficulty: Hard</span><span>Time: 2+ weeks</span></div>
+        <div class="links">
+          <a href="https://cp-algorithms.com/data_structures/fenwick.html" target="_blank">Fenwick (BIT)</a>
+          <a href="https://cp-algorithms.com/data_structures/segment_tree.html" target="_blank">Segment Tree</a>
+        </div>
+        <div class="read" onclick="toggle(this)">Read more »</div>
+        <div class="more">These structures help with efficient range queries and updates — useful in competitive programming and high-performance systems. Implement them and apply to frequency/range sum problems.</div>
+      </article>
+
+      <!-- System Design (mini) -->
+      <article class="card" data-tags="system-design" style="--i:9">
+        <div class="badge">System</div>
+        <h2>System Design Basics</h2>
+        <p class="lead">Intro to scalability, caching, and data partitioning — useful when moving from algorithms to building real systems.</p>
+        <div class="meta"><span>Pattern: Scale & Cache</span><span>Difficulty: Medium</span><span>Time: 1–2 weeks</span></div>
+        <div class="links"><a href="https://github.com/donnemartin/system-design-primer" target="_blank">System Design Primer</a>
+          <a href="https://www.educative.io/courses/grokking-the-system-design-interview" target="_blank">Grokking — System Design</a>
+        </div>
+        <div class="read" onclick="toggle(this)">Read more »</div>
+        <div class="more">Practice: design a URL shortener, chat service or image store. Focus on APIs, data models, scaling strategies (sharding, caching) and trade-offs.</div>
+      </article>
+
+    </div>
+
+    <!-- Footer CTA -->
+    <div style="margin-top:26px;text-align:center;color:#0b3d41">
+      <p style="margin:0;font-weight:700">Want a printable study plan?</p>
+      <p style="margin:4px 0 0">Download a weekly tracker and checklist to follow this roadmap.</p>
+      <div style="margin-top:12px"><a href="#" style="padding:10px 14px;border-radius:12px;background:linear-gradient(90deg,var(--teal-1),var(--teal-2));color:#fff;text-decoration:none;font-weight:800">Download Planner (coming soon)</a></div>
+    </div>
+
+  </main>
+    <footer>
+  <div class="footer-container">
+    <!-- Branding -->
+    <div class="footer-section">
+      <h2>first-contrib-placement</h2>
+      <p>
+        A community-driven project to share the best placement and learning resources for BTech students.
+      </p>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/varshitha-macha/" target="blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="#">Contribute</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="./roadmap.html">Roadmap</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Top Categories -->
+    <div class="footer-section">
+      <h3>Top Categories</h3>
+      <ul>
+        <li><a href="./dsa.html">DSA Practice</a></li>
+        <li><a href="./resume.html">Resume Tips</a></li>
+        <li><a href="./interviewprep.html">Interview Prep</a></li>
+        <li><a href="./open.html">Open Source</a></li>
+        <li><a href="./roadmap.html">Roadmaps</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-section">
+      <h3>Get in Touch</h3>
+      <p><strong>Location:</strong> India</p>
+      <p><strong>Email:</strong> contact@firstcontrib.com</p>
+    </div>
+  </div>
+
+
+  <div class="footer-bottom">
+    © 2025 All Rights Reserved | Built with ❤️ by the FCP Community
+  </div>
+</footer>
+
+  <script>
+    // reveal cards with stagger
+    window.addEventListener('DOMContentLoaded',()=>{
+      const cards = Array.from(document.querySelectorAll('.card'));
+      cards.forEach((c,i)=>setTimeout(()=>c.classList.add('visible'), i*180));
+
+      // search filter
+      const filter = document.getElementById('filter');
+      filter.addEventListener('input', e=>{
+        const q = e.target.value.trim().toLowerCase();
+        cards.forEach(c=>{
+          const tags = c.dataset.tags || '';
+          const title = c.querySelector('h2').innerText.toLowerCase();
+          const text = (c.innerText||'').toLowerCase();
+          const matches = q === '' || title.includes(q) || tags.includes(q) || text.includes(q);
+          c.style.display = matches ? '' : 'none';
+        })
+      });
+
+      document.getElementById('showAll').addEventListener('click',()=>{filter.value='';filter.dispatchEvent(new Event('input'))});
+    });
+
+    // toggle details
+    function toggle(el){
+      const more = el.nextElementSibling;
+      const visible = more.style.display === 'block';
+      more.style.display = visible ? 'none' : 'block';
+      el.innerText = visible ? 'Read more »' : 'Show less «';
+    }
+  </script>
+</body>
+</html>

@@ -31,8 +31,23 @@
 
       <ul class="navbar-menu">
         <li><a href="index.html"><i class="fa-solid fa-house-chimney"></i>Home</a></li>
-        <li><a href="interviewprep.html"><i class="fa-solid fa-book"></i>Resources</a></li>
+        <li><a href="#"><i class="fa-solid fa-handshake-angle"></i>Contribute</a></li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" id="resources-dropdown-toggle">
+            <i class="fa-solid fa-book"></i>Resources <i class="fa-solid fa-caret-down"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="./interviewprep.html">Interview Prep</a></li>
+            <li><a href="#">DSA Practice</a></li>
+            <li><a href="#">Resume Tips</a></li>
+            <li><a href="#">Open Source</a></li>
+            <li><a href="./roadmap.html">Roadmaps</a></li>
+          </ul>
+        </li>
+
         <li><a href="roadmap.html"><i class="fa-solid fa-map"></i>Roadmap</a></li>
+        <li><a href="#"><i class="fa-solid fa-address-card"></i>Contact</a></li>
         <li><a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer">
             <i class="fa-brands fa-github"></i>Github</a>
         </li>
@@ -56,6 +71,7 @@
     <h1>Welcome to Placement Resources!</h1>
     <h3>Find and share the best resources to help students prepare for the placements</h3>
   </header>
+  
   <div class="container">
     <h3>Recommended Resources</h3>
 
@@ -406,6 +422,25 @@
       navbarToggle.classList.toggle('active');
       navbarMenu.classList.toggle('active');
     });
+
+    // Dropdown functionality
+    const dropdownToggle = document.getElementById('resources-dropdown-toggle');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+
+    // Toggle dropdown on click
+    dropdownToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation(); // Prevents the document click listener from firing
+      dropdownMenu.classList.toggle('active');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!dropdownMenu.contains(e.target) && !dropdownToggle.contains(e.target)) {
+        dropdownMenu.classList.remove('active');
+      }
+    });
+
   </script>
 
 

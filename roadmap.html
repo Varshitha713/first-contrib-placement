@@ -17,7 +17,7 @@
     }
 
     header {
-      background: linear-gradient(135deg, #006D77, #83C5BE);
+      background: #23a2ae;
       color: white;
       text-align: center;
       padding: 40px 20px;
@@ -131,103 +131,6 @@
     ul li::marker {
       color: #006D77;
     }
-    dark-mode {
-      background: #121212 !important;
-      background-color: #121212 !important;
-      color: #F0F0F0 !important;
-    }
-
-    .dark-mode body {
-      background: #121212 !important;
-      background-color: #121212 !important;
-    }
-
-    .dark-mode .navbar {
-      background-color: #1a1a1a !important;
-    }
-
-    .dark-mode .navbar-container .navbar-menu li a {
-      color: #F0F0F0 !important;
-    }
-
-    .dark-mode .navbar-container .navbar-menu li a:hover {
-      color: #28A6C7 !important;
-      background: rgba(255, 255, 255, 0.1) !important;
-    }
-
-    .dark-mode header {
-      background: linear-gradient(135deg, #003B42, #5A8A8F) !important;
-      color: #E0F7FA !important;
-    }
-
-    .dark-mode .intro-wrapper {
-      background: transparent !important;
-    }
-
-    .dark-mode .intro {
-      background: rgba(30, 42, 48, 0.8) !important;
-      background-color: #1E2A30 !important;
-      color: #E0E0E0 !important;
-      border: 1px solid #333 !important;
-    }
-
-    .dark-mode .intro h2 {
-      color: #7FDBFF !important;
-    }
-
-    .dark-mode .intro p {
-      color: #B0B0B0 !important;
-    }
-
-    .dark-mode .step {
-      background: rgba(30, 42, 48, 0.9) !important;
-      background-color: #1E2A30 !important;
-      color: #E0E0E0 !important;
-      border-left-color: #7FDBFF !important;
-      border: 1px solid #333 !important;
-    }
-
-    .dark-mode .step:hover {
-      background: rgba(42, 58, 64, 0.9) !important;
-      background-color: #2A3A40 !important;
-    }
-
-    .dark-mode .step h2 {
-      color: #7FDBFF !important;
-    }
-
-    .dark-mode .step:hover h2 {
-      color: #5FCADD !important;
-    }
-
-    .dark-mode .step p {
-      color: #B0B0B0 !important;
-    }
-
-    .dark-mode .step:hover p {
-      color: #E0E0E0 !important;
-    }
-
-    .dark-mode .highlight {
-      color: #ff8a65 !important;
-    }
-
-    .dark-mode ul li::marker {
-      color: #7FDBFF !important;
-    }
-
-    .dark-mode footer {
-      background-color: #004E64 !important;
-      color: #E0F7FA !important;
-    }
-
-    .dark-mode footer a {
-      color: #7FDBFF !important;
-    }
-
-    .dark-mode footer a:hover {
-      color: #5FCADD !important;
-    }
   </style>
 </head>
 
@@ -236,7 +139,7 @@
   <nav class="navbar">
     <div class="navbar-container">
       <div class="logo">
-        <img src="images/PR-LOGO.png" width="140" height="120" id="logo">
+        <img src="/images/PR-LOGO.png" width="140" height="120" id="logo">
       </div>
 
 
@@ -244,8 +147,23 @@
 
       <ul class="navbar-menu">
         <li><a href="index.html"><i class="fa-solid fa-house-chimney"></i>Home</a></li>
-        <li><a href="interviewprep.html"><i class="fa-solid fa-book"></i>Resources</a></li>
+        <li><a href="#"><i class="fa-solid fa-handshake-angle"></i>Contribute</a></li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" id="resources-dropdown-toggle">
+            <i class="fa-solid fa-book"></i>Resources <i class="fa-solid fa-caret-down"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="./interviewprep.html">Interview Prep</a></li>
+            <li><a href="#">DSA Practice</a></li>
+            <li><a href="./interviewprep.html">Resume Tips</a></li>
+            <li><a href="#">Open Source</a></li>
+            <li><a href="./roadmap.html">Roadmaps</a></li>
+          </ul>
+        </li>
+
         <li><a href="roadmap.html"><i class="fa-solid fa-map"></i>Roadmap</a></li>
+        <li><a href="#"><i class="fa-solid fa-address-card"></i>Contact</a></li>
         <li><a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer">
             <i class="fa-brands fa-github"></i>Github</a>
         </li>
@@ -447,6 +365,24 @@
       navbarMenu.classList.toggle('active');
     });
 
+    // Dropdown functionality
+    const dropdownToggle = document.getElementById('resources-dropdown-toggle');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+
+    // Toggle dropdown on click
+    dropdownToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation(); // Prevents the document click listener from firing
+      dropdownMenu.classList.toggle('active');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!dropdownMenu.contains(e.target) && !dropdownToggle.contains(e.target)) {
+        dropdownMenu.classList.remove('active');
+      }
+    });
+
     // Close menu when clicking on a link (for mobile)
     const menuLinks = navbarMenu.querySelectorAll('a');
     menuLinks.forEach(link => {
@@ -457,7 +393,7 @@
     });
 
     // Close menu when clicking outside
-    document.addEventListener('click', function(event) {
+    document.addEventListener('click', function (event) {
       if (!navbarToggle.contains(event.target) && !navbarMenu.contains(event.target)) {
         navbarToggle.classList.remove('active');
         navbarMenu.classList.remove('active');
@@ -491,7 +427,7 @@
     });
 
     // Handle window resize
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', function () {
       if (window.innerWidth > 880) {
         // Reset mobile menu on desktop
         navbarToggle.classList.remove('active');

@@ -11,8 +11,8 @@ html {
 html, body {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #f0f7ff, #ffffff);
+  font-family: 'Roboto', sans-serif;
+  background-color: #ccd6e2;
   color: #03171f;
   transition: background-color 0.3s, color 0.3s;
 }
@@ -23,25 +23,12 @@ header {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: #23a2ae;
+  background-color: #006D77;
   font-family:'Roboto', sans-serif;
   color: #FFFFFF;
-  padding: 40px 20px;
+  padding: 16px 10px;
   font-size: 1.5rem;
   letter-spacing: 1px;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
-  position: relative;
-}
-/*Fade-in Animation */
-@keyframes Fadeinup {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
 }
 
 .navbar{
@@ -52,7 +39,7 @@ header {
   width: 100%;
   position: sticky;
   top: 0;
-  background: linear-gradient(90deg,#006D77,#0096a5);
+  background-color: #004E64;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   backdrop-filter: blur(10px);
   z-index: 1000;
@@ -116,7 +103,6 @@ header {
   min-width: 200px;
   background-color: #00818d;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  backdrop-filter: blur(10px);
   border-radius: 8px;
   padding: 10px 0;
   list-style: none;
@@ -142,7 +128,7 @@ header {
   color: white;
 }
 
-/* Dropdown on mobile view */
+/* Ensure dropdown works on mobile view */
 @media(max-width: 880px) {
   .navbar-menu .dropdown-menu {
     position: static;
@@ -168,6 +154,7 @@ header {
   }
 }
 
+/* Animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -289,7 +276,6 @@ header {
   width: auto;
   filter: brightness(0) invert(1);
 }
-
 /* Dark Mode */
 .dark-mode {
   background-color: #121212;
@@ -297,24 +283,24 @@ header {
 }
 
 .dark-mode header {
-  background: linear-gradient(135deg, #003B42, #005A61);
+  background-color: #003B42;
   color: #E0F7FA;
 }
 
 .dark-mode .card {
   background-color: #1E2A30;
   color: #E0E0E0;
-  border-left-color: #5FCADD;
 }
 
 .dark-mode .card a {
-  color: #5FCADD;
-  background-color: rgba(95, 202, 221, 0.1);
+  color: #121212;
+  background-color: #7FDBFF;
 }
 
 .dark-mode .card a:hover {
-  color: #B2EBF2;
-  background-color: rgba(95, 202, 221, 0.2);
+  color: #121212;
+  background-color: #5FCADD;
+  text-decoration: underline;
 }
 
 .dark-mode footer {
@@ -322,125 +308,6 @@ header {
   color: #E0F7FA;
 }
 
-/* Container */
-.container {
-  margin: 20px auto;
-  padding: 20px;
-  max-width: 900px;
-}
-
-.container h3 {
-  text-align: center;
-  font-size: 2rem;
-  color: #1d4c64;
-  font-family: 'Lucida Sans', sans-serif;
-}
-
-/* Timeline Styles */
-.timeline {
-  max-width: 900px;
-  margin: 50px auto;
-  position: relative;
-}
-
-.step {
-  background: linear-gradient(145deg, #ffffff, #e0f7fa);
-  margin: 30px 0;
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-  position: relative;
-  border-left: 8px solid #006D77;
-  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
-  animation: fadeInUp 1s ease-in-out both;
-}
-
-.step:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 36px rgba(0, 0, 0, 0.25);
-  background: linear-gradient(135deg, #d1f0e3, #ffffff);
-}
-
-.step h2 {
-  color: #006D77;
-  margin-bottom: 12px;
-  font-size: 1.5rem;
-  transition: color 0.4s ease;
-}
-
-.step:hover h2 {
-  color: #004e56;
-}
-
-.step p {
-  line-height: 1.7;
-  color: #333;
-  margin-bottom: 10px;
-  transition: color 0.4s ease;
-}
-
-.step:hover p {
-  color: #222;
-}
-
-/* Search Bar */
-.search-bar {
-  margin: 30px auto;
-  max-width: 600px;
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 100%;
-}
-
-.search-icon-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.search-icon {
-  position: absolute;
-  right: 16px;
-  width: 20px;
-  height: 20px;
-  fill: #5ca5cc;
-  transition: fill 0.3s ease;
-  pointer-events: none;
-}
-
-.search-bar input {
-  flex: 1;
-  width: 100%;
-  padding: 14px 46px 14px 16px !important;
-  font-size: 16px;
-  border: 1px solid #cccccc;
-  border-radius: 10px;
-  outline: none;
-  font-weight: bold;
-  font-family: 'Roboto', sans-serif;
-  color: #5ca5cc;
-  transition: all 0.3s ease;
-  text-align: left;
-}
-
-.search-bar input::placeholder {
-  color: #5ca5cc;
-}
-
-.search-bar input:focus {
-  border: 2px solid #219EBC;
-  box-shadow: 0 0 8px rgba(33, 158, 188, 0.3);
-  background-color: #f9f9f9;
-}
-
-.search-bar input:focus + .search-icon {
-  fill: #219EBC;
-}
-
-/* Dark Mode Search */
 .dark-mode .search-bar input {
   background-color: #2A2A2A;
   color: #E0E0E0;
@@ -455,8 +322,10 @@ header {
   border-color: #7FDBFF;
 }
 
-.dark-mode .search-icon {
-  fill: #B0B0B0;
+.dark-mode #categoryFilter {
+  background-color: #2A2A2A;
+  color: #E0E0E0;
+  border-color: #555555;
 }
 
 .dark-mode #categoryFilter:focus {

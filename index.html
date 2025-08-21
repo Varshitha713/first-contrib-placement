@@ -31,7 +31,7 @@
 
       <ul class="navbar-menu">
         <li><a href="index.html"><i class="fa-solid fa-house-chimney"></i>Home</a></li>
-        <li><a href="#"><i class="fa-solid fa-handshake-angle"></i>Contribute</a></li>
+        <li><a href="contribute.html"><i class="fa-solid fa-handshake-angle"></i>Contribute</a></li>
 
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" id="resources-dropdown-toggle">
@@ -44,14 +44,15 @@
             <li><a href="#">Open Source</a></li>
             <li><a href="./roadmap.html">Roadmaps</a></li>
           </ul>
-        </li>
+
 
         <li><a href="roadmap.html"><i class="fa-solid fa-map"></i>Roadmap</a></li>
-        <li><a href="#"><i class="fa-solid fa-address-card"></i>Contact</a></li>
+        <li><a href="contact.html"><i class="fa-solid fa-address-card"></i>Contact</a></li>
         <li><a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer">
             <i class="fa-brands fa-github"></i>Github</a>
         </li>
       </ul>
+
 
       <div class="navbar-icons">
         <!-- Hamburger icon -->
@@ -68,15 +69,8 @@
     </div>
   </nav>
   <header>
-
-    <div class="main-heading fade-in">
-      <img src="images/PR-LOGO.png" class=" width=" 140" height="120" id="logo">
-      <h1>Welcome to Placement Resources!</h1>
-      <p>Find and share the best resources to help students prepare for the placements</p>
-    </div>
-    <div>
-      <button class="fade-in" id="toggle-mode"></button>
-    </div>
+    <h1>Welcome to Placement Resources!</h1>
+    <h3>Find and share the best resources to help students prepare for the placements</h3>
   </header>
   <div class="container">
     <h3 class="fade-in">Recommended Resources</h3>
@@ -389,68 +383,93 @@
               class="fab fa-github"></i></a>
         </div>
       </div>
-    <!-- Quick Links -->
-    <div class="footer-section">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="#">Contribute</a></li>
-        <li><a href="#">Resources</a></li>
-        <li><a href="./roadmap.html">Roadmap</a></li>
-        <li><a href="./contact.html">Contact</a></li>
-      </ul>
-
-    </div>
-  </footer>
-
-    <!-- Top Categories -->
-    <div class="footer-section">
-      <h3>Top Categories</h3>
-      <ul>
-        <li><a href="./dsa.html">DSA Practice</a></li>
-        <li><a href="./resume.html">Resume Tips</a></li>
-        <li><a href="./interviewprep.html">Interview Prep</a></li>
-        <li><a href="./open.html">Open Source</a></li>
-        <li><a href="./roadmap.html">Roadmaps</a></li>
-      </ul>
-    </div>
-
-
-      <!-- Contact Info -->
+      <!-- Quick Links -->
       <div class="footer-section">
-        <h3>Get in Touch</h3>
-        <p><strong>Location:</strong> India</p>
-        <p><strong>Email:</strong> contact@firstcontrib.com</p>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="#">Contribute</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="./roadmap.html">Roadmap</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+
       </div>
-    </div>
-
-
-    <div class="footer-bottom">
-      © 2025 All Rights Reserved | Built with ❤️ by the FCP Community
-    </div>
   </footer>
 
-    const searchInput = document.getElementById('searchInput');
-    const categoryCheckboxes = document.querySelectorAll('#checkboxContainer input[type="checkbox"]');
-    const cards = document.querySelectorAll('.card');
-    const toggleBtn = document.getElementById("toggle-mode");
-    const backToTopButton = document.getElementById("backToTop");
+  <!-- Top Categories -->
+  <div class="footer-section">
+    <h3>Top Categories</h3>
+    <ul>
+      <li><a href="./dsa.html">DSA Practice</a></li>
+      <li><a href="./resume.html">Resume Tips</a></li>
+      <li><a href="./interviewprep.html">Interview Prep</a></li>
+      <li><a href="./open.html">Open Source</a></li>
+      <li><a href="./roadmap.html">Roadmaps</a></li>
+    </ul>
+  </div>
 
+
+  <!-- Contact Info -->
+  <div class="footer-section">
+    <h3>Get in Touch</h3>
+    <p><strong>Location:</strong> India</p>
+    <p><strong>Email:</strong> contact@firstcontrib.com</p>
+  </div>
+  </div>
+
+
+  <div class="footer-bottom">
+    © 2025 All Rights Reserved | Built with ❤️ by the FCP Community
+  </div>
+  </footer>
+
+  <script>
+    const navbarToggle = document.querySelector('.navbar-toggle');
+    const navbarMenu = document.querySelector('.navbar-menu');
+
+    navbarToggle.addEventListener('click', () => {
+      navbarToggle.classList.toggle('active');
+      navbarMenu.classList.toggle('active');
+    });
+
+    // Dropdown functionality
+    const dropdownToggle = document.getElementById('resources-dropdown-toggle');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+
+    // Toggle dropdown on click
+    dropdownToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation(); // Prevents the document click listener from firing
+      dropdownMenu.classList.toggle('active');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!dropdownMenu.contains(e.target) && !dropdownToggle.contains(e.target)) {
+        dropdownMenu.classList.remove('active');
+      }
+    });
+
+  </script>
 
 
   <script>
+
     const searchInput = document.getElementById('searchInput');
     const categoryCheckboxes = document.querySelectorAll('#checkboxContainer input[type="checkbox"]');
     const cards = document.querySelectorAll('.card');
     const toggleBtn = document.getElementById("toggle-mode");
     const backToTopButton = document.getElementById("backToTop");
+
     // 🔍 Search & Filter Logic
     function searchAndFilter() {
       const searchText = searchInput.value.toLowerCase();
       const selectedCategories = Array.from(categoryCheckboxes)
         .filter(cb => cb.checked)
         .map(cb => cb.value);
-      let hasVisiblecards = false;
+
+      let hasVisibleCards = false;
 
       cards.forEach(card => {
         const text = card.textContent.toLowerCase();
@@ -462,7 +481,7 @@
 
         if (matchesSearch && matchesCategory) {
           card.classList.remove("hidden");
-          hasVisiblecards = true;
+          hasVisibleCards = true;
         } else {
           card.classList.add("hidden");
         }
@@ -470,7 +489,7 @@
 
       // Show/hide no results message
       const noResultsMsg = document.getElementById('noResultsMessage');
-      if (hasVisiblecards) {
+      if (hasVisibleCards) {
         noResultsMsg.classList.add("hidden");
       } else {
         noResultsMsg.classList.remove("hidden");
@@ -533,22 +552,6 @@
       if (!filterDropdown.contains(e.target)) {
         filterDropdown.classList.remove("open");
       }
-    });
-    /* For Animation (Intersection Observer API) */
-    document.addEventListener("DOMContentLoaded", () => {
-      const faders = document.querySelectorAll('.fade-in');
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
-          }
-        });
-      }, {
-        threshold: 0.17
-      });
-
-      faders.forEach(fade => observer.observe(fade));
     });
 
   </script>

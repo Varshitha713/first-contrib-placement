@@ -695,9 +695,23 @@ header {
 }
 .dark-mode .card:hover{
   transform: translateY(-5px) scale(1.03);
-  background-color: rgba(222, 230, 233, 0.9);
+  background-color: rgba(178, 203, 212, 0.9);
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   color: #004E64;
+  
+}
+.dark-mode .card:hover h4{
+  color: #004E64;
+  
+}
+.dark-mode .card:hover p{
+  color: #004E64;
+  
+}
+.dark-mode .card:hover a{
+  color: #004E64;
+  background-color: white;
+  
 }
 .card a {
   display: inline-flex;
@@ -728,7 +742,7 @@ header {
 }
 
 .card a:hover {
-  color: #1a6f8a;
+  color: #0c3845;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(33, 158, 188, 0.2);
 }

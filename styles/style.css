@@ -693,7 +693,26 @@ header {
   line-height: 1.6;
   margin-bottom: 20px;
 }
-
+.dark-mode .card:hover{
+  transform: translateY(-5px) scale(1.03);
+  background-color: rgba(178, 203, 212, 0.9);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  color: #004E64;
+  
+}
+.dark-mode .card:hover h4{
+  color: #004E64;
+  
+}
+.dark-mode .card:hover p{
+  color: #004E64;
+  
+}
+.dark-mode .card:hover a{
+  color: #004E64;
+  background-color: white;
+  
+}
 .card a {
   display: inline-flex;
   align-items: center;
@@ -723,7 +742,7 @@ header {
 }
 
 .card a:hover {
-  color: #1a6f8a;
+  color: #0c3845;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(33, 158, 188, 0.2);
 }
@@ -1193,6 +1212,51 @@ footer {
   .intro-card p {
     max-width: 90%;
   }
+}
+.dark-mode .search-bar input {
+  color: #003B42;
+}
+
+/* Dark mode */
+.dark-mode .search-icon {
+  fill: #B0B0B0;
+}
+
+
+.dark-mode .search-bar input:focus + .search-icon {
+  fill: #7FDBFF;
+}
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.autocomplete-items div:hover {
+  background-color: #e9e9e9;
+}
+.dark-mode .autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  color: #003B42;
 }
 
 /* Large Desktop Styles */

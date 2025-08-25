@@ -72,12 +72,17 @@ header {
 
 .dark-mode header {
   background: linear-gradient(135deg, #003B42, #005A61);
-  color: #E0F7FA;
+  color: #000000;
 }
 
 .dark-mode .card {
   background-color: #1E2A30;
   color: #E0E0E0;
+  border-left-color: #5FCADD;
+}
+.dark-mode .card:hover{
+  background-color: #404e54;
+  color: #0c0b0b;
   border-left-color: #5FCADD;
 }
 
@@ -87,7 +92,7 @@ header {
 }
 
 .dark-mode .card a:hover {
-  color: #B2EBF2;
+  color: #070707;
   background-color: rgba(95, 202, 221, 0.2);
 }
 

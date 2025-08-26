@@ -5,10 +5,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ultimate Placement Roadmap</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="./styles/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2LdF1/Jz7A81rYf5nU5I5jE5Vf9I7p9B9qD4B3K8H6E5Q6yG1fW4Q0fB8D7G5B1"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -135,18 +139,14 @@
 </head>
 
 <body>
-
   <nav class="navbar">
     <div class="navbar-container">
       <div class="logo">
-        <img src="images/PR-LOGO.png" width="140" height="120" id="logo">
+        <img src="/images/PR-LOGO.png" width="140" height="120" id="logo">
       </div>
 
 
       <!-- Navigation Links -->
-
-
-
 
       <ul class="navbar-menu">
         <li><a href="index.html"><i class="fa-solid fa-house-chimney"></i>Home</a></li>
@@ -165,12 +165,14 @@
           </ul>
         </li>
 
+
         <li><a href="roadmap.html"><i class="fa-solid fa-map"></i>Roadmap</a></li>
         <li><a href="contact.html"><i class="fa-solid fa-address-card"></i>Contact</a></li>
         <li><a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer">
             <i class="fa-brands fa-github"></i>Github</a>
         </li>
       </ul>
+
 
       <div class="navbar-icons">
         <!-- Hamburger icon -->
@@ -186,7 +188,6 @@
       </div>
     </div>
   </nav>
-
   <header class="animate__animated animate__fadeInDown">
     <h1>🚀 Placement Preparation Roadmap for Students</h1>
   </header>
@@ -197,20 +198,36 @@
       <p class="section-subtitle">Your path to success in tech placements starts here</p>
     </div>
 
-  <div class="intro-wrapper animate__animated animate__fadeIn" data-aos="fade-right" data-aos-delay="100">
-    <section class="intro">
-      <h2>✨ Your Journey Begins Here</h2>
-      <p>Welcome to the ultimate roadmap for cracking tech placements! 🎯 Whether you're just getting started or already
-        deep into preparation, this guide will help you <span class="highlight">plan smart, build projects, master
-          interviews, and land your dream job</span>. Think of it as your personal GPS to navigate the world of
-        placements 🚗💼.</p>
-    </section>
-    <section class="intro">
-      <h2>🧭 Why Follow This Roadmap?</h2>
-      <p>Because random learning leads to confusion! This roadmap gives you a <span class="highlight">clear path with
-          milestones</span>, the right resources, and tips that actually work—designed by students who’ve been through
-        it.</p>
-    </section>
+    <div class="intro-container">
+      <section class="intro-card journey-card" data-aos="fade-right" data-aos-delay="100">
+        <div class="card-header">
+          <div class="icon-wrapper journey-icon">
+            <span class="intro-icon">✨</span>
+          </div>
+          <h2 class="card-title animate__animated animate__fadeInDown">Your Journey Begins Here</h2>
+        </div>
+        <div class="card-content">
+          <p>Welcome to the ultimate roadmap for cracking tech placements! 🎯 Whether you're just getting started or
+            already deep into preparation, this guide will help you <span class="highlight">plan smart, build projects,
+              master interviews, and land your dream job</span>. Think of it as your personal GPS to navigate the world
+            of placements 🚗💼.</p>
+        </div>
+      </section>
+
+      <section class="intro-card roadmap-card" data-aos="fade-left" data-aos-delay="200">
+        <div class="card-header">
+          <div class="icon-wrapper roadmap-icon">
+            <span class="intro-icon">🧭</span>
+          </div>
+          <h2 class="card-title animate__animated animate__fadeInDown">Why Follow This Roadmap?</h2>
+        </div>
+        <div class="card-content">
+          <p>Because random learning leads to confusion! This roadmap gives you a <span class="highlight">clear path
+              with milestones</span>, the right resources, and tips that actually work—designed by students who've been
+            through it.</p>
+        </div>
+      </section>
+    </div>
   </div>
 
 
@@ -363,12 +380,10 @@
     </div>
   </footer>
   <script>
-    // Navbar toggle functionality
     const navbarToggle = document.querySelector('.navbar-toggle');
     const navbarMenu = document.querySelector('.navbar-menu');
     const toggleBtn = document.getElementById("toggle-mode");
 
-    // Hamburger menu toggle
     navbarToggle.addEventListener('click', () => {
       navbarToggle.classList.toggle('active');
       navbarMenu.classList.toggle('active');
@@ -381,7 +396,7 @@
     // Toggle dropdown on click
     dropdownToggle.addEventListener('click', (e) => {
       e.preventDefault();
-      e.stopPropagation(); // Prevents the document click listener from firing
+      e.stopPropagation();
       dropdownMenu.classList.toggle('active');
     });
 
@@ -389,22 +404,6 @@
     document.addEventListener('click', (e) => {
       if (!dropdownMenu.contains(e.target) && !dropdownToggle.contains(e.target)) {
         dropdownMenu.classList.remove('active');
-      }
-    });
-    // Close menu when clicking on a link (for mobile)
-    const menuLinks = navbarMenu.querySelectorAll('a');
-    menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navbarToggle.classList.remove('active');
-        navbarMenu.classList.remove('active');
-      });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', function (event) {
-      if (!navbarToggle.contains(event.target) && !navbarMenu.contains(event.target)) {
-        navbarToggle.classList.remove('active');
-        navbarMenu.classList.remove('active');
       }
     });
 
@@ -434,14 +433,6 @@
       }
     });
 
-    // Handle window resize
-    window.addEventListener('resize', function () {
-      if (window.innerWidth > 880) {
-        // Reset mobile menu on desktop
-        navbarToggle.classList.remove('active');
-        navbarMenu.classList.remove('active');
-      }
-    });
   </script>
 
 </body>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2LdF1/Jz7A81rYf5nU5I5jE5Vf9I7p9B9qD4B3K8H6E5Q6yG1fW4Q0fB8D7G5B1"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="./styles/style.css">
+    <style>
+        body {
+            font-family: 'Fira Code', monospace;
+            background: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0px;
+        }
+
+        .contact-section {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            max-width: 1000px;
+            margin: auto;
+            box-shadow: 0 0 20px rgba(40, 166, 199, 0.1);
+            border: 1px solid rgba(40, 166, 199, 0.15);
+        }
+
+        .contact-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-form {
+            flex: 1 1 400px;
+        }
+
+        .contact-form h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #28A6C7;
+            border-left: 5px solid #28A6C7;
+            padding-left: 10px;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            background: #f0f8fa;
+            border: 1px solid #cce9ef;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 15px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .input-group:focus-within {
+            border-color: #28A6C7;
+            box-shadow: 0 0 8px rgba(40, 166, 199, 0.2);
+        }
+
+        .icon {
+            margin-right: 10px;
+            font-size: 1.2rem;
+            color: #28A6C7;
+        }
+
+        .input-group input,
+        .input-group textarea {
+            border: none;
+            outline: none;
+            background: transparent;
+            flex: 1;
+            font-size: 1rem;
+            color: #333;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .input-group textarea {
+            resize: none;
+            height: 120px;
+        }
+
+        .btn-submit {
+            background: linear-gradient(90deg, #28A6C7, #1d7a8a);
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+            box-shadow: 0 0 10px rgba(40, 166, 199, 0.4);
+        }
+
+        .contact-image {
+            flex: 1 1 300px;
+            text-align: center;
+        }
+
+        .contact-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(40, 166, 199, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <img src="/images/PR-LOGO.png" width="140" height="120" id="logo">
+            </div>
+
+
+            <!-- Navigation Links -->
+
+            <ul class="navbar-menu">
+                <li><a href="index.html"><i class="fa-solid fa-house-chimney"></i>Home</a></li>
+                <li><a href="contribute.html"><i class="fa-solid fa-handshake-angle"></i>Contribute</a></li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" id="resources-dropdown-toggle">
+                        <i class="fa-solid fa-book"></i>Resources <i class="fa-solid fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="./interviewprep.html">Interview Prep</a></li>
+                        <li><a href="./dsa.html">DSA Practice</a></li>
+                        <li><a href="./resume.html">Resume Tips</a></li>
+                        <li><a href="./open.html">Open Source</a></li>
+                        <li><a href="./roadmap.html">Roadmaps</a></li>
+                    </ul>
+                </li>
+
+
+                <li><a href="roadmap.html"><i class="fa-solid fa-map"></i>Roadmap</a></li>
+                <li><a href="contact.html"><i class="fa-solid fa-address-card"></i>Contact</a></li>
+                <li><a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fa-brands fa-github"></i>Github</a>
+                </li>
+            </ul>
+
+
+            <div class="navbar-icons">
+                <!-- Hamburger icon -->
+                <button class="navbar-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+
+                <!-- Dark/Light Mode Toggle -->
+                <button id="toggle-mode"></button>
+            </div>
+        </div>
+    </nav>
+    <section class="contact-section">
+        <div class="contact-container">
+            <!-- Left Form -->
+            <div class="contact-form">
+                <h2>Contact Us</h2>
+                <form id="contactForm" novalidate>
+                    <div class="input-group">
+                        <input type="text" id="name" name="name" placeholder="Name" required minlength="3">
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <textarea id="message" name="message" placeholder="Message" required minlength="10"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Right GIF -->
+            <div class="contact-image">
+                <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" alt="Light-themed coding GIF">
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <!-- Branding -->
+            <div class="footer-section">
+                <h2>first-contrib-placement</h2>
+                <p>
+                    A community-driven project to share the best placement and learning resources for BTech students.
+                </p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/varshitha-macha/" target="blank" rel="noopener noreferrer"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank"
+                        rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="#">Contribute</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="./roadmap.html">Roadmap</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Top Categories -->
+            <div class="footer-section">
+                <h3>Top Categories</h3>
+                <ul>
+                    <li><a href="./dsa.html">DSA Practice</a></li>
+                    <li><a href="./resume.html">Resume Tips</a></li>
+                    <li><a href="./interviewprep.html">Interview Prep</a></li>
+                    <li><a href="./open.html">Open Source</a></li>
+                    <li><a href="./roadmap.html">Roadmaps</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-section">
+                <h3>Get in Touch</h3>
+                <p><strong>Location:</strong> India</p>
+                <p><strong>Email:</strong> contact@firstcontrib.com</p>
+            </div>
+        </div>
+
+
+        <div class="footer-bottom">
+            © 2025 All Rights Reserved | Built with ❤️ by the FCP Community
+        </div>
+    </footer>
+    <script>
+        const navbarToggle = document.querySelector('.navbar-toggle');
+        const navbarMenu = document.querySelector('.navbar-menu');
+        const toggleBtn = document.getElementById("toggle-mode");
+
+        navbarToggle.addEventListener('click', () => {
+            navbarToggle.classList.toggle('active');
+            navbarMenu.classList.toggle('active');
+        });
+
+        // Dropdown functionality
+        const dropdownToggle = document.getElementById('resources-dropdown-toggle');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+
+        // Toggle dropdown on click
+        dropdownToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            dropdownMenu.classList.toggle('active');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!dropdownMenu.contains(e.target) && !dropdownToggle.contains(e.target)) {
+                dropdownMenu.classList.remove('active');
+            }
+        });
+
+        // Dark/Light mode functionality
+        window.addEventListener("DOMContentLoaded", () => {
+            const savedMode = localStorage.getItem("mode");
+
+            if (savedMode === "dark") {
+                document.body.classList.add("dark-mode");
+                toggleBtn.textContent = "☀️";
+            } else {
+                document.body.classList.remove("dark-mode");
+                toggleBtn.textContent = "🌙";
+            }
+        });
+
+        // Toggle and Save Mode
+        toggleBtn.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+
+            if (document.body.classList.contains("dark-mode")) {
+                toggleBtn.textContent = "☀️";
+                localStorage.setItem("mode", "dark");
+            } else {
+                toggleBtn.textContent = "🌙";
+                localStorage.setItem("mode", "light");
+            }
+        });
+
+    </script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            let name = document.getElementById('name');
+            let email = document.getElementById('email');
+            let message = document.getElementById('message');
+
+            if (name.value.trim().length < 3) {
+                alert("Name must be at least 3 characters long.");
+                name.focus();
+                return;
+            }
+
+            let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/;
+            if (!email.value.match(emailPattern)) {
+                alert("Please enter a valid email address.");
+                email.focus();
+                return;
+            }
+
+            if (message.value.trim().length < 10) {
+                alert("Message must be at least 10 characters long.");
+                message.focus();
+                return;
+            }
+
+            alert("Form submitted successfully!");
+            window.location.href = "./index.html"; // Redirect after success
+        });
+    </script>
+
+
+</body>
+
+</html>

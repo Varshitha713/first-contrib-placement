@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2LdF1/Jz7A81rYf5nU5I5jE5Vf9I7p9B9qD4B3K8H6E5Q6yG1fW4Q0fB8D7G5B1"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
   <title>Placement Resources</title>
   <link rel="icon" type="image/png" href="./images/favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -13,19 +19,61 @@
 </head>
 
 <body>
+
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="logo">
+        <img src="/images/PR-LOGO.png" width="140" height="120" id="logo">
+      </div>
+
+
+      <!-- Navigation Links -->
+
+      <ul class="navbar-menu">
+        <li><a href="index.html"><i class="fa-solid fa-house-chimney"></i>Home</a></li>
+        <li><a href="contribute.html"><i class="fa-solid fa-handshake-angle"></i>Contribute</a></li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" id="resources-dropdown-toggle">
+            <i class="fa-solid fa-book"></i>Resources <i class="fa-solid fa-caret-down"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="./interviewprep.html">Interview Prep</a></li>
+            <li><a href="./dsa.html">DSA Practice</a></li>
+            <li><a href="./resume.html">Resume Tips</a></li>
+            <li><a href="./open.html">Open Source</a></li>
+            <li><a href="./roadmap.html">Roadmaps</a></li>
+          </ul>
+
+
+        <li><a href="roadmap.html"><i class="fa-solid fa-map"></i>Roadmap</a></li>
+        <li><a href="contact.html"><i class="fa-solid fa-address-card"></i>Contact</a></li>
+        <li><a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github"></i>Github</a>
+        </li>
+      </ul>
+
+
+      <div class="navbar-icons">
+        <!-- Hamburger icon -->
+        <button class="navbar-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+
+        <!-- Dark/Light Mode Toggle -->
+        <button id="toggle-mode"></button>
+      </div>
+    </div>
+  </nav>
   <header>
-    
-    <div class="main-heading">
-      <img src="images/PR-LOGO.png" width="140" height="120" id="logo">
-      <h1>Welcome to Placement Resources!</h1>
-      <p>Find and share the best resources to help students prepare for the placements</p>
-    </div>
-    <div>
-      <button id="toggle-mode"></button>
-    </div>
+    <h1>Welcome to Placement Resources!</h1>
+    <h3>Find and share the best resources to help students prepare for the placements</h3>
   </header>
-  <div class ="container">
-    <h3>Recommended Resources</h3>
+  <div class="container">
+    <h3 class="fade-in">Recommended Resources</h3>
 
     <div class="search-bar">
       <div class="filter">
@@ -42,288 +90,326 @@
           </div>
         </div>
       </div>
-     
+
       <input type="text" id="searchInput" placeholder="Search for resources..." />
-       <div class="search-icon-container">
-    <svg class="search-icon" viewBox="0 0 24 24">
-      <path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-    </svg>
-  </div>
+      <div class="search-icon-container">
+        <svg class="search-icon" viewBox="0 0 24 24">
+          <path
+            d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+        </svg>
+      </div>
     </div>
 
 
-
-    <div class="card" category="coding">
+    <div class="card fade-in" category="coding">
       <h4>Coding Practice(mainly for DSA):Leetcode</h4>
       <p>LeetCode offers a wide range of problems to practice coding skills for technical interviews.</p>
-      <a href="https://leetcode.com"> Visit leetcode </a>
+      <a href="https://leetcode.com" target="_blank"> Visit leetcode </a>
       <p></p>
     </div>
 
-    <div class="card" category="learning">
+    <!-- New Card: ML Interview Prep -->
+    <div class="card fade-in" category="interview">
+      <h4>Machine Learning Interview Prep: Vikas Joshi's Guide</h4>
+      <p>A complete resource for ML-focused interviews including system design, coding, and case studies.</p>
+      <a href="https://github.com/avinashkranjan/Amazing-Interview-Resources">Visit ML Prep Guide</a>
+    </div>
+
+    <!-- New Card: Resume Builder -->
+    <div class="card fade-in" category="documentation">
+      <h4>Resume Builder: FlowCV</h4>
+      <p>Free and easy resume builder with modern templates tailored for tech and design roles.</p>
+      <a href="https://flowcv.com/" target="_blank">Visit FlowCV</a>
+    </div>
+
+    <div class="card fade-in" category="coding">
+      <h4>Competitive Programming Platform: CodeChef</h4>
+      <p>CodeChef helps programmers enhance their algorithmic thinking and problem-solving skills through a wide variety
+        of time-bound challenges and practice problems.</p>
+      <a href="https://www.codechef.com" target="_blank">Visit CodeChef</a>
+      <p></p>
+    </div>
+
+    <div class="card fade-in" category="learning">
       <h4>Online learning platform: edX</h4>
-      <p>edX is an online learning platform offering free and paid courses, certificates, and degrees from top universities like Harvard and MIT to help you gain skills and advance your career.</p>
-      <a href="https://www.edx.org/">Visit edX</a>
+      <p>edX is an online learning platform offering free and paid courses, certificates, and degrees from top
+        universities like Harvard and MIT to help you gain skills and advance your career.</p>
+      <a href="https://www.edx.org/" target="_blank">Visit edX</a>
       <p></p>
-     
     </div>
 
-    <div class="card" category="coding">
+    <div class="card fade-in" category="coding">
       <h4>Competitive coding platform: Codeforces</h4>
-      <p>Codeforces is a competitive programming platform known for regular contests and a vast problem archive to improve algorithmic skills.</p>
-       <a href="https://codeforces.com/">Visit codeforces</a>
+      <p>Codeforces is a competitive programming platform known for regular contests and a vast problem archive to
+        improve algorithmic skills.</p>
+      <a href="https://codeforces.com/" target="_blank">Visit codeforces</a>
       <p></p>
-     
     </div>
 
-    <div class="card" category="coding">
+    <div class="card fade-in" category="coding">
       <h4>Competitive Coding Contests platform: AtCoder</h4>
-      <p>AtCoder is a popular online competitive programming platform.It is known for its well-structured problems, clear constraints, and strong emphasis on logical thinking.</p>
-       <a href="https://atcoder.jp/">Visit AtCoder</a>
+      <p>AtCoder is a popular online competitive programming platform.It is known for its well-structured problems,
+        clear constraints, and strong emphasis on logical thinking.</p>
+      <a href="https://atcoder.jp/" target="_blank">Visit AtCoder</a>
       <p></p>
     </div>
 
-    <div class="card" category="learning">
-      <h4>Learning Git: Git Immersion</h4> 
+    <div class="card fade-in" category="learning">
+
+      <h4>Learning Git: Git Immersion</h4>
       <p>Git Immersion is a guided tour that helps you learn Git through hands-on labs and practical examples.</p>
-      <a href="https://gitimmersion.com" target="_blank">visit gitimmersion</a> 
+      <a href="https://gitimmersion.com" target="_blank">visit gitimmersion</a>
     </div>
-    <div class="card" category="coding">
+
+    <div class="card fade-in" category="coding">
       <h4>Coding Practice: Frontend Mentor</h4>
       <p>Frontend Mentor offers real-world frontend challenges to improve your HTML, CSS, and JavaScript skills.</p>
-      <a href="https://www.frontendmentor.io/">Visit frontend mentor</a>
+      <a href="https://www.frontendmentor.io/" target="_blank">Visit frontend mentor</a>
       <p></p>
-     
     </div>
 
-    <div class="card" category="documentation">
+    <div class="card fade-in" category="documentation">
       <h4>Online Documentation: DevDocs</h4>
       <p>Combines multiple developer documentations in one fast, searchable interface.</p>
-      <a href="https://devdocs.io">Visit devdocs</a>
+      <a href="https://devdocs.io" target="_blank">Visit devdocs</a>
       <p></p>
-     
+
     </div>
 
-    <div class="card" category="sql">
+    <div class="card fade-in" category="sql">
       <h4>Practice SQL: SQLZoo</h4>
       <p>platform for practing SQL with projects</p>
-      <a href="https://www.sqlzoo.net/wiki/SQL_Tutorial">Visit sqlzoo</a>
+      <a href="https://www.sqlzoo.net/wiki/SQL_Tutorial" target="_blank">Visit sqlzoo</a>
       <p></p>
-  
+
     </div>
 
-    <div class="card" category="coding">
+    <div class="card fade-in" category="coding">
       <h4>Coding Challenge: Code wars</h4>
       <p>Coding practice for all programming levels</p>
-      <a href="https://www.codewars.com/">Visit Code wars</a>
+      <a href="https://www.codewars.com/" target="_blank">Visit Code wars</a>
       <p></p>
     </div>
 
-    <div class="card" category="coding">
+    <div class="card fade-in" category="coding">
       <h4>Coding Test: HackerRank</h4>
       <p>Coding Test & Interview Solution</p>
-      <a href="https://www.hackerrank.com/">Visit HackerRank</a>
+      <a href="https://www.hackerrank.com/" target="_blank">Visit HackerRank</a>
       <p></p>
     </div>
 
-     <div class="card" category="learning">
+    <div class="card fade-in" category="learning">
       <h4>Courses and Certifications: Great Learning</h4>
       <p>Online courses with Certifications</p>
-      <a href="https://www.mygreatlearning.com/">Visit Great Learning</a>
+      <a href="https://www.mygreatlearning.com/" target="_blank">Visit Great Learning</a>
       <p></p>
-     </div>
+    </div>
 
-    <div class="card" category="learning">
+    <div class="card fade-in" category="learning">
       <h4>Practice and Courses: GeeksForGeeks</h4>
       <p>Practice coding, learn DSA, and explore computer science topics with tutorials and challenges.</p>
       <a href="https://www.geeksforgeeks.org" target="_blank">Visit GeeksForGeeks</a>
     </div>
 
-    <div class="card" category="coding">
+    <div class="card fade-in" category="coding">
       <h4>Algorithm Learning: Data Structure Visualization</h4>
-      <p>An interactive resource for visualizing various Data Structures and Algorithms. Perfect for understanding complex concepts through dynamic illustrations.</p>
-      <a href="https://www.cs.usfca.edu/~galles/visualization/Algorithms.html" target="_blank">Visit Data Structures Visualization</a>
-    </div>
-    
-    <div class="card" category="learning">
-      <h4>Documentation: Placement ready in 3 months</h4>
-      <p>A comprehensive guide outlining strategies and essential tips to prepare for your placements in just three months.</p>
-      <a href="https://medium.com/@varshini_vijay/placement-ready-in-3-months-bfba2512bee2" target="_blank">Visit Medium</a>
+      <p>An interactive resource for visualizing various Data Structures and Algorithms. Perfect for understanding
+        complex concepts through dynamic illustrations.</p>
+      <a href="https://www.cs.usfca.edu/~galles/visualization/Algorithms.html" target="_blank">Visit Data Structures
+        Visualization</a>
     </div>
 
-    <div class="card" category="learning">
+    <div class="card fade-in" category="learning">
+      <h4>Documentation: Placement ready in 3 months</h4>
+      <p>A comprehensive guide outlining strategies and essential tips to prepare for your placements in just three
+        months.</p>
+      <a href="https://medium.com/@varshini_vijay/placement-ready-in-3-months-bfba2512bee2" target="_blank">Visit
+        Medium</a>
+    </div>
+
+    <div class="card fade-in" category="learning">
       <h4>Learning: Aptitude Questions and Answers</h4>
-      <p>Curated resources and practice materials to sharpen your quantitative, logical, and verbal aptitude skills for competitive exams and placements.</p>
+      <p>Curated resources and practice materials to sharpen your quantitative, logical, and verbal aptitude skills for
+        competitive exams and placements.</p>
       <a href="https://www.indiabix.com/" target="_blank">Visit indiabix</a>
     </div>
 
-
-
-    <div class="card" category="interview">
+    <div class="card fade-in" category="interview">
       <h4>Technical Interviews: InterviewBit</h4>
       <p>Structured interview preparation with company-specific questions and mock interviews.</p>
-      <a href="https://www.interviewbit.com/">Visit Technical Interviews</a>
+      <a href="https://www.interviewbit.com/" target="_blank">Visit Technical Interviews</a>
     </div>
 
-    <div class="card" category="interview">
+    <div class="card fade-in" category="interview">
       <h4>Coding Interviews: AlgoExpert</h4>
       <p>Master coding interviews with curated questions, video explanations, and mock assessments.</p>
-      <a href="https://www.algoexpert.io/">Visit Coding Interviews</a>
+      <a href="https://www.algoexpert.io/" target="_blank">Visit Coding Interviews</a>
     </div>
 
-    <div class="card" category="interview">
+    <div class="card fade-in" category="interview">
       <h4>SQL Interview Questions: SQLBolt</h4>
       <p>Interactive SQL tutorial and interview questions for database-related roles.</p>
-      <a href="https://sqlbolt.com/">Visit SQL Interview Questions</a>
+      <a href="https://sqlbolt.com/" target="_blank">Visit SQL Interview Questions</a>
     </div>
 
-    <div class="card" category="interview">
+    <div class="card fade-in" category="interview">
       <h4>Mock Interviews: Interviewing.io</h4>
       <p>Practice technical interviews anonymously with engineers from top companies.</p>
-      <a href="https://interviewing.io/">Visit Mock Interviews</a>
+      <a href="https://interviewing.io/" target="_blank">Visit Mock Interviews</a>
     </div>
 
-    <div class="card" category="interview">
+    <div class="card fade-in" category="interview">
       <h4>Programming Mock Tests: Coding Ninjas</h4>
       <p>Mock interview questions and coding assessments for placement preparation.</p>
-      <a href="https://www.codingninjas.com/">Visit Programming Mock Tests</a>
+      <a href="https://www.codingninjas.com/" target="_blank">Visit Programming Mock Tests</a>
     </div>
 
-    <div class="card" category="interview">
+    <div class="card fade-in" category="interview">
       <h4>System Design Interviews: Grokking</h4>
       <p>Learn system design concepts and practice with real interview questions from top tech companies.</p>
-      <a href="https://www.educative.io/courses/grokking-the-system-design-interview">Visit System Design Interviews</a>
+      <a href="https://www.educative.io/courses/grokking-the-system-design-interview" target="_blank">Visit System
+        Design Interviews</a>
     </div>
 
-    <div class="card" category="interview">
+    <div class="card fade-in" category="interview">
       <h4>Behavioral Interviews: Pramp</h4>
       <p>Practice behavioral and technical interviews with peers in a realistic interview setting.</p>
-      <a href="https://www.pramp.com/">Visit Behavioral Interviews</a>
+      <a href="https://www.pramp.com/" target="_blank">Visit Behavioral Interviews</a>
     </div>
 
     <!-- Mock Test Section -->
-    <div class="card" category="mock">
+    <div class="card fade-in" category="mock">
       <h4>Coding Mock Tests: TestDome</h4>
       <p>Programming skill assessments and coding tests used by companies for hiring.</p>
-      <a href="https://www.testdome.com/">Visit Coding Mock Tests</a>
+      <a href="https://www.testdome.com/" target="_blank">Visit Coding Mock Tests</a>
     </div>
 
-    <div class="card" category="mock">
+    <div class="card fade-in" category="mock">
       <h4>Technical Mock Tests: HackerEarth</h4>
       <p>Practice technical assessments with timed coding challenges and algorithmic problems.</p>
-      <a href="https://www.hackerearth.com/">Visit Technical Mock Tests</a>
+      <a href="https://www.hackerearth.com/" target="_blank">Visit Technical Mock Tests</a>
     </div>
 
-    <div class="card" category="mock">
+    <div class="card fade-in" category="mock">
       <h4>SQL Mock Tests: W3Schools SQL Quiz</h4>
       <p>Test your SQL knowledge with interactive quizzes and practice tests.</p>
-      <a href="https://www.w3schools.com/quiztest/quiztest.asp?qtest=SQL">Visit SQL Mock Tests</a>
+      <a href="https://www.w3schools.com/quiztest/quiztest.asp?qtest=SQL" target="_blank">Visit SQL Mock Tests</a>
     </div>
 
-    <div class="card" category="mock">
+    <div class="card fade-in" category="mock">
       <h4>Aptitude Mock Tests: Youth4work</h4>
       <p>Comprehensive mock tests for quantitative, logical reasoning, and verbal ability.</p>
-      <a href="https://www.youth4work.com/">Visit Aptitude Mock Tests</a>
+      <a href="https://www.youth4work.com/" target="_blank">Visit Aptitude Mock Tests</a>
     </div>
-  <!-- Back to Top Button -->
 
-    <div class="card" category="learning">
+    <div class="card fade-in" category="learning">
       <h4>Courses for programming: UDEMY </h4>
-      <p>Online learning platform offering a vast range of beginner to advanced programming courses across various languages and technologies, taught by industry professionals.</p>
+      <p>Online learning platform offering a vast range of beginner to advanced programming courses across various
+        languages and technologies, taught by industry professionals.</p>
       <a href="https://www.udemy.com/" target="_blank">Visit Udemy</a>
     </div>
 
-    <div class="card" category="learning">
-      <h4>Learning technologies from professionals: Coursera  </h4>
-      <p> Global online learning platform that offers university level programming courses and professional certificates from top institutions like Stanford, MIT, and Google, often with hands on projects and peer-reviewed assignments.</p>
+    <div class="card fade-in" category="learning">
+      <h4>Learning technologies from professionals: Coursera </h4>
+      <p> Global online learning platform that offers university level programming courses and professional certificates
+        from top institutions like Stanford, MIT, and Google, often with hands on projects and peer-reviewed
+        assignments.</p>
       <a href="https://www.coursera.org/" target="_blank">Visit Coursera</a>
     </div>
 
-
-    <div class="card" category="CTFs">
+    <div class="card fade-in" category="CTFs">
       <h4> CTF Challenges by PicoCTF </h4>
-      <p> A free, beginner friendly cybersecurity competition and learning platform, featuring capture the flag (CTF) challenges that teach hacking, reverse engineering, cryptography, forensics, and more through interactive problem solving</p>
+      <p> A free, beginner friendly cybersecurity competition and learning platform, featuring capture the flag (CTF)
+        challenges that teach hacking, reverse engineering, cryptography, forensics, and more through interactive
+        problem solving</p>
       <a href="https://picoctf.org/" target="_blank">Visit PicoCTF </a>
     </div>
-  
-    <div class="card" category="CTFs">
+    <div class="card fade-in" category="CTFs">
       <h4> Cybersecurity by TryHackMe </h4>
       <p> A gamified platform for learning ethical hacking and cybersecurity through hands on labs and guided paths.</p>
       <a href="https://tryhackme.com/" target="_blank">Visit TryHackMe </a>
     </div>
 
-
-
-
-
-    <div class="card" category="coding">
+    <div class="card fade-in" category="coding">
       <h4>DSA Mastery: Take U Forward (Striver’s Sheet)</h4>
-      <p>Take U Forward offers a curated A2Z DSA Sheet, system design roadmap, and coding tutorials perfect for placement prep. Striver’s approach is structured and widely recommended.</p>
+      <p>Take U Forward offers a curated A2Z DSA Sheet, system design roadmap, and coding tutorials perfect for
+        placement prep. Striver’s approach is structured and widely recommended.</p>
       <a href="https://takeuforward.org/" target="_blank">Visit Take U Forward</a>
     </div>
-    <div class="card" category="learning">
+
+    <div class="card fade-in" category="learning">
       <h4>Web Dev Tutorials: W3Schools</h4>
-      <p>W3Schools offers beginner-friendly tutorials and interactive examples for HTML, CSS, JavaScript, Python, SQL, and more. Great for quick learning and reference.</p>
+      <p>W3Schools offers beginner-friendly tutorials and interactive examples for HTML, CSS, JavaScript, Python, SQL,
+        and more. Great for quick learning and reference.</p>
       <a href="https://www.w3schools.com/" target="_blank">Explore W3Schools</a>
     </div>
-    <div class="card" category="learning">
+
+    <div class="card fade-in" category="learning">
       <h4>Interactive Learning: freeCodeCamp</h4>
-      <p>Offers hands-on coding lessons, certifications, and projects in web development, data science, and more—all for free.</p>
+      <p>Offers hands-on coding lessons, certifications, and projects in web development, data science, and more—all for
+        free.</p>
       <a href="https://www.freecodecamp.org/" target="_blank">Explore freeCodeCamp</a>
     </div>
+
     <div id="noResultsMessage" class="hidden">
-     No matching resources found. 
-     <dl>Try:</dl>
-  <ul>
-    <li>Changing search terms</li>
-    <li>Selecting different categories</li>
-  </ul>
-</div>
+      No matching resources found.
+      <dl>Try:</dl>
+      <ul>
+        <li>Changing search terms</li>
+        <li>Selecting different categories</li>
+      </ul>
+    </div>
     <!-- Back to Top Button -->
 
 
- 
+
 
     <button id="backToTop" title="Go to top">↑</button>
 
   </div>
-<footer>
-  <div class="footer-container">
-    <!-- Branding -->
-    <div class="footer-section">
-      <h2>first-contrib-placement</h2>
-      <p>
-        A community-driven project to share the best placement and learning resources for BTech students.
-      </p>
-      <div class="social-icons">
-        <a href="https://www.linkedin.com/in/varshitha-macha/" target="blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+  <footer class="fade-in">
+    <div class="footer-container ">
+
+      <!-- Branding -->
+      <div class="footer-section">
+        <h2>first-contrib-placement</h2>
+        <p>
+          A community-driven project to share the best placement and learning resources for BTech students.
+        </p>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/varshitha-macha/" target="blank" rel="noopener noreferrer"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer"><i
+              class="fab fa-github"></i></a>
+        </div>
       </div>
-    </div>
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="#">Contribute</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="./roadmap.html">Roadmap</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
 
-    <!-- Quick Links -->
-    <div class="footer-section">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="#">Contribute</a></li>
-        <li><a href="#">Resources</a></li>
-        <li><a href="./roadmap.html">Roadmap</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
+      </div>
+  </footer>
 
-    <!-- Top Categories -->
+  <!-- Top Categories -->
+  <footer>
     <div class="footer-section">
       <h3>Top Categories</h3>
       <ul>
-        <li><a href="#">DSA Practice</a></li>
-        <li><a href="#">Resume Tips</a></li>
+        <li><a href="./dsa.html">DSA Practice</a></li>
+        <li><a href="./resume.html">Resume Tips</a></li>
         <li><a href="./interviewprep.html">Interview Prep</a></li>
-        <li><a href="#">Open Source</a></li>
+        <li><a href="./open.html">Open Source</a></li>
         <li><a href="./roadmap.html">Roadmaps</a></li>
       </ul>
     </div>
+
 
     <!-- Contact Info -->
     <div class="footer-section">
@@ -331,118 +417,148 @@
       <p><strong>Location:</strong> India</p>
       <p><strong>Email:</strong> contact@firstcontrib.com</p>
     </div>
-  </div>
+    </div>
 
 
-  <div class="footer-bottom">
-    © 2025 All Rights Reserved | Built with ❤️ by the FCP Community
-  </div>
-</footer>
+    <div class="footer-bottom">
+      © 2025 All Rights Reserved | Built with ❤️ by the FCP Community
+    </div>
+  </footer>
+
+  <script>
+    const navbarToggle = document.querySelector('.navbar-toggle');
+    const navbarMenu = document.querySelector('.navbar-menu');
+
+    navbarToggle.addEventListener('click', () => {
+      navbarToggle.classList.toggle('active');
+      navbarMenu.classList.toggle('active');
+    });
+
+    // Dropdown functionality
+    const dropdownToggle = document.getElementById('resources-dropdown-toggle');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+
+    // Toggle dropdown on click
+    dropdownToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation(); // Prevents the document click listener from firing
+      dropdownMenu.classList.toggle('active');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!dropdownMenu.contains(e.target) && !dropdownToggle.contains(e.target)) {
+        dropdownMenu.classList.remove('active');
+      }
+    });
+
+  </script>
 
 
+  <script>
 
+    const searchInput = document.getElementById('searchInput');
+    const categoryCheckboxes = document.querySelectorAll('#checkboxContainer input[type="checkbox"]');
+    const cards = document.querySelectorAll('.card');
+    const toggleBtn = document.getElementById("toggle-mode");
+    const backToTopButton = document.getElementById("backToTop");
 
-<script>
-  const searchInput = document.getElementById('searchInput');
-  const categoryCheckboxes = document.querySelectorAll('#checkboxContainer input[type="checkbox"]');
-  const cards = document.querySelectorAll('.card');
-  const toggleBtn = document.getElementById("toggle-mode");
-  const backToTopButton = document.getElementById("backToTop");
-
-  // 🔍 Search & Filter Logic
-  function searchAndFilter() {
-    const searchText = searchInput.value.toLowerCase();
-    const selectedCategories = Array.from(categoryCheckboxes)
+    // 🔍 Search & Filter Logic
+    function searchAndFilter() {
+      const searchText = searchInput.value.toLowerCase();
+      const selectedCategories = Array.from(categoryCheckboxes)
         .filter(cb => cb.checked)
         .map(cb => cb.value);
-    
-    let hasVisibleCards = false;
 
-    cards.forEach(card => {
+      let hasVisibleCards = false;
+
+      cards.forEach(card => {
         const text = card.textContent.toLowerCase();
         const cardCategory = card.getAttribute('category');
 
         const matchesSearch = text.includes(searchText);
-        const matchesCategory = selectedCategories.length === 0 || 
-                              selectedCategories.includes(cardCategory);
+        const matchesCategory = selectedCategories.length === 0 ||
+          selectedCategories.includes(cardCategory);
 
         if (matchesSearch && matchesCategory) {
-            card.classList.remove("hidden");
-            hasVisibleCards = true;
+          card.classList.remove("hidden");
+          hasVisibleCards = true;
         } else {
-            card.classList.add("hidden");
+          card.classList.add("hidden");
         }
+      });
+
+      // Show/hide no results message
+      const noResultsMsg = document.getElementById('noResultsMessage');
+      if (hasVisibleCards) {
+        noResultsMsg.classList.add("hidden");
+      } else {
+        noResultsMsg.classList.remove("hidden");
+      }
+    }
+
+    // Event Listeners
+    searchInput.addEventListener('input', searchAndFilter);
+    categoryCheckboxes.forEach(cb => cb.addEventListener('change', searchAndFilter));
+
+    // 🌗 Dark Mode
+    window.addEventListener("DOMContentLoaded", () => {
+      const savedMode = localStorage.getItem("mode");
+
+      if (savedMode === "dark") {
+        document.body.classList.add("dark-mode");
+        toggleBtn.textContent = "☀️";
+      } else {
+        document.body.classList.remove("dark-mode");
+        toggleBtn.textContent = "🌙";
+      }
+      searchAndFilter();
     });
 
-    // Show/hide no results message
-    const noResultsMsg = document.getElementById('noResultsMessage');
-    if (hasVisibleCards) {
-        noResultsMsg.classList.add("hidden");
-    } else {
-        noResultsMsg.classList.remove("hidden");
-    }
-}
+    // 🟢 Toggle and Save Mode
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
 
-  // Event Listeners
-  searchInput.addEventListener('input', searchAndFilter);
-  categoryCheckboxes.forEach(cb => cb.addEventListener('change', searchAndFilter));
+      if (document.body.classList.contains("dark-mode")) {
+        toggleBtn.textContent = "☀️";
+        localStorage.setItem("mode", "dark");
+      } else {
+        toggleBtn.textContent = "🌙";
+        localStorage.setItem("mode", "light");
+      }
+    });
 
-  // 🌗 Dark Mode
-  window.addEventListener("DOMContentLoaded", () => {
-    const savedMode = localStorage.getItem("mode");
+    // ⬆️ Back to Top
+    window.onscroll = () => {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        backToTopButton.style.display = "block";
+      } else {
+        backToTopButton.style.display = "none";
+      }
+    };
 
-    if (savedMode === "dark") {
-      document.body.classList.add("dark-mode");
-      toggleBtn.textContent = "☀️";
-    } else {
-      document.body.classList.remove("dark-mode");
-      toggleBtn.textContent = "🌙";
-    }
-    searchAndFilter();
-  });
+    backToTopButton.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
-  // 🟢 Toggle and Save Mode
-  toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
+    // ⬇️ Toggle dropdown
+    const filterToggle = document.getElementById("filterToggle");
+    const filterDropdown = document.querySelector(".filter-dropdown");
+    filterToggle.addEventListener("click", () => {
+      filterDropdown.classList.toggle("open");
+    });
 
-    if (document.body.classList.contains("dark-mode")) {
-      toggleBtn.textContent = "☀️";
-      localStorage.setItem("mode", "dark");
-    } else {
-      toggleBtn.textContent = "🌙";
-      localStorage.setItem("mode", "light");
-    }
-  });
+    // ⛔ Close dropdown if clicked outside
+    window.addEventListener("click", (e) => {
+      if (!filterDropdown.contains(e.target)) {
+        filterDropdown.classList.remove("open");
+      }
+    });
 
-  // ⬆️ Back to Top
-  window.onscroll = () => {
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-      backToTopButton.style.display = "block";
-    } else {
-      backToTopButton.style.display = "none";
-    }
-  };
-
-  backToTopButton.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  // ⬇️ Toggle dropdown
-  const filterToggle = document.getElementById("filterToggle");
-  const filterDropdown = document.querySelector(".filter-dropdown");
-  filterToggle.addEventListener("click", () => {
-    filterDropdown.classList.toggle("open");
-  });
-
-  // ⛔ Close dropdown if clicked outside
-  window.addEventListener("click", (e) => {
-    if (!filterDropdown.contains(e.target)) {
-      filterDropdown.classList.remove("open");
-    }
-  });
-</script>
+  </script>
 
 
 
 </body>
+
 </html>

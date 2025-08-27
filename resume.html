@@ -1,58 +1,107 @@
+<!-- File 2: resume-tips.html with animations, gradient, read more -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Interview Preparation</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="./styles/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Tips</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2LdF1/Jz7A81rYf5nU5I5jE5Vf9I7p9B9qD4B3K8H6E5Q6yG1fW4Q0fB8D7G5B1"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="./styles/style.css">
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Roboto', sans-serif;
       margin: 0;
-      background: linear-gradient(to bottom right, #f7f9fc, #e0f2f1);
+      background: linear-gradient(to right, #e0f7fa, #b2dfdb);
     }
 
     header {
-      background: #006D77;
+      background: linear-gradient(135deg, #28A6C7, #004d40);
       color: white;
+      padding: 2rem;
       text-align: center;
-      padding: 40px 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
-    section {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #ffffff;
+    .container {
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .tip-card {
+      background: white;
+      padding: 1.5rem;
       border-radius: 12px;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, background 0.3s ease;
+      overflow: hidden;
+      position: relative;
+      animation: slideIn 1s ease forwards;
+      opacity: 0;
     }
 
-    section:hover {
-      transform: scale(1.02);
-      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+    .tip-card:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+
+    .tip-card:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    .tip-card:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    .tip-card:nth-child(4) {
+      animation-delay: 0.8s;
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .tip-card:hover {
+      transform: scale(1.05);
+      background: linear-gradient(145deg, #e0f2f1, #ffffff);
     }
 
     h2 {
-      color: #006D77;
-    }
-
-    ul {
-      margin-left: 20px;
-      line-height: 1.8;
+      margin-top: 0;
+      color: #007c91;
     }
 
     a {
+      display: inline-block;
+      margin-top: 10px;
       color: #007c91;
+      font-weight: bold;
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .read-more {
+      color: #007c91;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .more-content {
+      display: none;
+      margin-top: 0.5rem;
+      color: #444;
     }
   </style>
 </head>
@@ -61,13 +110,11 @@
   <nav class="navbar">
     <div class="navbar-container">
       <div class="logo">
-        <img src="images/PR-LOGO.png" width="140" height="120" id="logo">
+        <img src="/images/PR-LOGO.png" width="140" height="120" id="logo">
       </div>
 
 
       <!-- Navigation Links -->
-
-
 
       <ul class="navbar-menu">
         <li><a href="index.html"><i class="fa-solid fa-house-chimney"></i>Home</a></li>
@@ -86,12 +133,14 @@
           </ul>
         </li>
 
+
         <li><a href="roadmap.html"><i class="fa-solid fa-map"></i>Roadmap</a></li>
         <li><a href="contact.html"><i class="fa-solid fa-address-card"></i>Contact</a></li>
         <li><a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer">
             <i class="fa-brands fa-github"></i>Github</a>
         </li>
       </ul>
+
 
       <div class="navbar-icons">
         <!-- Hamburger icon -->
@@ -107,72 +156,61 @@
       </div>
     </div>
   </nav>
-  <header data-aos="fade-down">
-    <h1>💼 Interview Preparation Central</h1>
-    <p>Everything you need to ace coding & HR interviews!</p>
+  <header>
+    <h1>Resume Tips Hub</h1>
+    <p>Boost your resume with expert tips and free resources</p>
   </header>
 
-  <section data-aos="zoom-in-up">
-    <h2>🔧 Technical Interview Practice</h2>
-    <ul>
-      <li><a href="https://leetcode.com" target="_blank">LeetCode</a> – Practice with real coding interview questions.
-      </li>
-      <li><a href="https://www.geeksforgeeks.org/tag/technical-interview-questions/" target="_blank">GeeksforGeeks –
-          Technical Q&A</a></li>
-      <li><a href="https://interviewbit.com" target="_blank">InterviewBit</a> – Guided practice with mock interview
-        flow.</li>
-    </ul>
-  </section>
-
-  <section data-aos="zoom-in-up" data-aos-delay="100">
-    <h2>🗣️ HR/Behavioral Interview Tips</h2>
-    <ul>
-      <li><a href="https://www.indeed.com/career-advice/interviewing/top-interview-questions-and-answers"
-          target="_blank">Common HR Questions – Indeed</a></li>
-      <li><a href="https://www.youtube.com/playlist?list=PLV8vIYTIdSnYBZQXaDgJrOnl7tOX0fgUe" target="_blank">YouTube
-          Playlist: HR Mock Interviews</a></li>
-      <li><a href="https://www.linkedin.com/pulse/mastering-behavioral-interviews-star-method-guide-jennifer-chen"
-          target="_blank">Using STAR Method for Behavioral Questions</a></li>
-    </ul>
-  </section>
-
-  <section data-aos="zoom-in-up" data-aos-delay="200">
-    <h2>🎥 Video-Based Learning</h2>
-    <ul>
-      <li><a href="https://www.youtube.com/c/ClémentMihailescu" target="_blank">Clément Mihailescu – Former Google
-          Engineer</a></li>
-      <li><a href="https://www.youtube.com/@ApnaCollegeOfficial" target="_blank">Apna College – Placement Prep
-          Series</a></li>
-      <li><a href="https://www.youtube.com/@codebasics" target="_blank">Codebasics – System Design + HR</a></li>
-    </ul>
-  </section>
-
-  <section data-aos="zoom-in-up" data-aos-delay="300">
-    <h2>🧠 Mock Interview Platforms</h2>
-    <ul>
-      <li><a href="https://pramp.com" target="_blank">Pramp – Free peer-to-peer mock interviews</a></li>
-      <li><a href="https://interviewing.io" target="_blank">Interviewing.io – Anonymous real interviews</a></li>
-    </ul>
-  </section>
-
-  <section data-aos="zoom-in-up" data-aos-delay="400">
-    <h2>📄 Resume Review & Feedback</h2>
-    <ul>
-      <li><a href="https://resumeworded.com" target="_blank">ResumeWorded – Instant feedback & score</a></li>
-      <li><a href="https://enhancv.com" target="_blank">Enhancv – AI resume builder</a></li>
-      <li><a href="https://overleaf.com" target="_blank">Overleaf – LaTeX templates for CS resumes</a></li>
-    </ul>
-  </section>
-
-  <section data-aos="flip-up" data-aos-delay="500">
-    <h2>📚 Bonus: Behavioral Interview Cheat Sheet</h2>
-    <ul>
-      <li><a href="https://hbr.org/2020/01/what-really-makes-a-good-interview-question" target="_blank">What Makes a
-          Good Interview Question – HBR</a></li>
-      <li><a href="https://www.themuse.com/advice/30-behavioral-interview-questions-you-should-be-ready-to-answer"
-          target="_blank">30 Behavioral Questions – The Muse</a></li>
-    </ul>
-  </section>
+  <div class="container">
+    <div class="tip-card">
+      <h2>Interactive Tips</h2>
+      <p>
+        Understand how recruiters view resumes and how ATS (Applicant Tracking Systems) work.
+        <span class="read-more" onclick="toggleMore(this)">Read more...</span>
+      </p>
+      <div class="more-content">
+        Use tools like Jobscan to test how well your resume matches a job description. Include keywords from the posting
+        and format your resume in clean sections: summary, education, experience, and skills.
+      </div>
+      <a href="https://novoresume.com/resume-tips" target="_blank">See Resume Tips</a>
+    </div>
+    <div class="tip-card">
+      <h2>Role-specific Advice</h2>
+      <p>
+        Customize your resume by showing relevant projects, tools, and achievements.
+        <span class="read-more" onclick="toggleMore(this)">Read more...</span>
+      </p>
+      <div class="more-content">
+        Include GitHub links, portfolio URLs, or LinkedIn. Use action verbs like "Developed", "Built", "Led". Focus on
+        relevant tools (e.g., Python, TensorFlow for ML, or MongoDB for full stack).
+      </div>
+      <a href="https://enhancv.com/resume-examples/" target="_blank">Explore Role-based Samples</a>
+    </div>
+    <div class="tip-card">
+      <h2>Company Sample Resumes</h2>
+      <p>
+        Study formats used by successful applicants at Google, Amazon, etc.
+        <span class="read-more" onclick="toggleMore(this)">Read more...</span>
+      </p>
+      <div class="more-content">
+        Top resumes use the STAR method: Situation, Task, Action, Result. Always quantify: "Increased API speed by 30%"
+        is more impactful than "Optimized backend code".
+      </div>
+      <a href="https://www.cakeresume.com/resources/top-resume-examples" target="_blank">Company Resumes</a>
+    </div>
+    <div class="tip-card">
+      <h2>Free Templates & Tools</h2>
+      <p>
+        Use online tools like Canva, Zety, or Overleaf for LaTeX-style resumes.
+        <span class="read-more" onclick="toggleMore(this)">Read more...</span>
+      </p>
+      <div class="more-content">
+        Templates help with layout. Resume checkers help with keyword optimization. Follow YouTube creators who do live
+        resume reviews for better insight.
+      </div>
+      <a href="https://www.canva.com/resumes/" target="_blank">Download Templates</a>
+    </div>
+  </div>
   <footer>
     <div class="footer-container">
       <!-- Branding -->
@@ -226,17 +264,11 @@
       © 2025 All Rights Reserved | Built with ❤️ by the FCP Community
     </div>
   </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
-    AOS.init({ once: true, duration: 1000 });
-  </script>
-  <script>
-    // Navbar toggle functionality
     const navbarToggle = document.querySelector('.navbar-toggle');
     const navbarMenu = document.querySelector('.navbar-menu');
     const toggleBtn = document.getElementById("toggle-mode");
 
-    // Hamburger menu toggle
     navbarToggle.addEventListener('click', () => {
       navbarToggle.classList.toggle('active');
       navbarMenu.classList.toggle('active');
@@ -249,7 +281,7 @@
     // Toggle dropdown on click
     dropdownToggle.addEventListener('click', (e) => {
       e.preventDefault();
-      e.stopPropagation(); // Prevents the document click listener from firing
+      e.stopPropagation();
       dropdownMenu.classList.toggle('active');
     });
 
@@ -257,23 +289,6 @@
     document.addEventListener('click', (e) => {
       if (!dropdownMenu.contains(e.target) && !dropdownToggle.contains(e.target)) {
         dropdownMenu.classList.remove('active');
-      }
-    });
-
-    // Close menu when clicking on a link (for mobile)
-    const menuLinks = navbarMenu.querySelectorAll('a');
-    menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navbarToggle.classList.remove('active');
-        navbarMenu.classList.remove('active');
-      });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', function (event) {
-      if (!navbarToggle.contains(event.target) && !navbarMenu.contains(event.target)) {
-        navbarToggle.classList.remove('active');
-        navbarMenu.classList.remove('active');
       }
     });
 
@@ -303,14 +318,14 @@
       }
     });
 
-    // Handle window resize
-    window.addEventListener('resize', function () {
-      if (window.innerWidth > 880) {
-        // Reset mobile menu on desktop
-        navbarToggle.classList.remove('active');
-        navbarMenu.classList.remove('active');
-      }
-    });
+  </script>
+  <script>
+    function toggleMore(element) {
+      const more = element.parentElement.nextElementSibling;
+      const isVisible = more.style.display === 'block';
+      more.style.display = isVisible ? 'none' : 'block';
+      element.textContent = isVisible ? 'Read more...' : 'Show less';
+    }
   </script>
 </body>
 

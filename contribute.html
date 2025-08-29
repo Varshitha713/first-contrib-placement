@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contribute - Placement Resources</title>
+  <link rel="icon" type="image/png" href="./images/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="./styles/style.css">
+  <style>
+    /* ---------- Basic Body & Flex Layout ---------- */
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: #f0fef5;
+      color: #2e3d32;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.dark-mode {
+      background-color: #0b1e12;
+      color: #a4ffc1;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    
+    body.dark-mode #toggle-mode {
+      background-color: #32ff91;
+      color: black;
+    }
+
+    /* ---------- Flash Card ---------- */
+    .flash-card-container {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin: 2rem auto;
+      max-width: 900px;
+      padding: 0 1rem;
+    }
+
+    .flash-card {
+      background-color: #e4f7e7;
+      border-radius: 15px;
+      padding: 1.5rem;
+      width: 220px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.4s, box-shadow 0.4s, background 0.3s, color 0.3s;
+      cursor: pointer;
+    }
+
+    body.dark-mode .flash-card {
+      background-color: #144327;
+      color: #a4ffc1;
+    }
+
+    .flash-card:hover {
+      transform: translateY(-12px) scale(1.05);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .flash-card i {
+      font-size: 2.2rem;
+      color: #2cbf6c;
+      margin-bottom: 0.5rem;
+    }
+
+    body.dark-mode .flash-card i {
+      color: #32ff91;
+    }
+
+    .flash-card h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .flash-card p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    /* ---------- Contributors ---------- */
+    .contributors-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .contributor-card {
+      background: #e4f7e7;
+      border-radius: 20px;
+      text-align: center;
+      padding: 1rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      transition: transform 0.4s, box-shadow 0.4s, background 0.3s, color 0.3s;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    body.dark-mode .contributor-card {
+      background: #144327;
+      color: #a4ffc1;
+    }
+
+    .contributor-card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
+    }
+
+    .contributor-card img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 0.5rem;
+      border: 3px solid #2cbf6c;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    body.dark-mode .contributor-card img {
+      border-color: #32ff91;
+    }
+
+    .contributor-card img:hover {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .contributor-card h3 {
+      margin: 0.3rem 0;
+      font-size: 1rem;
+    }
+
+    .contributor-card p {
+      font-size: 0.85rem;
+      margin: 0.2rem 0 0.5rem 0;
+    }
+
+    .contributor-card a {
+      color: #2cbf6c;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+
+    body.dark-mode .contributor-card a {
+      color: #32ff91;
+    }
+
+    .contributor-card a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---------- Loader ---------- */
+    .loader {
+      text-align: center;
+      margin: 2rem 0;
+      font-size: 1.2rem;
+      color: #2cbf6c;
+    }
+
+    body.dark-mode .loader {
+      color: #32ff91;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      background-color: #28A6C7;
+      color: white;
+      padding: 50px 20px 30px;
+      font-family: Arial, sans-serif;
+    }
+
+    body.dark-mode footer {
+      background-color: #144327;
+      color: #a4ffc1;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .footer-section {
+      flex: 1 1 220px;
+      text-align: center;
+    }
+
+    .footer-section h2,
+    .footer-section h3 {
+      margin-bottom: 10px;
+    }
+
+    .footer-section a {
+      color: white;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .footer-section a:hover {
+      color: #000000;
+    }
+
+    .social-icons {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .footer-bottom {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 15px;
+      border-top: 1px solid rgba(0, 0, 0, 0.2);
+      padding-top: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="logo">
+        <img src="/images/PR-LOGO.png" width="140" height="120" id="logo">
+      </div>
+
+
+      <!-- Navigation Links -->
+
+      <ul class="navbar-menu">
+        <li><a href="index.html"><i class="fa-solid fa-house-chimney"></i>Home</a></li>
+        <li><a href="contribute.html"><i class="fa-solid fa-handshake-angle"></i>Contribute</a></li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" id="resources-dropdown-toggle">
+            <i class="fa-solid fa-book"></i>Resources <i class="fa-solid fa-caret-down"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="./interviewprep.html">Interview Prep</a></li>
+            <li><a href="./dsa.html">DSA Practice</a></li>
+            <li><a href="./resume.html">Resume Tips</a></li>
+            <li><a href="./open.html">Open Source</a></li>
+            <li><a href="./roadmap.html">Roadmaps</a></li>
+          </ul>
+        </li>
+
+        <li><a href="roadmap.html"><i class="fa-solid fa-map"></i>Roadmap</a></li>
+        <li><a href="contact.html"><i class="fa-solid fa-address-card"></i>Contact</a></li>
+        <li><a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github"></i>Github</a>
+        </li>
+      </ul>
+
+
+      <div class="navbar-icons">
+        <!-- Hamburger icon -->
+        <button class="navbar-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+
+        <!-- Dark/Light Mode Toggle -->
+        <button id="toggle-mode"></button>
+      </div>
+    </div>
+  </nav>
+<header>
+  <h1>Welcome to Our Open Source Community!</h1>
+  <h3>Explore, contribute, and collaborate on projects to grow together as developers</h3>
+</header>
+
+
+  <main>
+    <!-- Flash Cards -->
+    <div class="flash-card-container">
+      <div class="flash-card">
+        <i class="fas fa-code-branch"></i>
+        <h3>Fork Repo</h3>
+        <p>Create your copy of the repository on GitHub.</p>
+      </div>
+      <div class="flash-card">
+        <i class="fas fa-pencil-alt"></i>
+        <h3>Create Branch</h3>
+        <p>Start a new branch for your feature or fix.</p>
+      </div>
+      <div class="flash-card">
+        <i class="fas fa-edit"></i>
+        <h3>Make Changes</h3>
+        <p>Add resources, improve docs, or fix issues.</p>
+      </div>
+      <div class="flash-card">
+        <i class="fas fa-paper-plane"></i>
+        <h3>Pull Request</h3>
+        <p>Push your branch and open a Pull Request.</p>
+      </div>
+    </div>
+
+    <!-- Contributors -->
+    <div class="loader" id="loader">Loading contributors...</div>
+    <div class="contributors-container" id="contributors"></div>
+  </main>
+
+  <script>
+    // Dark/Light mode functionality
+    window.addEventListener("DOMContentLoaded", () => {
+      const savedMode = localStorage.getItem("mode");
+
+      if (savedMode === "dark") {
+        document.body.classList.add("dark-mode");
+        toggleBtn.textContent = "☀️";
+      } else {
+        document.body.classList.remove("dark-mode");
+        toggleBtn.textContent = "🌙";
+      }
+    });
+
+    // Toggle and Save Mode
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+
+      if (document.body.classList.contains("dark-mode")) {
+        toggleBtn.textContent = "☀️";
+        localStorage.setItem("mode", "dark");
+      } else {
+        toggleBtn.textContent = "🌙";
+        localStorage.setItem("mode", "light");
+      }
+    });
+
+    // Fetch Contributors
+    const contributorsContainer = document.getElementById('contributors');
+    const loader = document.getElementById('loader');
+    const githubUser = 'Varshitha713';
+    const githubRepo = 'first-contrib-placement';
+    const apiUrl = `https://api.github.com/repos/${githubUser}/${githubRepo}/contributors`;
+
+    async function fetchContributors() {
+      try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) throw new Error('GitHub API error');
+        const contributors = await response.json();
+
+        loader.style.display = 'none';
+        contributors.forEach(contributor => {
+          const card = document.createElement('div');
+          card.classList.add('contributor-card');
+          card.innerHTML = `
+            <img src="${contributor.avatar_url}" alt="${contributor.login}">
+            <h3>${contributor.login}</h3>
+            <p>Contributions: ${contributor.contributions}</p>
+            <a href="${contributor.html_url}" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          `;
+          contributorsContainer.appendChild(card);
+        });
+
+        const cards = document.querySelectorAll('.contributor-card');
+        cards.forEach((c, i) => setTimeout(() => c.style.opacity = 1, i * 100));
+
+      } catch (err) {
+        loader.textContent = 'Failed to load contributors.';
+        console.error(err);
+      }
+    }
+
+    fetchContributors();
+  </script>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h2>first-contrib-placement</h2>
+        <p>A community-driven project to share the best placement and learning resources for BTech students.</p>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/varshitha-macha/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./contribute.html">Contribute</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="./roadmap.html">Roadmap</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Top Categories</h3>
+        <ul>
+          <li><a href="./dsa.html">DSA Practice</a></li>
+          <li><a href="./resume.html">Resume Tips</a></li>
+          <li><a href="./interviewprep.html">Interview Prep</a></li>
+          <li><a href="./open.html">Open Source</a></li>
+          <li><a href="./roadmap.html">Roadmaps</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Get in Touch</h3>
+        <p><strong>Location:</strong> India</p>
+        <p><strong>Email:</strong> contact@firstcontrib.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 All Rights Reserved | Built with ❤️ by the FCP Community
+    </div>
+  </footer>
+
+</body>
+
+</html>

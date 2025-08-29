@@ -20,6 +20,239 @@
       color: #2e3d32;
       transition: background 0.3s, color 0.3s;
     }
+.navbar{
+  display: flex;
+  align-items:center;
+  justify-content: flex-end;
+  height: 80px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: #004E64;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.navbar-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 2rem;
+  max-width: 1600px;
+}
+
+.navbar-icons{
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.logo img {
+  height: 90px;
+  width: auto;
+}
+
+.navbar-container .navbar-menu{
+  display: flex;
+  text-align: center;
+  gap: 1.5rem;
+  list-style: none;
+  transform: all 0.3s ease;
+}
+
+/* --- Dropdown Menu Styling --- */
+.navbar-menu .dropdown {
+  position: relative;
+}
+
+.navbar-menu .dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 3px 20px;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  transition: all 0.7s ease;
+  white-space: nowrap;
+}
+
+.navbar-menu .dropdown-toggle:hover {
+  color: #28A6C7;
+  background: white;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background-color: #00818d;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  padding: 10px 0;
+  list-style: none;
+  z-index: 1001;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.dropdown-menu.active {
+  display: block;
+}
+
+.dropdown-menu li a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #006D77;
+  color: white;
+}
+
+/* Ensure dropdown works on mobile view */
+@media(max-width: 880px) {
+  .navbar-menu .dropdown-menu {
+    position: static;
+    display: none;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0 0 0 1rem;
+    min-width: auto;
+  }
+
+  .navbar-menu .dropdown-menu.active {
+    display: block;
+  }
+
+  .navbar-menu .dropdown-menu li a {
+    padding: 8px 12px;
+    font-size: 1.2rem;
+  }
+
+  .navbar-menu .dropdown-menu li a:hover {
+    background-color: transparent;
+    color: #28A6C7;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.navbar-container .navbar-menu li a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 3px 20px;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  transition: all 0.7s ease;
+  white-space: nowrap;
+}
+
+.navbar-container .navbar-menu li a:hover{
+  color: #28A6C7;
+  background: white;
+}
+
+.navbar-menu li a i{
+  margin-right: 8px;
+}
+
+.navbar-toggle{
+  display: none;
+  background: transparent;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.bar{
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+#toggle-mode {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: white;
+}
+
+@media(max-width:880px){
+  .navbar{
+    backdrop-filter: none;
+  }
+
+  .navbar-container .navbar-menu{
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.7rem !important;
+    position: absolute;
+    height: 100vh;
+    width: 250px;
+    top: 0;
+    right: 0;
+    padding: 5rem 1.5rem;
+    box-shadow: 0 10px 10px #219EBC;
+    backdrop-filter: blur(10px);
+  }
+
+  .navbar-container .navbar-menu.active{
+    display: flex;
+  }
+
+  .navbar-toggle{
+    display: block;
+    z-index: 999;
+  }
+
+  #toggle-mode{
+    display: block;
+  }
+
+  .navbar-toggle.active .bar:nth-child(2){
+    opacity: 0;
+  }
+
+  .navbar-toggle.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .navbar-toggle.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+@media(max-width:480px){
+  .navbar-container{
+    padding: 0 1rem;
+  }
+
+  .navbar-container .navbar-menu li a{
+    font-size: 1.2rem;
+    padding: 3px 15px;
+    filter: brightness(1) invert(0);
+  }
+}
 
     body.dark-mode {
       background-color: #0b1e12;
@@ -108,6 +341,37 @@
       opacity: 0;
       transform: translateY(20px);
     }
+/* Hide dropdown by default */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background: white;
+  list-style: none;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+
+/* Show on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  margin: 0.5rem 0;
+}
+
+.dropdown-menu a {
+  color: #2e3d32;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu a:hover {
+  color: #28A6C7;
+}
 
     body.dark-mode .contributor-card {
       background: #144327;
@@ -320,9 +584,10 @@
 
   <script>
     // Dark/Light mode functionality
+
     window.addEventListener("DOMContentLoaded", () => {
       const savedMode = localStorage.getItem("mode");
-
+      const toggleBtn = document.getElementById("toggle-mode");
       if (savedMode === "dark") {
         document.body.classList.add("dark-mode");
         toggleBtn.textContent = "☀️";

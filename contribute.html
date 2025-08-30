@@ -293,7 +293,7 @@
 
     body.dark-mode .flash-card {
       background-color: #144327;
-      color: #a4ffc1;
+      color: #00818d;
     }
 
     .flash-card:hover {
@@ -303,12 +303,12 @@
 
     .flash-card i {
       font-size: 2.2rem;
-      color: #2cbf6c;
+      color: #00818d;
       margin-bottom: 0.5rem;
     }
 
     body.dark-mode .flash-card i {
-      color: #32ff91;
+      color: #00818d;
     }
 
     .flash-card h3 {
@@ -364,7 +364,7 @@
 
     body.dark-mode .contributor-card {
       background: #144327;
-      color: #a4ffc1;
+      color: #00818d;
     }
 
     .contributor-card:hover {
@@ -378,12 +378,12 @@
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 0.5rem;
-      border: 3px solid #2cbf6c;
+      border: 3px solid #00818d;
       transition: transform 0.3s, border-color 0.3s;
     }
 
     body.dark-mode .contributor-card img {
-      border-color: #32ff91;
+      border-color: #00818d;
     }
 
     .contributor-card img:hover {
@@ -401,14 +401,14 @@
     }
 
     .contributor-card a {
-      color: #2cbf6c;
+      color: #00818d;
       text-decoration: none;
       font-size: 0.9rem;
       transition: color 0.3s;
     }
 
     body.dark-mode .contributor-card a {
-      color: #32ff91;
+      color: #00818d;
     }
 
     .contributor-card a:hover {
@@ -420,11 +420,11 @@
       text-align: center;
       margin: 2rem 0;
       font-size: 1.2rem;
-      color: #2cbf6c;
+      color: #00818d;
     }
 
     body.dark-mode .loader {
-      color: #32ff91;
+      color: #00818d;
     }
 
     /* ---------- Footer ---------- */
@@ -570,26 +570,22 @@
     <div class="loader" id="loader">Loading contributors...</div>
     <div class="contributors-container" id="contributors"></div>
   </main>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.getElementById("toggle-mode");
 
-  <script>
-    // Dark/Light mode functionality
+    // Dark/Light Mode Setup
+    const savedMode = localStorage.getItem("mode");
+    if (savedMode === "dark") {
+      document.body.classList.add("dark-mode");
+      toggleBtn.textContent = "☀️";
+    } else {
+      toggleBtn.textContent = "🌙";
+    }
 
-    window.addEventListener("DOMContentLoaded", () => {
-      const savedMode = localStorage.getItem("mode");
-      const toggleBtn = document.getElementById("toggle-mode");
-      if (savedMode === "dark") {
-        document.body.classList.add("dark-mode");
-        toggleBtn.textContent = "☀️";
-      } else {
-        document.body.classList.remove("dark-mode");
-        toggleBtn.textContent = "🌙";
-      }
-    });
-
-    // Toggle and Save Mode
+    // Toggle Mode
     toggleBtn.addEventListener("click", () => {
       document.body.classList.toggle("dark-mode");
-
       if (document.body.classList.contains("dark-mode")) {
         toggleBtn.textContent = "☀️";
         localStorage.setItem("mode", "dark");
@@ -613,6 +609,7 @@
         const contributors = await response.json();
 
         loader.style.display = 'none';
+
         contributors.forEach(contributor => {
           const card = document.createElement('div');
           card.classList.add('contributor-card');
@@ -625,6 +622,7 @@
           contributorsContainer.appendChild(card);
         });
 
+        // Animate cards
         const cards = document.querySelectorAll('.contributor-card');
         cards.forEach((c, i) => setTimeout(() => c.style.opacity = 1, i * 100));
 
@@ -635,8 +633,10 @@
     }
 
     fetchContributors();
-  </script>
+  });
+</script>
 
+  
   <!-- Footer -->
   <footer>
     <div class="footer-container">

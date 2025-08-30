@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Career Roadmaps</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Lucida+Sans&display=swap" rel="stylesheet">
+  <style>
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #ccd6e2;
+    color: #03171f;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .container {
+    max-width: 1500px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #006D77 0%, #219EBC 100%);
+    font-family: 'Lucida Sans', sans-serif;
+    color: #FFFFFF;
+    padding: 24px 20px;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    border-radius: 0 0 16px 16px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  header h1 {
+    margin: 12px 0 8px;
+    font-size: 2.5rem;
+    color: #fff;
+    letter-spacing: 1.2px;
+  }
+  header p {
+    font-size: 1.2rem;
+    color: #e0f7fa;
+    margin-bottom: 0;
+    font-weight: 400;
+  }
+  .roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+  .roadmap-card {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+    color: #03171f;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .roadmap-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    background: linear-gradient(145deg, rgba(224, 247, 250, 0.95), rgba(222, 230, 233, 0.9));
+    box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+  }
+  .roadmap-card h2 {
+    margin: 0 0 12px;
+    font-size: 1.6rem;
+    color: #219EBC;
+    font-family: 'Lucida Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.3s ease;
+  }
+  .roadmap-card:hover h2 {
+    color: #006D77;
+  }
+  .roadmap-card h2::before {
+    content: '🚀';
+    font-size: 1.4rem;
+  }
+  .roadmap-card p.description {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+  .roadmap-card ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+    color: #555;
+  }
+  .roadmap-card ul li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .roadmap-card ul li::before {
+    content: '✔';
+    color: #219EBC;
+    font-size: 1rem;
+  }
+  .roadmap-card a {
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    background-color: #219EBC;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 1rem;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  .roadmap-card a:hover {
+    background-color: #006D77;
+    transform: scale(1.05);
+  }
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.65);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .modal.show {
+    display: flex;
+    opacity: 1;
+  }
+  .modal-content {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    max-width: 550px;
+    width: 90%;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+    transform: scale(0.7);
+    transition: transform 0.4s ease;
+  }
+  .modal.show .modal-content {
+    transform: scale(1);
+  }
+  .modal-content h3 {
+    margin: 0 0 16px;
+    color: #006D77;
+    font-family: 'Lucida Sans', sans-serif;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .modal-content h3::before {
+    content: '🚀';
+    font-size: 1.4rem;
+  }
+  .modal-content p {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .modal-content ul {
+    list-style-type: none;
+    padding: 0;
+    color: #555;
+    font-size: 0.95rem;
+  }
+  .modal-content ul li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .modal-content ul li::before {
+    content: '✔';
+    color: #219EBC;
+    font-size: 1rem;
+  }
+  .modal-content .close-btn {
+    background: #219EBC;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    display: block;
+    margin: 20px auto 0;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  .modal-content .close-btn:hover {
+    background: #006D77;
+    transform: scale(1.05);
+  }
+  footer {
+    background: linear-gradient(135deg, #28A6C7 0%, #006D77 100%);
+    color: #fff;
+    font-family: Arial, sans-serif;
+    padding: 40px 20px 20px;
+    margin-top: 60px;
+    border-radius: 0 0 16px 16px;
+    text-align: center;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.2);
+  }
+  footer a {
+    color: #e0f7fa;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 2rem;
+    }
+    .container {
+      padding: 12px;
+    }
+    .roadmap-card {
+      padding: 20px;
+    }
+    .roadmap-card h2 {
+      font-size: 1.4rem;
+    }
+    .modal-content {
+      width: 95%;
+      padding: 16px;
+    }
+    .modal-content h3 {
+      font-size: 1.5rem;
+    }
+    footer {
+      padding: 30px 10px 15px;
+      font-size: 0.95rem;
+    }
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📚 Career Roadmaps</h1>
+    <p>Explore structured learning paths to kickstart your tech career journey.</p>
+  </header>
+
+  <div class="container">
+    <div class="roadmap-grid">
+      <div class="roadmap-card" onclick="openModal('frontend')">
+        <h2>Frontend Developer</h2>
+        <p class="description">Master the art of crafting responsive and interactive user interfaces for web applications, ensuring seamless user experiences across devices.</p>
+        <ul>
+          <li>Core Skills: HTML, CSS, JavaScript</li>
+          <li>Frameworks: React, Vue, Angular</li>
+          <li>Tools: Webpack, Vite, Git</li>
+        </ul>
+        <a href="https://roadmap.sh/frontend" target="_blank">View Roadmap →</a>
+      </div>
+      <div class="roadmap-card" onclick="openModal('backend')">
+        <h2>Backend Developer</h2>
+        <p class="description">Build robust server-side applications and manage data flow to power seamless and scalable web functionalities.</p>
+        <ul>
+          <li>Core Skills: Node.js, Express, REST APIs</li>
+          <li>Databases: MongoDB, PostgreSQL</li>
+          <li>Concepts: Authentication, Scalability</li>
+        </ul>
+        <a href="https://roadmap.sh/backend" target="_blank">View Roadmap →</a>
+      </div>
+      <div class="roadmap-card" onclick="openModal('devops')">
+        <h2>DevOps Engineer</h2>
+        <p class="description">Streamline development and deployment with automation, managing infrastructure for reliable and efficient systems.</p>
+        <ul>
+          <li>Core Skills: CI/CD, Docker, Kubernetes</li>
+          <li>Cloud: AWS, Azure, GCP</li>
+          <li>Monitoring: Prometheus, Grafana</li>
+        </ul>
+        <a href="https://roadmap.sh/devops" target="_blank">View Roadmap →</a>
+      </div>
+      <div class="roadmap-card" onclick="openModal('android')">
+        <h2>Android Developer</h2>
+        <p class="description">Create powerful and user-friendly mobile applications for the Android ecosystem, leveraging modern tools and frameworks.</p>
+        <ul>
+          <li>Core Skills: Java, Kotlin</li>
+          <li>Tools: Android Studio, Jetpack</li>
+          <li>Services: Firebase, Google APIs</li>
+        </ul>
+        <a href="https://roadmap.sh/android" target="_blank">View Roadmap →</a>
+      </div>
+      <div class="roadmap-card" onclick="openModal('ai-data')">
+        <h2>AI & Data Scientist</h2>
+        <p class="description">Harness data and algorithms to build intelligent systems, uncovering insights that drive innovation.</p>
+        <ul>
+          <li>Core Skills: Python, TensorFlow, Pandas</li>
+          <li>Concepts: Machine Learning, NLP</li>
+          <li>Tools: Jupyter, Scikit-learn</li>
+        </ul>
+        <a href="https://roadmap.sh/ai-data-scientist" target="_blank">View Roadmap →</a>
+      </div>
+      <div class="roadmap-card" onclick="openModal('cybersecurity')">
+        <h2>Cybersecurity Expert</h2>
+        <p class="description">Protect systems and data from threats, mastering security practices to ensure safety in a connected world.</p>
+        <ul>
+          <li>Core Skills: Ethical Hacking, Cryptography</li>
+          <li>Tools: Wireshark, Metasploit</li>
+          <li>Concepts: Network Security, Penetration Testing</li>
+        </ul>
+        <a href="https://roadmap.sh/cyber-security" target="_blank">View Roadmap →</a>
+      </div>
+      <div class="roadmap-card" onclick="openModal('blockchain')">
+        <h2>Blockchain Developer</h2>
+        <p class="description">Develop decentralized applications and smart contracts, shaping secure and trustless transaction systems.</p>
+        <ul>
+          <li>Core Skills: Solidity, Ethereum</li>
+          <li>Tools: Truffle, Hardhat</li>
+          <li>Concepts: DApps, Cryptography</li>
+        </ul>
+        <a href="https://roadmap.sh/blockchain" target="_blank">View Roadmap →</a>
+      </div>
+      <div class="roadmap-card" onclick="openModal('data-analyst')">
+        <h2>Data Analyst</h2>
+        <p class="description">Transform raw data into actionable insights through analysis and visualization, empowering data-driven decisions.</p>
+        <ul>
+          <li>Core Skills: SQL, Excel, Python</li>
+          <li>Tools: Tableau, Power BI</li>
+          <li>Concepts: Data Cleaning, Visualization</li>
+        </ul>
+        <a href="https://roadmap.sh/data-analyst" target="_blank">View Roadmap →</a>
+      </div>
+      <div class="roadmap-card" onclick="openModal('product-manager')">
+        <h2>Product Manager</h2>
+        <p class="description">Lead product development from ideation to launch, bridging technical and business needs with a user-centric focus.</p>
+        <ul>
+          <li>Core Skills: Agile, Market Research</li>
+          <li>Tools: Jira, Trello</li>
+          <li>Concepts: Product Lifecycle, Stakeholder Management</li>
+        </ul>
+        <a href="https://roadmap.sh/product-manager" target="_blank">View Roadmap →</a>
+      </div>
+      <div class="roadmap-card" onclick="openModal('ux-designer')">
+        <h2>UX Designer</h2>
+        <p class="description">Design intuitive and engaging user experiences through research, wireframing, and prototyping for optimal usability.</p>
+        <ul>
+          <li>Core Skills: Wireframing, Prototyping</li>
+          <li>Tools: Figma, Adobe XD</li>
+          <li>Concepts: User Research, Usability Testing</li>
+        </ul>
+        <a href="https://roadmap.sh/ux-designer" target="_blank">View Roadmap →</a>
+      </div>
+      <div class="roadmap-card" onclick="openModal('game-developer')">
+        <h2>Game Developer</h2>
+        <p class="description">Create immersive gaming experiences using cutting-edge tools, bringing interactive worlds to life.</p>
+        <ul>
+          <li>Core Skills: C#, C++</li>
+          <li>Tools: Unity, Unreal Engine</li>
+          <li>Concepts: Game Design, Physics Simulation</li>
+        </ul>
+        <a href="https://roadmap.sh/game-developer" target="_blank">View Roadmap →</a>
+      </div>
+      <div class="roadmap-card" onclick="openModal('technical-writer')">
+        <h2>Technical Writer</h2>
+        <p class="description">Craft clear and concise documentation, simplifying complex technical concepts for diverse audiences.</p>
+        <ul>
+          <li>Core Skills: Technical Writing, Markdown</li>
+          <li>Tools: MadCap Flare, Doxygen</li>
+          <li>Concepts: API Documentation, User Guides</li>
+        </ul>
+        <a href="https://roadmap.sh/technical-writer" target="_blank">View Roadmap →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Structure -->
+  <div id="frontend-modal" class="modal">
+    <div class="modal-content">
+      <h3>Frontend Developer</h3>
+      <p>Master the art of crafting responsive and interactive user interfaces for web applications, ensuring seamless user experiences across devices. Learn to optimize performance and accessibility.</p>
+      <ul>
+        <li>Core Skills: HTML, CSS, JavaScript</li>
+        <li>Frameworks: React, Vue, Angular</li>
+        <li>Tools: Webpack, Vite, Git</li>
+        <li>Advanced: TypeScript, Accessibility, Performance Optimization</li>
+      </ul>
+      <button class="close-btn" onclick="closeModal('frontend')">Close</button>
+    </div>
+  </div>
+  <div id="backend-modal" class="modal">
+    <div class="modal-content">
+      <h3>Backend Developer</h3>
+      <p>Build robust server-side applications and manage data flow to power seamless and scalable web functionalities. Focus on secure and efficient systems.</p>
+      <ul>
+        <li>Core Skills: Node.js, Express, REST APIs</li>
+        <li>Databases: MongoDB, PostgreSQL</li>
+        <li>Concepts: Authentication, Scalability</li>
+        <li>Advanced: Microservices, GraphQL</li>
+      </ul>
+      <button class="close-btn" onclick="closeModal('backend')">Close</button>
+    </div>
+  </div>
+  <div id="devops-modal" class="modal">
+    <div class="modal-content">
+      <h3>DevOps Engineer</h3>
+      <p>Streamline development and deployment with automation, managing infrastructure for reliable and efficient systems. Master cloud and monitoring tools.</p>
+      <ul>
+        <li>Core Skills: CI/CD, Docker, Kubernetes</li>
+        <li>Cloud: AWS, Azure, GCP</li>
+        <li>Monitoring: Prometheus, Grafana</li>
+        <li>Advanced: Infrastructure as Code, Serverless</li>
+      </ul>
+      <button class="close-btn" onclick="closeModal('devops')">Close</button>
+    </div>
+  </div>
+  <div id="android-modal" class="modal">
+    <div class="modal-content">
+      <h3>Android Developer</h3>
+      <p>Create powerful and user-friendly mobile applications for the Android ecosystem, leveraging modern tools and frameworks for performance.</p>
+      <ul>
+        <li>Core Skills: Java, Kotlin</li>
+        <li>Tools: Android Studio, Jetpack</li>
+        <li>Services: Firebase, Google APIs</li>
+        <li>Advanced: Coroutines, Room Database</li>
+      </ul>
+      <button class="close-btn" onclick="closeModal('android')">Close</button>
+    </div>
+  </div>
+  <div id="ai-data-modal" class="modal">
+    <div class="modal-content">
+      <h3>AI & Data Scientist</h3>
+      <p>Harness data and algorithms to build intelligent systems, uncovering insights that drive innovation and solve complex problems.</p>
+      <ul>
+        <li>Core Skills: Python, TensorFlow, Pandas</li>
+        <li>Concepts: Machine Learning, NLP</li>
+        <li>Tools: Jupyter, Scikit-learn</li>
+        <li>Advanced: Deep Learning, Big Data</li>
+      </ul>
+      <button class="close-btn" onclick="closeModal('ai-data')">Close</button>
+    </div>
+  </div>
+  <div id="cybersecurity-modal" class="modal">
+    <div class="modal-content">
+      <h3>Cybersecurity Expert</h3>
+      <p>Protect systems and data from threats, mastering security practices to ensure safety in an interconnected digital world.</p>
+      <ul>
+        <li>Core Skills: Ethical Hacking, Cryptography</li>
+        <li>Tools: Wireshark, Metasploit</li>
+        <li>Concepts: Network Security, Penetration Testing</li>
+        <li>Advanced: Incident Response, Forensics</li>
+      </ul>
+      <button class="close-btn" onclick="closeModal('cybersecurity')">Close</button>
+    </div>
+  </div>
+  <div id="blockchain-modal" class="modal">
+    <div class="modal-content">
+      <h3>Blockchain Developer</h3>
+      <p>Develop decentralized applications and smart contracts, shaping secure and trustless transaction systems for the future.</p>
+      <ul>
+        <li>Core Skills: Solidity, Ethereum</li>
+        <li>Tools: Truffle, Hardhat</li>
+        <li>Concepts: DApps, Cryptography</li>
+        <li>Advanced: Layer 2 Solutions, DeFi</li>
+      </ul>
+      <button class="close-btn" onclick="closeModal('blockchain')">Close</button>
+    </div>
+  </div>
+  <div id="data-analyst-modal" class="modal">
+    <div class="modal-content">
+      <h3>Data Analyst</h3>
+      <p>Transform raw data into actionable insights through analysis and visualization, empowering data-driven decision-making.</p>
+      <ul>
+        <li>Core Skills: SQL, Excel, Python</li>
+        <li>Tools: Tableau, Power BI</li>
+        <li>Concepts: Data Cleaning, Visualization</li>
+        <li>Advanced: Statistical Modeling, R</li>
+      </ul>
+      <button class="close-btn" onclick="closeModal('data-analyst')">Close</button>
+    </div>
+  </div>
+  <div id="product-manager-modal" class="modal">
+    <div class="modal-content">
+      <h3>Product Manager</h3>
+      <p>Lead product development from ideation to launch, bridging technical and business needs with a user-centric focus.</p>
+      <ul>
+        <li>Core Skills: Agile, Market Research</li>
+        <li>Tools: Jira, Trello</li>
+        <li>Concepts: Product Lifecycle, Stakeholder Management</li>
+        <li>Advanced: Roadmapping, Analytics</li>
+      </ul>
+      <button class="close-btn" onclick="closeModal('product-manager')">Close</button>
+    </div>
+  </div>
+  <div id="ux-designer-modal" class="modal">
+    <div class="modal-content">
+      <h3>UX Designer</h3>
+      <p>Design intuitive and engaging user experiences through research, wireframing, and prototyping for optimal usability.</p>
+      <ul>
+        <li>Core Skills: Wireframing, Prototyping</li>
+        <li>Tools: Figma, Adobe XD</li>
+        <li>Concepts: User Research, Usability Testing</li>
+        <li>Advanced: Interaction Design, UI Patterns</li>
+      </ul>
+      <button class="close-btn" onclick="closeModal('ux-designer')">Close</button>
+    </div>
+  </div>
+  <div id="game-developer-modal" class="modal">
+    <div class="modal-content">
+      <h3>Game Developer</h3>
+      <p>Create immersive gaming experiences using cutting-edge tools, bringing interactive worlds to life with creativity.</p>
+      <ul>
+        <li>Core Skills: C#, C++</li>
+        <li>Tools: Unity, Unreal Engine</li>
+        <li>Concepts: Game Design, Physics Simulation</li>
+        <li>Advanced: Multiplayer Systems, VR/AR</li>
+      </ul>
+      <button class="close-btn" onclick="closeModal('game-developer')">Close</button>
+    </div>
+  </div>
+  <div id="technical-writer-modal" class="modal">
+    <div class="modal-content">
+      <h3>Technical Writer</h3>
+      <p>Craft clear and concise documentation, simplifying complex technical concepts for diverse audiences.</p>
+      <ul>
+        <li>Core Skills: Technical Writing, Markdown</li>
+        <li>Tools: MadCap Flare, Doxygen</li>
+        <li>Concepts: API Documentation, User Guides</li>
+        <li>Advanced: Structured Authoring, Localization</li>
+      </ul>
+      <button class="close-btn" onclick="closeModal('technical-writer')">Close</button>
+    </div>
+  </div>
+
+  <footer>
+    Made with ❤️ by a GSSoC'25 Contributor | <a href="https://first-contrib-placement.netlify.app" target="_blank">Back to Home</a>
+  </footer>
+
+  <script>
+    function openModal(id) {
+      const modal = document.getElementById(`${id}-modal`);
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(id) {
+      const modal = document.getElementById(`${id}-modal`);
+      modal.classList.remove('show');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modal when clicking outside
+    document.querySelectorAll('.modal').forEach(modal => {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('show');
+          document.body.style.overflow = 'auto';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

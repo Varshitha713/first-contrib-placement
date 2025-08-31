@@ -469,47 +469,41 @@
     const cards = document.querySelectorAll('.card');
     const toggleBtn = document.getElementById("toggle-mode");
     const backToTopButton = document.getElementById("backToTop");
-  const suggestions = [
-  "LeetCode",
-  "edX",
-  "Codeforces",
-  "Codechef",
-  "Mock tests",
-  "Cybersecurity",
-  "DSA",
-  "AtCoder",
-  "Git Immersion",
-  "Frontend Mentor",
-  "devdocs",
-  "sqlzoo",
-  "Code wars",
-  "HackerRank",
-  "Great Learning",
-  "GeeksForGeeks",
-  "Data Structures Visualization",
-  "Medium",
-  "indiabix",
-  "Technical Interviews",
-  "Coding Interviews",
-  "SQL Interview Questions",
-  "Mock Interviews",
-  "Programming Mock Tests",
-  "System Design Interviews",
-  "Behavioral Interviews",
-  "Coding Mock Tests",
-  "Technical Mock Tests",
-  "SQL Mock Tests",
-  "Aptitude Mock Tests",
-  "ctf",
-  "Udemy",
-  "Coursera",
-  "PicoCTF",
-  "TryHackMe",
-  "Take U Forward",
-  "W3Schools",
-  "freeCodeCamp"
-];
-const searchBox = document.getElementById('searchInput');
+
+  
+  function generateSuggestions() {
+    const suggestions = new Set();
+    
+    cards.forEach(card => {
+      const title = card.querySelector('h4').textContent;
+      const description = card.querySelector('p').textContent;
+      const category = card.getAttribute('category');
+      
+      // Extract words from title and description
+      const titleWords = title.split(/[:\s]+/).filter(word => word.length > 2);
+      const descWords = description.split(/\s+/).filter(word => word.length > 3);
+      
+      // Add title words (normalize case and remove punctuation)
+      titleWords.forEach(word => {
+        const cleanWord = word.toLowerCase().replace(/[^a-z0-9]/g, '');
+        if (cleanWord.length > 2) suggestions.add(cleanWord);
+      });
+      
+      // Add key description words (first few meaningful words, normalize case and remove punctuation)
+      descWords.slice(0, 3).forEach(word => {
+        const cleanWord = word.toLowerCase().replace(/[^a-z0-9]/g, '');
+        if (cleanWord.length > 3) suggestions.add(cleanWord);
+      });
+      
+      // Add category (normalize case)
+      suggestions.add(category.toLowerCase());
+    });
+    
+    return Array.from(suggestions).sort();
+  }
+  
+  const suggestions = generateSuggestions();
+  const searchBox = document.getElementById('searchInput');
 
 searchBox.addEventListener('input', function() {
   const input = this.value.toLowerCase();

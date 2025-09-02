@@ -359,10 +359,8 @@
         <li>Selecting different categories</li>
       </ul>
     </div>
+
     <!-- Back to Top Button -->
-
-
-
 
     <button id="backToTop" title="Go to top">↑</button>
 
@@ -377,10 +375,28 @@
           A community-driven project to share the best placement and learning resources for BTech students.
         </p>
         <div class="social-icons">
-          <a href="https://www.linkedin.com/in/varshitha-macha/" target="blank" rel="noopener noreferrer"><i
-              class="fab fa-linkedin-in"></i></a>
-          <a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer"><i
-              class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/varshitha-macha/" target="blank" rel="noopener noreferrer" style="margin-left: 12px;"><i
+              class="fab fa-linkedin-in" style= "font-size:32px;"></i></a>
+          <a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer" style="margin-left: 12px;"><i
+              class="fab fa-github" style="font-size:32px;"></i></a>
+
+      <!--Added more sharing options like whatsapp, twitter and facebook-->
+          <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20placement%20resource%20platform%20https://first-contrib-placement.netlify.app/"
+              target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" style="margin-left: 12px;">
+              <i class="fab fa-whatsapp" style="font-size:32px; color:#25D366;"></i>
+          </a>
+          <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20placement%20resource%20platform&url=https://first-contrib-placement.netlify.app/"
+              target="_blank" rel="noopener noreferrer" aria-label="Twitter" style="margin-left: 12px;">
+              <i class="fab fa-twitter" style="font-size:32px; color:#1DA1F2;"></i>
+          </a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://first-contrib-placement.netlify.app/"
+              target="_blank" rel="noopener noreferrer" aria-label="Facebook" style="margin-left: 12px;">
+              <i class="fab fa-facebook-f" style="font-size:32px; color:#4267B2;"></i>
+          </a>
+
+
+
+
         </div>
       </div>
       <!-- Quick Links -->
@@ -556,6 +572,78 @@
     });
 
   </script>
+  
+  <!-- Scroll to Top Button -->
+  <button id="scroll-top" aria-label="Scroll to Top" style="background: #18b4fa; border: none; border-radius: 50%; width: 56px; height: 56px; box-shadow: 0 2px 8px rgba(44,44,44,0.20); cursor: pointer;">
+    <i class="fas fa-arrow-up" style="color:#fff; font-size:28px;"></i>
+  </button>
+</div>
+<script>
+  document.getElementById('fab-share').onclick = function(e) {
+    e.stopPropagation();
+    var opts = document.getElementById('share-options');
+    opts.style.display = (opts.style.display === 'none' || opts.style.display === '') ? 'flex' : 'none';
+  }
+  document.body.onclick = function(e) {
+    if (!document.getElementById('fab-container').contains(e.target) && document.getElementById('share-options').style.display === 'flex') {
+      document.getElementById('share-options').style.display = 'none';
+    }
+  }
+</script>
+
+
+<!-- Floating Share Button -->
+<div id="fab-share-container" style="position: fixed; bottom: 100px; right: 32px; z-index: 1000; display: flex; flex-direction: column; align-items: center;">
+  <button id="fab-share" aria-label="Share" style="background: #219EBC; border: none; border-radius: 50%; width: 56px; height: 56px; box-shadow: 0 2px 8px rgba(44,44,44,0.20); cursor: pointer; position: relative;">
+    <i class="fas fa-share-alt" style="color:#fff; font-size:28px;"></i>
+  </button>
+  <div id="share-options" style="
+    display:none; 
+    flex-direction: column; 
+    gap: 14px; 
+    align-items: center; 
+    position: absolute; 
+    bottom: 70px; 
+    left: 50%; 
+    transform: translateX(-50%);
+    background: #219EBC; 
+    box-shadow: 0 2px 12px rgba(44,44,44,0.13);
+    padding: 12px 20px; 
+    border-radius: 12px;
+  ">
+    <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20platform%20https://first-contrib-placement.netlify.app/" target="_blank" aria-label="Share on WhatsApp">
+      <i class="fab fa-whatsapp" style="color:#fff; font-size:28px;"></i>
+    </a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://first-contrib-placement.netlify.app/" target="_blank" aria-label="Share on LinkedIn">
+      <i class="fab fa-linkedin" style="color:#fff; font-size:28px;"></i>
+    </a>
+    <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20platform&url=https://first-contrib-placement.netlify.app/" target="_blank" aria-label="Share on X">
+      <i class="fab fa-x-twitter" style="color:#fff; font-size:28px;"></i>
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://first-contrib-placement.netlify.app/" target="_blank" aria-label="Share on Facebook">
+      <i class="fab fa-facebook" style="color:#fff; font-size:28px;"></i>
+    </a>
+  </div>
+</div>
+
+<script>
+  document.getElementById('fab-share').onclick = function(e) {
+    e.stopPropagation();
+    var opts = document.getElementById('share-options');
+    opts.style.display = (opts.style.display === 'none' || opts.style.display === '') ? 'flex' : 'none';
+  }
+  document.body.onclick = function(e) {
+    if (!document.getElementById('fab-share-container').contains(e.target) && document.getElementById('share-options').style.display === 'flex') {
+      document.getElementById('share-options').style.display = 'none';
+    }
+  }
+</script>
+
+
+
+
+
+
 
 
 

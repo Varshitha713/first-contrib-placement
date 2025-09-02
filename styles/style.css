@@ -371,6 +371,7 @@ header {
   flex: 1;
   padding: 14px 16px;
   font-size: 16px;
+  width: 500px;
   border: 1px solid #cccccc;
   border-radius: 10px;
   outline: none;
@@ -436,6 +437,7 @@ header {
   padding: 8px 8px;
   border: none;
   height: 45px;
+  width: 132px;
   background-color: #28A6C7;
   color: white;
   border-radius: 8px;
@@ -846,7 +848,26 @@ header {
   line-height: 1.6;
   margin-bottom: 20px;
 }
-
+.dark-mode .card:hover{
+  transform: translateY(-5px) scale(1.03);
+  background-color: rgba(178, 203, 212, 0.9);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  color: #004E64;
+  
+}
+.dark-mode .card:hover h4{
+  color: #004E64;
+  
+}
+.dark-mode .card:hover p{
+  color: #004E64;
+  
+}
+.dark-mode .card:hover a{
+  color: #004E64;
+  background-color: white;
+  
+}
 .card a {
   display: inline-flex;
   align-items: center;
@@ -876,7 +897,7 @@ header {
 }
 
 .card a:hover {
-  color: #1a6f8a;
+  color: #0c3845;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(33, 158, 188, 0.2);
 }
@@ -1345,7 +1366,104 @@ footer {
     max-width: 90%;
   }
 }
+.dark-mode .search-bar input {
+  color: #504646;
+}
 
+/* Dark mode */
+.dark-mode .search-icon {
+  fill: #B0B0B0;
+}
+.autocomplete {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.autocomplete-items {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  border-radius: 10px;
+  margin-top: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  border: 1px solid #cccccc;
+  max-height: 200px;
+  overflow-y: auto;
+}
+.dark-mode #autocomplete-list{
+  background-color: #1E2A30;
+  color: #E0F7FA;
+}
+.dark-mode #autocomplete-list div{
+  border-color: white;
+  border: 1px solid white;
+}
+
+#autocomplete-list div{
+  border: 1px solid black;
+ 
+}
+
+.dark-mode .search-bar input:focus + .search-icon {
+  fill: #7FDBFF;
+}
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+}
+
+.autocomplete-items div {
+   padding: 12px 16px;
+  cursor: pointer;
+  background-color: #ffffff;
+  border-bottom: 1px solid #f0f0f0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #333;
+  transition: background-color 0.2s ease;
+}
+
+.autocomplete-items div:hover {
+  background-color: #f5f5f5;
+}
+.autocomplete-items div:last-child {
+  border-bottom: none;
+}
+
+
+.autocomplete-items strong {
+  font-weight: 600;
+  color: #219EBC;
+}
+
+.dark-mode .autocomplete-items {
+
+  border-color: #555555;
+  background-color: #2A2A2A;
+}
+.dark-mode .autocomplete-items div {
+  background-color: #2A2A2A;
+  color: #E0E0E0;
+  border-bottom-color: #444;
+}
+
+.dark-mode .autocomplete-items div:hover {
+  background-color: #3A3A3A;
+}
+
+.dark-mode .autocomplete-items strong {
+  color: #7FDBFF;
+}
 /* Large Desktop Styles */
 @media (min-width: 1400px) {
   .intro-card p {

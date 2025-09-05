@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2LdF1/Jz7A81rYf5nU5I5jE5Vf9I7p9B9qD4B3K8H6E5Q6yG1fW4Q0fB8D7G5B1"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <title>CS Core Concepts - Placement Resources</title>
+  <link rel="icon" type="image/png" href="./images/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="styles/style.css" rel="stylesheet">
+  <style>
+    :root {
+      --teal-1: #007c91;
+      --teal-2: #004d40;
+      --bg-1: #e0f7fa;
+      --bg-2: #b2dfdb;
+      --card-radius: 14px;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(90deg, var(--bg-1), var(--bg-2));
+      color: #06323b;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Container & grid */
+    .wrap {
+      max-width: 1180px;
+      margin: 28px auto;
+      padding: 0 20px
+    }
+
+    .controls {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px
+    }
+
+    .search {
+      flex: 1;
+      max-width: 520px
+    }
+
+    .search input {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 0, 0, 0.08)
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px
+    }
+
+    /* Card */
+    .card {
+      background: #fff;
+      border-radius: var(--card-radius);
+      padding: 18px;
+      box-shadow: 0 8px 20px rgba(3, 30, 30, 0.06);
+      overflow: hidden;
+      position: relative;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: transform .25s ease, box-shadow .2s ease
+    }
+
+    .card:hover {
+      transform: translateY(0) scale(1.02);
+      box-shadow: 0 18px 40px rgba(3, 30, 30, 0.12)
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 100px;
+      background: linear-gradient(90deg, var(--teal-1), var(--teal-2));
+      color: #fff;
+      font-size: 12px;
+      margin-bottom: 8px
+    }
+
+    h2 {
+      margin: 6px 0 8px;
+      font-size: 20px;
+      color: var(--teal-1)
+    }
+
+    p.lead {
+      margin: 0 0 8px;
+      color: #214b4f
+    }
+
+    .meta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: #2f5a5f;
+      margin-top: 8px
+    }
+
+    .meta span {
+      background: rgba(3, 30, 30, 0.03);
+      padding: 6px 8px;
+      border-radius: 8px
+    }
+
+    .links {
+      margin-top: 12px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap
+    }
+
+    .links a {
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--teal-1);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.00));
+    }
+
+    .read {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--teal-1);
+      cursor: pointer;
+      font-weight: 700
+    }
+
+    .more {
+      display: none;
+      margin-top: 12px;
+      color: #334d4f;
+      line-height: 1.5
+    }
+
+    /* stagger animation (will be toggled by JS onload) */
+    .visible {
+      animation: cardIn .6s cubic-bezier(.2, .9, .2, 1) forwards
+    }
+
+    @keyframes cardIn {
+      0% {
+        opacity: 0;
+        transform: translateY(30px) scale(.98)
+      }
+
+      50% {
+        opacity: 1
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1)
+      }
+    }
+
+    /* full-width section for roadmap timeline */
+    .timeline {
+      margin: 28px 0;
+      padding: 16px;
+      background: linear-gradient(90deg, rgba(0, 124, 145, 0.06), rgba(0, 77, 64, 0.03));
+      border-radius: 12px
+    }
+
+    .timeline h3 {
+      margin: 0 0 10px;
+      color: var(--teal-2)
+    }
+
+    .timeline ol {
+      margin: 0;
+      padding-left: 18px
+    }
+
+    /* responsiveness tweaks */
+    @media (max-width:520px) {
+      header h1 {
+        font-size: 20px
+      }
+
+      .card {
+        padding: 14px
+      }
+
+      .links a {
+        font-size: 13px;
+        padding: 7px 10px
+      }
+    }
+
+    /* Page header styling */
+    .page-header {
+      background-color: #006D77;
+      color: #FFFFFF;
+      padding: 28px 20px;
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .page-header h1 {
+      margin: 0;
+      font-size: 28px;
+      letter-spacing: 0.2px
+    }
+
+    .page-header p {
+      margin: 6px 0 0;
+      opacity: 0.95
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="logo">
+        <img src="/images/PR-LOGO.png" width="140" height="120" id="logo">
+      </div>
+
+      <!-- Navigation Links -->
+      <ul class="navbar-menu">
+        <li><a href="index.html"><i class="fa-solid fa-house-chimney"></i>Home</a></li>
+        <li><a href="contribute.html"><i class="fa-solid fa-handshake-angle"></i>Contribute</a></li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" id="resources-dropdown-toggle">
+            <i class="fa-solid fa-book"></i>Resources <i class="fa-solid fa-caret-down"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="./interviewprep.html">Interview Prep</a></li>
+            <li><a href="./dsa.html">DSA Practice</a></li>
+            <li><a href="./resume.html">Resume Tips</a></li>
+            <li><a href="./open.html">Open Source</a></li>
+            <li><a href="./roadmap.html">Roadmaps</a></li>
+          </ul>
+        </li>
+
+        <li><a href="roadmap.html"><i class="fa-solid fa-map"></i>Roadmap</a></li>
+        <li><a href="contact.html"><i class="fa-solid fa-address-card"></i>Contact</a></li>
+        <li><a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github"></i>Github</a>
+        </li>
+      </ul>
+
+      <div class="navbar-icons">
+        <!-- Hamburger icon -->
+        <button class="navbar-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <!-- Dark/Light Mode Toggle -->
+        <button id="toggle-mode"></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <h1>CS Core Concepts</h1>
+    <p>In-depth topic cards, live links and practice sets for OOPS, DBMS, OS, CN, System Design and Software Engineering Principles.</p>
+  </div>
+
+  <main class="wrap">
+    <div class="controls">
+      <div class="search"><input id="filter" placeholder="Search concepts (e.g. oop, dbms, os)..." /></div>
+    </div>
+
+    <section class="timeline">
+      <h3>Suggested Learning Path</h3>
+      <ol>
+        <li>Start with Programming Fundamentals & OOP</li>
+        <li>Learn Database Management Systems (DBMS)</li>
+        <li>Study Operating Systems concepts</li>
+        <li>Dive into Computer Networks</li>
+        <li>Explore System Design principles</li>
+        <li>Practice with real-world projects</li>
+      </ol>
+    </section>
+
+    <div class="grid" id="grid">
+
+      <!-- OOP -->
+      <article class="card" data-tags="oop,programming,basics" style="--i:1">
+        <div class="badge">Fundamental</div>
+        <h2>Object-Oriented Programming</h2>
+        <p class="lead">Learn the principles of OOP: encapsulation, inheritance, polymorphism, and abstraction.</p>
+        <div class="meta"><span>Key Concepts: Classes/Objects</span><span>Difficulty: Beginner</span><span>Time: 2-3 weeks</span></div>
+        <div class="links">
+          <a href="https://www.geeksforgeeks.org/object-oriented-programming-oops-concept-in-java/" target="_blank">GFG OOP Concepts</a>
+          <a href="https://www.javatpoint.com/java-oops-concepts" target="_blank">JavaTpoint OOP</a>
+          <a href="https://www.freecodecamp.org/news/object-oriented-programming-concepts/" target="_blank">FreeCodeCamp OOP</a>
+        </div>
+        <div class="read" onclick="toggle(this)">Read more »</div>
+        <div class="more">
+          Object-Oriented Programming (OOP) is a programming paradigm based on the concept of "objects", which can contain data and code. The four main principles are:
+          <ul>
+            <li><strong>Encapsulation:</strong> Bundling data and methods that operate on that data within one unit</li>
+            <li><strong>Inheritance:</strong> Mechanism where one class acquires the properties of another class</li>
+            <li><strong>Polymorphism:</strong> Ability of an object to take on many forms</li>
+            <li><strong>Abstraction:</strong> Hiding complex implementation details and showing only essential features</li>
+          </ul>
+          Practice: Implement a simple class hierarchy with inheritance and polymorphism.
+        </div>
+      </article>
+
+      <!-- DBMS -->
+      <article class="card" data-tags="dbms,database,sql" style="--i:2">
+        <div class="badge">Essential</div>
+        <h2>Database Management Systems</h2>
+        <p class="lead">Learn about database design, SQL, normalization, transactions, and more.</p>
+        <div class="meta"><span>Key Concepts: SQL, Normalization</span><span>Difficulty: Intermediate</span><span>Time: 3-4 weeks</span></div>
+        <div class="links">
+          <a href="https://www.geeksforgeeks.org/dbms/" target="_blank">GFG DBMS</a>
+          <a href="https://www.javatpoint.com/dbms-tutorial" target="_blank">JavaTpoint DBMS</a>
+          <a href="https://www.w3schools.com/sql/" target="_blank">W3Schools SQL</a>
+        </div>
+        <div class="read" onclick="toggle(this)">Read more »</div>
+        <div class="more">
+          A Database Management System (DBMS) is software for storing and retrieving users' data while considering appropriate security measures. Key concepts include:
+          <ul>
+            <li><strong>Relational Model:</strong> Data organized into tables (relations) with rows and columns</li>
+            <li><strong>SQL:</strong> Standard language for relational database management systems</li>
+            <li><strong>Normalization:</strong> Process of organizing data to reduce redundancy</li>
+            <li><strong>ACID Properties:</strong> Atomicity, Consistency, Isolation, Durability for transactions</li>
+            <li><strong>Indexing:</strong> Technique to improve the speed of data retrieval operations</li>
+          </ul>
+          Practice: Design a normalized database schema for a library management system.
+        </div>
+      </article>
+
+      <!-- Operating Systems -->
+      <article class="card" data-tags="os,operating systems,kernel" style="--i:3">
+        <div class="badge">Core</div>
+        <h2>Operating Systems</h2>
+        <p class="lead">Understand processes, threads, memory management, file systems, and more.</p>
+        <div class="meta"><span>Key Concepts: Processes, Memory</span><span>Difficulty: Intermediate</span><span>Time: 4-5 weeks</span></div>
+        <div class="links">
+          <a href="https://www.geeksforgeeks.org/operating-systems/" target="_blank">GFG OS</a>
+          <a href="https://www.javatpoint.com/operating-system" target="_blank">JavaTpoint OS</a>
+          <a href="https://pages.cs.wisc.edu/~remzi/OSTEP/" target="_blank">OS Three Easy Pieces</a>
+        </div>
+        <div class="read" onclick="toggle(this)">Read more »</div>
+        <div class="more">
+          An operating system (OS) is system software that manages computer hardware, software resources, and provides common services for computer programs. Key topics include:
+          <ul>
+            <li><strong>Process Management:</strong> Process scheduling, synchronization, and communication</li>
+            <li><strong>Memory Management:</strong> Paging, segmentation, virtual memory</li>
+            <li><strong>File Systems:</strong> Organization and management of data on storage devices</li>
+            <li><strong>Deadlocks:</strong> Detection, prevention, and avoidance strategies</li>
+            <li><strong>I/O Systems:</strong> Management of input/output devices</li>
+          </ul>
+          Practice: Implement a simple CPU scheduling algorithm simulator (e.g., Round Robin, SJF).
+        </div>
+      </article>
+
+      <!-- Computer Networks -->
+      <article class="card" data-tags="networks,cn,protocols" style="--i:4">
+        <div class="badge">Core</div>
+        <h2>Computer Networks</h2>
+        <p class="lead">Learn about network protocols, OSI model, TCP/IP, routing, and network security.</p>
+        <div class="meta"><span>Key Concepts: TCP/IP, Protocols</span><span>Difficulty: Intermediate</span><span>Time: 4-5 weeks</span></div>
+        <div class="links">
+          <a href="https://www.geeksforgeeks.org/computer-network-tutorials/" target="_blank">GFG Networks</a>
+          <a href="https://www.javatpoint.com/computer-network-tutorial" target="_blank">JavaTpoint CN</a>
+          <a href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/entry/ccna.html" target="_blank">Cisco CCNA</a>
+        </div>
+        <div class="read" onclick="toggle(this)">Read more »</div>
+        <div class="more">
+          Computer networking refers to interconnected computing devices that can exchange data and share resources with each other. Key concepts include:
+          <ul>
+            <li><strong>OSI Model:</strong> 7-layer architecture for understanding network interactions</li>
+            <li><strong>TCP/IP Protocol Suite:</strong> Foundation of modern internet communication</li>
+            <li><strong>Routing Algorithms:</strong> How data finds its path across networks</li>
+            <li><strong>Network Security:</strong> Encryption, firewalls, VPNs, and security protocols</li>
+            <li><strong>Wireless Networks:</strong> WiFi, Bluetooth, and mobile networks</li>
+          </ul>
+          Practice: Use Wireshark to analyze network packets and understand protocols in action.
+        </div>
+      </article>
+
+      <!-- System Design -->
+      <article class="card" data-tags="system design,scalability,architecture" style="--i:5">
+        <div class="badge">Advanced</div>
+        <h2>System Design</h2>
+        <p class="lead">Learn to design scalable, reliable, and efficient systems.</p>
+        <div class="meta"><span>Key Concepts: Scalability, APIs</span><span>Difficulty: Advanced</span><span>Time: 5-6 weeks</span></div>
+        <div class="links">
+          <a href="https://www.geeksforgeeks.org/system-design-tutorial/" target="_blank">GFG System Design</a>
+          <a href="https://github.com/donnemartin/system-design-primer" target="_blank">System Design Primer</a>
+          <a href="https://www.educative.io/courses/grokking-the-system-design-interview" target="_blank">Grokking System Design</a>
+        </div>
+        <div class="read" onclick="toggle(this)">Read more »</div>
+        <div class="more">
+          System design is the process of defining the architecture, components, modules, interfaces, and data for a system to satisfy specified requirements. Key concepts include:
+          <ul>
+            <li><strong>Load Balancing:</strong> Distributing network traffic across multiple servers</li>
+            <li><strong>Caching:</strong> Storing frequently accessed data in memory for faster retrieval</li>
+            <li><strong>Database Scaling:</strong> Vertical and horizontal scaling strategies</li>
+            <li><strong>Microservices Architecture:</strong> Designing systems as independently deployable services</li>
+            <li><strong>CAP Theorem:</strong> Consistency, Availability, Partition tolerance trade-offs</li>
+          </ul>
+          Practice: Design a URL shortening service like TinyURL considering scalability and reliability.
+        </div>
+      </article>
+
+      <!-- Software Engineering -->
+      <article class="card" data-tags="software engineering,development lifecycle" style="--i:6">
+        <div class="badge">Professional</div>
+        <h2>Software Engineering</h2>
+        <p class="lead">Learn about software development methodologies, testing, and project management.</p>
+        <div class="meta"><span>Key Concepts: Agile, Testing</span><span>Difficulty: Intermediate</span><span>Time: 3-4 weeks</span></div>
+        <div class="links">
+          <a href="https://www.geeksforgeeks.org/software-engineering/" target="_blank">GFG Software Engineering</a>
+          <a href="https://www.javatpoint.com/software-engineering-tutorial" target="_blank">JavaTpoint SE</a>
+          <a href="https://www.coursera.org/specializations/software-development-lifecycle" target="_blank">Coursera SDLC</a>
+        </div>
+        <div class="read" onclick="toggle(this)">Read more »</div>
+        <div class="more">
+          Software engineering is the systematic application of engineering approaches to the development of software. Key concepts include:
+          <ul>
+            <li><strong>Development Lifecycle:</strong> Waterfall, Agile, Scrum, and other methodologies</li>
+            <li><strong>Requirements Engineering:</strong> Eliciting, analyzing, and validating software requirements</li>
+            <li><strong>Software Testing:</strong> Unit testing, integration testing, system testing</li>
+            <li><strong>Version Control:</strong> Git and other tools for managing code changes</li>
+            <li><strong>CI/CD:</strong> Continuous Integration and Continuous Deployment practices</li>
+          </ul>
+          Practice: Set up a CI/CD pipeline for a simple web application using GitHub Actions.
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Footer CTA -->
+    <div style="margin-top:26px;text-align:center;color:#0b3d41">
+      <p style="margin:0;font-weight:700">Need a structured study plan?</p>
+      <p style="margin:4px 0 0">Download our comprehensive CS Core study guide and checklist.</p>
+      <div style="margin-top:12px"><a href="#"
+          style="padding:10px 14px;border-radius:12px;background:linear-gradient(90deg,var(--teal-1),var(--teal-2));color:#fff;text-decoration:none;font-weight:800">Download
+          Study Guide (PDF)</a></div>
+    </div>
+
+  </main>
+  <footer>
+    <div class="footer-container">
+      <!-- Branding -->
+      <div class="footer-section">
+        <h2>CS Core Concepts Hub</h2>
+        <p>
+          A community-driven project to share the best resources for Computer Science core concepts.
+        </p>
+        <div class="social-icons">
+          <a href="#" target="blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Contribute</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="#">Roadmap</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Top Categories -->
+      <div class="footer-section">
+        <h3>Core Subjects</h3>
+        <ul>
+          <li><a href="#">OOP</a></li>
+          <li><a href="#">DBMS</a></li>
+          <li><a href="#">Operating Systems</a></li>
+          <li><a href="#">Computer Networks</a></li>
+          <li><a href="#">System Design</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-section">
+        <h3>Get in Touch</h3>
+        <p><strong>Email:</strong> contact@firstcontrib.com</p>
+        <p><strong>Github of contributor:</strong> https://github.com/kinza7124</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 All Rights Reserved | Built with ❤️ by the GSSOC contributor
+    </div>
+  </footer>
+  <script>
+    // Navbar toggle functionality
+    const navbarToggle = document.querySelector('.navbar-toggle');
+    const navbarMenu = document.querySelector('.navbar-menu');
+    
+    navbarToggle.addEventListener('click', () => {
+      navbarToggle.classList.toggle('active');
+      navbarMenu.classList.toggle('active');
+    });
+
+    // Dropdown functionality
+    const dropdownToggle = document.getElementById('resources-dropdown-toggle');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    
+    // Toggle dropdown on click
+    dropdownToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      dropdownMenu.classList.toggle('active');
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!dropdownMenu.contains(e.target) && !dropdownToggle.contains(e.target)) {
+        dropdownMenu.classList.remove('active');
+      }
+    });
+
+    // Dark/Light mode functionality
+    window.addEventListener("DOMContentLoaded", () => {
+      const savedMode = localStorage.getItem("mode");
+      if (savedMode === "dark") {
+        document.body.classList.add("dark-mode");
+        toggleBtn.textContent = "☀️";
+      } else {
+        document.body.classList.remove("dark-mode");
+        toggleBtn.textContent = "🌙";
+      }
+    });
+    
+    // Toggle and Save Mode
+    const toggleBtn = document.getElementById("toggle-mode");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+
+      if (document.body.classList.contains("dark-mode")) {
+        toggleBtn.textContent = "☀️";
+        localStorage.setItem("mode", "dark");
+      } else {
+        toggleBtn.textContent = "🌙";
+        localStorage.setItem("mode", "light");
+      }
+    });
+
+    // reveal cards with stagger
+    window.addEventListener('DOMContentLoaded',()=>{
+      const cards = Array.from(document.querySelectorAll('.card'));
+      cards.forEach((c,i)=>setTimeout(()=>c.classList.add('visible'), i*180));
+
+      // search filter
+      const filter = document.getElementById('filter');
+      filter.addEventListener('input', e=>{
+        const q = e.target.value.trim().toLowerCase();
+        cards.forEach(c=>{
+          const tags = c.dataset.tags || '';
+          const title = c.querySelector('h2').innerText.toLowerCase();
+          const text = (c.innerText||'').toLowerCase();
+          const matches = q === '' || title.includes(q) || tags.includes(q) || text.includes(q);
+          c.style.display = matches ? '' : 'none';
+        })
+      });
+    });
+    
+    // toggle details
+    function toggle(el){
+      const more = el.nextElementSibling;
+      const visible = more.style.display === 'block';
+      more.style.display = visible ? 'none' : 'block';
+      el.innerText = visible ? 'Read more »' : 'Show less «';
+    }
+  </script>
+</body>
+</html>

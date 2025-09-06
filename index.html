@@ -673,16 +673,24 @@ const scrollToBottomButton = document.getElementById("scrollToBottom");
 
 
 window.onscroll = () => {
+
   if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
     backToTopButton.style.display = "block";
   } else {
     backToTopButton.style.display = "none";
   }
+  
  
   const isAtBottom = 
     window.innerHeight + window.scrollY >= document.body.offsetHeight - 100;
   scrollToBottomButton.style.display = isAtBottom ? "none" : "block";
 };
+
+
+backToTopButton.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
 
 scrollToBottomButton.addEventListener("click", () => {
   window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });

@@ -1470,3 +1470,35 @@ footer {
     max-width: 85%;
   }
 }
+
+#scrollToBottom {
+  position: fixed;
+  bottom: 100px; 
+  right: 32px;
+  z-index: 100;
+  display: none;
+  background-color: #219EBC;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+
+#scrollToBottom:hover {
+  background-color: #037b86;
+  transform: scale(1.2);
+}
+
+.dark-mode #scrollToBottom {
+  background-color: #7FDBFF;
+  color: #121212;
+}
+
+.dark-mode #scrollToBottom:hover {
+  background-color: #5FCADD;
+}

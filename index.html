@@ -400,6 +400,7 @@
     <!-- Back to Top Button -->
 
     <button id="backToTop" title="Go to top">↑</button>
+    <button id="scrollToBottom" title="Go to bottom">↓</button>
 
   </div>
   <footer class="fade-in">
@@ -651,6 +652,7 @@ document.addEventListener('click', function(e) {
       }
       searchAndFilter();
     });
+    
 
     // 🟢 Toggle and Save Mode
     toggleBtn.addEventListener("click", () => {
@@ -666,17 +668,25 @@ document.addEventListener('click', function(e) {
     });
 
     // ⬆️ Back to Top
-    window.onscroll = () => {
-      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        backToTopButton.style.display = "block";
-      } else {
-        backToTopButton.style.display = "none";
-      }
-    };
 
-    backToTopButton.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+const scrollToBottomButton = document.getElementById("scrollToBottom");
+
+
+window.onscroll = () => {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    backToTopButton.style.display = "block";
+  } else {
+    backToTopButton.style.display = "none";
+  }
+ 
+  const isAtBottom = 
+    window.innerHeight + window.scrollY >= document.body.offsetHeight - 100;
+  scrollToBottomButton.style.display = isAtBottom ? "none" : "block";
+};
+
+scrollToBottomButton.addEventListener("click", () => {
+  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+});
 
     // ⬇️ Toggle dropdown
     const filterToggle = document.getElementById("filterToggle");
@@ -710,7 +720,7 @@ document.addEventListener('click', function(e) {
 
 
 <!-- Floating Share Button -->
-<div id="fab-share-container" style="position: fixed; bottom: 100px; right: 32px; z-index: 1000; display: flex; flex-direction: column; align-items: center;">
+<div id="fab-share-container" style="position: fixed; bottom: 160px; right: 32px; z-index: 1000; display: flex; flex-direction: column; align-items: center;">
   <button id="fab-share" aria-label="Share" style="background: #219EBC; border: none; border-radius: 50%; width: 56px; height: 56px; box-shadow: 0 2px 8px rgba(44,44,44,0.20); cursor: pointer; position: relative;">
     <i class="fas fa-share-alt" style="color:#fff; font-size:28px;"></i>
   </button>

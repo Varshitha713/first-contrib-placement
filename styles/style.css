@@ -773,7 +773,7 @@ header {
 }
 
 .card-content {
-  flex: 1;
+  flex: 2;
   line-height: 1.6; /* Same as resource cards */
   color: #2c3e50; /* Darker text for better readability */
   font-size: 1rem; /* Slightly increased for better readability */
@@ -1470,3 +1470,35 @@ footer {
     max-width: 85%;
   }
 }
+.applications-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+  gap: 20px;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+@media (max-width: 767px) {
+  .applications-container {
+    grid-template-columns: 1fr; /* 1 card per row on small screens */
+  }
+}
+
+
+
+/* Card: already square */
+.card {
+  width: 100%;  /* fill the grid column */
+  height: 250px; /* your existing height */
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.2);
+}
+

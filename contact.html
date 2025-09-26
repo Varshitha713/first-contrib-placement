@@ -129,6 +129,165 @@
                 transform: translateY(0);
             }
         }
+        /* Dark Mode Styles */
+body.dark-mode {
+    background: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .contact-section {
+    background-color: #1e1e1e;
+    box-shadow: 0 0 20px rgba(40, 166, 199, 0.15);
+    border: 1px solid rgba(40, 166, 199, 0.2);
+}
+
+body.dark-mode .contact-form h2 {
+    color: #4ec9e6;
+    border-left-color: #4ec9e6;
+    text-shadow: 0 0 10px rgba(78, 201, 230, 0.3);
+}
+
+body.dark-mode .input-group {
+    background: #2d2d2d;
+    border: 1px solid #404040;
+}
+
+body.dark-mode .input-group:focus-within {
+    border-color: #4ec9e6;
+    box-shadow: 0 0 8px rgba(78, 201, 230, 0.3);
+}
+
+body.dark-mode .icon {
+    color: #4ec9e6;
+}
+
+body.dark-mode .input-group input,
+body.dark-mode .input-group textarea {
+    background: transparent;
+    color: #e0e0e0;
+}
+
+body.dark-mode .input-group input::placeholder,
+body.dark-mode .input-group textarea::placeholder {
+    color: #a0a0a0;
+}
+
+body.dark-mode .btn-submit {
+    background: linear-gradient(90deg, #4ec9e6, #2a9bb8);
+    box-shadow: 0 4px 15px rgba(78, 201, 230, 0.3);
+}
+
+body.dark-mode .btn-submit:hover {
+    box-shadow: 0 6px 20px rgba(78, 201, 230, 0.4);
+    transform: translateY(-3px);
+}
+
+body.dark-mode .contact-image img {
+    box-shadow: 0 0 15px rgba(78, 201, 230, 0.25);
+    filter: brightness(0.9) contrast(1.1);
+}
+
+/* Enhanced animations for dark mode */
+body.dark-mode .contact-form h2 {
+    animation: fadeInGlow 1s ease forwards;
+}
+
+@keyframes fadeInGlow {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+        text-shadow: 0 0 0 rgba(78, 201, 230, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        text-shadow: 0 0 10px rgba(78, 201, 230, 0.3);
+    }
+}
+
+/* Smooth transitions for all interactive elements */
+body.dark-mode .input-group,
+body.dark-mode .btn-submit,
+body.dark-mode .contact-section {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Improved focus states for accessibility */
+body.dark-mode .input-group input:focus,
+body.dark-mode .input-group textarea:focus {
+    background: rgba(78, 201, 230, 0.05);
+}
+
+/* Footer dark mode styles */
+body.dark-mode footer {
+    background: #1a1a1a;
+    color: #e0e0e0;
+    border-top: 1px solid #333;
+}
+
+body.dark-mode .footer-section h2,
+body.dark-mode .footer-section h3 {
+    color: #4ec9e6;
+}
+
+body.dark-mode .footer-section a {
+    color: #b0b0b0;
+}
+
+body.dark-mode .footer-section a:hover {
+    color: #4ec9e6;
+}
+
+body.dark-mode .footer-bottom {
+    background: #151515;
+    border-top: 1px solid #333;
+}
+
+/* Navbar dark mode enhancements */
+body.dark-mode .navbar {
+    background: #1a1a1a;
+    border-bottom: 1px solid #333;
+}
+
+body.dark-mode .navbar-menu a {
+    color: #e0e0e0;
+}
+
+body.dark-mode .navbar-menu a:hover {
+    color: #4ec9e6;
+    background: rgba(78, 201, 230, 0.1);
+}
+
+body.dark-mode .dropdown-menu {
+    background: #2d2d2d;
+    border: 1px solid #404040;
+}
+
+body.dark-mode .dropdown-menu a {
+    color: #e0e0e0;
+}
+
+body.dark-mode .dropdown-menu a:hover {
+    background: rgba(78, 201, 230, 0.15);
+}
+
+/* Scrollbar styling for dark mode */
+body.dark-mode::-webkit-scrollbar {
+    width: 8px;
+}
+
+body.dark-mode::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+body.dark-mode::-webkit-scrollbar-thumb {
+    background: #4ec9e6;
+    border-radius: 4px;
+}
+
+body.dark-mode::-webkit-scrollbar-thumb:hover {
+    background: #2a9bb8;
+}
     </style>
 </head>
 

@@ -54,6 +54,143 @@
     a:hover {
       text-decoration: underline;
     }
+
+    /* Dark Mode Styles */
+.dark-mode {
+  background: linear-gradient(to bottom right, #1a1a2e, #16213e);
+  color: #e0e0e0;
+}
+
+.dark-mode header {
+  background: #006D77;
+  color: #ffffff;
+}
+
+.dark-mode section {
+  background: #2d3748;
+  color: #e0e0e0;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode section:hover {
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode h2 {
+  color: #4fd1c7;
+}
+
+.dark-mode a {
+  color: #81e6d9;
+}
+
+.dark-mode a:hover {
+  color: #4fd1c7;
+  text-decoration: underline;
+}
+
+/* Footer Dark Mode */
+.dark-mode footer {
+  background: #1a202c;
+  color: #e0e0e0;
+}
+
+.dark-mode .footer-section h2,
+.dark-mode .footer-section h3 {
+  color: #4fd1c7;
+}
+
+.dark-mode .footer-section a {
+  color: #90cdf4;
+}
+
+.dark-mode .footer-section a:hover {
+  color: #63b3ed;
+}
+
+.dark-mode .footer-bottom {
+  background: #2d3748;
+  color: #a0aec0;
+}
+
+/* Navbar Dark Mode */
+.dark-mode .navbar {
+  background: #2d3748;
+  border-bottom: 1px solid #4a5568;
+}
+
+.dark-mode .navbar-menu a {
+  color: #e2e8f0;
+}
+
+.dark-mode .navbar-menu a:hover {
+  color: #4fd1c7;
+  background: #4a5568;
+}
+
+.dark-mode .dropdown-menu {
+  background: #2d3748;
+  border: 1px solid #4a5568;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .dropdown-menu a {
+  color: #e2e8f0;
+}
+
+.dark-mode .dropdown-menu a:hover {
+  background: #4a5568;
+  color: #4fd1c7;
+}
+
+/* Social Icons in Dark Mode */
+.dark-mode .social-icons a {
+  background: #4a5568;
+  color: #e2e8f0;
+}
+
+.dark-mode .social-icons a:hover {
+  background: #4fd1c7;
+  color: #2d3748;
+}
+
+/* Improved transitions for smooth mode switching */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+section, header, footer, .navbar {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Better contrast for list items */
+.dark-mode ul li {
+  color: #cbd5e0;
+}
+
+/* Improved link focus states for accessibility */
+.dark-mode a:focus {
+  outline: 2px solid #4fd1c7;
+  outline-offset: 2px;
+}
+
+/* Better scrollbar for dark mode (optional) */
+.dark-mode ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dark-mode ::-webkit-scrollbar-track {
+  background: #2d3748;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+  background: #4a5568;
+  border-radius: 4px;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background: #4fd1c7;
+}
   </style>
 </head>
 

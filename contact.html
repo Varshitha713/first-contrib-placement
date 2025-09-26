@@ -10,24 +10,47 @@
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2LdF1/Jz7A81rYf5nU5I5jE5Vf9I7p9B9qD4B3K8H6E5Q6yG1fW4Q0fB8D7G5B1"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="stylesheet" href="./styles/style.css">
     <style>
+        :root {
+            --text-color: #333;
+            --bg-color: #f9f9f9;
+            --section-bg: #ffffff;
+            --border-color: rgba(40, 166, 199, 0.15);
+            --input-bg: #f0f8fa;
+            --input-border: #cce9ef;
+            --primary-color: #28A6C7;
+            --shadow-color: rgba(40, 166, 199, 0.1);
+        }
+
+        .dark-mode {
+            --text-color: #e0e0e0;
+            --bg-color: #121212;
+            --section-bg: #1e1e1e;
+            --border-color: rgba(40, 166, 199, 0.3);
+            --input-bg: #2d2d2d;
+            --input-border: #404040;
+            --primary-color: #4fc3f7;
+            --shadow-color: rgba(79, 195, 247, 0.1);
+        }
+
         body {
             font-family: 'Fira Code', monospace;
-            background: #f9f9f9;
-            color: #333;
+            background: var(--bg-color);
+            color: var(--text-color);
             margin: 0;
             padding: 0px;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .contact-section {
-            background-color: #ffffff;
+            background-color: var(--section-bg);
             padding: 40px;
             border-radius: 12px;
             max-width: 1000px;
             margin: auto;
-            box-shadow: 0 0 20px rgba(40, 166, 199, 0.1);
-            border: 1px solid rgba(40, 166, 199, 0.15);
+            box-shadow: 0 0 20px var(--shadow-color);
+            border: 1px solid var(--border-color);
+            transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .contact-container {
@@ -45,32 +68,34 @@
         .contact-form h2 {
             font-size: 2rem;
             margin-bottom: 20px;
-            color: #28A6C7;
-            border-left: 5px solid #28A6C7;
+            color: var(--primary-color);
+            border-left: 5px solid var(--primary-color);
             padding-left: 10px;
             animation: fadeIn 1s ease forwards;
+            transition: color 0.3s ease, border-color 0.3s ease;
         }
 
         .input-group {
             display: flex;
             align-items: center;
-            background: #f0f8fa;
-            border: 1px solid #cce9ef;
+            background: var(--input-bg);
+            border: 1px solid var(--input-border);
             border-radius: 8px;
             padding: 12px;
             margin-bottom: 15px;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
         }
 
         .input-group:focus-within {
-            border-color: #28A6C7;
+            border-color: var(--primary-color);
             box-shadow: 0 0 8px rgba(40, 166, 199, 0.2);
         }
 
         .icon {
             margin-right: 10px;
             font-size: 1.2rem;
-            color: #28A6C7;
+            color: var(--primary-color);
+            transition: color 0.3s ease;
         }
 
         .input-group input,
@@ -80,8 +105,9 @@
             background: transparent;
             flex: 1;
             font-size: 1rem;
-            color: #333;
+            color: var(--text-color);
             font-family: 'Fira Code', monospace;
+            transition: color 0.3s ease;
         }
 
         .input-group textarea {
@@ -90,7 +116,7 @@
         }
 
         .btn-submit {
-            background: linear-gradient(90deg, #28A6C7, #1d7a8a);
+            background: linear-gradient(90deg, var(--primary-color), #1d7a8a);
             color: #fff;
             border: none;
             padding: 12px 25px;
@@ -129,6 +155,289 @@
                 transform: translateY(0);
             }
         }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: var(--section-bg);
+            padding: 10px 0;
+            box-shadow: 0 2px 10px var(--shadow-color);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo img {
+            transition: filter 0.3s ease;
+        }
+
+        .dark-mode .logo img {
+            filter: brightness(0.8);
+        }
+
+        .navbar-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-menu li {
+            margin: 0 15px;
+        }
+
+        .navbar-menu a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-menu a i {
+            margin-right: 5px;
+        }
+
+        .navbar-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--section-bg);
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            z-index: 1000;
+            list-style: none;
+            padding: 10px 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .dropdown-menu.active {
+            display: block;
+        }
+
+        .dropdown-menu li {
+            margin: 0;
+        }
+
+        .dropdown-menu a {
+            padding: 10px 20px;
+            display: block;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: var(--input-bg);
+            color: var(--primary-color);
+        }
+
+        .navbar-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-toggle {
+            display: none;
+            flex-direction: column;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-color);
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        #toggle-mode {
+            background: transparent;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-left: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        #toggle-mode:hover {
+            transform: scale(1.1);
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--section-bg);
+            color: var(--text-color);
+            padding: 40px 0 20px;
+            margin-top: 40px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+            padding: 0 15px;
+        }
+
+        .footer-section h2,
+        .footer-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--input-bg);
+            border-radius: 50%;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--section-bg);
+                box-shadow: 0 5px 10px var(--shadow-color);
+                z-index: 1000;
+            }
+
+            .navbar-menu.active {
+                display: flex;
+            }
+
+            .navbar-menu li {
+                margin: 0;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .navbar-menu a {
+                padding: 15px 20px;
+                display: block;
+            }
+
+            .navbar-toggle {
+                display: flex;
+            }
+
+            .navbar-toggle.active .bar:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .navbar-toggle.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .navbar-toggle.active .bar:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            .dropdown-menu {
+                position: static;
+                box-shadow: none;
+                border: none;
+                display: none;
+                padding-left: 20px;
+            }
+
+            .dropdown-menu.active {
+                display: block;
+            }
+
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .contact-form,
+            .contact-image {
+                flex: 1 1 100%;
+            }
+        }
     </style>
 </head>
 
@@ -136,12 +445,10 @@
     <nav class="navbar">
         <div class="navbar-container">
             <div class="logo">
-                <img src="/images/PR-LOGO.png" width="140" height="120" id="logo">
+                <img src="/images/PR-LOGO.png" width="140" height="120" id="logo" alt="Logo">
             </div>
 
-
             <!-- Navigation Links -->
-
             <ul class="navbar-menu">
                 <li><a href="index.html"><i class="fa-solid fa-house-chimney"></i>Home</a></li>
                 <li><a href="contribute.html"><i class="fa-solid fa-handshake-angle"></i>Contribute</a></li>
@@ -159,7 +466,6 @@
                     </ul>
                 </li>
 
-
                 <li><a href="roadmap.html"><i class="fa-solid fa-map"></i>Roadmap</a></li>
                 <li><a href="contact.html"><i class="fa-solid fa-address-card"></i>Contact</a></li>
                 <li><a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank"
@@ -167,7 +473,6 @@
                         <i class="fa-brands fa-github"></i>Github</a>
                 </li>
             </ul>
-
 
             <div class="navbar-icons">
                 <!-- Hamburger icon -->
@@ -177,12 +482,12 @@
                     <span class="bar"></span>
                 </button>
 
-
                 <!-- Dark/Light Mode Toggle -->
                 <button id="toggle-mode"></button>
             </div>
         </div>
     </nav>
+
     <section class="contact-section">
         <div class="contact-container">
             <!-- Left Form -->
@@ -190,12 +495,15 @@
                 <h2>Contact Us</h2>
                 <form id="contactForm" novalidate>
                     <div class="input-group">
+                        <i class="fas fa-user icon"></i>
                         <input type="text" id="name" name="name" placeholder="Name" required minlength="3">
                     </div>
                     <div class="input-group">
+                        <i class="fas fa-envelope icon"></i>
                         <input type="email" id="email" name="email" placeholder="Email" required>
                     </div>
                     <div class="input-group">
+                        <i class="fas fa-comment icon"></i>
                         <textarea id="message" name="message" placeholder="Message" required minlength="10"></textarea>
                     </div>
                     <button type="submit" class="btn-submit">Send Message</button>
@@ -208,6 +516,7 @@
             </div>
         </div>
     </section>
+
     <footer>
         <div class="footer-container">
             <!-- Branding -->
@@ -217,10 +526,13 @@
                     A community-driven project to share the best placement and learning resources for BTech students.
                 </p>
                 <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/varshitha-macha/" target="blank" rel="noopener noreferrer"><i
-                            class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.linkedin.com/in/varshitha-macha/" target="blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
                     <a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank"
-                        rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                        rel="noopener noreferrer">
+                        <i class="fab fa-github"></i>
+                    </a>
                 </div>
             </div>
 
@@ -256,11 +568,11 @@
             </div>
         </div>
 
-
         <div class="footer-bottom">
             © 2025 All Rights Reserved | Built with ❤️ by the FCP Community
         </div>
     </footer>
+
     <script>
         const navbarToggle = document.querySelector('.navbar-toggle');
         const navbarMenu = document.querySelector('.navbar-menu');
@@ -315,8 +627,7 @@
             }
         });
 
-    </script>
-    <script>
+        // Form validation
         document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault();
 
@@ -347,8 +658,6 @@
             window.location.href = "./index.html"; // Redirect after success
         });
     </script>
-
-
 </body>
 
 </html>

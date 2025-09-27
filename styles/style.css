@@ -1278,12 +1278,15 @@ footer {
   color: #e5e5ff;
   text-decoration: none;
   font-size: 15px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .footer-section a:hover {
   color: white;
+  background-color: rgba(255, 255, 255, 0.15);
 }
-
 .social-icons {
   margin-top: 15px;
   display: flex;

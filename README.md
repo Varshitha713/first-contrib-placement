@@ -1,5 +1,4 @@
 <div align="center">
-
 # 📚 Placement Resources
 
 [![GitHub stars](https://img.shields.io/github/stars/Varshitha713/first-contrib-placement.svg?style=for-the-badge)](https://github.com/Varshitha713/first-contrib-placement/stargazers)

@@ -1,4 +1,3 @@
-<!-- File 2: resume-tips.html with animations, gradient, read more -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -103,6 +102,139 @@
       margin-top: 0.5rem;
       color: #444;
     }
+
+    /* Resume Favorites Styles */
+    .resume-favorites-controls {
+      text-align: center;
+      margin: 30px auto;
+      max-width: 1200px;
+      padding: 0 20px;
+    }
+
+    .resume-favorite-icon {
+      cursor: pointer;
+      font-size: 1.3rem;
+      color: #ccc;
+      transition: all 0.3s ease;
+      padding: 8px;
+      border-radius: 50%;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+    }
+
+    .resume-favorite-icon:hover {
+      color: #ff6b6b;
+      background: rgba(255, 107, 107, 0.1);
+      transform: scale(1.1);
+    }
+
+    .resume-favorite-icon.active {
+      color: #ff6b6b;
+    }
+
+    .resume-favorite-icon.active i {
+      font-weight: 900;
+    }
+
+    /* Hidden state for filtered cards */
+    .tip-card.hidden {
+      display: none;
+    }
+
+    /* No Favorites Message */
+    .no-resume-favorites-message {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(145deg, #fff8f8, #ffeaea);
+      border-radius: 16px;
+      margin: 30px auto;
+      max-width: 900px;
+      border-left: 8px solid #ff6b6b;
+      animation: fadeInUp 0.5s ease-in-out;
+    }
+
+    .dark-mode .no-resume-favorites-message {
+      background: linear-gradient(145deg, #2a1a1a, #3a2a2a);
+      color: #ffb4b4;
+    }
+
+    .no-resume-favorites-message h3 {
+      color: #ff6b6b;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    .no-resume-favorites-message p {
+      color: #666;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+
+    .dark-mode .no-resume-favorites-message p {
+      color: #e0e0e0;
+    }
+
+    .no-resume-favorites-message button {
+      background: #ff6b6b;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .no-resume-favorites-message button:hover {
+      background: #ff5252;
+      transform: translateY(-2px);
+    }
+
+    /* Dark mode adjustments */
+    .dark-mode .tip-card {
+      background: #1E2A30;
+      color: #E0F7FA;
+    }
+
+    .dark-mode .tip-card:hover {
+      background: linear-gradient(145deg, #2d3748, #1E2A30);
+    }
+
+    .dark-mode h2 {
+      color: #81e6d9;
+    }
+
+    .dark-mode a {
+      color: #7FDBFF;
+    }
+
+    .dark-mode .read-more {
+      color: #7FDBFF;
+    }
+
+    .dark-mode .more-content {
+      color: #B0BEC5;
+    }
+
+    .dark-mode .resume-favorite-icon {
+      background: rgba(30, 42, 48, 0.9);
+    }
+
+    /* Animation for fadeInUp */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 
@@ -113,9 +245,7 @@
         <img src="/images/PR-LOGO.png" width="140" height="120" id="logo">
       </div>
 
-
       <!-- Navigation Links -->
-
       <ul class="navbar-menu">
         <li><a href="index.html"><i class="fa-solid fa-house-chimney"></i>Home</a></li>
         <li><a href="contribute.html"><i class="fa-solid fa-handshake-angle"></i>Contribute</a></li>
@@ -133,14 +263,12 @@
           </ul>
         </li>
 
-
         <li><a href="roadmap.html"><i class="fa-solid fa-map"></i>Roadmap</a></li>
         <li><a href="contact.html"><i class="fa-solid fa-address-card"></i>Contact</a></li>
         <li><a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer">
             <i class="fa-brands fa-github"></i>Github</a>
         </li>
       </ul>
-
 
       <div class="navbar-icons">
         <!-- Hamburger icon -->
@@ -150,19 +278,32 @@
           <span class="bar"></span>
         </button>
 
-
         <!-- Dark/Light Mode Toggle -->
         <button id="toggle-mode"></button>
       </div>
     </div>
   </nav>
+  
   <header>
     <h1>Resume Tips Hub</h1>
     <p>Boost your resume with expert tips and free resources</p>
   </header>
 
+  <!-- Favorites Controls -->
+  <div class="resume-favorites-controls">
+    <button id="resumeFavoritesBtn" class="favorites-toggle-btn">
+      <i class="far fa-star"></i> Show Favorite Tips Only
+    </button>
+    <div class="favorites-stats">
+      <span id="resumeFavoritesCount">0</span> favorite tips
+    </div>
+  </div>
+
   <div class="container">
-    <div class="tip-card">
+    <div class="tip-card" data-tip="interactive">
+      <span class="resume-favorite-icon" onclick="toggleResumeFavorite('interactive')">
+        <i class="far fa-heart"></i>
+      </span>
       <h2>Interactive Tips</h2>
       <p>
         Understand how recruiters view resumes and how ATS (Applicant Tracking Systems) work.
@@ -174,7 +315,11 @@
       </div>
       <a href="https://novoresume.com/resume-tips" target="_blank">See Resume Tips</a>
     </div>
-    <div class="tip-card">
+    
+    <div class="tip-card" data-tip="role-specific">
+      <span class="resume-favorite-icon" onclick="toggleResumeFavorite('role-specific')">
+        <i class="far fa-heart"></i>
+      </span>
       <h2>Role-specific Advice</h2>
       <p>
         Customize your resume by showing relevant projects, tools, and achievements.
@@ -186,7 +331,11 @@
       </div>
       <a href="https://enhancv.com/resume-examples/" target="_blank">Explore Role-based Samples</a>
     </div>
-    <div class="tip-card">
+    
+    <div class="tip-card" data-tip="company-samples">
+      <span class="resume-favorite-icon" onclick="toggleResumeFavorite('company-samples')">
+        <i class="far fa-heart"></i>
+      </span>
       <h2>Company Sample Resumes</h2>
       <p>
         Study formats used by successful applicants at Google, Amazon, etc.
@@ -198,7 +347,11 @@
       </div>
       <a href="https://www.cakeresume.com/resources/top-resume-examples" target="_blank">Company Resumes</a>
     </div>
-    <div class="tip-card">
+    
+    <div class="tip-card" data-tip="templates">
+      <span class="resume-favorite-icon" onclick="toggleResumeFavorite('templates')">
+        <i class="far fa-heart"></i>
+      </span>
       <h2>Free Templates & Tools</h2>
       <p>
         Use online tools like Canva, Zety, or Overleaf for LaTeX-style resumes.
@@ -211,6 +364,7 @@
       <a href="https://www.canva.com/resumes/" target="_blank">Download Templates</a>
     </div>
   </div>
+  
   <footer>
     <div class="footer-container">
       <!-- Branding -->
@@ -259,43 +413,158 @@
       </div>
     </div>
 
-
     <div class="footer-bottom">
       © 2025 All Rights Reserved | Built with ❤️ by the FCP Community
     </div>
   </footer>
+
   <script>
-    const navbarToggle = document.querySelector('.navbar-toggle');
-    const navbarMenu = document.querySelector('.navbar-menu');
-    const toggleBtn = document.getElementById("toggle-mode");
+    // Resume Tips Favorites Functionality
+    let showResumeFavoritesOnly = false;
+    let resumeFavorites = JSON.parse(localStorage.getItem('resumeFavorites')) || [];
 
-    navbarToggle.addEventListener('click', () => {
-      navbarToggle.classList.toggle('active');
-      navbarMenu.classList.toggle('active');
-    });
-
-    // Dropdown functionality
-    const dropdownToggle = document.getElementById('resources-dropdown-toggle');
-    const dropdownMenu = document.querySelector('.dropdown-menu');
-
-    // Toggle dropdown on click
-    dropdownToggle.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      dropdownMenu.classList.toggle('active');
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!dropdownMenu.contains(e.target) && !dropdownToggle.contains(e.target)) {
-        dropdownMenu.classList.remove('active');
+    function toggleResumeFavorite(tipId) {
+      const index = resumeFavorites.indexOf(tipId);
+      const icon = event.currentTarget.querySelector('i');
+      
+      if (index === -1) {
+        // Add to favorites
+        resumeFavorites.push(tipId);
+        icon.classList.remove('far', 'fa-heart');
+        icon.classList.add('fas', 'fa-heart');
+        event.currentTarget.classList.add('active');
+      } else {
+        // Remove from favorites
+        resumeFavorites.splice(index, 1);
+        icon.classList.remove('fas', 'fa-heart');
+        icon.classList.add('far', 'fa-heart');
+        event.currentTarget.classList.remove('active');
       }
-    });
+      
+      localStorage.setItem('resumeFavorites', JSON.stringify(resumeFavorites));
+      updateResumeFavoritesCount();
+      
+      if (showResumeFavoritesOnly) {
+        filterResumeTips();
+      }
+    }
 
-    // Dark/Light mode functionality
-    window.addEventListener("DOMContentLoaded", () => {
+    function filterResumeTips() {
+      const cards = document.querySelectorAll('.tip-card');
+      let visibleCount = 0;
+      
+      cards.forEach(card => {
+        const tipId = card.getAttribute('data-tip');
+        const isFavorite = resumeFavorites.includes(tipId);
+        
+        if (showResumeFavoritesOnly) {
+          if (isFavorite) {
+            card.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            card.classList.add('hidden');
+          }
+        } else {
+          card.classList.remove('hidden');
+          visibleCount++;
+        }
+      });
+      
+      // Show message if no favorites in filter mode
+      if (showResumeFavoritesOnly && visibleCount === 0) {
+        showNoResumeFavoritesMessage();
+      } else {
+        hideNoResumeFavoritesMessage();
+      }
+    }
+
+    function showNoResumeFavoritesMessage() {
+      let message = document.getElementById('noResumeFavoritesMessage');
+      if (!message) {
+        message = document.createElement('div');
+        message.id = 'noResumeFavoritesMessage';
+        message.className = 'no-resume-favorites-message';
+        message.innerHTML = `
+          <h3>⭐ No Favorite Resume Tips Yet</h3>
+          <p>Click the heart icons on resume tips to add them to your favorites!</p>
+          <button onclick="hideNoResumeFavoritesMessage()">Got it!</button>
+        `;
+        const container = document.querySelector('.container');
+        container.parentNode.insertBefore(message, container);
+      }
+    }
+
+    function hideNoResumeFavoritesMessage() {
+      const message = document.getElementById('noResumeFavoritesMessage');
+      if (message) {
+        message.remove();
+      }
+    }
+
+    function updateResumeFavoritesCount() {
+      const countElement = document.getElementById('resumeFavoritesCount');
+      if (countElement) {
+        countElement.textContent = resumeFavorites.length;
+      }
+    }
+
+    function initializeResumeFavorites() {
+      // Set initial favorite states
+      resumeFavorites.forEach(tipId => {
+        const icon = document.querySelector(`[data-tip="${tipId}"] .resume-favorite-icon i`);
+        if (icon) {
+          icon.classList.remove('far', 'fa-heart');
+          icon.classList.add('fas', 'fa-heart');
+          icon.parentElement.classList.add('active');
+        }
+      });
+      updateResumeFavoritesCount();
+    }
+
+    // Toggle resume favorites view
+    document.addEventListener('DOMContentLoaded', function() {
+      initializeResumeFavorites();
+      
+      const resumeFavoritesBtn = document.getElementById('resumeFavoritesBtn');
+      if (resumeFavoritesBtn) {
+        resumeFavoritesBtn.addEventListener('click', function() {
+          showResumeFavoritesOnly = !showResumeFavoritesOnly;
+          this.innerHTML = showResumeFavoritesOnly ? 
+            '<i class="far fa-star"></i> Show All Tips' : 
+            '<i class="far fa-star"></i> Show Favorite Tips Only';
+          
+          filterResumeTips();
+        });
+      }
+
+      // Navbar functionality
+      const navbarToggle = document.querySelector('.navbar-toggle');
+      const navbarMenu = document.querySelector('.navbar-menu');
+      const toggleBtn = document.getElementById("toggle-mode");
+
+      navbarToggle.addEventListener('click', () => {
+        navbarToggle.classList.toggle('active');
+        navbarMenu.classList.toggle('active');
+      });
+
+      // Dropdown functionality
+      const dropdownToggle = document.getElementById('resources-dropdown-toggle');
+      const dropdownMenu = document.querySelector('.dropdown-menu');
+
+      dropdownToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropdownMenu.classList.toggle('active');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!dropdownMenu.contains(e.target) && !dropdownToggle.contains(e.target)) {
+          dropdownMenu.classList.remove('active');
+        }
+      });
+
+      // Dark/Light mode functionality
       const savedMode = localStorage.getItem("mode");
-
       if (savedMode === "dark") {
         document.body.classList.add("dark-mode");
         toggleBtn.textContent = "☀️";
@@ -303,23 +572,20 @@
         document.body.classList.remove("dark-mode");
         toggleBtn.textContent = "🌙";
       }
+
+      toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        if (document.body.classList.contains("dark-mode")) {
+          toggleBtn.textContent = "☀️";
+          localStorage.setItem("mode", "dark");
+        } else {
+          toggleBtn.textContent = "🌙";
+          localStorage.setItem("mode", "light");
+        }
+      });
     });
 
-    // Toggle and Save Mode
-    toggleBtn.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-
-      if (document.body.classList.contains("dark-mode")) {
-        toggleBtn.textContent = "☀️";
-        localStorage.setItem("mode", "dark");
-      } else {
-        toggleBtn.textContent = "🌙";
-        localStorage.setItem("mode", "light");
-      }
-    });
-
-  </script>
-  <script>
+    // Read more functionality
     function toggleMore(element) {
       const more = element.parentElement.nextElementSibling;
       const isVisible = more.style.display === 'block';

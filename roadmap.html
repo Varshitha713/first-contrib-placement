@@ -29,7 +29,6 @@
       body {
         font-family: "Segoe UI", sans-serif;
         margin: 0;
-        /* background: linear-gradient(to right, #f0f7ff, #ffffff); */
       }
 
       header {
@@ -157,6 +156,131 @@
       .steps-list li::marker {
         color: #006d77;
       }
+
+      /* Favorites Controls */
+      .favorites-controls {
+        text-align: center;
+        margin: 20px auto;
+        max-width: 900px;
+        padding: 15px 20px;
+        background: linear-gradient(145deg, #ffffff, #f0f7ff);
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        position: relative;
+        z-index: 10;
+      }
+
+      .dark-mode .favorites-controls {
+        background: linear-gradient(145deg, #2d3748, #4a5568);
+      }
+
+      .favorites-btn {
+        background: linear-gradient(145deg, #006d77, #004e56);
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        font-weight: 600;
+      }
+
+      .favorites-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        background: linear-gradient(145deg, #004e56, #006d77);
+      }
+
+      .favorites-count {
+        margin-left: 15px;
+        color: #006d77;
+        font-weight: 600;
+        font-size: 1rem;
+      }
+
+      .dark-mode .favorites-count {
+        color: #81e6d9;
+      }
+
+      /* Step Header with Favorite Icon */
+      .step-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 15px;
+      }
+
+      .favorite-icon {
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: #ccc;
+        transition: all 0.3s ease;
+        padding: 5px;
+        border-radius: 50%;
+        margin-left: 15px;
+        flex-shrink: 0;
+      }
+
+      .favorite-icon:hover {
+        color: #ff6b6b;
+        background: rgba(255, 107, 107, 0.1);
+        transform: scale(1.1);
+      }
+
+      .favorite-icon.active {
+        color: #ff6b6b;
+      }
+
+      .favorite-icon.active i {
+        font-weight: 900;
+      }
+
+      /* Hidden state for filtered steps */
+      .step.hidden {
+        display: none;
+      }
+
+      .dark-mode .step {
+        background: linear-gradient(145deg, #2d3748, #4a5568);
+        color: #f8ffff;
+      }
+
+      .dark-mode .step:hover {
+        background: linear-gradient(135deg, #4a5568, #2d3748);
+      }
+
+      .dark-mode .step h2 {
+        color: #81e6d9;
+      }
+
+      .dark-mode .step p {
+        color: #e2e8f0;
+      }
+
+      /* No Favorites Message */
+      .no-favorites-message {
+        animation: fadeInUp 0.5s ease-in-out;
+      }
+
+      .dark-mode .no-favorites-message div {
+        background: linear-gradient(145deg, #2a1a1a, #3a2a2a) !important;
+        color: #ffb4b4 !important;
+      }
+
+      .dark-mode .no-favorites-message h3 {
+        color: #ff6b6b !important;
+      }
+
+      .dark-mode .no-favorites-message p {
+        color: #e0e0e0 !important;
+      }
+
+      .dark-mode .no-favorites-message button {
+        background: #ff6b6b !important;
+        color: white !important;
+      }
     </style>
   </head>
 
@@ -168,7 +292,6 @@
         </div>
 
         <!-- Navigation Links -->
-
         <ul class="navbar-menu">
           <li>
             <a href="index.html"
@@ -230,6 +353,14 @@
     <header class="animate__animated animate__fadeInDown">
       <h1>🚀 Placement Preparation Roadmap for Students</h1>
     </header>
+
+    <!-- Favorites Controls -->
+    <div class="favorites-controls" data-aos="fade-up">
+      <button id="showFavoritesBtn" class="favorites-btn">
+        <i class="far fa-star"></i> Show Favorites Only
+      </button>
+      <span id="favoritesCount" class="favorites-count">0 favorites</span>
+    </div>
 
     <div class="intro-sections" data-aos="fade-up">
       <div class="section-header">
@@ -293,8 +424,13 @@
     </div>
 
     <div class="timeline" data-aos="fade-up" data-aos-delay="200">
-      <div class="step" data-aos="fade-right">
-        <h2>🔰 Step 0: Explore and Set a Goal</h2>
+      <div class="step" data-aos="fade-right" data-step="step0">
+        <div class="step-header">
+          <h2>🔰 Step 0: Explore and Set a Goal</h2>
+          <span class="favorite-icon" onclick="toggleFavorite('step0')">
+            <i class="far fa-heart"></i>
+          </span>
+        </div>
         <p>
           Before you begin, understand what roles you want to pursue: Software
           Engineer, Data Analyst, Backend Developer, Frontend Developer, AI
@@ -325,8 +461,13 @@
         </ul>
       </div>
 
-      <div class="step" data-aos="fade-left">
-        <h2>🛠 Step 1: Learn a Programming Language</h2>
+      <div class="step" data-aos="fade-left" data-step="step1">
+        <div class="step-header">
+          <h2>🛠 Step 1: Learn a Programming Language</h2>
+          <span class="favorite-icon" onclick="toggleFavorite('step1')">
+            <i class="far fa-heart"></i>
+          </span>
+        </div>
         <p>
           Start with a language used in interviews like
           <span class="highlight">C++, Java, or Python</span>. Learn syntax,
@@ -341,8 +482,13 @@
         </ul>
       </div>
 
-      <div class="step" data-aos="fade-right">
-        <h2>📚 Step 2: Data Structures & Algorithms</h2>
+      <div class="step" data-aos="fade-right" data-step="step2">
+        <div class="step-header">
+          <h2>📚 Step 2: Data Structures & Algorithms</h2>
+          <span class="favorite-icon" onclick="toggleFavorite('step2')">
+            <i class="far fa-heart"></i>
+          </span>
+        </div>
         <p>
           DSA is the most important skill for tech placements. Build strong
           fundamentals.
@@ -354,7 +500,7 @@
           </li>
           <li>
             Follow a structured sheet like
-            <span class="highlight">Striver’s SDE Sheet</span> or
+            <span class="highlight">Striver's SDE Sheet</span> or
             <span class="highlight">Love Babbar 450</span>.
           </li>
           <li>Use LeetCode, GFG, and Codeforces for practice.</li>
@@ -362,8 +508,13 @@
         </ul>
       </div>
 
-      <div class="step" data-aos="fade-left">
-        <h2>💻 Step 3: Build Projects</h2>
+      <div class="step" data-aos="fade-left" data-step="step3">
+        <div class="step-header">
+          <h2>💻 Step 3: Build Projects</h2>
+          <span class="favorite-icon" onclick="toggleFavorite('step3')">
+            <i class="far fa-heart"></i>
+          </span>
+        </div>
         <p>
           Hands-on projects show your practical skills. Choose domain-aligned
           projects (web, ML, app dev, etc.).
@@ -376,8 +527,13 @@
         </ul>
       </div>
 
-      <div class="step" data-aos="fade-right">
-        <h2>📄 Step 4: Resume Building</h2>
+      <div class="step" data-aos="fade-right" data-step="step4">
+        <div class="step-header">
+          <h2>📄 Step 4: Resume Building</h2>
+          <span class="favorite-icon" onclick="toggleFavorite('step4')">
+            <i class="far fa-heart"></i>
+          </span>
+        </div>
         <p>Create a clean, one-page resume highlighting:</p>
         <ul class="steps-list">
           <li>
@@ -390,8 +546,13 @@
         </ul>
       </div>
 
-      <div class="step" data-aos="fade-left">
-        <h2>🤝 Step 5: Interview Preparation</h2>
+      <div class="step" data-aos="fade-left" data-step="step5">
+        <div class="step-header">
+          <h2>🤝 Step 5: Interview Preparation</h2>
+          <span class="favorite-icon" onclick="toggleFavorite('step5')">
+            <i class="far fa-heart"></i>
+          </span>
+        </div>
         <p>Prepare for technical + behavioral + HR rounds.</p>
         <ul class="steps-list">
           <li>Mock interviews: InterviewBit, Pramp, peers.</li>
@@ -403,8 +564,13 @@
         </ul>
       </div>
 
-      <div class="step" data-aos="fade-right">
-        <h2>🎯 Step 6: Apply and Track</h2>
+      <div class="step" data-aos="fade-right" data-step="step6">
+        <div class="step-header">
+          <h2>🎯 Step 6: Apply and Track</h2>
+          <span class="favorite-icon" onclick="toggleFavorite('step6')">
+            <i class="far fa-heart"></i>
+          </span>
+        </div>
         <p>
           Start applying 3-6 months before graduation. Apply smartly and track
           progress.
@@ -419,8 +585,13 @@
         </ul>
       </div>
 
-      <div class="step" data-aos="fade-up">
-        <h2>🌟 Bonus: Portfolio & Personal Branding</h2>
+      <div class="step" data-aos="fade-up" data-step="step7">
+        <div class="step-header">
+          <h2>🌟 Bonus: Portfolio & Personal Branding</h2>
+          <span class="favorite-icon" onclick="toggleFavorite('step7')">
+            <i class="far fa-heart"></i>
+          </span>
+        </div>
         <p>Establish a strong online presence.</p>
         <ul class="steps-list">
           <li>LinkedIn: Consistent posts, projects, certifications.</li>
@@ -438,6 +609,192 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
       AOS.init({ once: true, duration: 1000 });
+
+      // Favorites functionality
+      let showFavoritesOnly = false;
+      let favorites = JSON.parse(localStorage.getItem('roadmapFavorites')) || [];
+
+      function toggleFavorite(stepId) {
+        const index = favorites.indexOf(stepId);
+        const icon = document.querySelector(`[data-step="${stepId}"] .favorite-icon i`);
+        
+        if (index === -1) {
+          // Add to favorites
+          favorites.push(stepId);
+          if (icon) {
+            icon.classList.remove('far', 'fa-heart');
+            icon.classList.add('fas', 'fa-heart');
+            icon.parentElement.classList.add('active');
+          }
+        } else {
+          // Remove from favorites
+          favorites.splice(index, 1);
+          if (icon) {
+            icon.classList.remove('fas', 'fa-heart');
+            icon.classList.add('far', 'fa-heart');
+            icon.parentElement.classList.remove('active');
+          }
+        }
+        
+        localStorage.setItem('roadmapFavorites', JSON.stringify(favorites));
+        updateFavoritesCount();
+        
+        if (showFavoritesOnly) {
+          filterSteps();
+        }
+      }
+
+      function filterSteps() {
+        const steps = document.querySelectorAll('.step');
+        let visibleCount = 0;
+        
+        steps.forEach(step => {
+          const stepId = step.getAttribute('data-step');
+          const isFavorite = favorites.includes(stepId);
+          
+          if (showFavoritesOnly) {
+            if (isFavorite) {
+              step.classList.remove('hidden');
+              visibleCount++;
+            } else {
+              step.classList.add('hidden');
+            }
+          } else {
+            step.classList.remove('hidden');
+            visibleCount++;
+          }
+        });
+        
+        // Show message if no favorites in filter mode
+        if (showFavoritesOnly && visibleCount === 0) {
+          showNoFavoritesMessage();
+        } else {
+          hideNoFavoritesMessage();
+        }
+      }
+
+      function showNoFavoritesMessage() {
+        let message = document.getElementById('noFavoritesMessage');
+        if (!message) {
+          message = document.createElement('div');
+          message.id = 'noFavoritesMessage';
+          message.className = 'no-favorites-message';
+          message.innerHTML = `
+            <div style="text-align: center; padding: 40px; background: linear-gradient(145deg, #fff8f8, #ffeaea); 
+                        border-radius: 16px; margin: 20px 0; border-left: 8px solid #ff6b6b;">
+              <h3 style="color: #ff6b6b; margin-bottom: 10px;">⭐ No Favorite Steps Yet</h3>
+              <p style="color: #666; margin-bottom: 15px;">Click the heart icons on roadmap steps to add them to your favorites!</p>
+              <button onclick="hideNoFavoritesMessage()" style="background: #ff6b6b; color: white; border: none; 
+                      padding: 10px 20px; border-radius: 8px; cursor: pointer;">Got it!</button>
+            </div>
+          `;
+          const timeline = document.querySelector('.timeline');
+          timeline.appendChild(message);
+        }
+      }
+
+      function hideNoFavoritesMessage() {
+        const message = document.getElementById('noFavoritesMessage');
+        if (message) {
+          message.remove();
+        }
+      }
+
+      function updateFavoritesCount() {
+        const countElement = document.getElementById('favoritesCount');
+        if (countElement) {
+          countElement.textContent = `${favorites.length} ${favorites.length === 1 ? 'favorite' : 'favorites'}`;
+        }
+      }
+
+      function initializeFavorites() {
+        // Set initial favorite states
+        favorites.forEach(stepId => {
+          const icon = document.querySelector(`[data-step="${stepId}"] .favorite-icon i`);
+          if (icon) {
+            icon.classList.remove('far', 'fa-heart');
+            icon.classList.add('fas', 'fa-heart');
+            icon.parentElement.classList.add('active');
+          }
+        });
+        updateFavoritesCount();
+      }
+
+      // Toggle favorites view
+      document.addEventListener('DOMContentLoaded', function() {
+        initializeFavorites();
+        
+        const favoritesBtn = document.getElementById('showFavoritesBtn');
+        if (favoritesBtn) {
+          favoritesBtn.addEventListener('click', function() {
+            showFavoritesOnly = !showFavoritesOnly;
+            this.innerHTML = showFavoritesOnly ? 
+              '<i class="far fa-star"></i> Show All Steps' : 
+              '<i class="far fa-star"></i> Show Favorites Only';
+            
+            filterSteps();
+          });
+        }
+      });
+
+      // Existing navbar functionality
+      const navbarToggle = document.querySelector(".navbar-toggle");
+      const navbarMenu = document.querySelector(".navbar-menu");
+      const toggleBtn = document.getElementById("toggle-mode");
+
+      navbarToggle.addEventListener("click", () => {
+        navbarToggle.classList.toggle("active");
+        navbarMenu.classList.toggle("active");
+      });
+
+      // Dropdown functionality
+      const dropdownToggle = document.getElementById(
+        "resources-dropdown-toggle"
+      );
+      const dropdownMenu = document.querySelector(".dropdown-menu");
+
+      // Toggle dropdown on click
+      dropdownToggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropdownMenu.classList.toggle("active");
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener("click", (e) => {
+        if (
+          !dropdownMenu.contains(e.target) &&
+          !dropdownToggle.contains(e.target)
+        ) {
+          dropdownMenu.classList.remove("active");
+        }
+      });
+
+      // Dark/Light mode functionality
+      window.addEventListener("DOMContentLoaded", () => {
+        const savedMode = localStorage.getItem("mode");
+
+        if (savedMode === "dark") {
+          document.body.classList.add("dark-mode");
+          toggleBtn.textContent = "☀️";
+        } else {
+          document.body.classList.remove("dark-mode");
+          toggleBtn.textContent = "🌙";
+        }
+      });
+
+      // Toggle and Save Mode
+      toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        if (document.body.classList.contains("dark-mode")) {
+          toggleBtn.textContent = "☀️";
+          localStorage.setItem("mode", "dark");
+        } else {
+          toggleBtn.textContent = "🌙";
+          localStorage.setItem("mode", "light");
+        }
+      });
     </script>
     <footer>
       <div class="footer-container">
@@ -500,64 +857,5 @@
         © 2025 All Rights Reserved | Built with ❤️ by the FCP Community
       </div>
     </footer>
-    <script>
-      const navbarToggle = document.querySelector(".navbar-toggle");
-      const navbarMenu = document.querySelector(".navbar-menu");
-      const toggleBtn = document.getElementById("toggle-mode");
-
-      navbarToggle.addEventListener("click", () => {
-        navbarToggle.classList.toggle("active");
-        navbarMenu.classList.toggle("active");
-      });
-
-      // Dropdown functionality
-      const dropdownToggle = document.getElementById(
-        "resources-dropdown-toggle"
-      );
-      const dropdownMenu = document.querySelector(".dropdown-menu");
-
-      // Toggle dropdown on click
-      dropdownToggle.addEventListener("click", (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        dropdownMenu.classList.toggle("active");
-      });
-
-      // Close dropdown when clicking outside
-      document.addEventListener("click", (e) => {
-        if (
-          !dropdownMenu.contains(e.target) &&
-          !dropdownToggle.contains(e.target)
-        ) {
-          dropdownMenu.classList.remove("active");
-        }
-      });
-
-      // Dark/Light mode functionality
-      window.addEventListener("DOMContentLoaded", () => {
-        const savedMode = localStorage.getItem("mode");
-
-        if (savedMode === "dark") {
-          document.body.classList.add("dark-mode");
-          toggleBtn.textContent = "☀️";
-        } else {
-          document.body.classList.remove("dark-mode");
-          toggleBtn.textContent = "🌙";
-        }
-      });
-
-      // Toggle and Save Mode
-      toggleBtn.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
-
-        if (document.body.classList.contains("dark-mode")) {
-          toggleBtn.textContent = "☀️";
-          localStorage.setItem("mode", "dark");
-        } else {
-          toggleBtn.textContent = "🌙";
-          localStorage.setItem("mode", "light");
-        }
-      });
-    </script>
   </body>
 </html>

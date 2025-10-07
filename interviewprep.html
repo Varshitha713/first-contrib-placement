@@ -30,6 +30,7 @@
       border-radius: 12px;
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
     }
 
     section:hover {
@@ -54,6 +55,116 @@
     a:hover {
       text-decoration: underline;
     }
+
+    /* Favorites Controls for Interview Prep */
+    .interview-favorites-controls {
+      text-align: center;
+      margin: 30px auto;
+      max-width: 900px;
+      padding: 0 20px;
+    }
+
+    /* Favorite Icon for Interview Sections */
+    .interview-favorite-icon {
+      cursor: pointer;
+      font-size: 1.3rem;
+      color: #ccc;
+      transition: all 0.3s ease;
+      padding: 8px;
+      border-radius: 50%;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+    }
+
+    .interview-favorite-icon:hover {
+      color: #ff6b6b;
+      background: rgba(255, 107, 107, 0.1);
+      transform: scale(1.1);
+    }
+
+    .interview-favorite-icon.active {
+      color: #ff6b6b;
+    }
+
+    .interview-favorite-icon.active i {
+      font-weight: 900;
+    }
+
+    /* Hidden state for filtered sections */
+    section.hidden {
+      display: none;
+    }
+
+    /* No Favorites Message */
+    .no-interview-favorites-message {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(145deg, #fff8f8, #ffeaea);
+      border-radius: 16px;
+      margin: 30px auto;
+      max-width: 900px;
+      border-left: 8px solid #ff6b6b;
+      animation: fadeInUp 0.5s ease-in-out;
+    }
+
+    .dark-mode .no-interview-favorites-message {
+      background: linear-gradient(145deg, #2a1a1a, #3a2a2a);
+      color: #ffb4b4;
+    }
+
+    .no-interview-favorites-message h3 {
+      color: #ff6b6b;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    .no-interview-favorites-message p {
+      color: #666;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+
+    .dark-mode .no-interview-favorites-message p {
+      color: #e0e0e0;
+    }
+
+    .no-interview-favorites-message button {
+      background: #ff6b6b;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .no-interview-favorites-message button:hover {
+      background: #ff5252;
+      transform: translateY(-2px);
+    }
+
+    /* Dark mode adjustments */
+    .dark-mode section {
+      background: #1E2A30;
+      color: #E0F7FA;
+    }
+
+    .dark-mode h2 {
+      color: #81e6d9;
+    }
+
+    .dark-mode a {
+      color: #7FDBFF;
+    }
+
+    .dark-mode .interview-favorite-icon {
+      background: rgba(30, 42, 48, 0.9);
+    }
   </style>
 </head>
 
@@ -64,11 +175,7 @@
         <img src="images/PR-LOGO.png" width="140" height="120" id="logo">
       </div>
 
-
       <!-- Navigation Links -->
-
-
-
       <ul class="navbar-menu">
         <li><a href="index.html"><i class="fa-solid fa-house-chimney"></i>Home</a></li>
         <li><a href="contribute.html"><i class="fa-solid fa-handshake-angle"></i>Contribute</a></li>
@@ -101,18 +208,31 @@
           <span class="bar"></span>
         </button>
 
-
         <!-- Dark/Light Mode Toggle -->
         <button id="toggle-mode"></button>
       </div>
     </div>
   </nav>
+
   <header data-aos="fade-down">
     <h1>💼 Interview Preparation Central</h1>
     <p>Everything you need to ace coding & HR interviews!</p>
   </header>
 
-  <section data-aos="zoom-in-up">
+  <!-- Favorites Controls -->
+  <div class="interview-favorites-controls">
+    <button id="interviewFavoritesBtn" class="favorites-toggle-btn">
+      <i class="far fa-star"></i> Show Favorite Sections Only
+    </button>
+    <div class="favorites-stats">
+      <span id="interviewFavoritesCount">0</span> favorite sections
+    </div>
+  </div>
+
+  <section data-aos="zoom-in-up" data-section="technical">
+    <span class="interview-favorite-icon" onclick="toggleInterviewFavorite('technical')">
+      <i class="far fa-heart"></i>
+    </span>
     <h2>🔧 Technical Interview Practice</h2>
     <ul>
       <li><a href="https://leetcode.com" target="_blank">LeetCode</a> – Practice with real coding interview questions.
@@ -124,7 +244,10 @@
     </ul>
   </section>
 
-  <section data-aos="zoom-in-up" data-aos-delay="100">
+  <section data-aos="zoom-in-up" data-aos-delay="100" data-section="behavioral">
+    <span class="interview-favorite-icon" onclick="toggleInterviewFavorite('behavioral')">
+      <i class="far fa-heart"></i>
+    </span>
     <h2>🗣️ HR/Behavioral Interview Tips</h2>
     <ul>
       <li><a href="https://www.indeed.com/career-advice/interviewing/top-interview-questions-and-answers"
@@ -136,7 +259,10 @@
     </ul>
   </section>
 
-  <section data-aos="zoom-in-up" data-aos-delay="200">
+  <section data-aos="zoom-in-up" data-aos-delay="200" data-section="video">
+    <span class="interview-favorite-icon" onclick="toggleInterviewFavorite('video')">
+      <i class="far fa-heart"></i>
+    </span>
     <h2>🎥 Video-Based Learning</h2>
     <ul>
       <li><a href="https://www.youtube.com/c/ClémentMihailescu" target="_blank">Clément Mihailescu – Former Google
@@ -147,7 +273,10 @@
     </ul>
   </section>
 
-  <section data-aos="zoom-in-up" data-aos-delay="300">
+  <section data-aos="zoom-in-up" data-aos-delay="300" data-section="mock">
+    <span class="interview-favorite-icon" onclick="toggleInterviewFavorite('mock')">
+      <i class="far fa-heart"></i>
+    </span>
     <h2>🧠 Mock Interview Platforms</h2>
     <ul>
       <li><a href="https://pramp.com" target="_blank">Pramp – Free peer-to-peer mock interviews</a></li>
@@ -155,7 +284,10 @@
     </ul>
   </section>
 
-  <section data-aos="zoom-in-up" data-aos-delay="400">
+  <section data-aos="zoom-in-up" data-aos-delay="400" data-section="resume">
+    <span class="interview-favorite-icon" onclick="toggleInterviewFavorite('resume')">
+      <i class="far fa-heart"></i>
+    </span>
     <h2>📄 Resume Review & Feedback</h2>
     <ul>
       <li><a href="https://resumeworded.com" target="_blank">ResumeWorded – Instant feedback & score</a></li>
@@ -164,7 +296,10 @@
     </ul>
   </section>
 
-  <section data-aos="flip-up" data-aos-delay="500">
+  <section data-aos="flip-up" data-aos-delay="500" data-section="cheatsheet">
+    <span class="interview-favorite-icon" onclick="toggleInterviewFavorite('cheatsheet')">
+      <i class="far fa-heart"></i>
+    </span>
     <h2>📚 Bonus: Behavioral Interview Cheat Sheet</h2>
     <ul>
       <li><a href="https://hbr.org/2020/01/what-really-makes-a-good-interview-question" target="_blank">What Makes a
@@ -173,6 +308,7 @@
           target="_blank">30 Behavioral Questions – The Muse</a></li>
     </ul>
   </section>
+
   <footer>
     <div class="footer-container">
       <!-- Branding -->
@@ -221,66 +357,181 @@
       </div>
     </div>
 
-
     <div class="footer-bottom">
       © 2025 All Rights Reserved | Built with ❤️ by the FCP Community
     </div>
   </footer>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
     AOS.init({ once: true, duration: 1000 });
-  </script>
-  <script>
-    // Navbar toggle functionality
-    const navbarToggle = document.querySelector('.navbar-toggle');
-    const navbarMenu = document.querySelector('.navbar-menu');
-    const toggleBtn = document.getElementById("toggle-mode");
 
-    // Hamburger menu toggle
-    navbarToggle.addEventListener('click', () => {
-      navbarToggle.classList.toggle('active');
-      navbarMenu.classList.toggle('active');
-    });
+    // Interview Prep Favorites Functionality
+    let showInterviewFavoritesOnly = false;
+    let interviewFavorites = JSON.parse(localStorage.getItem('interviewFavorites')) || [];
 
-    // Dropdown functionality
-    const dropdownToggle = document.getElementById('resources-dropdown-toggle');
-    const dropdownMenu = document.querySelector('.dropdown-menu');
-
-    // Toggle dropdown on click
-    dropdownToggle.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation(); // Prevents the document click listener from firing
-      dropdownMenu.classList.toggle('active');
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!dropdownMenu.contains(e.target) && !dropdownToggle.contains(e.target)) {
-        dropdownMenu.classList.remove('active');
+    function toggleInterviewFavorite(sectionId) {
+      const index = interviewFavorites.indexOf(sectionId);
+      const icon = event.currentTarget.querySelector('i');
+      
+      if (index === -1) {
+        // Add to favorites
+        interviewFavorites.push(sectionId);
+        icon.classList.remove('far', 'fa-heart');
+        icon.classList.add('fas', 'fa-heart');
+        event.currentTarget.classList.add('active');
+      } else {
+        // Remove from favorites
+        interviewFavorites.splice(index, 1);
+        icon.classList.remove('fas', 'fa-heart');
+        icon.classList.add('far', 'fa-heart');
+        event.currentTarget.classList.remove('active');
       }
-    });
+      
+      localStorage.setItem('interviewFavorites', JSON.stringify(interviewFavorites));
+      updateInterviewFavoritesCount();
+      
+      if (showInterviewFavoritesOnly) {
+        filterInterviewSections();
+      }
+    }
 
-    // Close menu when clicking on a link (for mobile)
-    const menuLinks = navbarMenu.querySelectorAll('a');
-    menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navbarToggle.classList.remove('active');
-        navbarMenu.classList.remove('active');
+    function filterInterviewSections() {
+      const sections = document.querySelectorAll('section[data-section]');
+      let visibleCount = 0;
+      
+      sections.forEach(section => {
+        const sectionId = section.getAttribute('data-section');
+        const isFavorite = interviewFavorites.includes(sectionId);
+        
+        if (showInterviewFavoritesOnly) {
+          if (isFavorite) {
+            section.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            section.classList.add('hidden');
+          }
+        } else {
+          section.classList.remove('hidden');
+          visibleCount++;
+        }
       });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', function (event) {
-      if (!navbarToggle.contains(event.target) && !navbarMenu.contains(event.target)) {
-        navbarToggle.classList.remove('active');
-        navbarMenu.classList.remove('active');
+      
+      // Show message if no favorites in filter mode
+      if (showInterviewFavoritesOnly && visibleCount === 0) {
+        showNoInterviewFavoritesMessage();
+      } else {
+        hideNoInterviewFavoritesMessage();
       }
-    });
+    }
 
-    // Dark/Light mode functionality
-    window.addEventListener("DOMContentLoaded", () => {
+    function showNoInterviewFavoritesMessage() {
+      let message = document.getElementById('noInterviewFavoritesMessage');
+      if (!message) {
+        message = document.createElement('div');
+        message.id = 'noInterviewFavoritesMessage';
+        message.className = 'no-interview-favorites-message';
+        message.innerHTML = `
+          <h3>⭐ No Favorite Interview Sections Yet</h3>
+          <p>Click the heart icons on interview preparation sections to add them to your favorites!</p>
+          <button onclick="hideNoInterviewFavoritesMessage()">Got it!</button>
+        `;
+        const header = document.querySelector('header');
+        header.parentNode.insertBefore(message, header.nextSibling.nextSibling);
+      }
+    }
+
+    function hideNoInterviewFavoritesMessage() {
+      const message = document.getElementById('noInterviewFavoritesMessage');
+      if (message) {
+        message.remove();
+      }
+    }
+
+    function updateInterviewFavoritesCount() {
+      const countElement = document.getElementById('interviewFavoritesCount');
+      if (countElement) {
+        countElement.textContent = interviewFavorites.length;
+      }
+    }
+
+    function initializeInterviewFavorites() {
+      // Set initial favorite states
+      interviewFavorites.forEach(sectionId => {
+        const icon = document.querySelector(`[data-section="${sectionId}"] .interview-favorite-icon i`);
+        if (icon) {
+          icon.classList.remove('far', 'fa-heart');
+          icon.classList.add('fas', 'fa-heart');
+          icon.parentElement.classList.add('active');
+        }
+      });
+      updateInterviewFavoritesCount();
+    }
+
+    // Toggle interview favorites view
+    document.addEventListener('DOMContentLoaded', function() {
+      initializeInterviewFavorites();
+      
+      const interviewFavoritesBtn = document.getElementById('interviewFavoritesBtn');
+      if (interviewFavoritesBtn) {
+        interviewFavoritesBtn.addEventListener('click', function() {
+          showInterviewFavoritesOnly = !showInterviewFavoritesOnly;
+          this.innerHTML = showInterviewFavoritesOnly ? 
+            '<i class="far fa-star"></i> Show All Sections' : 
+            '<i class="far fa-star"></i> Show Favorite Sections Only';
+          
+          filterInterviewSections();
+        });
+      }
+
+      // Navbar toggle functionality
+      const navbarToggle = document.querySelector('.navbar-toggle');
+      const navbarMenu = document.querySelector('.navbar-menu');
+      const toggleBtn = document.getElementById("toggle-mode");
+
+      // Hamburger menu toggle
+      navbarToggle.addEventListener('click', () => {
+        navbarToggle.classList.toggle('active');
+        navbarMenu.classList.toggle('active');
+      });
+
+      // Dropdown functionality
+      const dropdownToggle = document.getElementById('resources-dropdown-toggle');
+      const dropdownMenu = document.querySelector('.dropdown-menu');
+
+      // Toggle dropdown on click
+      dropdownToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // Prevents the document click listener from firing
+        dropdownMenu.classList.toggle('active');
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!dropdownMenu.contains(e.target) && !dropdownToggle.contains(e.target)) {
+          dropdownMenu.classList.remove('active');
+        }
+      });
+
+      // Close menu when clicking on a link (for mobile)
+      const menuLinks = navbarMenu.querySelectorAll('a');
+      menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          navbarToggle.classList.remove('active');
+          navbarMenu.classList.remove('active');
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', function (event) {
+        if (!navbarToggle.contains(event.target) && !navbarMenu.contains(event.target)) {
+          navbarToggle.classList.remove('active');
+          navbarMenu.classList.remove('active');
+        }
+      });
+
+      // Dark/Light mode functionality
       const savedMode = localStorage.getItem("mode");
-
       if (savedMode === "dark") {
         document.body.classList.add("dark-mode");
         toggleBtn.textContent = "☀️";
@@ -288,28 +539,27 @@
         document.body.classList.remove("dark-mode");
         toggleBtn.textContent = "🌙";
       }
-    });
 
-    // Toggle and Save Mode
-    toggleBtn.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
+      // Toggle and Save Mode
+      toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        if (document.body.classList.contains("dark-mode")) {
+          toggleBtn.textContent = "☀️";
+          localStorage.setItem("mode", "dark");
+        } else {
+          toggleBtn.textContent = "🌙";
+          localStorage.setItem("mode", "light");
+        }
+      });
 
-      if (document.body.classList.contains("dark-mode")) {
-        toggleBtn.textContent = "☀️";
-        localStorage.setItem("mode", "dark");
-      } else {
-        toggleBtn.textContent = "🌙";
-        localStorage.setItem("mode", "light");
-      }
-    });
-
-    // Handle window resize
-    window.addEventListener('resize', function () {
-      if (window.innerWidth > 880) {
-        // Reset mobile menu on desktop
-        navbarToggle.classList.remove('active');
-        navbarMenu.classList.remove('active');
-      }
+      // Handle window resize
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 880) {
+          // Reset mobile menu on desktop
+          navbarToggle.classList.remove('active');
+          navbarMenu.classList.remove('active');
+        }
+      });
     });
   </script>
 </body>

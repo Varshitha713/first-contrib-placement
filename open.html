@@ -169,6 +169,142 @@
       border-radius: 10px;
       box-shadow: 0 6px 18px rgba(3, 30, 30, 0.04)
     }
+
+    /* Dark Mode Styles */
+.dark-mode {
+  --bg1: #0a1929;
+  --bg2: #071521;
+  --accent: #4db6ac;
+  --accent-dark: #26a69a;
+  --card: #1e293b;
+  color: #e2e8f0;
+}
+
+.dark-mode body {
+  background: linear-gradient(90deg, var(--bg1), var(--bg2));
+  color: #e2e8f0;
+}
+
+.dark-mode header {
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  color: #0f172a;
+}
+
+.dark-mode .card {
+  background: var(--card);
+  color: #e2e8f0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .card h3 {
+  color: var(--accent);
+}
+
+.dark-mode .card p {
+  color: #cbd5e1;
+}
+
+.dark-mode .card a {
+  color: var(--accent);
+}
+
+.dark-mode .search input {
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: #e2e8f0;
+}
+
+.dark-mode .search input::placeholder {
+  color: #94a3b8;
+}
+
+.dark-mode .ghost {
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: var(--accent);
+}
+
+.dark-mode .button {
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+  color: #0f172a;
+}
+
+.dark-mode .button:hover {
+  background: linear-gradient(90deg, var(--accent-dark), var(--accent));
+}
+
+.dark-mode .contribute {
+  background: linear-gradient(90deg, rgba(77, 182, 172, 0.1), rgba(38, 166, 154, 0.05));
+}
+
+.dark-mode .step {
+  background: #1e293b;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .filters .button {
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+  color: #0f172a;
+}
+
+/* Navbar Dark Mode */
+.dark-mode .navbar {
+  background: #1e293b;
+  border-bottom: 1px solid #334155;
+}
+
+.dark-mode .navbar-menu a {
+  color: #e2e8f0;
+}
+
+.dark-mode .navbar-menu a:hover {
+  background: #334155;
+  color: var(--accent);
+}
+
+.dark-mode .dropdown-menu {
+  background: #1e293b;
+  border: 1px solid #334155;
+}
+
+.dark-mode .dropdown-menu a {
+  color: #e2e8f0;
+}
+
+.dark-mode .dropdown-menu a:hover {
+  background: #334155;
+  color: var(--accent);
+}
+
+/* Footer Dark Mode */
+.dark-mode footer {
+  background: #1e293b;
+  color: #e2e8f0;
+  border-top: 1px solid #334155;
+}
+
+.dark-mode .footer-section h2,
+.dark-mode .footer-section h3 {
+  color: var(--accent);
+}
+
+.dark-mode .footer-section a {
+  color: #cbd5e1;
+}
+
+.dark-mode .footer-section a:hover {
+  color: var(--accent);
+}
+
+.dark-mode .footer-bottom {
+  border-top: 1px solid #334155;
+  color: #94a3b8;
+}
+
+/* Animation for smooth transition */
+body, .card, .navbar, footer, .button, .search input, .ghost {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
   </style>
 </head>
 

@@ -123,6 +123,7 @@
       transition: transform 0.3s, opacity 0.3s;
       opacity: 0;
       transform: translateY(20px);
+      position: relative;
     }
 
     .card.show {
@@ -169,6 +170,140 @@
       border-radius: 10px;
       box-shadow: 0 6px 18px rgba(3, 30, 30, 0.04)
     }
+
+    /* Open Source Favorites Styles */
+    .open-favorites-controls {
+      text-align: center;
+      margin: 30px auto;
+      max-width: 1150px;
+      padding: 0 20px;
+    }
+
+    .repo-favorite-icon {
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: #ccc;
+      transition: all 0.3s ease;
+      padding: 6px;
+      border-radius: 50%;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+    }
+
+    .repo-favorite-icon:hover {
+      color: #ff6b6b;
+      background: rgba(255, 107, 107, 0.1);
+      transform: scale(1.1);
+    }
+
+    .repo-favorite-icon.active {
+      color: #ff6b6b;
+    }
+
+    .repo-favorite-icon.active i {
+      font-weight: 900;
+    }
+
+    /* Hidden state for filtered repos */
+    .card.hidden {
+      display: none;
+    }
+
+    /* No Favorites Message */
+    .no-repo-favorites-message {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(145deg, #fff8f8, #ffeaea);
+      border-radius: 16px;
+      margin: 30px auto;
+      max-width: 900px;
+      border-left: 8px solid #ff6b6b;
+      animation: fadeInUp 0.5s ease-in-out;
+    }
+
+    .dark-mode .no-repo-favorites-message {
+      background: linear-gradient(145deg, #2a1a1a, #3a2a2a);
+      color: #ffb4b4;
+    }
+
+    .no-repo-favorites-message h3 {
+      color: #ff6b6b;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    .no-repo-favorites-message p {
+      color: #666;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+
+    .dark-mode .no-repo-favorites-message p {
+      color: #e0e0e0;
+    }
+
+    .no-repo-favorites-message button {
+      background: #ff6b6b;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .no-repo-favorites-message button:hover {
+      background: #ff5252;
+      transform: translateY(-2px);
+    }
+
+    /* Dark mode adjustments */
+    .dark-mode .card {
+      background: #1E2A30;
+      color: #E0F7FA;
+    }
+
+    .dark-mode .card h3 {
+      color: #81e6d9;
+    }
+
+    .dark-mode .card p {
+      color: #B0BEC5;
+    }
+
+    .dark-mode .card a {
+      color: #7FDBFF;
+    }
+
+    .dark-mode .repo-favorite-icon {
+      background: rgba(30, 42, 48, 0.9);
+    }
+
+    .dark-mode .step {
+      background: #2d3748;
+      color: #E0F7FA;
+    }
+
+    .dark-mode .contribute {
+      background: linear-gradient(90deg, rgba(129, 230, 217, 0.06), rgba(127, 219, 255, 0.03));
+    }
+
+    /* Animation for fadeInUp */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 
@@ -179,9 +314,7 @@
         <img src="/images/PR-LOGO.png" width="140" height="120" id="logo">
       </div>
 
-
       <!-- Navigation Links -->
-
       <ul class="navbar-menu">
         <li><a href="index.html"><i class="fa-solid fa-house-chimney"></i>Home</a></li>
         <li><a href="contribute.html"><i class="fa-solid fa-handshake-angle"></i>Contribute</a></li>
@@ -199,14 +332,12 @@
           </ul>
         </li>
 
-
         <li><a href="roadmap.html"><i class="fa-solid fa-map"></i>Roadmap</a></li>
         <li><a href="contact.html"><i class="fa-solid fa-address-card"></i>Contact</a></li>
         <li><a href="https://github.com/Varshitha713/first-contrib-placement" target="_blank" rel="noopener noreferrer">
             <i class="fa-brands fa-github"></i>Github</a>
         </li>
       </ul>
-
 
       <div class="navbar-icons">
         <!-- Hamburger icon -->
@@ -216,18 +347,28 @@
           <span class="bar"></span>
         </button>
 
-
         <!-- Dark/Light Mode Toggle -->
         <button id="toggle-mode"></button>
       </div>
     </div>
   </nav>
+  
   <header>
     <h1>Open Source Hub</h1>
     <p>Discover beginner-friendly projects, contribute guides, and live GitHub links.</p>
   </header>
 
   <main class="wrap">
+    <!-- Favorites Controls -->
+    <div class="open-favorites-controls">
+      <button id="repoFavoritesBtn" class="favorites-toggle-btn">
+        <i class="far fa-star"></i> Show Favorite Repositories Only
+      </button>
+      <div class="favorites-stats">
+        <span id="repoFavoritesCount">0</span> favorite repositories
+      </div>
+    </div>
+
     <div class="topbar">
       <div class="search" style="flex:1;max-width:640px">
         <input id="q" placeholder="Search projects, languages or topics (e.g. react, api, beginner)" />
@@ -272,6 +413,7 @@
       </div>
     </section>
   </main>
+  
   <footer>
     <div class="footer-container">
       <!-- Branding -->
@@ -320,44 +462,156 @@
       </div>
     </div>
 
-
     <div class="footer-bottom">
       © 2025 All Rights Reserved | Built with ❤️ by the FCP Community
     </div>
   </footer>
 
   <script>
-    const navbarToggle = document.querySelector('.navbar-toggle');
-    const navbarMenu = document.querySelector('.navbar-menu');
-    const toggleBtn = document.getElementById("toggle-mode");
+    // Open Source Favorites Functionality
+    let showRepoFavoritesOnly = false;
+    let repoFavorites = JSON.parse(localStorage.getItem('repoFavorites')) || [];
 
-    navbarToggle.addEventListener('click', () => {
-      navbarToggle.classList.toggle('active');
-      navbarMenu.classList.toggle('active');
-    });
-
-    // Dropdown functionality
-    const dropdownToggle = document.getElementById('resources-dropdown-toggle');
-    const dropdownMenu = document.querySelector('.dropdown-menu');
-
-    // Toggle dropdown on click
-    dropdownToggle.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      dropdownMenu.classList.toggle('active');
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!dropdownMenu.contains(e.target) && !dropdownToggle.contains(e.target)) {
-        dropdownMenu.classList.remove('active');
+    function toggleRepoFavorite(repoId, repoName, repoUrl, repoDescription) {
+      const index = repoFavorites.findIndex(fav => fav.id === repoId);
+      const icon = event.currentTarget.querySelector('i');
+      
+      if (index === -1) {
+        // Add to favorites
+        repoFavorites.push({
+          id: repoId,
+          name: repoName,
+          url: repoUrl,
+          description: repoDescription,
+          stars: 0,
+          forks: 0
+        });
+        icon.classList.remove('far', 'fa-heart');
+        icon.classList.add('fas', 'fa-heart');
+        event.currentTarget.classList.add('active');
+      } else {
+        // Remove from favorites
+        repoFavorites.splice(index, 1);
+        icon.classList.remove('fas', 'fa-heart');
+        icon.classList.add('far', 'fa-heart');
+        event.currentTarget.classList.remove('active');
       }
-    });
+      
+      localStorage.setItem('repoFavorites', JSON.stringify(repoFavorites));
+      updateRepoFavoritesCount();
+      
+      if (showRepoFavoritesOnly) {
+        filterRepoFavorites();
+      }
+    }
 
-    // Dark/Light mode functionality
-    window.addEventListener("DOMContentLoaded", () => {
+    function filterRepoFavorites() {
+      const cards = document.querySelectorAll('#repoContainer .card');
+      let visibleCount = 0;
+      
+      cards.forEach(card => {
+        const repoId = card.getAttribute('data-repo-id');
+        const isFavorite = repoFavorites.some(fav => fav.id === repoId);
+        
+        if (showRepoFavoritesOnly) {
+          if (isFavorite) {
+            card.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            card.classList.add('hidden');
+          }
+        } else {
+          card.classList.remove('hidden');
+          visibleCount++;
+        }
+      });
+      
+      // Show message if no favorites in filter mode
+      if (showRepoFavoritesOnly && visibleCount === 0) {
+        showNoRepoFavoritesMessage();
+      } else {
+        hideNoRepoFavoritesMessage();
+      }
+    }
+
+    function showNoRepoFavoritesMessage() {
+      let message = document.getElementById('noRepoFavoritesMessage');
+      if (!message) {
+        message = document.createElement('div');
+        message.id = 'noRepoFavoritesMessage';
+        message.className = 'no-repo-favorites-message';
+        message.innerHTML = `
+          <h3>⭐ No Favorite Repositories Yet</h3>
+          <p>Click the heart icons on GitHub repositories to add them to your favorites!</p>
+          <button onclick="hideNoRepoFavoritesMessage()">Got it!</button>
+        `;
+        const repoContainer = document.getElementById('repoContainer');
+        repoContainer.appendChild(message);
+      }
+    }
+
+    function hideNoRepoFavoritesMessage() {
+      const message = document.getElementById('noRepoFavoritesMessage');
+      if (message) {
+        message.remove();
+      }
+    }
+
+    function updateRepoFavoritesCount() {
+      const countElement = document.getElementById('repoFavoritesCount');
+      if (countElement) {
+        countElement.textContent = repoFavorites.length;
+      }
+    }
+
+    function initializeRepoFavorites() {
+      updateRepoFavoritesCount();
+    }
+
+    // Toggle repo favorites view
+    document.addEventListener('DOMContentLoaded', function() {
+      initializeRepoFavorites();
+      
+      const repoFavoritesBtn = document.getElementById('repoFavoritesBtn');
+      if (repoFavoritesBtn) {
+        repoFavoritesBtn.addEventListener('click', function() {
+          showRepoFavoritesOnly = !showRepoFavoritesOnly;
+          this.innerHTML = showRepoFavoritesOnly ? 
+            '<i class="far fa-star"></i> Show All Repositories' : 
+            '<i class="far fa-star"></i> Show Favorite Repositories Only';
+          
+          filterRepoFavorites();
+        });
+      }
+
+      // Navbar functionality
+      const navbarToggle = document.querySelector('.navbar-toggle');
+      const navbarMenu = document.querySelector('.navbar-menu');
+      const toggleBtn = document.getElementById("toggle-mode");
+
+      navbarToggle.addEventListener('click', () => {
+        navbarToggle.classList.toggle('active');
+        navbarMenu.classList.toggle('active');
+      });
+
+      // Dropdown functionality
+      const dropdownToggle = document.getElementById('resources-dropdown-toggle');
+      const dropdownMenu = document.querySelector('.dropdown-menu');
+
+      dropdownToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropdownMenu.classList.toggle('active');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!dropdownMenu.contains(e.target) && !dropdownToggle.contains(e.target)) {
+          dropdownMenu.classList.remove('active');
+        }
+      });
+
+      // Dark/Light mode functionality
       const savedMode = localStorage.getItem("mode");
-
       if (savedMode === "dark") {
         document.body.classList.add("dark-mode");
         toggleBtn.textContent = "☀️";
@@ -365,23 +619,20 @@
         document.body.classList.remove("dark-mode");
         toggleBtn.textContent = "🌙";
       }
+
+      toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        if (document.body.classList.contains("dark-mode")) {
+          toggleBtn.textContent = "☀️";
+          localStorage.setItem("mode", "dark");
+        } else {
+          toggleBtn.textContent = "🌙";
+          localStorage.setItem("mode", "light");
+        }
+      });
     });
 
-    // Toggle and Save Mode
-    toggleBtn.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-
-      if (document.body.classList.contains("dark-mode")) {
-        toggleBtn.textContent = "☀️";
-        localStorage.setItem("mode", "dark");
-      } else {
-        toggleBtn.textContent = "🌙";
-        localStorage.setItem("mode", "light");
-      }
-    });
-
-  </script>
-  <script>
+    // GitHub API functionality
     async function fetchRepos(query) {
       const container = document.getElementById("repoContainer");
       container.innerHTML = "<p style='text-align:center;'>Loading...</p>";
@@ -402,15 +653,30 @@
         shuffled.forEach((repo, index) => {
           const card = document.createElement("div");
           card.className = "card";
+          card.setAttribute('data-repo-id', repo.id);
+          
+          // Check if repo is already favorited
+          const isFavorited = repoFavorites.some(fav => fav.id === repo.id);
+          const heartIcon = isFavorited ? 'fas fa-heart' : 'far fa-heart';
+          const activeClass = isFavorited ? 'active' : '';
+          
           card.innerHTML = `
-        <h3>${repo.name}</h3>
-        <p>${repo.description ? repo.description.substring(0, 100) + "..." : "No description"}</p>
-        <p>⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}</p>
-        <a href="${repo.html_url}" target="_blank">View Repo</a>
-      `;
+            <span class="repo-favorite-icon ${activeClass}" onclick="toggleRepoFavorite(${repo.id}, '${repo.name.replace(/'/g, "\\'")}', '${repo.html_url}', '${repo.description ? repo.description.replace(/'/g, "\\'") : "No description"}')">
+              <i class="${heartIcon}"></i>
+            </span>
+            <h3>${repo.name}</h3>
+            <p>${repo.description ? repo.description.substring(0, 100) + "..." : "No description"}</p>
+            <p>⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}</p>
+            <a href="${repo.html_url}" target="_blank">View Repo</a>
+          `;
           container.appendChild(card);
-          setTimeout(() => card.classList.add("show"), index * 200); // animation stagger
+          setTimeout(() => card.classList.add("show"), index * 200);
         });
+
+        // Apply filter if favorites only is active
+        if (showRepoFavoritesOnly) {
+          filterRepoFavorites();
+        }
       } catch (error) {
         container.innerHTML = `<p style="text-align:center; color:red;">Error loading repositories</p>`;
         console.error(error);
@@ -433,6 +699,7 @@
       el.click();
       el.remove();
     }
+    
     document.getElementById('newIssueBtn').addEventListener('click', () => {
       const tpl = `<!-- ISSUE TEMPLATE -->\n### Summary\nProvide a short description of the issue.\n\n### Steps To Reproduce\n1. \n2. \n3.\n\n### Expected behavior\nDescribe the expected behavior.\n\n### Environment\n- OS: \n- Node: \n\n### Additional context\nAdd any other context about the problem here.`;
       download('ISSUE_TEMPLATE.md', tpl);

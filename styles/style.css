@@ -1358,6 +1358,29 @@ footer {
   }
 }
 
+
+/* --- Fix: Ensure text is visible on hover --- */
+.card:hover h4,
+.card:hover p {
+  color: #1a3a4a !important;  /* Dark readable text */
+}
+
+.intro-card:hover h2,
+.intro-card:hover p {
+  color: #1a3a4a !important;
+}
+
+/* Keep links styled like buttons */
+.card a {
+  color: #ffffff !important;
+  background-color: #219EBC;
+}
+
+.card a:hover {
+  background-color: #1a6f8a;
+  color: #ffffff !important;
+}
+
 /* ==========================================================================
    Favorites Feature Styles
    ========================================================================== */
